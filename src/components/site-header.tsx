@@ -12,7 +12,7 @@ const navItems = [
   { key: "nav.about", to: "/about" },
   { key: "nav.services", to: "/", hash: "services", hasDropdown: true },
   { key: "nav.work", to: "/", hash: "gallery" },
-  { key: "nav.reviews", to: "/", hash: "reviews" },
+  { key: "nav.reviews", to: "/reviews" },
   { key: "nav.contact", to: "/contact" },
 ] as const;
 
