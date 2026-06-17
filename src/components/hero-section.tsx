@@ -38,8 +38,14 @@ export function HeroSection() {
               <span>{t("welcome.badge")}</span>
             </div>
 
-            <h1 className="whitespace-nowrap text-[10px] min-[375px]:text-[12px] min-[425px]:text-[13px] sm:text-[20px] md:text-[24px] lg:text-[32px] xl:text-[36px] leading-[1.3] md:leading-[1.5] capitalize font-bold tracking-tight -mt-[10px] md:-mt-[20px] drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
-              {t("hero.title")}
+            <h1 className="text-[20px] sm:text-[22px] md:text-[26px] lg:text-[32px] xl:text-[36px] sm:whitespace-nowrap leading-[1.3] md:leading-[1.5] capitalize font-bold tracking-tight -mt-[10px] md:-mt-[20px] drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
+              {t("hero.title").split("\n").map((line, i) => (
+                <span key={i} className="block sm:inline">
+                  {line}
+                  {i === 0 && <br className="sm:hidden" />}
+                  {i === 0 && <span className="hidden sm:inline"> </span>}
+                </span>
+              ))}
             </h1>
 
             <p className="mt-[14px] md:mt-[20px] text-[14px] sm:text-[16px] md:text-[18px] leading-relaxed text-white/95 max-w-4xl whitespace-pre-line drop-shadow-[0_1px_4px_rgba(0,0,0,0.3)]">

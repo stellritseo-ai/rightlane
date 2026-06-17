@@ -62,7 +62,7 @@ export const translations = {
     "nav.talk": "Let's Talk",
 
     // Hero Section
-    "hero.title": "Outdoor Visions Come To Life Building America's Dreams",
+    "hero.title": "Outdoor Visions Come To Life\nBuilding America's Dreams",
     "hero.description": "San Antonio Outdoor Living is a Concrete Contractor in San Antonio, TX. We offer Landscaping,\nOutdoor Kitchen Design, Hardscaping and more!",
     "hero.btn.consultation": "Get Your Free Consultation",
     "hero.btn.book": "Book A Service",
@@ -248,7 +248,7 @@ export const translations = {
     "nav.talk": "Hablemos",
 
     // Hero Section
-    "hero.title": "Visiones al Aire Libre Cobran Vida Construyendo los Sueños de América",
+    "hero.title": "Visiones al Aire Libre Cobran Vida\nConstruyendo los Sueños de América",
     "hero.description": "San Antonio Outdoor Living es un contratista de concreto en San Antonio, TX. ¡Ofrecemos paisajismo,\ndiseño de cocinas al aire libre, adoquines y más!",
     "hero.btn.consultation": "Obtenga Su Consulta Gratis",
     "hero.btn.book": "Reservar un Servicio",
