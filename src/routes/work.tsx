@@ -243,7 +243,7 @@ function OurWorkPage() {
           </motion.div>
 
           {/* Symmetrical Projects Grid Layout */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
             {projects.map((p, idx) => (
               <motion.div
                 key={p.title}
