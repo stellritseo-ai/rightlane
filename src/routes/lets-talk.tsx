@@ -40,14 +40,21 @@ export const Route = createFileRoute("/lets-talk")({
 function LetUsTalkPage() {
   const { t } = useTranslation();
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    address: "",
-    projectType: "",
-    description: "",
-    contactTime: ""
+  const [formData, setFormData] = useState(() => {
+    let initialType = "";
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      initialType = params.get("type") || "";
+    }
+    return {
+      name: "",
+      email: "",
+      phone: "",
+      address: "",
+      projectType: initialType,
+      description: "",
+      contactTime: ""
+    };
   });
 
   const cities = [
@@ -539,7 +546,7 @@ function LetUsTalkPage() {
                         <div className="relative w-full">
                           <select
                             required
-                            value={formData.projectType}
+                            value={formData.projectType || new URLSearchParams(window.location.search).get('project') || ""}
                             onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                             className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 py-3 pl-4 pr-10 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-[#577a4c]/30 focus:border-[#577a4c] transition-all appearance-none cursor-pointer"
                           >
@@ -555,6 +562,7 @@ function LetUsTalkPage() {
                             <option value="softscapes">Softscapes</option>
                             <option value="fencing">Fencing</option>
                             <option value="turf">Artificial Turf</option>
+                            <option value="commercial">Commercial Services</option>
                             <option value="other">Other</option>
                           </select>
                           <div className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 flex items-center text-neutral-500">

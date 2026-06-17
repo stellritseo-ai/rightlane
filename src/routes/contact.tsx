@@ -40,14 +40,21 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   const { t } = useTranslation();
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    address: "",
-    projectType: "",
-    description: "",
-    contactTime: ""
+  const [formData, setFormData] = useState(() => {
+    let initialType = "";
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      initialType = params.get("type") || "";
+    }
+    return {
+      name: "",
+      email: "",
+      phone: "",
+      address: "",
+      projectType: initialType,
+      description: "",
+      contactTime: ""
+    };
   });
 
   const cities = [
@@ -407,6 +414,7 @@ function ContactPage() {
                             <option value="softscapes">Softscapes</option>
                             <option value="fencing">Fencing</option>
                             <option value="turf">Artificial Turf</option>
+                            <option value="commercial">Commercial Services</option>
                             <option value="other">Other</option>
                           </select>
                           <div className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 flex items-center text-neutral-500">

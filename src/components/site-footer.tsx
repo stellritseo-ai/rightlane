@@ -8,7 +8,7 @@ export function SiteFooter() {
   const quickLinks = [
     "/",
     "/about",
-    "/#services",
+    "/services",
     "/work",
     "/reviews",
     "/#consultation",
@@ -45,7 +45,7 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-3.5 text-[15px] text-neutral-300 font-light">
               {[1, 2, 3, 4, 5, 6, 7].map((num) => (
                 <li key={num}>
-                  <a href="/#services" className="hover:text-white hover:translate-x-0.5 transition-all duration-200 block">
+                  <a href="/services" className="hover:text-white hover:translate-x-0.5 transition-all duration-200 block">
                     {t(`footer.service.${num}` as any)}
                   </a>
                 </li>
