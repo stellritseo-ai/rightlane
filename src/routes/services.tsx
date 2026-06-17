@@ -23,7 +23,8 @@ import {
   Compass,
   Smile,
   Zap,
-  ArrowRight
+  ArrowRight,
+  ChevronRight
 } from "lucide-react";
 
 import imgRemodeling from "@/assets/svc-house-remodeling.jpg";
