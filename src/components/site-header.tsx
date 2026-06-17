@@ -56,10 +56,12 @@ export function SiteHeader() {
             }
           `}
         >
-          {/* Nav content row */}
+          {/* Nav content row — centered on mobile, spread on desktop */}
           <div
-            className={`flex items-center justify-between w-full transition-all duration-300 ${
-              scrolled ? "px-4 sm:px-6 lg:px-10 xl:px-16 py-2.5" : "px-6 md:px-8 py-[10px]"
+            className={`relative flex items-center w-full transition-all duration-300 ${
+              scrolled
+                ? "px-4 sm:px-6 lg:px-10 xl:px-16 py-2.5 justify-between lg:justify-between"
+                : "px-6 md:px-8 py-[10px] justify-center lg:justify-between"
             }`}
             style={
               !scrolled
@@ -72,7 +74,57 @@ export function SiteHeader() {
                 : undefined
             }
           >
-            {/* Logo — shrinks slightly when scrolled */}
+            {/* Mobile: phone icon + hamburger — absolute right so logo stays centered */}
+            <div className="lg:hidden absolute right-6 flex items-center gap-3">
+              <a
+                href="tel:2104295526"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-r from-[#32322d] to-[#1e1e1a] text-white transition-all duration-200"
+              >
+                <Phone className="h-3.5 w-3.5 fill-white text-white" />
+              </a>
+
+              <Sheet>
+                <SheetTrigger asChild>
+                  <button className="flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-300 bg-white/80 hover:bg-neutral-50 active:bg-neutral-100 hover:scale-[1.02] active:scale-[0.98] text-neutral-700 transition-all duration-200 cursor-pointer">
+                    <Menu className="h-4 w-4" />
+                  </button>
+                </SheetTrigger>
+                <SheetContent side="right" className="bg-[#fcfbf8] border-l border-[#e1ded4] p-6 font-sans">
+                  <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+                  <div className="flex flex-col gap-6 mt-8">
+                    <div className="flex items-center justify-center gap-3 border-b border-neutral-200 pb-4">
+                      <img src={logo} alt="JRM" className="h-10 w-10 object-contain" />
+                      <div className="leading-none text-[#565737]">
+                        <div className="text-md font-bold tracking-wider">JRM</div>
+                        <div className="text-xs font-semibold tracking-wider text-[#6c6d4d]">CONSTRUCTION</div>
+                      </div>
+                    </div>
+
+                    <nav className="flex flex-col items-center gap-4">
+                      {navItems.map((item) => (
+                        <Link
+                          key={item.key}
+                          to={item.to}
+                          className="text-lg font-medium text-neutral-800 hover:text-[#4d4d2b] transition-colors py-1.5 border-b border-neutral-100 w-full text-center"
+                        >
+                          {t(item.key)}
+                        </Link>
+                      ))}
+                    </nav>
+
+                    <a
+                      href="tel:2104295526"
+                      className="flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#32322d] to-[#1e1e1a] hover:from-[#23231f] hover:to-[#121210] py-4 text-white transition-all duration-200 shadow-sm w-full mt-4"
+                    >
+                      <Phone className="h-4 w-4 fill-white text-white" />
+                      <span className="font-normal">(210) 429-5526</span>
+                    </a>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
+
+            {/* Logo — centered on mobile, left on desktop */}
             <Link to="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity shrink-0">
               <img
                 src={logo}
@@ -122,56 +174,6 @@ export function SiteHeader() {
                 <Phone className="h-3.5 w-3.5 fill-white text-white" />
                 <span className="font-normal text-sm">(210) 429-5526</span>
               </a>
-            </div>
-
-            {/* Mobile: phone icon + hamburger */}
-            <div className="lg:hidden flex items-center gap-3">
-              <a
-                href="tel:2104295526"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-r from-[#32322d] to-[#1e1e1a] text-white transition-all duration-200"
-              >
-                <Phone className="h-3.5 w-3.5 fill-white text-white" />
-              </a>
-
-              <Sheet>
-                <SheetTrigger asChild>
-                  <button className="flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-300 bg-white/80 hover:bg-neutral-50 active:bg-neutral-100 hover:scale-[1.02] active:scale-[0.98] text-neutral-700 transition-all duration-200 cursor-pointer">
-                    <Menu className="h-4 w-4" />
-                  </button>
-                </SheetTrigger>
-                <SheetContent side="right" className="bg-[#fcfbf8] border-l border-[#e1ded4] p-6 font-sans">
-                  <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                  <div className="flex flex-col gap-6 mt-8">
-                    <div className="flex items-center gap-3 border-b border-neutral-200 pb-4">
-                      <img src={logo} alt="JRM" className="h-10 w-10 object-contain" />
-                      <div className="leading-none text-[#565737]">
-                        <div className="text-md font-bold tracking-wider">JRM</div>
-                        <div className="text-xs font-semibold tracking-wider text-[#6c6d4d]">CONSTRUCTION</div>
-                      </div>
-                    </div>
-
-                    <nav className="flex flex-col gap-4">
-                      {navItems.map((item) => (
-                        <Link
-                          key={item.key}
-                          to={item.to}
-                          className="text-lg font-medium text-neutral-800 hover:text-[#4d4d2b] transition-colors py-1.5 border-b border-neutral-100"
-                        >
-                          {t(item.key)}
-                        </Link>
-                      ))}
-                    </nav>
-
-                    <a
-                      href="tel:2104295526"
-                      className="flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#32322d] to-[#1e1e1a] hover:from-[#23231f] hover:to-[#121210] py-4 text-white transition-all duration-200 shadow-sm w-full mt-4"
-                    >
-                      <Phone className="h-4 w-4 fill-white text-white" />
-                      <span className="font-normal">(210) 429-5526</span>
-                    </a>
-                  </div>
-                </SheetContent>
-              </Sheet>
             </div>
           </div>
         </div>
