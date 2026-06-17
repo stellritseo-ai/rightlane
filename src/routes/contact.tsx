@@ -15,7 +15,10 @@ import {
   ShieldCheck,
   Building,
   UserCheck,
-  Hammer
+  Hammer,
+  ArrowRight,
+  Info,
+  Sparkles
 } from "lucide-react";
 import logo from "@/assets/jrm-logo.png";
 import welBg from "@/assets/wel-bg.png";
@@ -24,17 +27,17 @@ import contactHero from "@/assets/stats-jobsite.jpg";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact JRM Construction Landscape Design — San Antonio, TX" },
-      { name: "description", content: "Contact JRM Construction for free estimates, on-site design consultations, or 24/7 emergency service in San Antonio, TX." },
-      { property: "og:title", content: "Contact JRM Construction Landscape Design" },
-      { property: "og:description", content: "Connect with principal consultant Robert Thompson for premium remodeling and landscape solutions in San Antonio, TX." },
+      { title: "Let's Talk — JRM Construction Landscape Design, San Antonio" },
+      { name: "description", content: "Let's Talk. Contact JRM Construction for free estimates, on-site design consultations, or 24/7 emergency service in San Antonio, TX." },
+      { property: "og:title", content: "Let's Talk — JRM Construction Landscape Design" },
+      { property: "og:description", content: "Connect with owner Robert Thompson for premium remodeling and landscape solutions in San Antonio, TX." },
       { property: "og:type", content: "website" }
     ],
   }),
-  component: ContactPage,
+  component: LetUsTalkPage,
 });
 
-function ContactPage() {
+function LetUsTalkPage() {
   const { t } = useTranslation();
 
   const cities = [
@@ -48,28 +51,65 @@ function ContactPage() {
     "Castroville",
     "Fredericksburg",
     "Kerrville",
+    "Bandera",
+    "Hondo",
+    "Pleasanton",
+    "Floresville",
   ];
 
   const trustValues = [
     {
-      title: "Direct Owner Communication",
-      desc: "Work closely with Robert Thompson from blueprint to cleanup. No sales reps, no layers of bureaucracy.",
-      icon: UserCheck,
-    },
-    {
-      title: "35 Years of Local Expertise",
-      desc: "Deep knowledge of San Antonio's unique soil types, shifting foundations, micro-climates, and regional style trends.",
+      title: "35 Years of Proven Expertise",
+      desc: "Decades of local experience in remodeling, construction, and landscape design.",
       icon: Hammer,
     },
     {
-      title: "Full Licensing & Insurance",
-      desc: "We hold extensive liability insurance and structural bonding for your ultimate protection (License details available on request).",
+      title: "Honest & Transparent Communication",
+      desc: "Clear quotes, no hidden fees, and open dialogue from start to finish.",
+      icon: UserCheck,
+    },
+    {
+      title: "Superior Craftsmanship",
+      desc: "Attention to detail and quality materials that stand the test of time.",
+      icon: Sparkles,
+    },
+    {
+      title: "Licensed, Insured & Bonded",
+      desc: "Your complete protection and peace of mind for every project phase.",
       icon: ShieldCheck,
     },
     {
-      title: "Comprehensive Service Range",
-      desc: "From massive home additions and custom masonry patios to outdoor kitchens and low-maintenance artificial grass layouts.",
+      title: "Owner-Led Oversight",
+      desc: "Robert Thompson is personally involved in every project we take on.",
       icon: Building,
+    },
+    {
+      title: "Comprehensive Service Range",
+      desc: "From house remodeling and new construction to outdoor living spaces and complete landscaping.",
+      icon: Info,
+    },
+  ];
+
+  const steps = [
+    {
+      number: "1",
+      title: "Within 24 Hours",
+      desc: "We will acknowledge your inquiry and schedule your consultation.",
+    },
+    {
+      number: "2",
+      title: "Consultation Meeting",
+      desc: "Robert will meet you at your property to discuss your vision.",
+    },
+    {
+      number: "3",
+      title: "Follow-Up & Proposal",
+      desc: "You will receive a clear, detailed estimate and project plan.",
+    },
+    {
+      number: "4",
+      title: "Project Commencement",
+      desc: "Once you're ready, we begin the exciting journey of bringing your vision to life.",
     },
   ];
 
@@ -101,17 +141,17 @@ function ContactPage() {
           >
             {/* Badge */}
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 backdrop-blur-md text-white text-xs font-semibold uppercase tracking-wider mb-6 shadow-sm">
-              Contact JRM Construction
+              Let's Talk
             </span>
 
             {/* Title */}
-            <h1 className="text-[26px] sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight capitalize tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
-              Your Vision Starts with a Conversation
+            <h1 className="text-[32px] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight capitalize tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+              Your Vision Deserves a Conversation
             </h1>
 
             {/* Subtitle */}
-            <p className="mt-6 text-sm md:text-base text-neutral-300 font-light leading-relaxed max-w-2xl mx-auto">
-              For over 35 years, JRM Construction has been built on a foundation of clear communication, trusted partnerships, and attentive service. Your project deserves a personalized approach, and it all begins here.
+            <p className="mt-6 text-sm md:text-base text-neutral-300 font-light leading-relaxed max-w-3xl mx-auto">
+              Every great project begins with a simple conversation. At JRM Construction Landscaping Design, we believe that the foundation of any successful partnership is clear communication, mutual understanding, and shared vision.
             </p>
           </motion.div>
 
@@ -135,19 +175,227 @@ function ContactPage() {
         </section>
       </div>
 
-      {/* ── EDITORIAL GRID COLUMN LAYOUT ── */}
+      {/* ── INTRODUCTORY SECTION ── */}
+      <div className="w-full bg-[#f4f3ef] pt-[10px] pb-[10px] px-[15px]">
+        <section className="mx-auto max-w-[1400px] w-full rounded-[10px] bg-[#fcfbf8] border border-[#eae8e1] shadow-[0_12px_40px_rgb(0,0,0,0.03)] px-6 py-12 text-center">
+          <div className="max-w-3xl mx-auto space-y-6">
+            <p className="text-md md:text-lg text-neutral-800 leading-relaxed font-light">
+              Owner <strong className="font-semibold text-[#3d5636]">Robert Thompson</strong> personally leads every initial discussion because we know that your project deserves the attention and expertise that only 35 years of experience can provide.
+            </p>
+            <p className="text-sm md:text-md text-neutral-600 leading-relaxed font-light">
+              Whether you're dreaming of a complete home remodel, a custom outdoor kitchen, a new construction project, or simply want to explore possibilities for your property, we're here to listen, advise, and guide you toward the best solutions for your needs and budget.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      {/* ── CORE DETAILS AND EXPECTATIONS STEPPER ── */}
       <div className="w-full bg-[#f4f3ef] pt-[10px] pb-[10px] px-[15px]">
         <section
           className="mx-auto max-w-[1400px] w-full rounded-[10px] bg-[#fcfbf8] border border-[#eae8e1] shadow-[0_12px_40px_rgb(0,0,0,0.03)] px-6 py-20 md:px-12 lg:px-16"
           style={{ backgroundImage: `url(${welBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
         >
+          <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-20 items-start">
+            
+            {/* Left Column: How We Can Help */}
+            <div className="space-y-8">
+              <div>
+                <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-2">
+                  Our Scope
+                </span>
+                <h2 
+                  className="text-2xl md:text-3xl font-extrabold text-neutral-900 tracking-tight leading-tight"
+                  style={{ fontFamily: "Georgia, serif" }}
+                >
+                  How We Can Help You
+                </h2>
+              </div>
+
+              <div className="space-y-6">
+                {/* Homeowners */}
+                <div className="bg-white rounded-2xl border border-neutral-200/50 p-6 md:p-8 shadow-sm space-y-4 text-left">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-[#577a4c]/10 text-[#3d5636] flex items-center justify-center">
+                      <Sparkles className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-md md:text-lg font-bold text-neutral-900 tracking-wide">
+                      For Homeowners
+                    </h3>
+                  </div>
+                  <ul className="space-y-3 text-xs md:text-sm text-neutral-600 font-light">
+                    <li className="flex gap-2.5 items-start">
+                      <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#577a4c]/20 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                      <span>Transform your living space with a kitchen, bathroom, or whole-home remodel.</span>
+                    </li>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#577a4c]/20 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                      <span>Create the ultimate outdoor living area with patios, outdoor kitchens, and fireplaces.</span>
+                    </li>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#577a4c]/20 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                      <span>Enhance your curb appeal with custom landscaping, fencing, and artificial turf.</span>
+                    </li>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#577a4c]/20 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                      <span>Build your dream home from the ground up with expert new construction services.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Commercial Property Owners */}
+                <div className="bg-white rounded-2xl border border-neutral-200/50 p-6 md:p-8 shadow-sm space-y-4 text-left">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-[#577a4c]/10 text-[#3d5636] flex items-center justify-center">
+                      <Building className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-md md:text-lg font-bold text-neutral-900 tracking-wide">
+                      For Commercial Property Owners
+                    </h3>
+                  </div>
+                  <ul className="space-y-3 text-xs md:text-sm text-neutral-600 font-light">
+                    <li className="flex gap-2.5 items-start">
+                      <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#577a4c]/20 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                      <span>Professional commercial construction and build-outs.</span>
+                    </li>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#577a4c]/20 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                      <span>High-impact landscaping and hardscaping for businesses.</span>
+                    </li>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#577a4c]/20 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                      <span>Reliable, licensed, and insured contracting for your commercial needs.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Emergency Needs */}
+                <div className="bg-red-50/40 rounded-2xl border border-red-200/60 p-6 md:p-8 shadow-sm space-y-4 text-left relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-red-100/20 rounded-full translate-x-8 -translate-y-8 pointer-events-none" />
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-red-100 text-red-700 flex items-center justify-center">
+                      <AlertTriangle className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-md md:text-lg font-bold text-red-900 tracking-wide">
+                      For Emergency Needs
+                    </h3>
+                  </div>
+                  <p className="text-xs md:text-sm text-red-950 font-light leading-relaxed">
+                    24/7 emergency construction and repair services available. If your property needs urgent safeguarding or structural repairs, call us directly.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: What to Expect Stepper */}
+            <div className="space-y-8 lg:pl-6">
+              <div>
+                <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-2">
+                  Our Process
+                </span>
+                <h2 
+                  className="text-2xl md:text-3xl font-extrabold text-neutral-900 tracking-tight leading-tight"
+                  style={{ fontFamily: "Georgia, serif" }}
+                >
+                  What to Expect After You Reach Out
+                </h2>
+              </div>
+
+              {/* Vertical Stepper */}
+              <div className="relative pl-8 space-y-8 text-left border-l-[1.5px] border-[#577a4c]/30 ml-4 py-2">
+                {steps.map((s) => (
+                  <div key={s.number} className="relative">
+                    {/* Circle number tag */}
+                    <div className="absolute -left-[49px] top-0.5 w-8 h-8 rounded-full bg-[#1c140d] text-white font-bold flex items-center justify-center text-xs shadow-md">
+                      {s.number}
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <h4 className="text-sm font-bold text-neutral-900 tracking-wide uppercase">
+                        {s.title}
+                      </h4>
+                      <p className="text-xs md:text-sm text-neutral-600 font-light leading-relaxed">
+                        {s.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+          </div>
+        </section>
+      </div>
+
+      {/* ── SCHEDULE YOUR FREE CONSULTATION SECTION ── */}
+      <div className="w-full bg-[#f4f3ef] pt-[10px] pb-[10px] px-[15px]">
+        <section className="mx-auto max-w-[1400px] w-full rounded-[10px] bg-[#f1e8db] border border-[#eae8e1] shadow-[0_12px_40px_rgb(0,0,0,0.04)] px-6 py-16 md:px-12 lg:px-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="max-w-4xl mx-auto space-y-8"
+          >
+            <div>
+              <span className="inline-flex items-center bg-white/60 border border-neutral-900/10 text-neutral-800 rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4 shadow-sm">
+                Property Assessment
+              </span>
+              <h2 
+                className="text-3xl md:text-4xl font-extrabold text-neutral-950 tracking-tight"
+                style={{ fontFamily: "Georgia, serif" }}
+              >
+                Schedule Your Free Consultation
+              </h2>
+              <p className="mt-4 text-sm md:text-base text-neutral-700 font-light leading-relaxed max-w-3xl mx-auto">
+                Your journey with JRM Construction begins with a no-cost, no-obligation consultation at your property. During this meeting, we will:
+              </p>
+            </div>
+
+            {/* Checklist elements */}
+            <div className="bg-white/95 rounded-2xl border border-neutral-200/50 p-6 md:p-8 max-w-2xl mx-auto text-left shadow-sm">
+              <ul className="space-y-4 text-xs md:text-sm text-neutral-700 font-light">
+                <li className="flex gap-3 items-start">
+                  <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#577a4c]/10 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                  <span><strong>Listen</strong> to your vision, goals, and priorities.</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#577a4c]/10 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                  <span><strong>Assess</strong> your space and discuss structural/design possibilities.</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#577a4c]/10 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                  <span>Provide <strong>honest, expert insights</strong> based on 35 years of experience.</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#577a4c]/10 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                  <span><strong>Answer all your questions</strong> about process, timeline, and investment.</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#577a4c]/10 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                  <span><strong>Outline clear next steps</strong> toward a detailed, transparent proposal.</span>
+                </li>
+              </ul>
+            </div>
+
+            <p className="text-xs md:text-sm text-neutral-600 font-light italic" style={{ fontFamily: "Georgia, serif" }}>
+              There is no pressure, only professional guidance. We want you to feel confident and informed before making any decisions.
+            </p>
+          </motion.div>
+        </section>
+      </div>
+
+      {/* ── GET IN TOUCH & CONSULTATION FORM ── */}
+      <div className="w-full bg-[#f4f3ef] pt-[10px] pb-[10px] px-[15px]">
+        <section
+          className="mx-auto max-w-[1400px] w-full rounded-[10px] bg-[#fcfbf8] border border-[#eae8e1] shadow-[0_12px_40px_rgb(0,0,0,0.03)] px-6 py-20 md:px-12 lg:px-16"
+        >
           <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20 items-start">
             
-            {/* Left Column: Details & Consultation Block */}
+            {/* Left Column: Direct channels */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="space-y-8"
             >
@@ -162,7 +410,7 @@ function ContactPage() {
                   Reach Out Directly
                 </h2>
                 <p className="mt-3 text-sm text-neutral-600 leading-relaxed font-light">
-                  We proudly serve San Antonio and the surrounding 80-mile area with licensed, insured, and bonded professionalism. Connect via your preferred method.
+                  We look forward to answering any questions and arranging your property inspection. Select your preferred channel below.
                 </p>
               </div>
 
@@ -176,10 +424,11 @@ function ContactPage() {
                   <div className="w-10 h-10 rounded-lg bg-[#577a4c]/10 text-[#3d5636] flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
                     <Phone className="w-5 h-5" />
                   </div>
-                  <h4 className="text-sm font-bold text-neutral-900">Phone (Primary)</h4>
-                  <span className="text-[11px] text-neutral-400 font-semibold tracking-wider block mt-0.5">ESTIMATES & ASSISTANCE</span>
+                  <h4 className="text-sm font-bold text-neutral-900">📞 Call Robert Directly</h4>
                   <p className="mt-3 text-md font-bold text-[#3d5636] group-hover:underline">(210) 429-5526</p>
-                  <p className="mt-2 text-xs text-neutral-500 font-light">Call to speak directly with Robert Thompson.</p>
+                  <p className="mt-2 text-xs text-neutral-500 font-light leading-relaxed">
+                    Speak with the owner today to schedule your consultation or discuss your project.
+                  </p>
                 </a>
 
                 {/* Email Card */}
@@ -190,10 +439,11 @@ function ContactPage() {
                   <div className="w-10 h-10 rounded-lg bg-[#577a4c]/10 text-[#3d5636] flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
                     <Mail className="w-5 h-5" />
                   </div>
-                  <h4 className="text-sm font-bold text-neutral-900">Email Address</h4>
-                  <span className="text-[11px] text-neutral-400 font-semibold tracking-wider block mt-0.5">INSPIRATIONS & SCHEDULING</span>
+                  <h4 className="text-sm font-bold text-neutral-900">📧 Send an Email</h4>
                   <p className="mt-3 text-sm font-bold text-[#3d5636] group-hover:underline truncate">robertsa210@icloud.com</p>
-                  <p className="mt-2 text-xs text-neutral-500 font-light">Ideal for sending project details & photos.</p>
+                  <p className="mt-2 text-xs text-neutral-500 font-light leading-relaxed">
+                    Share your project details, inspirations, or questions with us.
+                  </p>
                 </a>
 
                 {/* Office Hours */}
@@ -201,8 +451,7 @@ function ContactPage() {
                   <div className="w-10 h-10 rounded-lg bg-[#577a4c]/10 text-[#3d5636] flex items-center justify-center mb-4">
                     <Clock className="w-5 h-5" />
                   </div>
-                  <h4 className="text-sm font-bold text-neutral-900">Office Hours</h4>
-                  <span className="text-[11px] text-neutral-400 font-semibold tracking-wider block mt-0.5">STANDARD OPERATION</span>
+                  <h4 className="text-sm font-bold text-neutral-900">🕒 Office Hours</h4>
                   <p className="mt-3 text-sm font-bold text-neutral-800">Monday - Saturday</p>
                   <p className="text-xs text-neutral-600 mt-1">8:00 AM - 5:00 PM</p>
                 </div>
@@ -213,40 +462,11 @@ function ContactPage() {
                   <div className="w-10 h-10 rounded-lg bg-red-100 text-red-700 flex items-center justify-center mb-4">
                     <AlertTriangle className="w-5 h-5" />
                   </div>
-                  <h4 className="text-sm font-bold text-red-900">24/7 Emergency Support</h4>
-                  <span className="text-[11px] text-red-700 font-bold tracking-wider block mt-0.5">PROPERTY PROTECTION</span>
+                  <h4 className="text-sm font-bold text-red-900">⚡ 24/7 Emergency Services</h4>
                   <p className="mt-3 text-xs text-red-950 font-light leading-relaxed">
-                    For urgent structural or water issues requiring immediate attention, call our main line anytime.
+                    For urgent issues requiring immediate attention to protect your property, call our main line anytime.
                   </p>
                 </div>
-              </div>
-
-              {/* Ready for Consultation Section */}
-              <div className="bg-neutral-100/70 border border-neutral-200/40 rounded-2xl p-6 text-left space-y-4">
-                <h3 className="text-md font-bold text-neutral-900 tracking-wide capitalize">
-                  Ready for Your Free Consultation?
-                </h3>
-                <p className="text-xs md:text-sm text-neutral-600 font-light leading-relaxed">
-                  The first step to transforming your home or commercial property is a no-obligation, on-site consultation. During this meeting, Robert Thompson will:
-                </p>
-                <ul className="space-y-2.5 text-xs text-neutral-700 font-light">
-                  <li className="flex gap-2.5 items-start">
-                    <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#577a4c]/20 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
-                    <span>Listen directly to your unique vision, goals, and budget.</span>
-                  </li>
-                  <li className="flex gap-2.5 items-start">
-                    <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#577a4c]/20 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
-                    <span>Assess your outdoor or indoor space and provide expert insights.</span>
-                  </li>
-                  <li className="flex gap-2.5 items-start">
-                    <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#577a4c]/20 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
-                    <span>Explain our hands-on process and answer any structural or licensing questions.</span>
-                  </li>
-                  <li className="flex gap-2.5 items-start">
-                    <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#577a4c]/20 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
-                    <span>Outline clear next steps for a transparent project estimate.</span>
-                  </li>
-                </ul>
               </div>
             </motion.div>
 
@@ -254,7 +474,7 @@ function ContactPage() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="bg-white rounded-2xl border border-neutral-200/50 p-8 shadow-lg space-y-6 text-left"
             >
@@ -263,7 +483,7 @@ function ContactPage() {
                   Send Us a Message
                 </h3>
                 <p className="text-xs text-neutral-500 mt-1 font-light">
-                  Complete the form below to receive a direct call or email assessment.
+                  Prefer to reach out online? Fill out the form below, and we'll respond within one business day.
                 </p>
               </div>
 
@@ -272,7 +492,7 @@ function ContactPage() {
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-[11px] font-bold text-neutral-700 uppercase tracking-wider mb-1.5">
-                      Full Name
+                      Your Name
                     </label>
                     <input
                       type="text"
@@ -316,31 +536,56 @@ function ContactPage() {
                   </div>
                 </div>
 
-                {/* Row 3: Project Type Select */}
-                <div>
-                  <label className="block text-[11px] font-bold text-neutral-700 uppercase tracking-wider mb-1.5">
-                    Project Type
-                  </label>
-                  <div className="relative w-full">
-                    <select
-                      className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 py-3 pl-4 pr-10 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-[#577a4c]/30 focus:border-[#577a4c] transition-all appearance-none cursor-pointer"
-                      defaultValue=""
-                    >
-                      <option value="" disabled hidden>
-                        Select project focus...
-                      </option>
-                      <option value="remodeling">House Remodeling</option>
-                      <option value="construction">New Construction</option>
-                      <option value="kitchen">Outdoor Kitchen</option>
-                      <option value="fireplace">Fireplace Installation</option>
-                      <option value="hardscaping">Hardscaping & Patios</option>
-                      <option value="landscaping">Landscaping Design</option>
-                      <option value="fencing">Fencing</option>
-                      <option value="turf">Artificial Turf</option>
-                      <option value="other">Other project</option>
-                    </select>
-                    <div className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 flex items-center text-neutral-500">
-                      <ChevronDown className="h-4 w-4" />
+                {/* Row 3: Dropdowns for Project Type & Best Time to Contact */}
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-[11px] font-bold text-neutral-700 uppercase tracking-wider mb-1.5">
+                      Project Type
+                    </label>
+                    <div className="relative w-full">
+                      <select
+                        className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 py-3 pl-4 pr-10 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-[#577a4c]/30 focus:border-[#577a4c] transition-all appearance-none cursor-pointer"
+                        defaultValue=""
+                      >
+                        <option value="" disabled hidden>
+                          Select project type...
+                        </option>
+                        <option value="remodeling">House Remodeling</option>
+                        <option value="new-construction">New Construction</option>
+                        <option value="outdoor-kitchen">Outdoor Kitchen</option>
+                        <option value="fireplace">Custom Fireplace</option>
+                        <option value="patio">Covered Patio</option>
+                        <option value="hardscapes">Hardscapes</option>
+                        <option value="softscapes">Softscapes</option>
+                        <option value="fencing">Fencing</option>
+                        <option value="turf">Artificial Turf</option>
+                        <option value="other">Other</option>
+                      </select>
+                      <div className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 flex items-center text-neutral-500">
+                        <ChevronDown className="h-4 w-4" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-[11px] font-bold text-neutral-700 uppercase tracking-wider mb-1.5">
+                      Best Time to Contact
+                    </label>
+                    <div className="relative w-full">
+                      <select
+                        className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 py-3 pl-4 pr-10 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-[#577a4c]/30 focus:border-[#577a4c] transition-all appearance-none cursor-pointer"
+                        defaultValue=""
+                      >
+                        <option value="" disabled hidden>
+                          Select best time...
+                        </option>
+                        <option value="morning">Morning</option>
+                        <option value="afternoon">Afternoon</option>
+                        <option value="evening">Evening</option>
+                      </select>
+                      <div className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 flex items-center text-neutral-500">
+                        <ChevronDown className="h-4 w-4" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -362,7 +607,7 @@ function ContactPage() {
                   type="submit"
                   className="w-full bg-[#1c140d] hover:bg-[#2c2015] text-white text-xs md:text-sm font-bold uppercase tracking-[0.2em] rounded-lg py-4 transition-all duration-300 shadow-md hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] select-none cursor-pointer text-center"
                 >
-                  Request Consultation
+                  Send Message
                 </button>
               </form>
 
@@ -376,13 +621,58 @@ function ContactPage() {
         </section>
       </div>
 
+      {/* ── WHY CLIENTS TRUST US SECTION ── */}
+      <div className="w-full bg-[#f4f3ef] pt-[10px] pb-[10px] px-[15px]">
+        <section className="mx-auto max-w-[1400px] w-full rounded-[10px] bg-[#f8f8f8] border border-[#eae8e1] shadow-[0_12px_40px_rgb(0,0,0,0.03)] px-6 py-20 md:px-12 lg:px-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="max-w-3xl mx-auto mb-16"
+          >
+            <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
+              Our Promise
+            </span>
+            <h2 
+              className="text-3xl md:text-4xl font-extrabold text-neutral-900 tracking-tight"
+              style={{ fontFamily: "Georgia, serif" }}
+            >
+              Why Our Clients Trust Us
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {trustValues.map((v, idx) => {
+              const Icon = v.icon;
+              return (
+                <motion.div
+                  key={v.title}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, delay: idx * 0.08, ease: "easeOut" }}
+                  className="bg-white rounded-xl border border-neutral-200/50 p-6 shadow-sm hover:shadow-md hover:scale-[1.02] hover:border-[#577a4c]/30 transition-all duration-300 flex flex-col items-start text-left"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-[#577a4c]/10 text-[#3d5636] flex items-center justify-center mb-4">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <h4 className="text-sm font-bold text-neutral-900 tracking-wide mb-2">{v.title}</h4>
+                  <p className="text-xs text-neutral-600 font-light leading-relaxed">{v.desc}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </section>
+      </div>
+
       {/* ── SERVICE AREA SECTION ── */}
       <div className="w-full bg-[#f4f3ef] pt-[10px] pb-[10px] px-[15px]">
         <section className="mx-auto max-w-[1400px] w-full rounded-[10px] bg-[#f1e8db] border border-[#eae8e1] shadow-[0_12px_40px_rgb(0,0,0,0.04)] px-6 py-20 md:px-12 lg:px-16 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="max-w-3xl mx-auto mb-12"
           >
@@ -393,22 +683,22 @@ function ContactPage() {
               className="text-3xl md:text-4xl font-extrabold text-neutral-950 tracking-tight"
               style={{ fontFamily: "Georgia, serif" }}
             >
-              San Antonio & Surrounding Areas
+              Service Area
             </h2>
-            <p className="mt-3 text-sm text-neutral-700 leading-relaxed font-light">
-              We are based in San Antonio, Texas and proudly serve homeowners and businesses within an 80-mile radius, including:
+            <p className="mt-4 text-sm text-neutral-700 leading-relaxed font-light">
+              We are based in San Antonio, TX and proudly serve homeowners and businesses within an 80-mile radius, including:
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3.5 max-w-6xl mx-auto">
             {cities.map((city, idx) => (
               <motion.div
                 key={city}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className="bg-white/80 border border-neutral-200/40 rounded-full py-2.5 px-4 shadow-sm hover:bg-white hover:border-[#577a4c]/30 hover:scale-[1.02] transition-all duration-300 text-sm font-semibold text-neutral-800 flex items-center justify-center gap-2"
+                transition={{ duration: 0.5, delay: idx * 0.04 }}
+                className="bg-white/80 border border-neutral-200/40 rounded-full py-2.5 px-4 shadow-sm hover:bg-white hover:border-[#577a4c]/30 hover:scale-[1.02] transition-all duration-300 text-xs font-semibold text-neutral-800 flex items-center justify-center gap-1.5"
               >
                 <MapPin className="w-3.5 h-3.5 text-[#3d5636]" />
                 <span>{city}</span>
@@ -424,58 +714,69 @@ function ContactPage() {
         </section>
       </div>
 
-      {/* ── WHY CONTACT JRM VALUES ── */}
+      {/* ── LET'S BUILD SOMETHING CTA ── */}
       <div className="w-full bg-[#f4f3ef] pt-[10px] pb-[15px] px-[15px]">
-        <section className="mx-auto max-w-[1400px] w-full rounded-[10px] bg-[#f8f8f8] border border-[#eae8e1] shadow-[0_12px_40px_rgb(0,0,0,0.03)] px-6 py-20 md:px-12 lg:px-16">
+        <section
+          className="mx-auto max-w-[1400px] w-full rounded-[10px] bg-[#1c140d] text-white px-6 py-20 md:px-12 lg:px-16 text-center border border-neutral-800 shadow-[0_20px_50px_rgba(0,0,0,0.15)] relative overflow-hidden"
+          style={{
+            backgroundImage: "linear-gradient(to bottom, rgba(28,20,13,0.96), rgba(28,20,13,0.98)), url(/src/assets/wel-bg.png)",
+            backgroundAttachment: "fixed",
+            backgroundSize: "100% 100%",
+            backgroundPosition: "center",
+          }}
+        >
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="text-center max-w-3xl mx-auto mb-16"
+            initial={{ opacity: 0, scale: 0.98, y: 20 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="max-w-4xl mx-auto flex flex-col items-center"
           >
-            <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
-              Our Promise
-            </span>
-            <h2 
-              className="text-3xl md:text-4xl font-extrabold text-neutral-900 tracking-tight"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
-              Why Contact JRM Construction?
+            {/* Logo */}
+            <img src={logo} alt="JRM" className="h-14 w-auto object-contain mb-8 filter brightness-110" />
+
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-5">
+              Let's Build Something Remarkable Together
             </h2>
-          </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {trustValues.map((v, idx) => {
-              const Icon = v.icon;
-              return (
-                <motion.div
-                  key={v.title}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
-                  className="bg-white rounded-xl border border-neutral-200/50 p-6 shadow-sm hover:shadow-md hover:scale-[1.02] hover:border-[#577a4c]/30 transition-all duration-300 flex flex-col items-start text-left"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-[#577a4c]/10 text-[#3d5636] flex items-center justify-center mb-4">
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <h4 className="text-sm font-bold text-neutral-900 tracking-wide mb-2">{v.title}</h4>
-                  <p className="text-xs text-neutral-600 font-light leading-relaxed">{v.desc}</p>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          <div className="mt-16 text-center border-t border-neutral-200/50 pt-8 max-w-4xl mx-auto space-y-4">
-            <p className="text-neutral-700 text-sm font-light italic" style={{ fontFamily: "Georgia, serif" }}>
-              "We look forward to the opportunity to earn your trust and build something remarkable for you."
+            <p className="text-sm md:text-base text-neutral-300 leading-relaxed font-light mb-10 max-w-3xl">
+              The first step toward transforming your property is reaching out. We look forward to hearing about your vision and exploring how we can bring it to life with craftsmanship, integrity, and 35 years of trusted experience. Contact us today. We're ready to talk.
             </p>
-            <div className="flex flex-col items-center select-none leading-none pt-2 text-[#565737]">
-              <div className="text-md font-bold tracking-wider">JRM CONSTRUCTION LANDSCAPING DESIGN</div>
-              <div className="text-[10px] font-extrabold tracking-widest text-[#6c6d4d] mt-1">LICENSED · INSURED · BONDED | SAN ANTONIO, TEXAS</div>
+
+            <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-8 w-full max-w-3xl mb-10 text-left">
+              <h3 className="text-md font-bold text-white mb-5 text-center sm:text-left tracking-wide">
+                JRM Construction Landscaping Design
+              </h3>
+              
+              <div className="grid sm:grid-cols-2 gap-5 text-[15px] font-light">
+                <a href="tel:2104295526" className="flex items-center gap-3.5 hover:text-[#a5b89d] transition-colors">
+                  <Phone className="w-5 h-5 text-[#a5b89d] shrink-0" />
+                  <span>(210) 429-5526</span>
+                </a>
+                <a href="mailto:robertsa210@icloud.com" className="flex items-center gap-3.5 hover:text-[#a5b89d] transition-colors">
+                  <Mail className="w-5 h-5 text-[#a5b89d] shrink-0" />
+                  <span>robertsa210@icloud.com</span>
+                </a>
+                <div className="flex items-center gap-3.5">
+                  <MapPin className="w-5 h-5 text-[#a5b89d] shrink-0" />
+                  <span>Proudly Serving San Antonio & 80-Mile Surrounding Area</span>
+                </div>
+                <div className="flex items-center gap-3.5">
+                  <ShieldCheck className="w-5 h-5 text-[#a5b89d] shrink-0" />
+                  <span>Licensed · Insured · Bonded</span>
+                </div>
+              </div>
             </div>
-          </div>
+
+            <div className="flex flex-wrap gap-4 justify-center">
+              <a
+                href="tel:2104295526"
+                className="rounded-full bg-[#577a4c] hover:bg-[#4d6c43] px-8 py-3.5 text-white text-[14px] font-bold tracking-wider uppercase transition-all duration-300 shadow-lg hover:scale-[1.03]"
+              >
+                Call Robert Now
+              </a>
+            </div>
+          </motion.div>
         </section>
       </div>
 
