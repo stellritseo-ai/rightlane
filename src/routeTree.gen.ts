@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorkRouteImport } from './routes/work'
 import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as LetsTalkRouteImport } from './routes/lets-talk'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -23,6 +24,11 @@ const WorkRoute = WorkRouteImport.update({
 const ReviewsRoute = ReviewsRouteImport.update({
   id: '/reviews',
   path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LetsTalkRoute = LetsTalkRouteImport.update({
+  id: '/lets-talk',
+  path: '/lets-talk',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -45,6 +51,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/lets-talk': typeof LetsTalkRoute
   '/reviews': typeof ReviewsRoute
   '/work': typeof WorkRoute
 }
@@ -52,6 +59,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/lets-talk': typeof LetsTalkRoute
   '/reviews': typeof ReviewsRoute
   '/work': typeof WorkRoute
 }
@@ -60,21 +68,30 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/lets-talk': typeof LetsTalkRoute
   '/reviews': typeof ReviewsRoute
   '/work': typeof WorkRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/reviews' | '/work'
+  fullPaths: '/' | '/about' | '/contact' | '/lets-talk' | '/reviews' | '/work'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/reviews' | '/work'
-  id: '__root__' | '/' | '/about' | '/contact' | '/reviews' | '/work'
+  to: '/' | '/about' | '/contact' | '/lets-talk' | '/reviews' | '/work'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/lets-talk'
+    | '/reviews'
+    | '/work'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  LetsTalkRoute: typeof LetsTalkRoute
   ReviewsRoute: typeof ReviewsRoute
   WorkRoute: typeof WorkRoute
 }
@@ -93,6 +110,13 @@ declare module '@tanstack/react-router' {
       path: '/reviews'
       fullPath: '/reviews'
       preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lets-talk': {
+      id: '/lets-talk'
+      path: '/lets-talk'
+      fullPath: '/lets-talk'
+      preLoaderRoute: typeof LetsTalkRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -123,6 +147,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  LetsTalkRoute: LetsTalkRoute,
   ReviewsRoute: ReviewsRoute,
   WorkRoute: WorkRoute,
 }
