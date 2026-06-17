@@ -1,6 +1,7 @@
 import { useTranslation } from "@/context/translation-context";
 import { ClipboardList, Phone } from "lucide-react";
 import welBg from "@/assets/wel-bg.png";
+import { motion } from "framer-motion";
 
 export function WhyChooseSection() {
   const { t } = useTranslation();
@@ -22,8 +23,14 @@ export function WhyChooseSection() {
       >
         <div className="grid gap-10 lg:grid-cols-[1.55fr_1fr] lg:gap-16 items-start">
           {/* Left Text Block */}
-          <div className="flex flex-col justify-center h-full">
-            <div>
+          <motion.div
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col justify-center h-full w-full"
+          >
+            <div className="flex flex-col items-center lg:items-start text-center lg:text-left w-full">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#23321e]/30 bg-[#2d3f26]/90 backdrop-blur-md text-white text-[10px] md:text-[11px] font-extrabold uppercase tracking-widest mb-6 shadow-sm select-none">
                 <span className="flex h-2 w-2 relative">
@@ -44,10 +51,17 @@ export function WhyChooseSection() {
               </p>
 
               {/* Feature items */}
-              <div className="space-y-1 mb-8">
+              <div className="space-y-1 mb-8 w-full">
                 {features.map((f, idx) => (
-                  <div key={f.title} className={`group flex items-start gap-3 hover:bg-[#2d3f26]/5 p-2 rounded-xl -ml-2 transition-all duration-300 ${idx === 0 ? '-mt-[15px]' : ''}`}>
-                    <span className="text-[17px] mt-[1.5px] select-none shrink-0 group-hover:translate-x-1.5 transition-transform duration-300 ease-out">👉</span>
+                  <div
+                    key={f.title}
+                    className={`group flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left justify-center sm:justify-start gap-3 hover:bg-[#2d3f26]/5 p-2 rounded-xl transition-all duration-300 ${
+                      idx === 0 ? "lg:-mt-[15px]" : ""
+                    }`}
+                  >
+                    <span className="text-[17px] select-none shrink-0 group-hover:translate-x-1.5 transition-transform duration-300 ease-out">
+                      👉
+                    </span>
                     <p className="text-neutral-800 text-sm md:text-[15px] leading-relaxed">
                       <strong className="font-bold text-neutral-950">{t(f.title)}:</strong>{" "}
                       <span className="text-neutral-700 font-normal">{t(f.desc)}</span>
@@ -57,7 +71,7 @@ export function WhyChooseSection() {
               </div>
 
               {/* CTAs */}
-              <div className="flex flex-wrap items-center gap-4">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
                 <a
                   href="#consultation"
                   className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#2c241d] to-[#1a1511] hover:from-[#3d3228] hover:to-[#221c16] text-white text-[11px] md:text-xs font-bold uppercase tracking-widest rounded-full px-8 py-4 transition-all duration-300 shadow-[0_4px_14px_rgba(34,28,22,0.25)] hover:scale-[1.03] active:scale-[0.97]"
@@ -74,10 +88,16 @@ export function WhyChooseSection() {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Video Block */}
-          <div className="relative group rounded-2xl overflow-hidden shadow-lg border border-neutral-900/5 h-[360px] lg:h-[480px] lg:sticky lg:top-[40px] self-start">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative group rounded-2xl overflow-hidden shadow-lg border border-neutral-900/5 h-[360px] lg:h-[480px] lg:sticky lg:top-[40px] self-start w-full"
+          >
             <video
               src="https://res.cloudinary.com/dgpdydebp/video/upload/v1781722131/IMG_5476_n4xtt7.mp4"
               className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-500 ease-out"
@@ -96,7 +116,7 @@ export function WhyChooseSection() {
                 Featured Work
               </span>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>

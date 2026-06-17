@@ -1,5 +1,6 @@
 import { useTranslation } from "@/context/translation-context";
 import { ClipboardList, Images } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function GetStartedSection() {
   const { t } = useTranslation();
@@ -22,7 +23,13 @@ export function GetStartedSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-black/80 z-10" />
 
         {/* Content container */}
-        <div className="relative z-20 max-w-5xl mx-auto flex flex-col items-center justify-center text-white">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98, y: 20 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative z-20 max-w-5xl mx-auto flex flex-col items-center justify-center text-white"
+        >
           {/* Welcome Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-white/90 text-xs font-semibold uppercase tracking-wider mb-5 select-none shadow-sm">
             <span className="flex h-2 w-2 relative">
@@ -32,8 +39,14 @@ export function GetStartedSection() {
             <span>{t("welcome.badge")}</span>
           </div>
 
-          <h2 className="whitespace-nowrap text-[9px] min-[375px]:text-[10.5px] min-[425px]:text-[12px] sm:text-[18px] md:text-[20px] lg:text-[28px] xl:text-[32px] leading-snug font-semibold tracking-tight mb-[15px] drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
-            {t("getstarted.title")}
+          <h2 className="sm:whitespace-nowrap text-[20px] sm:text-[18px] md:text-[20px] lg:text-[28px] xl:text-[32px] leading-snug font-semibold tracking-tight mb-[15px] drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)] text-center">
+            {t("getstarted.title").split("\n").map((line, i) => (
+              <span key={i} className="block sm:inline">
+                {line}
+                {i === 0 && <br className="sm:hidden" />}
+                {i === 0 && <span className="hidden sm:inline"> </span>}
+              </span>
+            ))}
           </h2>
 
           <p className="text-sm md:text-[15px] leading-relaxed md:leading-[40px] text-white/90 w-full max-w-4xl mb-8 font-light drop-shadow-[0_1px_4px_rgba(0,0,0,0.3)]">
@@ -56,7 +69,7 @@ export function GetStartedSection() {
               <span>{t("getstarted.btn.gallery")}</span>
             </a>
           </div>
-        </div>
+        </motion.div>
       </section>
     </div>
   );

@@ -2,6 +2,7 @@ import heroImage from "@/assets/hero-patio.jpg";
 import heroVideo from "@/assets/jrmvideo.mp4";
 import { useTranslation } from "@/context/translation-context";
 import { ClipboardList, Calendar } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function HeroSection() {
   const { t } = useTranslation();
@@ -27,18 +28,28 @@ export function HeroSection() {
           className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-[#111a0a]/95 via-[#1c2b11]/80 md:via-[#1c2b11]/50 to-transparent z-10"
         />
 
-        <div className="relative z-20 w-full px-6 py-16 md:px-12 md:py-24 lg:px-16 flex items-center">
-          <div className="max-w-4xl text-white">
+        <div className="relative z-20 w-full px-6 py-16 md:px-12 md:py-24 lg:px-16 flex items-center justify-center md:justify-start text-center md:text-left">
+          <div className="max-w-4xl text-white flex flex-col items-center md:items-start">
             {/* Welcome Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/20 bg-white/10 backdrop-blur-md text-white text-xs md:text-sm font-semibold uppercase tracking-wider mt-[60px] sm:mt-[80px] md:mt-[100px] mb-5 md:mb-8 animate-fade-in shadow-sm select-none">
+            <motion.div
+              initial={{ opacity: 0, y: -15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/20 bg-white/10 backdrop-blur-md text-white text-xs md:text-sm font-semibold uppercase tracking-wider mt-[60px] sm:mt-[80px] md:mt-[100px] mb-5 md:mb-8 animate-fade-in shadow-sm select-none"
+            >
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
               <span>{t("welcome.badge")}</span>
-            </div>
+            </motion.div>
 
-            <h1 className="text-[20px] sm:text-[22px] md:text-[26px] lg:text-[32px] xl:text-[36px] sm:whitespace-nowrap leading-[1.3] md:leading-[1.5] capitalize font-bold tracking-tight -mt-[10px] md:-mt-[20px] drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
+              className="text-[20px] sm:text-[22px] md:text-[26px] lg:text-[32px] xl:text-[36px] sm:whitespace-nowrap leading-[1.3] md:leading-[1.5] capitalize font-bold tracking-tight -mt-[10px] md:-mt-[20px] drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
+            >
               {t("hero.title").split("\n").map((line, i) => (
                 <span key={i} className="block sm:inline">
                   {line}
@@ -46,13 +57,23 @@ export function HeroSection() {
                   {i === 0 && <span className="hidden sm:inline"> </span>}
                 </span>
               ))}
-            </h1>
+            </motion.h1>
 
-            <p className="mt-[14px] md:mt-[20px] text-[14px] sm:text-[16px] md:text-[18px] leading-relaxed text-white/95 max-w-4xl whitespace-pre-line drop-shadow-[0_1px_4px_rgba(0,0,0,0.3)]">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              className="mt-[14px] md:mt-[20px] text-[14px] sm:text-[16px] md:text-[18px] leading-relaxed text-white/95 max-w-4xl whitespace-pre-line drop-shadow-[0_1px_4px_rgba(0,0,0,0.3)]"
+            >
               {t("hero.description")}
-            </p>
+            </motion.p>
 
-            <div className="mt-8 md:mt-10 flex flex-wrap items-center gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.45, ease: "easeOut" }}
+              className="mt-8 md:mt-10 flex flex-wrap items-center justify-center md:justify-start gap-4"
+            >
               <a
                 href="#consultation"
                 className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#577a4c] to-[#3d5636] px-6 py-3 text-white text-sm font-semibold hover:from-[#4d6c43] hover:to-[#33472c] hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 shadow-[0_4px_14px_rgba(87,122,76,0.35)]"
@@ -67,10 +88,15 @@ export function HeroSection() {
                 <Calendar className="w-4 h-4" />
                 <span>{t("hero.btn.book")}</span>
               </a>
-            </div>
+            </motion.div>
 
             {/* Star Rating Trust Widget */}
-            <div className="mt-6 md:mt-10 flex flex-wrap items-center gap-3 text-white/90 text-xs sm:text-sm drop-shadow-sm select-none border-t border-white/10 pt-4 md:pt-6 max-w-md">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+              className="mt-6 md:mt-10 flex flex-wrap items-center justify-center md:justify-start gap-3 text-white/90 text-xs sm:text-sm drop-shadow-sm select-none border-t border-white/10 pt-4 md:pt-6 max-w-md mx-auto md:mx-0"
+            >
               <div className="flex gap-1 text-amber-400">
                 {[...Array(5)].map((_, i) => (
                   <svg
@@ -84,7 +110,7 @@ export function HeroSection() {
                 ))}
               </div>
               <span className="font-medium tracking-wide">{t("reviews.basedon")}</span>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

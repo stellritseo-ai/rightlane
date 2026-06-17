@@ -16,6 +16,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import AutoScroll from "embla-carousel-auto-scroll";
+import { motion } from "framer-motion";
 
 const services = [
   { key: "services.remodeling", image: houseRemodeling },
@@ -46,7 +47,13 @@ export function ServicesSection() {
         <div className="grid lg:grid-cols-[40%_1fr] gap-12 lg:gap-16 items-center">
 
           {/* Left Text Block */}
-          <div className="flex flex-col justify-center h-full">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col justify-center h-full"
+          >
             <div className="pr-2 mb-6 lg:mb-0">
               <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-5">
                 {t("services.badge")}
@@ -66,13 +73,17 @@ export function ServicesSection() {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Top 3 Service Cards */}
           <div className="grid sm:grid-cols-3 gap-5">
-            {topItems.map((s) => (
-              <div
+            {topItems.map((s, idx) => (
+              <motion.div
                 key={s.key}
+                initial={{ opacity: 0, y: 35 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.7, delay: idx * 0.15, ease: "easeOut" }}
                 className="group relative rounded-2xl overflow-hidden shadow-md bg-neutral-950 h-[220px] sm:h-[280px] lg:h-[340px] xl:h-[380px] border border-neutral-900/5 cursor-pointer"
               >
                 {/* Background image */}
@@ -109,13 +120,19 @@ export function ServicesSection() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
 
         {/* Second Row Grid: Slider / Carousel */}
-        <div className="mt-8 relative px-2 md:px-0">
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="mt-8 relative px-2 md:px-0"
+        >
           <Carousel
             plugins={[
               AutoScroll({
@@ -173,10 +190,8 @@ export function ServicesSection() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-
-
           </Carousel>
-        </div>
+        </motion.div>
       </section>
     </div>
   );

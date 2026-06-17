@@ -3,6 +3,7 @@ import c1 from "@/assets/c1.webp";
 import c2 from "@/assets/c2.webp";
 import c3 from "@/assets/c3.webp";
 import c4 from "@/assets/c4.webp";
+import { motion } from "framer-motion";
 
 export function FreeConsultationSection() {
   const { t } = useTranslation();
@@ -49,21 +50,37 @@ export function FreeConsultationSection() {
         {/* Content wrapper */}
         <div className="relative z-20 max-w-7xl w-full mx-auto flex flex-col items-center">
           {/* Header Title */}
-          <h2 className="text-white text-[22px] sm:text-[26px] md:text-3xl lg:text-[31px] leading-snug font-bold tracking-tight mb-[15px] drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+          <motion.h2
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="text-white text-[22px] sm:text-[26px] md:text-3xl lg:text-[31px] leading-snug font-bold tracking-tight mb-[15px] drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
+          >
             {t("freeconsult.title")}
-          </h2>
+          </motion.h2>
 
           {/* Description */}
-          <p className="text-white/90 text-sm md:text-[15px] leading-relaxed max-w-5xl mx-auto mb-12 font-light tracking-wide drop-shadow-[0_1px_4px_rgba(0,0,0,0.3)]">
+          <motion.p
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+            className="text-white/90 text-sm md:text-[15px] leading-relaxed max-w-5xl mx-auto mb-12 font-light tracking-wide drop-shadow-[0_1px_4px_rgba(0,0,0,0.3)]"
+          >
             {t("freeconsult.desc")}
-          </p>
+          </motion.p>
 
           {/* Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-2">
-            {cards.map((c) => {
+            {cards.map((c, idx) => {
               return (
-                <div
+                <motion.div
                   key={c.titleKey}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.7, delay: idx * 0.12, ease: "easeOut" }}
                   className="group bg-white/10 backdrop-blur-md border border-white/20 hover:border-white/35 hover:bg-white/15 rounded-[10px] p-6 flex flex-col items-center text-center shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 min-h-[300px] cursor-default"
                 >
                   {/* Circle Badge Icon */}
@@ -84,7 +101,7 @@ export function FreeConsultationSection() {
                   <p className="text-white/80 text-[13px] md:text-sm leading-relaxed font-light">
                     {t(c.descKey)}
                   </p>
-                </div>
+                </motion.div>
               );
             })}
           </div>

@@ -56,12 +56,12 @@ export function SiteHeader() {
             }
           `}
         >
-          {/* Nav content row — centered on mobile, spread on desktop */}
+          {/* Nav content row — logo left, controls right on mobile; spread on desktop */}
           <div
             className={`relative flex items-center w-full transition-all duration-300 ${
               scrolled
-                ? "px-4 sm:px-6 lg:px-10 xl:px-16 py-2.5 justify-between lg:justify-between"
-                : "px-6 md:px-8 py-[10px] justify-center lg:justify-between"
+                ? "px-4 sm:px-6 lg:px-10 xl:px-16 py-2.5 justify-between"
+                : "px-6 md:px-8 py-[10px] justify-between"
             }`}
             style={
               !scrolled
@@ -74,8 +74,19 @@ export function SiteHeader() {
                 : undefined
             }
           >
-            {/* Mobile: phone icon + hamburger — absolute right so logo stays centered */}
-            <div className="lg:hidden absolute right-6 flex items-center gap-3">
+            {/* Logo — left-aligned on all sizes */}
+            <Link to="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity shrink-0">
+              <img
+                src={logo}
+                alt="JRM Construction Landscape Design"
+                className={`w-auto object-contain transition-all duration-300 ${
+                  scrolled ? "h-11 md:h-[52px]" : "h-16 md:h-20"
+                }`}
+              />
+            </Link>
+
+            {/* Mobile: phone icon + hamburger — aligned to the right automatically via justify-between */}
+            <div className="lg:hidden flex items-center gap-3">
               <a
                 href="tel:2104295526"
                 className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-r from-[#32322d] to-[#1e1e1a] text-white transition-all duration-200"
@@ -123,17 +134,6 @@ export function SiteHeader() {
                 </SheetContent>
               </Sheet>
             </div>
-
-            {/* Logo — centered on mobile, left on desktop */}
-            <Link to="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity shrink-0">
-              <img
-                src={logo}
-                alt="JRM Construction Landscape Design"
-                className={`w-auto object-contain transition-all duration-300 ${
-                  scrolled ? "h-11 md:h-[52px]" : "h-16 md:h-20"
-                }`}
-              />
-            </Link>
 
             {/* Desktop Nav Links */}
             <nav className="hidden lg:flex items-center gap-1 xl:gap-2">

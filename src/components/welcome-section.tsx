@@ -2,6 +2,7 @@ import { Phone } from "lucide-react";
 import welBg from "@/assets/wel-bg.png";
 import welImg from "@/assets/wel-img.webp";
 import { useTranslation } from "@/context/translation-context";
+import { motion } from "framer-motion";
 
 export function WelcomeSection() {
   const { t } = useTranslation();
@@ -14,9 +15,14 @@ export function WelcomeSection() {
       >
         <div className="grid gap-12 lg:grid-cols-[1.85fr_1fr] lg:gap-16 items-center">
           {/* Left content */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             {/* Welcome Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-900/10 bg-white/80 backdrop-blur-md text-neutral-800 text-xs md:text-sm font-semibold uppercase tracking-wider shadow-sm select-none animate-fade-in">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-900/10 bg-white/80 backdrop-blur-md text-neutral-800 text-[11px] font-semibold uppercase tracking-wider shadow-sm select-none animate-fade-in">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
@@ -24,7 +30,7 @@ export function WelcomeSection() {
               <span>{t("welcome.badge")}</span>
             </div>
 
-            <h2 className="mt-[20px] text-[26px] capitalize font-extrabold text-neutral-900 leading-[1.2] tracking-tight">
+            <h2 className="mt-[20px] text-[22px] md:text-[26px] leading-[36px] md:leading-[1.2] capitalize font-extrabold text-neutral-900 tracking-tight">
               {t("welcome.title")}
             </h2>
 
@@ -55,10 +61,16 @@ export function WelcomeSection() {
                 {t("welcome.btn.consultation")}
               </a>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right image */}
-          <div className="relative group w-full max-w-[540px] mx-auto flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative group w-full max-w-[540px] mx-auto flex items-center justify-center"
+          >
             <img
               src={welImg}
               alt="Outdoor living transformation"
@@ -75,7 +87,7 @@ export function WelcomeSection() {
                 35+ Yrs Exp
               </span>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>
