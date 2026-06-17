@@ -154,8 +154,12 @@ function ReviewsPage() {
             initial={{ scale: 1.08, opacity: 0.95 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${reviewsHero})` }}
+            className="absolute inset-0 bg-no-repeat bg-center"
+            style={{
+              backgroundImage: `url(${reviewsHero})`,
+              backgroundAttachment: "fixed",
+              backgroundSize: "100% 100%"
+            }}
           />
 
           {/* Dark Forest overlay */}
