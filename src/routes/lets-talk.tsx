@@ -457,7 +457,7 @@ function LetUsTalkPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="bg-white rounded-2xl border border-neutral-200/50 p-8 shadow-lg space-y-6 text-left relative"
+              className="bg-white rounded-2xl border border-neutral-200/50 p-5 md:p-8 shadow-lg space-y-6 text-left relative"
             >
               <AnimatePresence mode="wait">
                 {!isSubmitted ? (
@@ -771,7 +771,7 @@ function LetUsTalkPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3.5 max-w-6xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-3.5 max-w-6xl mx-auto">
             {cities.map((city, idx) => (
               <motion.div
                 key={city}
@@ -779,7 +779,7 @@ function LetUsTalkPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: idx * 0.04 }}
-                className="bg-white/80 border border-neutral-200/40 rounded-full py-2.5 px-4 shadow-sm hover:bg-white hover:border-[#577a4c]/30 hover:scale-[1.02] transition-all duration-300 text-xs font-semibold text-neutral-800 flex items-center justify-center gap-1.5"
+                className="bg-white/80 border border-neutral-200/40 rounded-full py-2.5 px-4 shadow-sm hover:bg-white hover:border-[#577a4c]/30 hover:scale-[1.02] transition-all duration-300 text-xs font-semibold text-neutral-800 flex items-center justify-center gap-1.5 shrink-0"
               >
                 <MapPin className="w-3.5 h-3.5 text-[#3d5636]" />
                 <span>{city}</span>

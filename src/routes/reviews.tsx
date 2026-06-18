@@ -154,11 +154,9 @@ function ReviewsPage() {
             initial={{ scale: 1.08, opacity: 0.95 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute inset-0 bg-no-repeat bg-center"
+            className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `url(${reviewsHero})`,
-              backgroundAttachment: "fixed",
-              backgroundSize: "100% 100%"
+              backgroundImage: `url(${reviewsHero})`
             }}
           />
 
@@ -222,7 +220,7 @@ function ReviewsPage() {
           <div className="grid gap-12 lg:grid-cols-[1fr_2fr] lg:gap-20 items-start">
             
             {/* Left Column: Aggregator Stats & Share Card */}
-            <div className="space-y-8 sticky top-28">
+            <div className="space-y-8 lg:sticky lg:top-28">
               {/* Score Widget */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}

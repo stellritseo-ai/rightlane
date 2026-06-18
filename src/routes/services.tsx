@@ -271,6 +271,44 @@ function ServicesPage() {
       link: "/lets-talk?type=fencing",
       linkText: "Learn More About Fencing →"
     },
+    {
+      id: "irrigation",
+      category: "landscape",
+      title: "Irrigation Systems",
+      icon: Sparkles,
+      image: imgSoftscapes,
+      badge: "💦",
+      desc: "Keep your property lush and healthy with custom, high-efficiency irrigation systems. We design, install, and service automatic sprinkler setups, drip systems, and smart controllers tailored to San Antonio's water conservation guidelines.",
+      items: [
+        "Custom Sprinkler System Design",
+        "Drip Irrigation & Micro-Spray",
+        "Smart WiFi Controller Setup",
+        "System Inspections & Audits",
+        "Backflow Testing & Repair",
+        "Water-Saving System Upgrades"
+      ],
+      link: "/lets-talk?type=softscapes",
+      linkText: "Learn More About Irrigation →"
+    },
+    {
+      id: "lighting",
+      category: "landscape",
+      title: "Landscape Lighting",
+      icon: Sparkles,
+      image: imgHardscapes,
+      badge: "💡",
+      desc: "Illuminate your property's architectural features, walkways, and outdoor living spaces. We design and install low-voltage LED lighting systems that enhance beauty, extend usability, and improve nighttime security.",
+      items: [
+        "Architectural Up-Lighting",
+        "Walkway & Path Lighting",
+        "Patio & Deck Illuminations",
+        "Low-Voltage LED System Install",
+        "Smart Timer & Automation Controls",
+        "System Maintenance & Upgrades"
+      ],
+      link: "/lets-talk?type=hardscapes",
+      linkText: "Learn More About Lighting →"
+    },
     // Commercial
     {
       id: "commercial",
@@ -423,12 +461,12 @@ function ServicesPage() {
           style={{ backgroundImage: `url(${welBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
         >
           {/* Filter Tab bar */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12 max-w-4xl mx-auto">
+          <div className="flex overflow-x-auto flex-nowrap justify-start gap-2 mb-12 max-w-4xl mx-auto pb-3 px-2 scrollbar-none lg:flex-wrap lg:justify-center lg:overflow-x-visible lg:pb-0">
             {filters.map((f) => (
               <button
                 key={f.key}
                 onClick={() => setActiveFilter(f.key)}
-                className={`px-5 py-2.5 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300 shadow-sm border ${
+                className={`px-5 py-2.5 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300 shadow-sm border shrink-0 ${
                   activeFilter === f.key
                     ? "bg-[#3d5636] border-[#3d5636] text-white shadow-md scale-[1.02]"
                     : "bg-white/90 border-neutral-200 text-neutral-800 hover:border-[#3d5636]/40 hover:bg-white"
@@ -447,12 +485,13 @@ function ServicesPage() {
                 return (
                   <motion.div
                     key={s.id}
+                    id={s.id}
                     layout
                     initial={{ opacity: 0, scale: 0.96 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.96 }}
                     transition={{ duration: 0.4 }}
-                    className="bg-white rounded-2xl border border-neutral-200/50 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col justify-between"
+                    className="scroll-mt-28 bg-white rounded-2xl border border-neutral-200/50 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col justify-between"
                   >
                     <div>
                       {/* Image Block with Zoom */}
@@ -466,7 +505,7 @@ function ServicesPage() {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                         
                         {/* Title Badges */}
-                        <div className="absolute bottom-4 left-5 flex items-center gap-2.5">
+                        <div className="absolute bottom-4 left-5 right-5 flex items-center gap-2.5">
                           <span className="text-xl bg-white/10 backdrop-blur-md border border-white/20 p-2 rounded-lg leading-none shrink-0 shadow-sm">
                             {s.badge}
                           </span>

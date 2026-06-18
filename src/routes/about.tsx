@@ -190,14 +190,14 @@ function AboutPage() {
               className="relative w-full max-w-[440px] mx-auto flex items-center justify-center py-6"
             >
               {/* Offset border frame behind image */}
-              <div className="absolute top-2 left-2 right-[-8px] bottom-[-8px] border-2 border-[#577a4c]/20 rounded-2xl z-0 select-none pointer-events-none" />
+              <div className="absolute top-2 left-2 right-[-4px] bottom-[-4px] sm:right-[-8px] sm:bottom-[-8px] border-2 border-[#577a4c]/20 rounded-2xl z-0 select-none pointer-events-none" />
 
               <img
                 src={welImg}
                 alt="Beautiful JRM outdoor transformation project"
                 className="relative z-10 w-full h-auto object-contain rounded-2xl shadow-xl border border-neutral-200/50"
               />
-              <div className="absolute -bottom-1 -right-8 bg-white/95 backdrop-blur-md border border-neutral-200 rounded-xl p-4 shadow-xl flex flex-col select-none z-20">
+              <div className="absolute -bottom-1 -right-2 sm:-right-8 bg-white/95 backdrop-blur-md border border-neutral-200 rounded-xl p-4 shadow-xl flex flex-col select-none z-20">
                 <span className="text-3xl font-black text-[#3d5636]">35+</span>
                 <span className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest leading-none mt-0.5">Years of Trust</span>
               </div>
@@ -368,7 +368,7 @@ function AboutPage() {
 
             {/* Timeline Item 1 */}
             <div className="relative flex flex-col sm:flex-row items-stretch gap-8 sm:gap-0 mb-12 sm:mb-16">
-              <div className="w-full sm:w-1/2 sm:pr-12 text-left sm:text-right flex flex-col justify-center items-start sm:items-end">
+              <div className="w-full sm:w-1/2 pl-16 sm:pl-0 sm:pr-12 text-left sm:text-right flex flex-col justify-center items-start sm:items-end">
                 <span className="text-sm font-black text-[#3d5636] bg-[#577a4c]/10 border border-[#577a4c]/20 px-3 py-1 rounded-full mb-2">1990</span>
                 <h3 className="text-lg font-bold text-neutral-900">Founding Roots</h3>
                 <p className="mt-2 text-xs md:text-sm text-neutral-600 font-light leading-relaxed">
@@ -383,7 +383,7 @@ function AboutPage() {
             <div className="relative flex flex-col sm:flex-row items-stretch gap-8 sm:gap-0 mb-12 sm:mb-16">
               <div className="hidden sm:block w-full sm:w-1/2" />
               <div className="absolute left-[29px] sm:left-1/2 h-8 w-8 rounded-full border-4 border-white bg-[#577a4c] shadow-md -translate-x-[50%] flex items-center justify-center top-1 sm:top-1/2 sm:-translate-y-1/2 z-10" />
-              <div className="w-full sm:w-1/2 sm:pl-12 text-left flex flex-col justify-center items-start">
+              <div className="w-full sm:w-1/2 pl-16 sm:pl-12 text-left flex flex-col justify-center items-start">
                 <span className="text-sm font-black text-[#3d5636] bg-[#577a4c]/10 border border-[#577a4c]/20 px-3 py-1 rounded-full mb-2">2005</span>
                 <h3 className="text-lg font-bold text-neutral-900">Expanding to Hardscapes</h3>
                 <p className="mt-2 text-xs md:text-sm text-neutral-600 font-light leading-relaxed">
@@ -394,7 +394,7 @@ function AboutPage() {
 
             {/* Timeline Item 3 */}
             <div className="relative flex flex-col sm:flex-row items-stretch gap-8 sm:gap-0 mb-12 sm:mb-16">
-              <div className="w-full sm:w-1/2 sm:pr-12 text-left sm:text-right flex flex-col justify-center items-start sm:items-end">
+              <div className="w-full sm:w-1/2 pl-16 sm:pl-0 sm:pr-12 text-left sm:text-right flex flex-col justify-center items-start sm:items-end">
                 <span className="text-sm font-black text-[#3d5636] bg-[#577a4c]/10 border border-[#577a4c]/20 px-3 py-1 rounded-full mb-2">2015</span>
                 <h3 className="text-lg font-bold text-neutral-900">Full Design-Build Renovation</h3>
                 <p className="mt-2 text-xs md:text-sm text-neutral-600 font-light leading-relaxed">
@@ -409,7 +409,7 @@ function AboutPage() {
             <div className="relative flex flex-col sm:flex-row items-stretch gap-8 sm:gap-0">
               <div className="hidden sm:block w-full sm:w-1/2" />
               <div className="absolute left-[29px] sm:left-1/2 h-8 w-8 rounded-full border-4 border-white bg-[#577a4c] shadow-md -translate-x-[50%] flex items-center justify-center top-1 sm:top-1/2 sm:-translate-y-1/2 z-10" />
-              <div className="w-full sm:w-1/2 sm:pl-12 text-left flex flex-col justify-center items-start">
+              <div className="w-full sm:w-1/2 pl-16 sm:pl-12 text-left flex flex-col justify-center items-start">
                 <span className="text-sm font-black text-[#3d5636] bg-[#577a4c]/10 border border-[#577a4c]/20 px-3 py-1 rounded-full mb-2">Present</span>
                 <h3 className="text-lg font-bold text-neutral-900">San Antonio's Trusted Team</h3>
                 <p className="mt-2 text-xs md:text-sm text-neutral-600 font-light leading-relaxed">
