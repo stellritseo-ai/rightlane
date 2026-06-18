@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "@/context/translation-context";
-import { X } from "lucide-react";
+import { X, ZoomIn } from "lucide-react";
 import faqPavilion from "@/assets/faq-pavilion.jpg";
 import heroPatio from "@/assets/hero-patio.jpg";
 import statsJobsite from "@/assets/stats-jobsite.jpg";
@@ -15,37 +15,51 @@ import svcSoftscapes from "@/assets/svc-softscapes.jpg";
 import welcomePavilion from "@/assets/welcome-pavilion.jpg";
 import welcomePool from "@/assets/welcome-pool.jpg";
 
+import { getGalleryPhotos } from "@/lib/leads-store";
+
+const DEFAULT_PHOTOS = [
+  svcOutdoorKitchens,
+  welcomePavilion,
+  svcOutdoorKitchens,
+  faqPavilion,
+  welcomePavilion,
+  welcomePool,
+  welcomePool,
+  heroPatio,
+  statsJobsite,
+  svcSoftscapes,
+  svcArtificialTurf,
+  svcSoftscapes,
+  svcHardscapes,
+  svcFireplace,
+  svcSoftscapes,
+  svcFencing,
+  svcNewConstruction,
+  svcOutdoorKitchens,
+  svcHouseRemodeling
+];
+
 export function GallerySection() {
   const { t } = useTranslation();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [galleryPhotos, setGalleryPhotos] = useState<string[]>([]);
 
-  const row1 = [
-    svcOutdoorKitchens,
-    welcomePavilion,
-    svcOutdoorKitchens,
-    faqPavilion,
-    welcomePavilion,
-    welcomePool,
-  ];
-
-  const row2 = [
-    welcomePool,
-    heroPatio,
-    statsJobsite,
-    svcSoftscapes,
-    svcArtificialTurf,
-    svcSoftscapes,
-    svcHardscapes,
-  ];
-
-  const row3 = [
-    svcFireplace,
-    svcSoftscapes,
-    svcFencing,
-    svcNewConstruction,
-    svcOutdoorKitchens,
-    svcHouseRemodeling,
-  ];
+  useEffect(() => {
+    const fetchGallery = async () => {
+      try {
+        const photos = await getGalleryPhotos();
+        if (photos && photos.length > 0) {
+          setGalleryPhotos(photos.map(p => p.url));
+        } else {
+          setGalleryPhotos(DEFAULT_PHOTOS);
+        }
+      } catch (error) {
+        console.error("Failed to load gallery photos from DB, falling back to defaults:", error);
+        setGalleryPhotos(DEFAULT_PHOTOS);
+      }
+    };
+    fetchGallery();
+  }, []);
 
   return (
     <div className="w-full bg-[#f4f3ef] mt-[15px] mb-[15px] pt-[5px] pb-[5px] px-[15px]">
@@ -60,61 +74,28 @@ export function GallerySection() {
           {t("gallery.title")}
         </h2>
 
-        {/* Justified Grid Rows */}
-        <div className="w-full flex flex-col gap-2">
-          {/* Row 1: 6 columns */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 w-full">
-            {row1.map((img, idx) => (
-              <div
-                key={`row1-${idx}`}
-                className="overflow-hidden rounded-[4px] shadow-sm border border-neutral-900/5 aspect-[4/3] sm:aspect-auto sm:h-[180px] lg:h-[200px]"
-                onClick={() => setSelectedImage(img)}
-              >
-                <img
-                  src={img}
-                  alt="JRM Construction Project Detail"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-out cursor-pointer"
-                  loading="lazy"
-                />
+        {/* Justified Centered Flex Grid */}
+        <div className="flex flex-wrap justify-center gap-3 md:gap-4 w-full">
+          {galleryPhotos.slice(0, 15).map((img, idx) => (
+            <div
+              key={idx}
+              className="group relative overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100 aspect-[4/3] w-[calc(50%-6px)] sm:w-[calc(33.33%-8px)] md:w-[calc(25%-12px)] lg:w-[calc(20%-13px)] min-w-[140px] sm:min-w-[180px] lg:min-w-[200px] cursor-pointer shadow-xs hover:shadow-md transition-all duration-300"
+              onClick={() => setSelectedImage(img)}
+            >
+              <img
+                src={img}
+                alt="JRM Construction Project Detail"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                loading="lazy"
+              />
+              {/* Overlay with Zoom Icon */}
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300">
+                  <ZoomIn className="w-5 h-5 text-white" />
+                </div>
               </div>
-            ))}
-          </div>
-
-          {/* Row 2: 7 columns */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2 w-full">
-            {row2.map((img, idx) => (
-              <div
-                key={`row2-${idx}`}
-                className="overflow-hidden rounded-[4px] shadow-sm border border-neutral-900/5 aspect-[4/3] sm:aspect-auto sm:h-[180px] lg:h-[200px]"
-                onClick={() => setSelectedImage(img)}
-              >
-                <img
-                  src={img}
-                  alt="JRM Construction Project Detail"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-out cursor-pointer"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Row 3: 6 columns */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 w-full">
-            {row3.map((img, idx) => (
-              <div
-                key={`row3-${idx}`}
-                className="overflow-hidden rounded-[4px] shadow-sm border border-neutral-900/5 aspect-[4/3] sm:aspect-auto sm:h-[180px] lg:h-[200px]"
-                onClick={() => setSelectedImage(img)}
-              >
-                <img
-                  src={img}
-                  alt="JRM Construction Project Detail"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-out cursor-pointer"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 

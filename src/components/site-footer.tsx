@@ -175,7 +175,13 @@ export function SiteFooter() {
 
         {/* Copyright & Branding */}
         <div className="mt-12 mb-[-32px] rounded-2xl sm:rounded-full bg-white/[0.02] border border-white/5 py-3 sm:py-3.5 text-xs text-neutral-400 tracking-wide relative z-10 w-full backdrop-blur-md px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3 text-center sm:text-left">
-          <span>{t("footer.copyright")}</span>
+          <span>
+            {t("footer.copyright")}{" "}
+            <span className="mx-1.5 text-neutral-700">|</span>{" "}
+            <a href="/dashboard" className="hover:text-white hover:underline transition-all">
+              Admin Portal
+            </a>
+          </span>
           <span className="md:text-right shrink-0">
             {language === "es" ? "Diseño por" : "Design By"}{" "}
             <a

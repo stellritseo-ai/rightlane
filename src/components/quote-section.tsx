@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { MapPin, Mail } from "lucide-react";
 import { useTranslation } from "@/context/translation-context";
+import { addLead, addWebEmail } from "@/lib/leads-store";
 import map from "@/assets/map.webp";
 
 const areas = [
@@ -12,6 +14,43 @@ const areas = [
 
 export function QuoteSection() {
   const { t } = useTranslation();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [service, setService] = useState("remodeling");
+  const [message, setMessage] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!firstName.trim() || !lastName.trim() || !email.trim()) return;
+
+    try {
+      const fullName = `${firstName} ${lastName}`;
+      await addLead({
+        name: fullName,
+        email,
+        phone: "",
+        address: "",
+        projectType: service,
+        description: message,
+        contactTime: "morning"
+      });
+
+      await addWebEmail({
+        name: fullName,
+        email,
+        phone: "",
+        service,
+        message,
+        source: "landing_page"
+      });
+
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("Failed to submit landing page form:", error);
+    }
+  };
 
   return (
     <div className="w-full bg-[#f4f3ef] mt-[15px] mb-[15px] pt-[5px] pb-[5px] px-[15px]">
@@ -49,106 +88,137 @@ export function QuoteSection() {
           </div>
         </div>
 
-        {/* Quote Form */}
-        <div className="flex flex-col justify-start w-full lg:pl-6">
-          {/* Title */}
-          <h3 className="text-2xl md:text-3xl font-black text-[#08152e] mb-2">
-            {t("quote.form.title")}
-          </h3>
-
-          {/* Description */}
-          <p className="text-sm leading-relaxed text-neutral-600 mb-6 max-w-2xl">
-            {t("quote.form.desc")}
-          </p>
-
-          {/* Form */}
-          <form className="space-y-4 w-full" onSubmit={(e) => e.preventDefault()}>
-
-            {/* Row 1: Name fields */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-semibold text-[#08152e] mb-1.5">
-                  {t("quote.form.first")}
-                </label>
-                <input
-                  type="text"
-                  placeholder="John"
-                  className="w-full rounded-lg border border-neutral-200 px-4 py-3 text-sm focus:border-[#3f4a1f] focus:outline-none focus:ring-1 focus:ring-[#3f4a1f] bg-white transition-all placeholder-neutral-300"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-semibold text-[#08152e] mb-1.5">
-                  {t("quote.form.last")}
-                </label>
-                <input
-                  type="text"
-                  placeholder="Smith"
-                  className="w-full rounded-lg border border-neutral-200 px-4 py-3 text-sm focus:border-[#3f4a1f] focus:outline-none focus:ring-1 focus:ring-[#3f4a1f] bg-white transition-all placeholder-neutral-300"
-                />
-              </div>
+        {/* Quote Form / Success State */}
+        {isSubmitted ? (
+          <div className="flex flex-col justify-center items-center text-center w-full lg:pl-6 py-12">
+            <div className="bg-[#3f4a1f]/10 text-[#3f4a1f] p-4 rounded-full mb-4">
+              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
             </div>
+            <h3 className="text-xl font-bold text-[#08152e] mb-2">
+              Quote Request Received!
+            </h3>
+            <p className="text-xs text-neutral-500 font-light max-w-sm leading-relaxed">
+              Thank you, {firstName}! Your request has been sent successfully. Robert Thompson and our team will review your project details and get back to you shortly.
+            </p>
+          </div>
+        ) : (
+          <div className="flex flex-col justify-start w-full lg:pl-6">
+            {/* Title */}
+            <h3 className="text-2xl md:text-3xl font-black text-[#08152e] mb-2">
+              {t("quote.form.title")}
+            </h3>
 
-            {/* Row 2: Email and Service select */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-semibold text-[#08152e] mb-1.5">
-                  {t("quote.form.email")}
-                </label>
-                <div className="relative flex items-center">
+            {/* Description */}
+            <p className="text-sm leading-relaxed text-neutral-600 mb-6 max-w-2xl">
+              {t("quote.form.desc")}
+            </p>
+
+            {/* Form */}
+            <form className="space-y-4 w-full" onSubmit={handleSubmit}>
+
+              {/* Row 1: Name fields */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold text-[#08152e] mb-1.5">
+                    {t("quote.form.first")}
+                  </label>
                   <input
-                    type="email"
-                    placeholder="Example@email.com"
-                    className="w-full rounded-lg border border-neutral-200 pl-4 pr-10 py-3 text-sm focus:border-[#3f4a1f] focus:outline-none focus:ring-1 focus:ring-[#3f4a1f] bg-white transition-all placeholder-neutral-300"
+                    type="text"
+                    required
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    placeholder="John"
+                    className="w-full rounded-lg border border-neutral-200 px-4 py-3 text-sm focus:border-[#3f4a1f] focus:outline-none focus:ring-1 focus:ring-[#3f4a1f] bg-white transition-all placeholder-neutral-300"
                   />
-                  <Mail className="absolute right-3.5 h-4 w-4 text-emerald-600/80 pointer-events-none" />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-[#08152e] mb-1.5">
+                    {t("quote.form.last")}
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    placeholder="Smith"
+                    className="w-full rounded-lg border border-neutral-200 px-4 py-3 text-sm focus:border-[#3f4a1f] focus:outline-none focus:ring-1 focus:ring-[#3f4a1f] bg-white transition-all placeholder-neutral-300"
+                  />
                 </div>
               </div>
-              <div>
-                <label className="block text-xs font-semibold text-[#08152e] mb-1.5">
-                  {t("quote.form.service")}
-                </label>
-                <div className="relative flex items-center">
-                  <select className="w-full rounded-lg border border-neutral-200 px-4 py-3 text-sm focus:border-[#3f4a1f] focus:outline-none focus:ring-1 focus:ring-[#3f4a1f] bg-white transition-all appearance-none cursor-pointer text-neutral-800 pr-10">
-                    <option value="remodeling">House Remodeling</option>
-                    <option value="construction">New Construction</option>
-                    <option value="patios">Covered Patios</option>
-                    <option value="kitchens">Outdoor Kitchens</option>
-                    <option value="hardscapes">Hardscapes & Concrete</option>
-                    <option value="landscaping">Landscaping & Turf</option>
-                    <option value="other">Other Services</option>
-                  </select>
-                  <div className="absolute right-3.5 pointer-events-none text-neutral-500">
-                    <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-                    </svg>
+
+              {/* Row 2: Email and Service select */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold text-[#08152e] mb-1.5">
+                    {t("quote.form.email")}
+                  </label>
+                  <div className="relative flex items-center">
+                    <input
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Example@email.com"
+                      className="w-full rounded-lg border border-neutral-200 pl-4 pr-10 py-3 text-sm focus:border-[#3f4a1f] focus:outline-none focus:ring-1 focus:ring-[#3f4a1f] bg-white transition-all placeholder-neutral-300"
+                    />
+                    <Mail className="absolute right-3.5 h-4 w-4 text-emerald-600/80 pointer-events-none" />
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-[#08152e] mb-1.5">
+                    {t("quote.form.service")}
+                  </label>
+                  <div className="relative flex items-center">
+                    <select
+                      value={service}
+                      onChange={(e) => setService(e.target.value)}
+                      className="w-full rounded-lg border border-neutral-200 px-4 py-3 text-sm focus:border-[#3f4a1f] focus:outline-none focus:ring-1 focus:ring-[#3f4a1f] bg-white transition-all appearance-none cursor-pointer text-neutral-800 pr-10"
+                    >
+                      <option value="remodeling">House Remodeling</option>
+                      <option value="construction">New Construction</option>
+                      <option value="patios">Covered Patios</option>
+                      <option value="kitchens">Outdoor Kitchens</option>
+                      <option value="hardscapes">Hardscapes & Concrete</option>
+                      <option value="landscaping">Landscaping & Turf</option>
+                      <option value="other">Other Services</option>
+                    </select>
+                    <div className="absolute right-3.5 pointer-events-none text-neutral-500">
+                      <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Row 3: Message textarea */}
-            <div>
-              <label className="block text-xs font-semibold text-[#08152e] mb-1.5">
-                {t("quote.form.message.label")}
-              </label>
-              <textarea
-                rows={4}
-                placeholder={t("quote.form.message.placeholder")}
-                className="w-full rounded-lg border border-neutral-200 px-4 py-3 text-sm focus:border-[#3f4a1f] focus:outline-none focus:ring-1 focus:ring-[#3f4a1f] bg-white transition-all placeholder-neutral-300 resize-none"
-              />
-            </div>
+              {/* Row 3: Message textarea */}
+              <div>
+                <label className="block text-xs font-semibold text-[#08152e] mb-1.5">
+                  {t("quote.form.message.label")}
+                </label>
+                <textarea
+                  rows={4}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  placeholder={t("quote.form.message.placeholder")}
+                  className="w-full rounded-lg border border-neutral-200 px-4 py-3 text-sm focus:border-[#3f4a1f] focus:outline-none focus:ring-1 focus:ring-[#3f4a1f] bg-white transition-all placeholder-neutral-300 resize-none"
+                />
+              </div>
 
-            {/* Submit Button */}
-            <div className="pt-2">
-              <button
-                type="submit"
-                className="rounded-full bg-[#3f4a1f] hover:bg-[#2d3715] text-white text-xs font-bold uppercase tracking-widest px-12 py-3.5 transition-all duration-300 shadow-md hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
-              >
-                {t("quote.form.send")}
-              </button>
-            </div>
-          </form>
-        </div>
+              {/* Submit Button */}
+              <div className="pt-2">
+                <button
+                  type="submit"
+                  className="rounded-full bg-[#3f4a1f] hover:bg-[#2d3715] text-white text-xs font-bold uppercase tracking-widest px-12 py-3.5 transition-all duration-300 shadow-md hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                >
+                  {t("quote.form.send")}
+                </button>
+              </div>
+            </form>
+          </div>
+        )}
       </section>
     </div>
   );

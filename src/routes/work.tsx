@@ -17,6 +17,7 @@ import {
 import logo from "@/assets/jrm-logo.png";
 import welBg from "@/assets/wel-bg.png";
 import workHero from "@/assets/welcome-pool.jpg";
+import { getGalleryPhotos } from "@/lib/leads-store";
 
 // Project local images from assets folder
 import houseRemodeling from "@/assets/svc-house-remodeling.jpg";
@@ -43,7 +44,7 @@ export const Route = createFileRoute("/work")({
 
 const CATEGORIES = ["All", "Remodeling", "Outdoor Living", "Landscaping", "Construction", "Fencing"];
 
-const projects = [
+const STATIC_PROJECTS = [
   {
     title: "Complete Home Remodel & Backyard Transformation",
     location: "San Antonio, TX",
@@ -105,6 +106,100 @@ const projects = [
 function OurWorkPage() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [projects, setProjects] = useState<any[]>([]);
+
+  useEffect(() => {
+    const loadGallery = async () => {
+      try {
+        const photos = await getGalleryPhotos();
+        if (photos && photos.length > 0) {
+          const mapped = photos.map((photo, index) => {
+            const url = photo.url.toLowerCase();
+            let category = "Outdoor Living";
+            let title = "JRM Custom Craftsmanship";
+            let services = ["Design-Build", "Custom Masonry"];
+
+            // Infer category and details based on file name patterns
+            if (url.includes("kitchen")) {
+              category = "Outdoor Living";
+              title = "Custom Outdoor Kitchen & Grill Station";
+              services = ["Outdoor Kitchen", "Granite Countertops", "Hardscapes"];
+            } else if (url.includes("pavilion")) {
+              category = "Outdoor Living";
+              title = "Rustic Covered Pavilion & Pergola";
+              services = ["Covered Patio", "Cedar Pergola", "Carpentry"];
+            } else if (url.includes("pool")) {
+              category = "Outdoor Living";
+              title = "Resort-Style Pool Deck & Masonry";
+              services = ["Pool Deck", "Flagstone Coping", "Hardscapes"];
+            } else if (url.includes("patio")) {
+              category = "Outdoor Living";
+              title = "Premium Flagstone Patio Extension";
+              services = ["Flagstone Patio", "Hardscapes", "Outdoor Living"];
+            } else if (url.includes("fireplace")) {
+              category = "Outdoor Living";
+              title = "Custom Floor-to-Ceiling Stone Fireplace";
+              services = ["Masonry Fireplace", "Stone Accent Wall", "Hardscapes"];
+            } else if (url.includes("turf")) {
+              category = "Landscaping";
+              title = "Premium Artificial Turf Installation";
+              services = ["Artificial Turf", "Soil Preparation", "Drainage System"];
+            } else if (url.includes("softscapes")) {
+              category = "Landscaping";
+              title = "Native Texas Planting & Softscape Design";
+              services = ["Softscapes", "Drip Irrigation", "Planting Beds"];
+            } else if (url.includes("hardscapes")) {
+              category = "Landscaping";
+              title = "Limestone Retaining Wall & Steps";
+              services = ["Retaining Wall", "Limestone Steps", "Hardscapes"];
+            } else if (url.includes("fence") || url.includes("fencing")) {
+              category = "Fencing";
+              title = "Horizontal Cedar Privacy Fence";
+              services = ["Cedar Fencing", "Steel Posts", "Privacy Screen"];
+            } else if (url.includes("construction")) {
+              category = "Construction";
+              title = "New Custom Home Construction";
+              services = ["New Construction", "Framing", "Foundation Work"];
+            } else if (url.includes("jobsite")) {
+              category = "Construction";
+              title = "Custom Structural Framing Work";
+              services = ["Structural Framing", "Framing Inspection", "Construction"];
+            } else if (url.includes("remodeling")) {
+              category = "Remodeling";
+              title = "Complete Kitchen & Bath Home Renovation";
+              services = ["House Remodeling", "Custom Cabinetry", "Tile Backsplash"];
+            }
+
+            // Distribute locations based on index
+            const locations = [
+              "San Antonio, TX",
+              "Boerne, TX",
+              "New Braunfels, TX",
+              "Seguin, TX",
+              "Bulverde, TX",
+              "Schertz, TX"
+            ];
+            const location = locations[index % locations.length];
+
+            return {
+              title,
+              location,
+              image: photo.url,
+              category,
+              services
+            };
+          });
+          setProjects(mapped);
+        } else {
+          setProjects(STATIC_PROJECTS);
+        }
+      } catch (err) {
+        console.error("Failed to fetch gallery for work page:", err);
+        setProjects(STATIC_PROJECTS);
+      }
+    };
+    loadGallery();
+  }, []);
 
   const filtered = activeCategory === "All"
     ? projects

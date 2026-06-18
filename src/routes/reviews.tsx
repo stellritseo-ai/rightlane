@@ -1,9 +1,11 @@
+import { useState, useEffect } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { FloatingChat } from "@/components/floating-chat";
 import { useTranslation } from "@/context/translation-context";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { getReviews, Review } from "@/lib/leads-store";
 import {
   Star,
   Phone,
@@ -33,6 +35,20 @@ export const Route = createFileRoute("/reviews")({
 
 function ReviewsPage() {
   const { t } = useTranslation();
+  const [reviews, setReviews] = useState<Review[]>([]);
+  const [lightboxPhoto, setLightboxPhoto] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const data = await getReviews();
+        setReviews(data.filter((r) => r.featured));
+      } catch (error) {
+        console.error("Error loading reviews:", error);
+      }
+    };
+    fetchReviews();
+  }, []);
 
   const reviewsList = [
     {
@@ -272,11 +288,11 @@ function ReviewsPage() {
               </motion.div>
             </div>
 
-            {/* Right Column: 13 Reviews Cards List */}
+            {/* Right Column: Dynamic Reviews Cards List */}
             <div className="grid gap-6">
-              {reviewsList.map((r, idx) => (
+              {reviews.map((r, idx) => (
                 <motion.div
-                  key={r.title}
+                  key={r.id || r.title}
                   initial={{ opacity: 0, y: 25 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
@@ -289,9 +305,15 @@ function ReviewsPage() {
                     {/* Stars and Location Badge */}
                     <div className="flex items-center justify-between flex-wrap gap-2">
                       <div className="flex items-center gap-0.5 text-amber-500">
-                        {[1, 2, 3, 4, 5].map((s) => (
-                          <Star key={s} className="w-4 h-4 fill-current" />
-                        ))}
+                        {Array.from({ length: 5 }).map((_, sIdx) => {
+                          const ratingValue = sIdx + 1;
+                          return (
+                            <Star 
+                              key={sIdx} 
+                              className={`w-4 h-4 ${ratingValue <= (r.rating || 5) ? 'fill-current text-amber-500' : 'text-neutral-200'}`} 
+                            />
+                          );
+                        })}
                       </div>
                       <span className="inline-flex items-center gap-1 bg-[#577a4c]/10 text-[#3d5636] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                         <MapPin className="w-3 h-3" />
@@ -308,6 +330,41 @@ function ReviewsPage() {
                     <p className="text-xs md:text-sm text-neutral-600 font-light leading-relaxed italic" style={{ fontFamily: "Georgia, serif" }}>
                       "{r.text}"
                     </p>
+
+                    {/* Completion Photos */}
+                    {r.photos && r.photos.length > 0 && (
+                      <div className="flex gap-2.5 mt-4 flex-wrap">
+                        {r.photos.map((photo, pIdx) => (
+                          <div 
+                            key={pIdx} 
+                            className="relative h-20 w-28 rounded-lg overflow-hidden border border-neutral-200/60 shadow-xs cursor-pointer hover:opacity-90 active:scale-98 transition-all"
+                            onClick={() => setLightboxPhoto(photo)}
+                          >
+                            <img
+                              src={photo}
+                              alt="Project completion"
+                              className="h-full w-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-black/10 hover:bg-transparent transition-colors flex items-center justify-center">
+                              <ImageIcon className="w-4 h-4 text-white drop-shadow-md" />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Owner Reply */}
+                    {r.replyText && (
+                      <div className="mt-4 p-4 rounded-xl bg-[#577a4c]/5 border-l-2 border-[#577a4c] text-left">
+                        <div className="flex items-center gap-1.5 text-[#3d5636] font-bold text-[10px] uppercase tracking-wider mb-1">
+                          <CheckCircle2 className="w-3.5 h-3.5" />
+                          <span>Response from Robert Thompson (Owner)</span>
+                        </div>
+                        <p className="text-xs text-neutral-700 font-light leading-relaxed">
+                          "{r.replyText}"
+                        </p>
+                      </div>
+                    )}
                   </div>
 
                   {/* Author Name */}
@@ -467,6 +524,37 @@ function ReviewsPage() {
 
       <SiteFooter />
       <FloatingChat />
+
+      {/* Lightbox Modal Overlay */}
+      <AnimatePresence>
+        {lightboxPhoto && (
+          <div
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/85 backdrop-blur-xs select-none cursor-pointer"
+            onClick={() => setLightboxPhoto(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative max-w-4xl max-h-[90vh] overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={lightboxPhoto}
+                alt="Enlarged view"
+                className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
+              />
+              <button
+                type="button"
+                onClick={() => setLightboxPhoto(null)}
+                className="absolute top-3 right-3 bg-black/60 hover:bg-black/85 text-white rounded-full p-2.5 transition-all text-xs font-bold shadow-md cursor-pointer border border-white/20"
+              >
+                ✕ Close
+              </button>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

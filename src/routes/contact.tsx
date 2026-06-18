@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { addLead, addWebEmail } from "@/lib/leads-store";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { FloatingChat } from "@/components/floating-chat";
@@ -138,8 +139,21 @@ function ContactPage() {
     },
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    try {
+      await addLead(formData);
+      await addWebEmail({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        service: formData.projectType,
+        message: `${formData.description} (Address: ${formData.address}, Best time to contact: ${formData.contactTime})`,
+        source: "contact_page"
+      });
+    } catch (error) {
+      console.error("Error submitting lead:", error);
+    }
     setIsSubmitted(true);
   };
 

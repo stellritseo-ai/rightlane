@@ -12,7 +12,9 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorkRouteImport } from './routes/work'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as LetsTalkRouteImport } from './routes/lets-talk'
+import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -32,9 +34,19 @@ const ReviewsRoute = ReviewsRouteImport.update({
   path: '/reviews',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LetsTalkRoute = LetsTalkRouteImport.update({
   id: '/lets-talk',
   path: '/lets-talk',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -57,7 +69,9 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
   '/lets-talk': typeof LetsTalkRoute
+  '/login': typeof LoginRoute
   '/reviews': typeof ReviewsRoute
   '/services': typeof ServicesRoute
   '/work': typeof WorkRoute
@@ -66,7 +80,9 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
   '/lets-talk': typeof LetsTalkRoute
+  '/login': typeof LoginRoute
   '/reviews': typeof ReviewsRoute
   '/services': typeof ServicesRoute
   '/work': typeof WorkRoute
@@ -76,7 +92,9 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
   '/lets-talk': typeof LetsTalkRoute
+  '/login': typeof LoginRoute
   '/reviews': typeof ReviewsRoute
   '/services': typeof ServicesRoute
   '/work': typeof WorkRoute
@@ -87,7 +105,9 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/dashboard'
     | '/lets-talk'
+    | '/login'
     | '/reviews'
     | '/services'
     | '/work'
@@ -96,7 +116,9 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/dashboard'
     | '/lets-talk'
+    | '/login'
     | '/reviews'
     | '/services'
     | '/work'
@@ -105,7 +127,9 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/dashboard'
     | '/lets-talk'
+    | '/login'
     | '/reviews'
     | '/services'
     | '/work'
@@ -115,7 +139,9 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  DashboardRoute: typeof DashboardRoute
   LetsTalkRoute: typeof LetsTalkRoute
+  LoginRoute: typeof LoginRoute
   ReviewsRoute: typeof ReviewsRoute
   ServicesRoute: typeof ServicesRoute
   WorkRoute: typeof WorkRoute
@@ -144,11 +170,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReviewsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/lets-talk': {
       id: '/lets-talk'
       path: '/lets-talk'
       fullPath: '/lets-talk'
       preLoaderRoute: typeof LetsTalkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -179,7 +219,9 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  DashboardRoute: DashboardRoute,
   LetsTalkRoute: LetsTalkRoute,
+  LoginRoute: LoginRoute,
   ReviewsRoute: ReviewsRoute,
   ServicesRoute: ServicesRoute,
   WorkRoute: WorkRoute,
