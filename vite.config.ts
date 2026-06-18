@@ -22,5 +22,6 @@ export default defineConfig({
     rollupConfig: {
       external: ["mongoose", "mongodb"],
     },
+    traceDeps: ["mongoose", "mongodb"],
   } as any,
 });
