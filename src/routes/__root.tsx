@@ -79,14 +79,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "JRM Construction Landscaping Design | San Antonio's Trusted Remodeling & Outdoor Living Experts Since 1989" },
+      { name: "description", content: "San Antonio's premier licensed, insured, and bonded construction company. 35+ years of experience in house remodeling, outdoor kitchens, custom fireplaces, hardscapes & artificial turf. Free consultations. Call (210) 429-5526." },
+      { name: "author", content: "JRM Construction Landscaping Design" },
+      { property: "og:title", content: "JRM Construction Landscaping Design | San Antonio's Trusted Remodeling & Outdoor Living Experts Since 1989" },
+      { property: "og:description", content: "San Antonio's premier licensed, insured, and bonded construction company. 35+ years of experience in house remodeling, outdoor kitchens, custom fireplaces, hardscapes & artificial turf. Free consultations. Call (210) 429-5526." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:url", content: "https://jrmconstruction.vercel.app" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "JRM Construction Landscaping Design | San Antonio" },
+      { name: "twitter:description", content: "35+ years of trusted construction & landscaping in San Antonio. Licensed, insured & bonded. Call (210) 429-5526." },
     ],
     links: [
       {
