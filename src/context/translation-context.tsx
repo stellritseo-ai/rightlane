@@ -261,7 +261,7 @@ export const translations = {
 
     // Hero Section
     "hero.title": "Visiones al Aire Libre Cobran Vida\nConstruyendo los Sueños de América",
-    "hero.description": "JRM Construction Landscaping Design es un contratista de concreto en San Antonio, TX.\n¡Ofrecemos paisajismo, diseño de cocinas al aire libre, adoquines y más!",
+    "hero.description": "San Antonio Outdoor Living es un contratista de concreto en San Antonio, TX. ¡Ofrecemos paisajismo,\ndiseño de cocinas al aire libre, adoquines y más!",
     "hero.btn.consultation": "Obtenga Su Consulta Gratis",
     "hero.btn.book": "Reservar un Servicio",
 

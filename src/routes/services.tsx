@@ -85,7 +85,7 @@ function ServicesPage() {
         "Interior & Exterior Repairs",
         "Custom Interiors & Built-Ins"
       ],
-      link: "/lets-talk?type=remodeling",
+      link: "/house-remodeling",
       linkText: "Learn More About House Remodeling →"
     },
     {
@@ -103,7 +103,7 @@ function ServicesPage() {
         "Foundation & Framing",
         "Full Turnkey Service"
       ],
-      link: "/lets-talk?type=new-construction",
+      link: "/new-construction",
       linkText: "Learn More About New Construction →"
     },
     {
@@ -121,7 +121,7 @@ function ServicesPage() {
         "Gas & Wood-Burning Options",
         "Custom Mantels & Surrounds"
       ],
-      link: "/lets-talk?type=fireplace",
+      link: "/custom-fireplaces",
       linkText: "Learn More About Custom Fireplaces →"
     },
     // Outdoor Living
@@ -140,7 +140,7 @@ function ServicesPage() {
         "Screened Enclosures",
         "Custom Columns & Pillars"
       ],
-      link: "/lets-talk?type=patio",
+      link: "/covered-patios",
       linkText: "Learn More About Covered Patios →"
     },
     {
@@ -158,7 +158,7 @@ function ServicesPage() {
         "Premium Appliance Integration",
         "Bar & Beverage Stations"
       ],
-      link: "/lets-talk?type=outdoor-kitchen",
+      link: "/outdoor-kitchens",
       linkText: "Learn More About Outdoor Kitchens →"
     },
     {
@@ -175,7 +175,7 @@ function ServicesPage() {
         "Fireplace & Outdoor Kitchen Integration",
         "Stone & Stucco Finishes"
       ],
-      link: "/lets-talk?type=fireplace",
+      link: "/custom-fireplaces",
       linkText: "Learn More About Custom Fireplaces →"
     },
     // Landscape & Hardscape
@@ -195,7 +195,7 @@ function ServicesPage() {
         "Driveways & Courtyards",
         "Drainage Solutions"
       ],
-      link: "/lets-talk?type=hardscapes",
+      link: "/hardscapes",
       linkText: "Learn More About Hardscapes →"
     },
     {
@@ -214,7 +214,7 @@ function ServicesPage() {
         "Mulching & Soil Amendment",
         "Sod Installation & Seeding"
       ],
-      link: "/lets-talk?type=softscapes",
+      link: "/softscapes",
       linkText: "Learn More About Softscapes →"
     },
     {
@@ -232,7 +232,7 @@ function ServicesPage() {
         "Tropical Theme Landscaping",
         "Complete Care & Integration"
       ],
-      link: "/lets-talk?type=softscapes",
+      link: "/palm-trees",
       linkText: "Learn More About Palm Trees →"
     },
     {
@@ -250,7 +250,7 @@ function ServicesPage() {
         "Poolside & Patio Surrounds",
         "Turf with Paver Inlays"
       ],
-      link: "/lets-talk?type=turf",
+      link: "/artificial-turf",
       linkText: "Learn More About Artificial Turf →"
     },
     {
@@ -268,7 +268,7 @@ function ServicesPage() {
         "Chain Link (Coated & Commercial)",
         "Specialty & Decorative Fencing"
       ],
-      link: "/lets-talk?type=fencing",
+      link: "/fencing",
       linkText: "Learn More About Fencing →"
     },
     {
@@ -287,7 +287,7 @@ function ServicesPage() {
         "Backflow Testing & Repair",
         "Water-Saving System Upgrades"
       ],
-      link: "/lets-talk?type=softscapes",
+      link: "/irrigation",
       linkText: "Learn More About Irrigation →"
     },
     {
@@ -306,7 +306,7 @@ function ServicesPage() {
         "Smart Timer & Automation Controls",
         "System Maintenance & Upgrades"
       ],
-      link: "/lets-talk?type=hardscapes",
+      link: "/landscape-lighting",
       linkText: "Learn More About Lighting →"
     },
     // Commercial
@@ -326,7 +326,7 @@ function ServicesPage() {
         "Parking Lot Installation",
         "Property Maintenance & Repairs"
       ],
-      link: "/lets-talk?type=commercial",
+      link: "/commercial",
       linkText: "Learn More About Commercial Services →"
     }
   ];

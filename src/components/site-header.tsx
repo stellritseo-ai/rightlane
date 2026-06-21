@@ -17,19 +17,19 @@ const navItems = [
 ] as const;
 
 const servicesSubMenu = [
-  { label: "Palm Trees",        to: "/services", hash: "palms" },
-  { label: "House Remodeling",  to: "/services", hash: "remodeling" },
-  { label: "New Construction",  to: "/services", hash: "new-construction" },
-  { label: "Fireplace",         to: "/services", hash: "fireplace" },
-  { label: "Fencing",           to: "/services", hash: "fencing" },
-  { label: "Hardscapes",        to: "/services", hash: "hardscapes" },
-  { label: "Covered Patios",    to: "/services", hash: "patios" },
-  { label: "Artificial Turf",   to: "/services", hash: "turf" },
-  { label: "Softscapes",        to: "/services", hash: "softscapes" },
-  { label: "Outdoor Kitchens",  to: "/services", hash: "kitchens" },
-  { label: "Custom Fireplaces", to: "/services", hash: "outdoor-fireplace" },
-  { label: "Irrigation",        to: "/services", hash: "irrigation" },
-  { label: "Landscape Lighting",to: "/services", hash: "lighting" },
+  { label: "Palm Trees",        to: "/palm-trees", hash: undefined },
+  { label: "House Remodeling",  to: "/house-remodeling", hash: undefined },
+  { label: "New Construction",  to: "/new-construction", hash: undefined },
+  { label: "Fireplace",         to: "/custom-fireplaces", hash: undefined },
+  { label: "Fencing",           to: "/fencing", hash: undefined },
+  { label: "Hardscapes",        to: "/hardscapes", hash: undefined },
+  { label: "Covered Patios",    to: "/covered-patios", hash: undefined },
+  { label: "Artificial Turf",   to: "/artificial-turf", hash: undefined },
+  { label: "Softscapes",        to: "/softscapes", hash: undefined },
+  { label: "Outdoor Kitchens",  to: "/outdoor-kitchens", hash: undefined },
+  { label: "Custom Fireplaces", to: "/custom-fireplaces", hash: undefined },
+  { label: "Irrigation",        to: "/irrigation", hash: undefined },
+  { label: "Landscape Lighting",to: "/landscape-lighting", hash: undefined },
 ] as const;
 
 export function SiteHeader() {

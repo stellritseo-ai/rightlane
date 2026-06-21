@@ -38,7 +38,7 @@ export const Route = createFileRoute("/lets-talk")({
   component: LetUsTalkPage,
 });
 
-function LetUsTalkPage() {
+export function LetUsTalkPage() {
   const { t } = useTranslation();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState(() => {
