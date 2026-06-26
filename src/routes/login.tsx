@@ -4,13 +4,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { User, Lock, ArrowRight, ShieldAlert } from "lucide-react";
 import { toast } from "sonner";
 import { loginAdmin, verifyAdminToken } from "@/lib/leads-store";
-import logo from "@/assets/jrm-logo.png";
+import logo from "@/assets/logo.png";
 
 export const Route = createFileRoute("/login")({
   head: () => ({
     meta: [
-      { title: "Robert's Office — Portal Access" },
-      { name: "description", content: "Authenticate to access JRM Construction Landscape Design business console." }
+      { title: "Ronnie's Office — Portal Access" },
+      { name: "description", content: "Authenticate to access Right Lane Handyman Services, LLC business console." }
     ],
   }),
   component: LoginPage,
@@ -55,7 +55,7 @@ function LoginPage() {
       const res = await loginAdmin(username, password);
       if (res.success && res.token) {
         localStorage.setItem("jrm-admin-token", res.token);
-        toast.success("Welcome back, Robert!");
+        toast.success("Welcome back, Ronnie!");
         navigate({ to: "/dashboard" });
       } else {
         setErrorMsg("Failed to authenticate.");
@@ -102,9 +102,9 @@ function LoginPage() {
       >
         {/* Logo and Branding */}
         <div className="flex flex-col items-center gap-2 mb-8">
-          <img src={logo} alt="JRM Logo" className="h-12 w-auto opacity-90 object-contain mb-2 select-none" />
-          <h2 className="text-xs font-extrabold uppercase tracking-[0.25em] text-[#3f4a1f] select-none">Robert's Office</h2>
-          <h1 className="text-2xl font-bold font-serif text-neutral-900 tracking-tight mt-1">JRM Admin Portal</h1>
+          <img src={logo} alt="Right Lane Logo" className="h-12 w-auto opacity-90 object-contain mb-2 select-none" />
+          <h2 className="text-xs font-extrabold uppercase tracking-[0.25em] text-[#ffa326] select-none">Ronnie's Office</h2>
+          <h1 className="text-2xl font-bold font-serif text-neutral-900 tracking-tight mt-1">Right Lane Admin Portal</h1>
           <p className="text-[11px] text-neutral-500 font-light max-w-xs mt-1">
             Access secure management controls, analytics, lead logs, and real-time chat.
           </p>
@@ -139,7 +139,7 @@ function LoginPage() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="Enter username"
-                className="w-full bg-neutral-50/50 hover:bg-neutral-50 border border-[#eae8e1] rounded-xl py-3 pl-10 pr-4 text-xs focus:outline-none focus:ring-2 focus:ring-[#577a4c]/20 focus:border-[#577a4c] transition-all text-neutral-800 placeholder-neutral-400"
+                className="w-full bg-neutral-50/50 hover:bg-neutral-50 border border-[#eae8e1] rounded-xl py-3 pl-10 pr-4 text-xs focus:outline-none focus:ring-2 focus:ring-[#ffa326]/20 focus:border-[#ffa326] transition-all text-neutral-800 placeholder-neutral-400"
               />
               <User className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-400" />
             </div>
@@ -155,7 +155,7 @@ function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full bg-neutral-50/50 hover:bg-neutral-50 border border-[#eae8e1] rounded-xl py-3 pl-10 pr-4 text-xs focus:outline-none focus:ring-2 focus:ring-[#577a4c]/20 focus:border-[#577a4c] transition-all text-neutral-800 placeholder-neutral-400"
+                className="w-full bg-neutral-50/50 hover:bg-neutral-50 border border-[#eae8e1] rounded-xl py-3 pl-10 pr-4 text-xs focus:outline-none focus:ring-2 focus:ring-[#ffa326]/20 focus:border-[#ffa326] transition-all text-neutral-800 placeholder-neutral-400"
               />
               <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-400" />
             </div>
@@ -174,7 +174,7 @@ function LoginPage() {
               </span>
             ) : (
               <>
-                <span>Enter Robert's Office</span>
+                <span>Enter Ronnie's Office</span>
                 <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
               </>
             )}
@@ -184,7 +184,7 @@ function LoginPage() {
 
       {/* Footer bar */}
       <div className="absolute bottom-6 text-center text-[9px] text-neutral-500 font-medium tracking-wide">
-        © 2026 JRM Construction Landscape Design · Admin Authentication Portal
+        © 2026 Right Lane Handyman Services, LLC · Admin Authentication Portal
       </div>
     </div>
   );

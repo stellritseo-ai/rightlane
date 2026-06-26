@@ -21,17 +21,17 @@ import {
   Sparkles,
   Info
 } from "lucide-react";
-import logo from "@/assets/jrm-logo.png";
+import logo from "@/assets/logo.png";
 import welBg from "@/assets/wel-bg.png";
 import contactHero from "@/assets/stats-jobsite.jpg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact JRM Construction Landscape Design — San Antonio, TX" },
-      { name: "description", content: "Contact JRM Construction for free estimates, on-site design consultations, or 24/7 emergency service in San Antonio, TX." },
-      { property: "og:title", content: "Contact JRM Construction Landscape Design" },
-      { property: "og:description", content: "Connect with owner Robert Thompson for premium remodeling and landscape solutions in San Antonio, TX." },
+      { title: "Contact Right Lane Handyman Services, LLC — Clearwater, FL" },
+      { name: "description", content: "Contact Right Lane Handyman Services, LLC for free estimates, on-site design consultations, or 24/7 emergency service in Clearwater, FL." },
+      { property: "og:title", content: "Contact Right Lane Handyman Services, LLC" },
+      { property: "og:description", content: "Connect with the Right Lane team for premium remodeling and landscape solutions in Clearwater, FL." },
       { property: "og:type", content: "website" }
     ],
   }),
@@ -59,16 +59,16 @@ function ContactPage() {
   });
 
   const cities = [
-    "New Braunfels",
-    "Boerne",
-    "San Marcos",
-    "Seguin",
-    "Canyon Lake",
+    "St. Petersburg",
+    "Largo",
+    "Dunedin",
+    "Pinellas Park",
+    "Tarpon Springs",
     "Bulverde",
     "Schertz",
     "Castroville",
-    "Fredericksburg",
-    "Kerrville",
+    "Tampa",
+    "Palm Harbor",
     "Bandera",
     "Hondo",
     "Pleasanton",
@@ -80,7 +80,7 @@ function ContactPage() {
 
   const trustValues = [
     {
-      title: "35 Years of Experience",
+      title: "25+ Years of Experience",
       desc: "Deep local expertise in remodeling, construction, and landscape design.",
       icon: Hammer,
     },
@@ -91,7 +91,7 @@ function ContactPage() {
     },
     {
       title: "Owner-Led Oversight",
-      desc: "Robert Thompson is personally involved in every project.",
+      desc: "Right Lane Handyman is personally involved in every project.",
       icon: Building,
     },
     {
@@ -125,7 +125,7 @@ function ContactPage() {
     {
       number: "2",
       title: "Your On-Site Consultation",
-      desc: "Robert will meet you at your property to discuss your vision, assess your space, and answer all your questions.",
+      desc: "Ronnie will meet you at your property to discuss your vision, assess your space, and answer all your questions.",
     },
     {
       number: "3",
@@ -174,7 +174,7 @@ function ContactPage() {
           />
 
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#111a0a]/92 via-[#111a0a]/78 to-[#111a0a]/92 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1c140d]/92 via-[#1c140d]/78 to-[#1c140d]/92 z-10" />
 
           {/* Hero Content */}
           <motion.div
@@ -198,7 +198,7 @@ function ContactPage() {
 
             {/* Subtitle */}
             <p className="mt-6 text-sm md:text-base text-neutral-300 font-light leading-relaxed max-w-3xl mx-auto">
-              At JRM Construction Landscaping Design, we believe great projects begin with great communication. Whether you're ready to schedule your free consultation, have questions about our services, or need emergency assistance, owner Robert Thompson and our team are here to listen, guide, and support you every step of the way.
+              At Right Lane Handyman Services, LLC, we believe great projects begin with great communication. Whether you're ready to schedule your free consultation, have questions about our services, or need emergency assistance, the Right Lane team and our team are here to listen, guide, and support you every step of the way.
             </p>
           </motion.div>
 
@@ -215,7 +215,7 @@ function ContactPage() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute top-0 left-0 w-full h-1/3 bg-[#a5b89d] rounded-full"
+                className="absolute top-0 left-0 w-full h-1/3 bg-[#ffa326] rounded-full"
               />
             </div>
           </div>
@@ -227,7 +227,7 @@ function ContactPage() {
         <section className="mx-auto max-w-[1400px] w-full rounded-[10px] bg-[#fcfbf8] border border-[#eae8e1] shadow-[0_12px_40px_rgb(0,0,0,0.03)] px-6 py-12 text-center">
           <div className="max-w-3xl mx-auto">
             <p className="text-sm md:text-base text-neutral-600 leading-relaxed font-light">
-              With over 35 years of experience serving San Antonio and the surrounding area, we understand that every project is unique. That's why we take the time to understand your vision, answer your questions, and provide the expert guidance you need to make informed decisions.
+              With over 25+ Years of experience serving Clearwater and the surrounding area, we understand that every project is unique. That's why we take the time to understand your vision, answer your questions, and provide the expert guidance you need to make informed decisions.
             </p>
           </div>
         </section>
@@ -250,7 +250,7 @@ function ContactPage() {
               className="space-y-8"
             >
               <div>
-                <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-2">
+                <span className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-2">
                   Get in Touch
                 </span>
                 <h2 
@@ -265,22 +265,22 @@ function ContactPage() {
               <div className="grid sm:grid-cols-2 gap-4">
                 {/* Phone Card */}
                 <a 
-                  href="tel:2104295526"
-                  className="group block p-5 rounded-xl border border-neutral-200/50 bg-white hover:border-[#577a4c]/40 hover:shadow-md transition-all duration-300 text-left"
+                  href="tel:7276420201"
+                  className="group block p-5 rounded-xl border border-neutral-200/50 bg-white hover:border-[#ffa326]/40 hover:shadow-md transition-all duration-300 text-left"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-[#577a4c]/10 text-[#3d5636] flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-lg bg-[#ffa326]/10 text-[#cc7e14] flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
                     <Phone className="w-5 h-5" />
                   </div>
                   <h4 className="text-sm font-bold text-neutral-900">📞 Phone</h4>
                   <p className="mt-2 text-xs text-neutral-500 font-light leading-relaxed">
-                    Call to speak directly with Robert for consultations, estimates, or urgent needs.
+                    Call to speak directly with Ronnie for consultations, estimates, or urgent needs.
                   </p>
-                  <p className="mt-3 text-md font-bold text-[#3d5636] group-hover:underline">(210) 429-5526</p>
+                  <p className="mt-3 text-md font-bold text-[#cc7e14] group-hover:underline">(727) 642-0201</p>
                 </a>
 
                 {/* Office Hours */}
                 <div className="p-5 rounded-xl border border-neutral-200/50 bg-white text-left">
-                  <div className="w-10 h-10 rounded-lg bg-[#577a4c]/10 text-[#3d5636] flex items-center justify-center mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-[#ffa326]/10 text-[#cc7e14] flex items-center justify-center mb-4">
                     <Clock className="w-5 h-5" />
                   </div>
                   <h4 className="text-sm font-bold text-neutral-900">🕒 Office Hours</h4>
@@ -302,17 +302,17 @@ function ContactPage() {
 
                 {/* Email Card */}
                 <a 
-                  href="mailto:robertsa210@icloud.com"
-                  className="group block p-5 rounded-xl border border-neutral-200/50 bg-white hover:border-[#577a4c]/40 hover:shadow-md transition-all duration-300 text-left"
+                  href="mailto:rightlanehandymanservice@yahoo.com"
+                  className="group block p-5 rounded-xl border border-neutral-200/50 bg-white hover:border-[#ffa326]/40 hover:shadow-md transition-all duration-300 text-left"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-[#577a4c]/10 text-[#3d5636] flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-lg bg-[#ffa326]/10 text-[#cc7e14] flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
                     <Mail className="w-5 h-5" />
                   </div>
                   <h4 className="text-sm font-bold text-neutral-900">📧 Email</h4>
                   <p className="mt-2 text-xs text-neutral-500 font-light leading-relaxed">
                     Ideal for sending project inspiration photos, detailed inquiries, or scheduling requests.
                   </p>
-                  <p className="mt-3 text-sm font-bold text-[#3d5636] group-hover:underline truncate font-light">robertsa210@icloud.com</p>
+                  <p className="mt-3 text-sm font-bold text-[#cc7e14] group-hover:underline truncate font-light">rightlanehandymanservice@yahoo.com</p>
                 </a>
               </div>
             </motion.div>
@@ -355,7 +355,7 @@ function ContactPage() {
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           placeholder="Your Name"
-                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#577a4c]/30 focus:border-[#577a4c] transition-all"
+                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#ffa326]/30 focus:border-[#ffa326] transition-all"
                         />
                       </div>
 
@@ -370,7 +370,7 @@ function ContactPage() {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="Email Address"
-                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#577a4c]/30 focus:border-[#577a4c] transition-all"
+                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#ffa326]/30 focus:border-[#ffa326] transition-all"
                         />
                       </div>
 
@@ -385,7 +385,7 @@ function ContactPage() {
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           placeholder="Phone Number"
-                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#577a4c]/30 focus:border-[#577a4c] transition-all"
+                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#ffa326]/30 focus:border-[#ffa326] transition-all"
                         />
                       </div>
 
@@ -400,7 +400,7 @@ function ContactPage() {
                           value={formData.address}
                           onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                           placeholder="Property Address"
-                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#577a4c]/30 focus:border-[#577a4c] transition-all"
+                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#ffa326]/30 focus:border-[#ffa326] transition-all"
                         />
                       </div>
 
@@ -414,7 +414,7 @@ function ContactPage() {
                             required
                             value={formData.projectType}
                             onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                            className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 py-3 pl-4 pr-10 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-[#577a4c]/30 focus:border-[#577a4c] transition-all appearance-none cursor-pointer"
+                            className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 py-3 pl-4 pr-10 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-[#ffa326]/30 focus:border-[#ffa326] transition-all appearance-none cursor-pointer"
                           >
                             <option value="" disabled hidden>
                               Select project type...
@@ -448,7 +448,7 @@ function ContactPage() {
                           value={formData.description}
                           onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                           placeholder="Tell us about your project vision, timeline, and goals..."
-                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#577a4c]/30 focus:border-[#577a4c] transition-all resize-none font-light"
+                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#ffa326]/30 focus:border-[#ffa326] transition-all resize-none font-light"
                         />
                       </div>
 
@@ -462,7 +462,7 @@ function ContactPage() {
                             required
                             value={formData.contactTime}
                             onChange={(e) => setFormData({ ...formData, contactTime: e.target.value })}
-                            className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 py-3 pl-4 pr-10 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-[#577a4c]/30 focus:border-[#577a4c] transition-all appearance-none cursor-pointer"
+                            className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 py-3 pl-4 pr-10 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-[#ffa326]/30 focus:border-[#ffa326] transition-all appearance-none cursor-pointer"
                           >
                             <option value="" disabled hidden>
                               Select best time...
@@ -500,7 +500,7 @@ function ContactPage() {
                     transition={{ duration: 0.5, ease: "easeOut" }}
                     className="flex flex-col items-center justify-center py-12 text-center space-y-6"
                   >
-                    <div className="w-16 h-16 bg-[#577a4c]/15 text-[#3d5636] rounded-full flex items-center justify-center shadow-inner">
+                    <div className="w-16 h-16 bg-[#ffa326]/15 text-[#cc7e14] rounded-full flex items-center justify-center shadow-inner">
                       <CheckCircle2 className="w-9 h-9" />
                     </div>
                     <div className="space-y-2">
@@ -508,7 +508,7 @@ function ContactPage() {
                         Thank You, {formData.name}!
                       </h3>
                       <p className="text-sm text-neutral-600 font-light max-w-sm mx-auto">
-                        Your message was successfully received. Owner Robert Thompson will contact you during the {formData.contactTime} to discuss details.
+                        Your message was successfully received. the Right Lane team will contact you during the {formData.contactTime} to discuss details.
                       </p>
                     </div>
                     <button
@@ -524,7 +524,7 @@ function ContactPage() {
                           contactTime: ""
                         });
                       }}
-                      className="text-xs font-semibold text-[#3d5636] border border-[#577a4c]/30 hover:bg-[#577a4c]/5 rounded-full px-5 py-2 transition-all"
+                      className="text-xs font-semibold text-[#cc7e14] border border-[#ffa326]/30 hover:bg-[#ffa326]/5 rounded-full px-5 py-2 transition-all"
                     >
                       Send Another Message
                     </button>
@@ -556,7 +556,7 @@ function ContactPage() {
               Visit Our Service Area
             </h2>
             <p className="mt-4 text-sm text-neutral-700 leading-relaxed font-light">
-              Based in San Antonio, TX, we proudly serve homeowners and businesses within an 80-mile radius, including:
+              Based in Clearwater, FL, we proudly serve homeowners and businesses within an Clearwater and surrounding areas, including:
             </p>
           </motion.div>
 
@@ -568,16 +568,16 @@ function ContactPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: idx * 0.04 }}
-                className="bg-white/80 border border-neutral-200/40 rounded-full py-2.5 px-4 shadow-sm hover:bg-white hover:border-[#577a4c]/30 hover:scale-[1.02] transition-all duration-300 text-xs font-semibold text-neutral-800 flex items-center justify-center gap-1.5 shrink-0"
+                className="bg-white/80 border border-neutral-200/40 rounded-full py-2.5 px-4 shadow-sm hover:bg-white hover:border-[#ffa326]/30 hover:scale-[1.02] transition-all duration-300 text-xs font-semibold text-neutral-800 flex items-center justify-center gap-1.5 shrink-0"
               >
-                <MapPin className="w-3.5 h-3.5 text-[#3d5636]" />
+                <MapPin className="w-3.5 h-3.5 text-[#cc7e14]" />
                 <span>{city}</span>
               </motion.div>
             ))}
           </div>
 
           <div className="mt-8 text-center">
-            <span className="inline-flex items-center gap-2 bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] font-bold text-xs px-5 py-2.5 rounded-full select-none shadow-sm">
+            <span className="inline-flex items-center gap-2 bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] font-bold text-xs px-5 py-2.5 rounded-full select-none shadow-sm">
               Not sure if you're in our area? Just ask—we're happy to confirm.
             </span>
           </div>
@@ -588,7 +588,7 @@ function ContactPage() {
       <div className="w-full bg-[#f4f3ef] pt-[10px] pb-[10px] px-[15px]">
         <section className="mx-auto max-w-[1400px] w-full rounded-[10px] bg-[#fcfbf8] border border-[#eae8e1] shadow-[0_12px_40px_rgb(0,0,0,0.03)] px-6 py-20 md:px-12 lg:px-16 text-center">
           <div className="max-w-3xl mx-auto mb-16">
-            <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-3">
+            <span className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-3">
               Our Process
             </span>
             <h2 
@@ -616,7 +616,7 @@ function ContactPage() {
         </section>
       </div>
 
-      {/* ── WHY CONTACT JRM VALUES ── */}
+      {/* ── WHY CONTACT Right Lane VALUES ── */}
       <div className="w-full bg-[#f4f3ef] pt-[10px] pb-[10px] px-[15px]">
         <section className="mx-auto max-w-[1400px] w-full rounded-[10px] bg-[#f8f8f8] border border-[#eae8e1] shadow-[0_12px_40px_rgb(0,0,0,0.03)] px-6 py-20 md:px-12 lg:px-16 text-center">
           <motion.div
@@ -626,14 +626,14 @@ function ContactPage() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
+            <span className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
               Our Promise
             </span>
             <h2 
               className="text-3xl md:text-4xl font-extrabold text-neutral-900 tracking-tight"
               style={{ fontFamily: "Georgia, serif" }}
             >
-              Why Contact JRM Construction?
+              Why Contact Right Lane Handyman Services, LLC?
             </h2>
           </motion.div>
 
@@ -647,9 +647,9 @@ function ContactPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: idx * 0.08, ease: "easeOut" }}
-                  className="bg-white rounded-xl border border-neutral-200/50 p-6 shadow-sm hover:shadow-md hover:scale-[1.02] hover:border-[#577a4c]/30 transition-all duration-300 flex flex-col items-start text-left"
+                  className="bg-white rounded-xl border border-neutral-200/50 p-6 shadow-sm hover:shadow-md hover:scale-[1.02] hover:border-[#ffa326]/30 transition-all duration-300 flex flex-col items-start text-left"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-[#577a4c]/10 text-[#3d5636] flex items-center justify-center mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-[#ffa326]/10 text-[#cc7e14] flex items-center justify-center mb-4">
                     <Icon className="w-5 h-5" />
                   </div>
                   <h4 className="text-sm font-bold text-neutral-900 tracking-wide mb-2">{v.title}</h4>
@@ -680,7 +680,7 @@ function ContactPage() {
             className="max-w-4xl mx-auto flex flex-col items-center"
           >
             {/* Logo */}
-            <img src={logo} alt="JRM" className="h-14 w-auto object-contain mb-8 filter brightness-110" />
+            <img src={logo} alt="Right Lane" className="h-14 w-auto object-contain mb-8 filter brightness-110" />
 
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-5">
               Let's Start the Conversation
@@ -690,30 +690,30 @@ function ContactPage() {
               Your project begins with a simple conversation. Whether you're dreaming of a kitchen remodel, a custom outdoor kitchen, or a complete property transformation, we're here to help.
             </p>
 
-            <p className="text-md font-bold text-[#a5b89d] mb-10 tracking-wide uppercase">
+            <p className="text-md font-bold text-[#ffa326] mb-10 tracking-wide uppercase">
               Contact us today—we're ready to listen and guide you.
             </p>
 
             <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-8 w-full max-w-3xl mb-10 text-left">
               <h3 className="text-md font-bold text-white mb-5 text-center sm:text-left tracking-wide">
-                JRM Construction Landscaping Design
+                Right Lane Handyman Services, LLC
               </h3>
               
               <div className="grid sm:grid-cols-2 gap-5 text-[15px] font-light">
-                <a href="tel:2104295526" className="flex items-center gap-3.5 hover:text-[#a5b89d] transition-colors">
-                  <Phone className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>(210) 429-5526</span>
+                <a href="tel:7276420201" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
+                  <Phone className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>(727) 642-0201</span>
                 </a>
-                <a href="mailto:robertsa210@icloud.com" className="flex items-center gap-3.5 hover:text-[#a5b89d] transition-colors">
-                  <Mail className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>robertsa210@icloud.com</span>
+                <a href="mailto:rightlanehandymanservice@yahoo.com" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
+                  <Mail className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>rightlanehandymanservice@yahoo.com</span>
                 </a>
                 <div className="flex items-center gap-3.5">
-                  <MapPin className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>Proudly Serving San Antonio & the Surrounding 80-Mile Area</span>
+                  <MapPin className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>Proudly Serving Clearwater & the Surrounding Clearwater area</span>
                 </div>
                 <div className="flex items-center gap-3.5">
-                  <ShieldCheck className="w-5 h-5 text-[#a5b89d] shrink-0" />
+                  <ShieldCheck className="w-5 h-5 text-[#ffa326] shrink-0" />
                   <span>Licensed · Insured · Bonded</span>
                 </div>
               </div>
@@ -721,10 +721,10 @@ function ContactPage() {
 
             <div className="flex flex-wrap gap-4 justify-center">
               <a
-                href="tel:2104295526"
-                className="rounded-full bg-[#577a4c] hover:bg-[#4d6c43] px-8 py-3.5 text-white text-[14px] font-bold tracking-wider uppercase transition-all duration-300 shadow-lg hover:scale-[1.03]"
+                href="tel:7276420201"
+                className="rounded-full bg-[#ffa326] hover:bg-[#ffa326] px-8 py-3.5 text-white text-[14px] font-bold tracking-wider uppercase transition-all duration-300 shadow-lg hover:scale-[1.03]"
               >
-                Call Robert Now
+                Call Ronnie Now
               </a>
             </div>
           </motion.div>

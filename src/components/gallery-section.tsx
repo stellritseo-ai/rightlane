@@ -1,42 +1,26 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "@/context/translation-context";
 import { X, ZoomIn } from "lucide-react";
-import faqPavilion from "@/assets/faq-pavilion.jpg";
-import heroPatio from "@/assets/hero-patio.jpg";
-import statsJobsite from "@/assets/stats-jobsite.jpg";
-import svcArtificialTurf from "@/assets/svc-artificial-turf.jpg";
-import svcFencing from "@/assets/svc-fencing.jpg";
-import svcFireplace from "@/assets/svc-fireplace.jpg";
-import svcHardscapes from "@/assets/svc-hardscapes.jpg";
-import svcHouseRemodeling from "@/assets/svc-house-remodeling.jpg";
-import svcNewConstruction from "@/assets/svc-new-construction.jpg";
-import svcOutdoorKitchens from "@/assets/svc-outdoor-kitchens.jpg";
-import svcSoftscapes from "@/assets/svc-softscapes.jpg";
-import welcomePavilion from "@/assets/welcome-pavilion.jpg";
-import welcomePool from "@/assets/welcome-pool.jpg";
+import junkRemoval from "@/assets/svc-junk-removal.png";
+import debrisRemoval from "@/assets/svc-debris-removal.png";
+import pressureWash from "@/assets/svc-pressure-wash.png";
+import demolition from "@/assets/svc-demolition.png";
+import maintenance from "@/assets/svc-maintenance.png";
+import cleaning from "@/assets/svc-cleaning.png";
+import statsCleanup from "@/assets/stats-cleanup.png";
+import welImg from "@/assets/wel-img.png";
 
 import { getGalleryPhotos } from "@/lib/leads-store";
 
 const DEFAULT_PHOTOS = [
-  svcOutdoorKitchens,
-  welcomePavilion,
-  svcOutdoorKitchens,
-  faqPavilion,
-  welcomePavilion,
-  welcomePool,
-  welcomePool,
-  heroPatio,
-  statsJobsite,
-  svcSoftscapes,
-  svcArtificialTurf,
-  svcSoftscapes,
-  svcHardscapes,
-  svcFireplace,
-  svcSoftscapes,
-  svcFencing,
-  svcNewConstruction,
-  svcOutdoorKitchens,
-  svcHouseRemodeling
+  junkRemoval,
+  debrisRemoval,
+  pressureWash,
+  demolition,
+  maintenance,
+  cleaning,
+  statsCleanup,
+  welImg
 ];
 
 export function GallerySection() {
@@ -65,7 +49,7 @@ export function GallerySection() {
     <div className="w-full bg-[#f4f3ef] mt-[15px] mb-[15px] pt-[5px] pb-[5px] px-[15px]">
       <section id="gallery" className="mx-auto max-w-[1400px] w-full rounded-[10px] bg-[#fbfaf7] px-[30px] py-[50px] border border-[#eae8e1] shadow-[0_12px_40px_rgb(0,0,0,0.04)] text-center">
         {/* Badge */}
-        <div className="inline-flex items-center bg-[#2d3f26] border border-[#23321e] text-white text-[10px] md:text-[11px] font-extrabold px-5 py-2 rounded-full uppercase tracking-widest mb-4 shadow-sm select-none">
+        <div className="inline-flex items-center bg-[#2b1a05] border border-[#593203] text-white text-[10px] md:text-[11px] font-extrabold px-5 py-2 rounded-full uppercase tracking-widest mb-4 shadow-sm select-none">
           {t("gallery.badge")}
         </div>
 
@@ -84,7 +68,7 @@ export function GallerySection() {
             >
               <img
                 src={img}
-                alt="JRM Construction Project Detail"
+                alt="Right Lane Handyman Services, LLC Project Detail"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                 loading="lazy"
               />
@@ -121,7 +105,7 @@ export function GallerySection() {
           >
             <img
               src={selectedImage}
-              alt="JRM Construction Project Detail Large View"
+              alt="Right Lane Handyman Services, LLC Project Detail Large View"
               className="max-w-full max-h-[85vh] md:max-h-[90vh] object-contain rounded-lg shadow-2xl border border-white/10"
             />
           </div>

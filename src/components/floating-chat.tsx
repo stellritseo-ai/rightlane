@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { MessageCircle, Phone, Mail, X, Send } from "lucide-react";
-import { useTranslation } from "@/context/translation-context";
-import favIcon from "@/assets/fav.png";
+import logo from "@/assets/logo.png";
 import { io } from "socket.io-client";
 import {
   getChatSessions,
@@ -20,7 +19,6 @@ interface Message {
 }
 
 export function FloatingChat() {
-  const { language } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
   const [inputValue, setInputValue] = useState("");
@@ -33,7 +31,6 @@ export function FloatingChat() {
     name: "",
     email: "",
     phone: "",
-    city: "San Antonio"
   });
   const [isConnecting, setIsConnecting] = useState(false);
   const socketRef = useRef<any>(null);
@@ -76,7 +73,7 @@ export function FloatingChat() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const sessionId = localStorage.getItem("jrm-client-chat-session-id");
+    const sessionId = localStorage.getItem("rightlane-client-chat-session-id");
     
     const initializeChat = async () => {
       const currentSession = sessionId ? await getChatSessionById(sessionId) : null;
@@ -93,27 +90,25 @@ export function FloatingChat() {
 
   const handlePreChatSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!preChatData.name.trim() || !preChatData.email.trim() || !preChatData.phone.trim()) return;
+    if (!preChatData.name.trim() || !preChatData.email.trim()) return;
 
     setIsConnecting(true);
     try {
       const newSession = await createChatSession(
         preChatData.name,
-        preChatData.city,
+        "Clearwater",
         preChatData.email,
-        preChatData.phone
+        preChatData.phone || "N/A"
       );
 
       // Seed with initial welcome message from admin
       const welcomed = await sendChatMessage(
         newSession.id,
         "admin",
-        language === "es"
-          ? "¡Hola! Bienvenidos a JRM Construction Landscaping Design. ¿Cómo podemos ayudarte hoy con tu proyecto de remodelación o exteriores?"
-          : "Hi there! Welcome to JRM Construction Landscaping Design. How can we help you with your remodeling or outdoor project today?"
+        "Hi there! Welcome to Right Lane Emergency Cleanup & Hauling. How can we help you with your cleanup, hauling, or pressure washing project today?"
       );
 
-      localStorage.setItem("jrm-client-chat-session-id", newSession.id);
+      localStorage.setItem("rightlane-client-chat-session-id", newSession.id);
       setChatSession(welcomed || newSession);
       setShowPreChatForm(false);
     } catch (error) {
@@ -198,9 +193,7 @@ export function FloatingChat() {
         const botReply = await sendChatMessage(
           fresh.id,
           "admin",
-          language === "es"
-            ? "¡Gracias por contactarnos! Tu mensaje ha sido recibido. Robert Thompson o un miembro de nuestro equipo se comunicará contigo a la brevedad. Si deseas asistencia inmediata, puedes llamarnos directamente o usar el enlace a continuación para chatear por WhatsApp."
-            : "Thank you for contacting us! Your message has been received. Robert Thompson or a member of our team will get back to you shortly. For immediate assistance, feel free to call us directly or use the link below to chat via WhatsApp."
+          "Thank you for contacting us! Your message has been received. Ronnie Lane or a member of our team will get back to you shortly. For immediate assistance, feel free to use the link below to chat via WhatsApp."
         );
         
         if (botReply) {
@@ -232,21 +225,18 @@ export function FloatingChat() {
     }
   };
 
-  const whatsappNumber = "12104295526";
-  const defaultMessage = language === "es" 
-    ? "Hola, estoy interesado en sus servicios de construcción y paisajismo." 
-    : "Hi, I'm interested in your construction and landscaping services.";
+  const whatsappNumber = "17276420201";
+  const defaultMessage = "Hi, I'm interested in your handyman and remodeling services.";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
 
   // Translations
   const t = {
-    title: language === "es" ? "Asistente JRM" : "JRM Assistant",
-    subtitle: language === "es" ? "En línea · Soporte JRM" : "Online · JRM Support",
-    inputPlaceholder: language === "es" ? "Escribe un mensaje..." : "Type a message...",
-    tooltip: language === "es" ? "¿Tiene preguntas? ¡Chatee con nosotros!" : "Have questions? Chat with us!",
-    whatsappBtn: language === "es" ? "Chatear por WhatsApp" : "Chat on WhatsApp",
-    callBtn: language === "es" ? "Llamar Ahora" : "Call Us Now",
-    emailBtn: language === "es" ? "Enviar Correo" : "Send Email",
+    title: "Right Lane Assistant",
+    subtitle: "Online · Right Lane Support",
+    inputPlaceholder: "Type a message...",
+    tooltip: "Have questions? Chat with us!",
+    whatsappBtn: "Chat on WhatsApp",
+    emailBtn: "Send Email",
   };
 
   return (
@@ -276,8 +266,8 @@ export function FloatingChat() {
           <div className="bg-[#2c241d] p-4 text-white relative flex items-center gap-3 shrink-0">
             <div className="relative">
               <img 
-                src={favIcon} 
-                alt="JRM Construction Landscaping Design" 
+                src={logo} 
+                alt="Right Lane Handyman Services" 
                 className="h-10 w-10 rounded-full object-cover bg-white border-2 border-white/20" 
               />
               <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-[#2c241d]"></span>
@@ -304,7 +294,7 @@ export function FloatingChat() {
                   Start Live Chat
                 </h3>
                 <p className="text-[10.5px] text-neutral-500 font-light leading-normal">
-                  Please introduce yourself to start chatting with Robert and the team.
+                  Please introduce yourself to start chatting with Ronnie Lane and the team.
                 </p>
               </div>
 
@@ -318,7 +308,7 @@ export function FloatingChat() {
                   placeholder="John Doe"
                   value={preChatData.name}
                   onChange={(e) => setPreChatData(prev => ({ ...prev, name: e.target.value }))}
-                  className="w-full bg-[#f4f6f8] hover:bg-[#ebedf0] focus:bg-white border-none rounded-xl py-2 px-3.5 text-xs text-neutral-800 placeholder-neutral-450 focus:outline-none focus:ring-2 focus:ring-[#4a6741]/20 transition-all"
+                  className="w-full bg-[#f4f6f8] hover:bg-[#ebedf0] focus:bg-white border-none rounded-xl py-2 px-3.5 text-xs text-neutral-800 placeholder-neutral-450 focus:outline-none focus:ring-2 focus:ring-[#ffa326]/20 transition-all"
                 />
               </div>
 
@@ -332,46 +322,17 @@ export function FloatingChat() {
                   placeholder="john@example.com"
                   value={preChatData.email}
                   onChange={(e) => setPreChatData(prev => ({ ...prev, email: e.target.value }))}
-                  className="w-full bg-[#f4f6f8] hover:bg-[#ebedf0] focus:bg-white border-none rounded-xl py-2 px-3.5 text-xs text-neutral-800 placeholder-neutral-450 focus:outline-none focus:ring-2 focus:ring-[#4a6741]/20 transition-all"
+                  className="w-full bg-[#f4f6f8] hover:bg-[#ebedf0] focus:bg-white border-none rounded-xl py-2 px-3.5 text-xs text-neutral-800 placeholder-neutral-450 focus:outline-none focus:ring-2 focus:ring-[#ffa326]/20 transition-all"
                 />
               </div>
 
-              <div>
-                <label className="block text-[9px] font-bold uppercase tracking-wider text-neutral-600 mb-1">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  required
-                  placeholder="(210) 555-0199"
-                  value={preChatData.phone}
-                  onChange={(e) => setPreChatData(prev => ({ ...prev, phone: e.target.value }))}
-                  className="w-full bg-[#f4f6f8] hover:bg-[#ebedf0] focus:bg-white border-none rounded-xl py-2 px-3.5 text-xs text-neutral-800 placeholder-neutral-450 focus:outline-none focus:ring-2 focus:ring-[#4a6741]/20 transition-all"
-                />
-              </div>
+              {/* Phone number field removed */}
 
-              <div>
-                <label className="block text-[9px] font-bold uppercase tracking-wider text-neutral-600 mb-1">
-                  Your City
-                </label>
-                <select
-                  value={preChatData.city}
-                  onChange={(e) => setPreChatData(prev => ({ ...prev, city: e.target.value }))}
-                  className="w-full bg-[#f4f6f8] hover:bg-[#ebedf0] focus:bg-white border-none rounded-xl py-2 px-3.5 text-xs text-neutral-800 placeholder-neutral-450 focus:outline-none focus:ring-2 focus:ring-[#4a6741]/20 transition-all cursor-pointer"
-                >
-                  <option value="San Antonio">San Antonio</option>
-                  <option value="Boerne">Boerne</option>
-                  <option value="New Braunfels">New Braunfels</option>
-                  <option value="Schertz">Schertz</option>
-                  <option value="Bulverde">Bulverde</option>
-                  <option value="Seguin">Seguin</option>
-                </select>
-              </div>
 
               <button
                 type="submit"
                 disabled={isConnecting}
-                className="w-full py-2.5 bg-[#4a6741] text-white hover:bg-[#3d5535] disabled:bg-neutral-200 disabled:text-neutral-400 rounded-xl font-bold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-sm active:scale-98 mt-1.5"
+                className="w-full py-2.5 bg-[#ffa326] text-black hover:bg-[#e68a00] disabled:bg-neutral-200 disabled:text-neutral-400 rounded-xl font-bold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-sm active:scale-98 mt-1.5"
               >
                 {isConnecting ? "Connecting..." : "Start Chatting"}
               </button>
@@ -385,7 +346,7 @@ export function FloatingChat() {
                     <div 
                       className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-xs md:text-sm leading-relaxed shadow-[0_2px_8px_rgba(0,0,0,0.02)] ${
                         msg.sender === "client" 
-                          ? "bg-[#4a6741] text-white rounded-tr-none" 
+                          ? "bg-[#ffa326] text-[#1c140d] font-semibold rounded-tr-none" 
                           : "bg-white text-neutral-800 border border-neutral-100/90 rounded-tl-none"
                       }`}
                     >
@@ -396,7 +357,7 @@ export function FloatingChat() {
                     </span>
 
                     {/* Show Quick Action Buttons under specific Bot messages */}
-                    {msg.sender === "admin" && msg.text.includes("remodeling or outdoor project") && (
+                    {msg.sender === "admin" && msg.text.includes("Welcome to Right Lane") && (
                       <div className="mt-3 space-y-2 w-[85%]">
                         {/* WhatsApp */}
                         <a 
@@ -406,23 +367,14 @@ export function FloatingChat() {
                           className="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#20ba59] text-white py-2 px-3 rounded-lg font-bold text-[10px] uppercase tracking-wider transition-all shadow-sm active:scale-98"
                         >
                           <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
-                            <path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.761.459 3.475 1.33 4.99L2 22l5.163-1.355a9.92 9.92 0 004.846 1.258h.004c5.506 0 9.99-4.482 9.99-9.988 0-2.668-1.039-5.176-2.927-7.065A9.91 9.91 0 0012.012 2zm5.72 14.195c-.247.694-1.22 1.267-1.684 1.34-.407.065-.94.12-2.738-.624-2.298-.952-3.766-3.29-3.882-3.447-.115-.156-.939-1.248-.939-2.38 0-1.132.592-1.687.804-1.912.213-.225.467-.282.624-.282.156 0 .311.002.447.008.143.006.335-.054.524.398.195.467.669 1.63.729 1.75.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.253.31-.36.42-.12.12-.246.25-.106.49.14.24.62 1.024 1.33 1.657.914.814 1.683 1.065 1.922 1.184.24.12.38.1.522-.06.142-.16.612-.712.776-.956.164-.244.328-.2.553-.117.225.084 1.427.674 1.673.797.246.124.41.185.47.288.06.103.06.602-.187 1.296z"/>
+                            <path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.761.459 3.475 1.33 4.99L2 22l5.163-1.355a9.92 9.92 0 004.846 1.258h.004c5.506 0 9.99-4.482 9.99-9.988 0-2.668-1.039-5.176-2.927-7.065A9.91 9.91 0 0012.012 2zm5.72 14.195c-.247.694-1.22 1.267-1.684 1.34-.407.065-.94.12-2.738-.624-2.298-.952-3.766-3.29-3.882-3.447-.115-.156-.939-1.248-.939-2.38 0-1.132.592-1.787.804-1.912.213-.225.467-.282.624-.282.156 0 .311.002.447.008.143.006.335-.054.524.398.195.467.669 1.63.729 1.75.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.253.31-.36.42-.12.12-.246.25-.106.49.14.24.62 1.024 1.33 1.657.914.814 1.683 1.065 1.922 1.184.24.12.38.1.522-.06.142-.16.612-.712.776-.956.164-.244.328-.2.553-.117.225.084 1.427.674 1.673.797.246.124.41.185.47.288.06.103.06.602-.187 1.296z"/>
                           </svg>
                           {t.whatsappBtn}
                         </a>
                         
-                        {/* Call */}
-                        <a 
-                          href="tel:2104295526"
-                          className="flex items-center justify-center gap-2 w-full bg-[#3f4a1f] hover:bg-[#323b18] text-white py-2 px-3 rounded-lg font-bold text-[10px] uppercase tracking-wider transition-all shadow-sm active:scale-98"
-                        >
-                          <Phone className="h-3.5 w-3.5" />
-                          {t.callBtn}
-                        </a>
-
                         {/* Email */}
                         <a 
-                          href="mailto:info@jrmconstruction.com"
+                          href="mailto:rightlanehandymanservice@yahoo.com"
                           className="flex items-center justify-center gap-2 w-full bg-white hover:bg-neutral-50 text-neutral-800 border border-neutral-200 py-2 px-3 rounded-lg font-bold text-[10px] uppercase tracking-wider transition-all shadow-xs active:scale-98"
                         >
                           <Mail className="h-3.5 w-3.5 text-neutral-500" />
@@ -454,12 +406,12 @@ export function FloatingChat() {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder={t.inputPlaceholder}
-                  className="flex-1 bg-[#f4f6f8] hover:bg-[#ebedf0] focus:bg-white border-none rounded-xl py-2.5 px-4 text-xs md:text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#4a6741]/20 transition-all"
+                  className="flex-1 bg-[#f4f6f8] hover:bg-[#ebedf0] focus:bg-white border-none rounded-xl py-2.5 px-4 text-xs md:text-sm text-neutral-800 placeholder-neutral-450 focus:outline-none focus:ring-2 focus:ring-[#ffa326]/20 transition-all"
                 />
                 <button 
                   type="submit"
                   disabled={!inputValue.trim()}
-                  className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#4a6741] text-white hover:bg-[#3d5535] disabled:bg-neutral-100 disabled:text-neutral-300 transition-all cursor-pointer shrink-0"
+                  className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#ffa326] text-black hover:bg-[#e68a00] disabled:bg-neutral-100 disabled:text-neutral-300 transition-all cursor-pointer shrink-0"
                 >
                   <Send className="h-4.5 w-4.5" />
                 </button>
@@ -472,15 +424,15 @@ export function FloatingChat() {
       {/* Floating Button Trigger */}
       <button 
         onClick={handleToggle}
-        className={`flex h-14 w-14 items-center justify-center rounded-full text-white transition-all duration-300 shadow-2xl relative group active:scale-95 cursor-pointer ${
+        className={`flex h-14 w-14 items-center justify-center rounded-full transition-all duration-300 shadow-2xl relative group active:scale-95 cursor-pointer ${
           isOpen 
-            ? "bg-[#2c241d] hover:bg-[#1a1511] rotate-90" 
-            : "bg-[#4a6741] hover:bg-[#3d5535] hover:scale-105"
+            ? "bg-[#2c241d] hover:bg-[#1a1511] rotate-90 text-white" 
+            : "bg-[#ffa326] hover:bg-[#e68a00] hover:scale-105 text-black"
         }`}
       >
         {/* Pulsing ring animation when closed */}
         {!isOpen && (
-          <span className="absolute inset-0 rounded-full bg-[#4a6741]/40 animate-ping opacity-75"></span>
+          <span className="absolute inset-0 rounded-full bg-[#ffa326]/40 animate-ping opacity-75"></span>
         )}
         
         {isOpen ? (

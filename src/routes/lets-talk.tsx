@@ -21,17 +21,17 @@ import {
   Sparkles,
   Info
 } from "lucide-react";
-import logo from "@/assets/jrm-logo.png";
+import logo from "@/assets/logo.png";
 import welBg from "@/assets/wel-bg.png";
 import contactHero from "@/assets/stats-jobsite.jpg";
 
 export const Route = createFileRoute("/lets-talk")({
   head: () => ({
     meta: [
-      { title: "Let's Talk — JRM Construction Landscape Design, San Antonio" },
-      { name: "description", content: "Let's Talk. Contact JRM Construction for free estimates, on-site design consultations, or 24/7 emergency service in San Antonio, TX." },
-      { property: "og:title", content: "Let's Talk — JRM Construction Landscape Design" },
-      { property: "og:description", content: "Connect with owner Robert Thompson for premium remodeling and landscape solutions in San Antonio, TX." },
+      { title: "Let's Talk — Right Lane Handyman Services, LLC, Clearwater" },
+      { name: "description", content: "Let's Talk. Contact Right Lane Handyman Services, LLC for free estimates, on-site design consultations, or 24/7 emergency service in Clearwater, FL." },
+      { property: "og:title", content: "Let's Talk — Right Lane Handyman Services, LLC" },
+      { property: "og:description", content: "Connect with the Right Lane team for premium remodeling and landscape solutions in Clearwater, FL." },
       { property: "og:type", content: "website" }
     ],
   }),
@@ -59,16 +59,16 @@ export function LetUsTalkPage() {
   });
 
   const cities = [
-    "New Braunfels",
-    "Boerne",
-    "San Marcos",
-    "Seguin",
-    "Canyon Lake",
+    "St. Petersburg",
+    "Largo",
+    "Dunedin",
+    "Pinellas Park",
+    "Tarpon Springs",
     "Bulverde",
     "Schertz",
     "Castroville",
-    "Fredericksburg",
-    "Kerrville",
+    "Tampa",
+    "Palm Harbor",
     "Bandera",
     "Hondo",
     "Pleasanton",
@@ -77,7 +77,7 @@ export function LetUsTalkPage() {
 
   const trustValues = [
     {
-      title: "35 Years of Proven Expertise",
+      title: "25+ Years of Proven Expertise",
       desc: "Decades of local experience in remodeling, construction, and landscape design.",
       icon: Hammer,
     },
@@ -98,7 +98,7 @@ export function LetUsTalkPage() {
     },
     {
       title: "Owner-Led Oversight",
-      desc: "Robert Thompson is personally involved in every project.",
+      desc: "Right Lane Handyman is personally involved in every project.",
       icon: Building,
     },
     {
@@ -117,7 +117,7 @@ export function LetUsTalkPage() {
     {
       number: "2",
       title: "Consultation Meeting",
-      desc: "Robert will meet you at your property to discuss your vision.",
+      desc: "Ronnie will meet you at your property to discuss your vision.",
     },
     {
       number: "3",
@@ -166,7 +166,7 @@ export function LetUsTalkPage() {
           />
 
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#111a0a]/92 via-[#111a0a]/78 to-[#111a0a]/92 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1c140d]/92 via-[#1c140d]/78 to-[#1c140d]/92 z-10" />
 
           {/* Hero Content */}
           <motion.div
@@ -190,7 +190,7 @@ export function LetUsTalkPage() {
 
             {/* Subtitle */}
             <p className="mt-6 text-sm md:text-base text-neutral-300 font-light leading-relaxed max-w-3xl mx-auto">
-              Every great project begins with a simple conversation. At JRM Construction Landscaping Design, we believe that the foundation of any successful partnership is clear communication, mutual understanding, and shared vision. Owner Robert Thompson personally leads every initial discussion because we know that your project deserves the attention and expertise that only 35 years of experience can provide.
+              Every great project begins with a simple conversation. At Right Lane Handyman Services, LLC, we believe that the foundation of any successful partnership is clear communication, mutual understanding, and shared vision. the Right Lane team personally leads every initial discussion because we know that your project deserves the attention and expertise that only 25+ Years of experience can provide.
             </p>
           </motion.div>
 
@@ -207,7 +207,7 @@ export function LetUsTalkPage() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute top-0 left-0 w-full h-1/3 bg-[#a5b89d] rounded-full"
+                className="absolute top-0 left-0 w-full h-1/3 bg-[#ffa326] rounded-full"
               />
             </div>
           </div>
@@ -232,7 +232,7 @@ export function LetUsTalkPage() {
           style={{ backgroundImage: `url(${welBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
         >
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-3">
+            <span className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-3">
               Our Services
             </span>
             <h2 
@@ -248,7 +248,7 @@ export function LetUsTalkPage() {
             <div className="bg-white rounded-2xl border border-neutral-200/50 p-6 md:p-8 shadow-sm space-y-5 text-left flex flex-col justify-between">
               <div className="space-y-5">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-[#577a4c]/10 text-[#3d5636] flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-[#ffa326]/10 text-[#cc7e14] flex items-center justify-center shrink-0">
                     <Sparkles className="w-5 h-5" />
                   </div>
                   <h3 className="text-md md:text-lg font-bold text-neutral-900 tracking-wide">
@@ -257,19 +257,19 @@ export function LetUsTalkPage() {
                 </div>
                 <ul className="space-y-4 text-xs md:text-sm text-neutral-600 font-light">
                   <li className="flex gap-2.5 items-start">
-                    <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#577a4c]/15 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                    <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#ffa326]/15 text-[#cc7e14] mt-0.5 select-none font-bold text-[10px]">✓</span>
                     <span>Transform your living space with a kitchen, bathroom, or whole-home remodel</span>
                   </li>
                   <li className="flex gap-2.5 items-start">
-                    <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#577a4c]/15 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                    <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#ffa326]/15 text-[#cc7e14] mt-0.5 select-none font-bold text-[10px]">✓</span>
                     <span>Create the ultimate outdoor living area with patios, outdoor kitchens, and fireplaces</span>
                   </li>
                   <li className="flex gap-2.5 items-start">
-                    <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#577a4c]/15 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                    <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#ffa326]/15 text-[#cc7e14] mt-0.5 select-none font-bold text-[10px]">✓</span>
                     <span>Enhance your curb appeal with custom landscaping, fencing, and artificial turf</span>
                   </li>
                   <li className="flex gap-2.5 items-start">
-                    <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#577a4c]/15 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                    <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#ffa326]/15 text-[#cc7e14] mt-0.5 select-none font-bold text-[10px]">✓</span>
                     <span>Build your dream home from the ground up with expert new construction services</span>
                   </li>
                 </ul>
@@ -280,7 +280,7 @@ export function LetUsTalkPage() {
             <div className="bg-white rounded-2xl border border-neutral-200/50 p-6 md:p-8 shadow-sm space-y-5 text-left flex flex-col justify-between">
               <div className="space-y-5">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-[#577a4c]/10 text-[#3d5636] flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-[#ffa326]/10 text-[#cc7e14] flex items-center justify-center shrink-0">
                     <Building className="w-5 h-5" />
                   </div>
                   <h3 className="text-md md:text-lg font-bold text-neutral-900 tracking-wide">
@@ -289,15 +289,15 @@ export function LetUsTalkPage() {
                 </div>
                 <ul className="space-y-4 text-xs md:text-sm text-neutral-600 font-light">
                   <li className="flex gap-2.5 items-start">
-                    <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#577a4c]/15 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                    <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#ffa326]/15 text-[#cc7e14] mt-0.5 select-none font-bold text-[10px]">✓</span>
                     <span>Professional commercial construction and build-outs</span>
                   </li>
                   <li className="flex gap-2.5 items-start">
-                    <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#577a4c]/15 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                    <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#ffa326]/15 text-[#cc7e14] mt-0.5 select-none font-bold text-[10px]">✓</span>
                     <span>High-impact landscaping and hardscaping for businesses</span>
                   </li>
                   <li className="flex gap-2.5 items-start">
-                    <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#577a4c]/15 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                    <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#ffa326]/15 text-[#cc7e14] mt-0.5 select-none font-bold text-[10px]">✓</span>
                     <span>Reliable, licensed, and insured contracting for your commercial needs</span>
                   </li>
                 </ul>
@@ -347,7 +347,7 @@ export function LetUsTalkPage() {
                 Schedule Your Free Consultation
               </h2>
               <p className="mt-4 text-sm md:text-base text-neutral-700 font-light leading-relaxed max-w-3xl mx-auto">
-                Your journey with JRM Construction begins with a no-cost, no-obligation consultation at your property. During this meeting, we will:
+                Your journey with Right Lane Handyman Services, LLC begins with a no-cost, no-obligation consultation at your property. During this meeting, we will:
               </p>
             </div>
 
@@ -355,23 +355,23 @@ export function LetUsTalkPage() {
             <div className="bg-white/95 rounded-2xl border border-neutral-200/50 p-6 md:p-8 max-w-2xl mx-auto text-left shadow-sm">
               <ul className="space-y-4 text-xs md:text-sm text-neutral-700 font-light">
                 <li className="flex gap-3 items-start">
-                  <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#577a4c]/10 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                  <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#ffa326]/10 text-[#cc7e14] mt-0.5 select-none font-bold text-[10px]">✓</span>
                   <span>Listen to your vision, goals, and priorities</span>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#577a4c]/10 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                  <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#ffa326]/10 text-[#cc7e14] mt-0.5 select-none font-bold text-[10px]">✓</span>
                   <span>Assess your space and discuss possibilities</span>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#577a4c]/10 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
-                  <span>Provide honest, expert insights based on 35 years of experience</span>
+                  <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#ffa326]/10 text-[#cc7e14] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                  <span>Provide honest, expert insights based on 25+ Years of experience</span>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#577a4c]/10 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                  <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#ffa326]/10 text-[#cc7e14] mt-0.5 select-none font-bold text-[10px]">✓</span>
                   <span>Answer all your questions about process, timeline, and investment</span>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#577a4c]/10 text-[#3d5636] mt-0.5 select-none font-bold text-[10px]">✓</span>
+                  <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#ffa326]/10 text-[#cc7e14] mt-0.5 select-none font-bold text-[10px]">✓</span>
                   <span>Outline clear next steps toward a detailed, transparent proposal</span>
                 </li>
               </ul>
@@ -398,7 +398,7 @@ export function LetUsTalkPage() {
               className="space-y-8"
             >
               <div>
-                <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-2">
+                <span className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-2">
                   Get in Touch
                 </span>
                 <h2 
@@ -413,22 +413,22 @@ export function LetUsTalkPage() {
               <div className="grid sm:grid-cols-2 gap-4">
                 {/* Phone Card */}
                 <a 
-                  href="tel:2104295526"
-                  className="group block p-5 rounded-xl border border-neutral-200/50 bg-white hover:border-[#577a4c]/40 hover:shadow-md transition-all duration-300 text-left"
+                  href="tel:7276420201"
+                  className="group block p-5 rounded-xl border border-neutral-200/50 bg-white hover:border-[#ffa326]/40 hover:shadow-md transition-all duration-300 text-left"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-[#577a4c]/10 text-[#3d5636] flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-lg bg-[#ffa326]/10 text-[#cc7e14] flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
                     <Phone className="w-5 h-5" />
                   </div>
-                  <h4 className="text-sm font-bold text-neutral-900">📞 Call Robert Directly</h4>
+                  <h4 className="text-sm font-bold text-neutral-900">📞 Call Ronnie Directly</h4>
                   <p className="mt-2.5 text-xs text-neutral-500 font-light leading-relaxed">
                     Speak with the owner today to schedule your consultation or discuss your project.
                   </p>
-                  <p className="mt-3 text-md font-bold text-[#3d5636] group-hover:underline">(210) 429-5526</p>
+                  <p className="mt-3 text-md font-bold text-[#cc7e14] group-hover:underline">(727) 642-0201</p>
                 </a>
 
                 {/* Office Hours */}
                 <div className="p-5 rounded-xl border border-neutral-200/50 bg-white text-left">
-                  <div className="w-10 h-10 rounded-lg bg-[#577a4c]/10 text-[#3d5636] flex items-center justify-center mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-[#ffa326]/10 text-[#cc7e14] flex items-center justify-center mb-4">
                     <Clock className="w-5 h-5" />
                   </div>
                   <h4 className="text-sm font-bold text-neutral-900">🕒 Office Hours</h4>
@@ -450,17 +450,17 @@ export function LetUsTalkPage() {
 
                 {/* Email Card */}
                 <a 
-                  href="mailto:robertsa210@icloud.com"
-                  className="group block p-5 rounded-xl border border-neutral-200/50 bg-white hover:border-[#577a4c]/40 hover:shadow-md transition-all duration-300 text-left"
+                  href="mailto:rightlanehandymanservice@yahoo.com"
+                  className="group block p-5 rounded-xl border border-neutral-200/50 bg-white hover:border-[#ffa326]/40 hover:shadow-md transition-all duration-300 text-left"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-[#577a4c]/10 text-[#3d5636] flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-lg bg-[#ffa326]/10 text-[#cc7e14] flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
                     <Mail className="w-5 h-5" />
                   </div>
                   <h4 className="text-sm font-bold text-neutral-900">📧 Send an Email</h4>
                   <p className="mt-2.5 text-xs text-neutral-500 font-light leading-relaxed">
                     Share your project details, inspirations, or questions with us.
                   </p>
-                  <p className="mt-3 text-sm font-bold text-[#3d5636] group-hover:underline truncate font-light">robertsa210@icloud.com</p>
+                  <p className="mt-3 text-sm font-bold text-[#cc7e14] group-hover:underline truncate font-light">rightlanehandymanservice@yahoo.com</p>
                 </a>
               </div>
             </motion.div>
@@ -503,7 +503,7 @@ export function LetUsTalkPage() {
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           placeholder="Your Name"
-                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#577a4c]/30 focus:border-[#577a4c] transition-all"
+                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#ffa326]/30 focus:border-[#ffa326] transition-all"
                         />
                       </div>
 
@@ -518,7 +518,7 @@ export function LetUsTalkPage() {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="Email Address"
-                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#577a4c]/30 focus:border-[#577a4c] transition-all"
+                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#ffa326]/30 focus:border-[#ffa326] transition-all"
                         />
                       </div>
 
@@ -533,7 +533,7 @@ export function LetUsTalkPage() {
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           placeholder="Phone Number"
-                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#577a4c]/30 focus:border-[#577a4c] transition-all"
+                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#ffa326]/30 focus:border-[#ffa326] transition-all"
                         />
                       </div>
 
@@ -548,7 +548,7 @@ export function LetUsTalkPage() {
                           value={formData.address}
                           onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                           placeholder="Property Address"
-                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#577a4c]/30 focus:border-[#577a4c] transition-all"
+                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#ffa326]/30 focus:border-[#ffa326] transition-all"
                         />
                       </div>
 
@@ -562,7 +562,7 @@ export function LetUsTalkPage() {
                             required
                             value={formData.projectType || new URLSearchParams(window.location.search).get('project') || ""}
                             onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                            className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 py-3 pl-4 pr-10 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-[#577a4c]/30 focus:border-[#577a4c] transition-all appearance-none cursor-pointer"
+                            className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 py-3 pl-4 pr-10 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-[#ffa326]/30 focus:border-[#ffa326] transition-all appearance-none cursor-pointer"
                           >
                             <option value="" disabled hidden>
                               Select project type...
@@ -596,7 +596,7 @@ export function LetUsTalkPage() {
                           value={formData.description}
                           onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                           placeholder="Tell us about your project vision, timeline, and goals..."
-                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#577a4c]/30 focus:border-[#577a4c] transition-all resize-none font-light"
+                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#ffa326]/30 focus:border-[#ffa326] transition-all resize-none font-light"
                         />
                       </div>
 
@@ -610,7 +610,7 @@ export function LetUsTalkPage() {
                             required
                             value={formData.contactTime}
                             onChange={(e) => setFormData({ ...formData, contactTime: e.target.value })}
-                            className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 py-3 pl-4 pr-10 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-[#577a4c]/30 focus:border-[#577a4c] transition-all appearance-none cursor-pointer"
+                            className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200/70 py-3 pl-4 pr-10 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-[#ffa326]/30 focus:border-[#ffa326] transition-all appearance-none cursor-pointer"
                           >
                             <option value="" disabled hidden>
                               Select best time...
@@ -648,7 +648,7 @@ export function LetUsTalkPage() {
                     transition={{ duration: 0.5, ease: "easeOut" }}
                     className="flex flex-col items-center justify-center py-12 text-center space-y-6"
                   >
-                    <div className="w-16 h-16 bg-[#577a4c]/15 text-[#3d5636] rounded-full flex items-center justify-center shadow-inner">
+                    <div className="w-16 h-16 bg-[#ffa326]/15 text-[#cc7e14] rounded-full flex items-center justify-center shadow-inner">
                       <CheckCircle2 className="w-9 h-9" />
                     </div>
                     <div className="space-y-2">
@@ -656,7 +656,7 @@ export function LetUsTalkPage() {
                         Thank You, {formData.name}!
                       </h3>
                       <p className="text-sm text-neutral-600 font-light max-w-sm mx-auto">
-                        Your message was successfully received. Owner Robert Thompson will contact you during the {formData.contactTime} to discuss details.
+                        Your message was successfully received. the Right Lane team will contact you during the {formData.contactTime} to discuss details.
                       </p>
                     </div>
                     <button
@@ -672,7 +672,7 @@ export function LetUsTalkPage() {
                           contactTime: ""
                         });
                       }}
-                      className="text-xs font-semibold text-[#3d5636] border border-[#577a4c]/30 hover:bg-[#577a4c]/5 rounded-full px-5 py-2 transition-all"
+                      className="text-xs font-semibold text-[#cc7e14] border border-[#ffa326]/30 hover:bg-[#ffa326]/5 rounded-full px-5 py-2 transition-all"
                     >
                       Send Another Message
                     </button>
@@ -688,7 +688,7 @@ export function LetUsTalkPage() {
       <div className="w-full bg-[#f4f3ef] pt-[10px] pb-[10px] px-[15px]">
         <section className="mx-auto max-w-[1400px] w-full rounded-[10px] bg-[#fcfbf8] border border-[#eae8e1] shadow-[0_12px_40px_rgb(0,0,0,0.03)] px-6 py-20 md:px-12 lg:px-16 text-center">
           <div className="max-w-3xl mx-auto mb-16">
-            <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-3">
+            <span className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-3">
               Our Process
             </span>
             <h2 
@@ -726,7 +726,7 @@ export function LetUsTalkPage() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="max-w-3xl mx-auto mb-16"
           >
-            <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
+            <span className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
               Our Promise
             </span>
             <h2 
@@ -747,9 +747,9 @@ export function LetUsTalkPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: idx * 0.08, ease: "easeOut" }}
-                  className="bg-white rounded-xl border border-neutral-200/50 p-6 shadow-sm hover:shadow-md hover:scale-[1.02] hover:border-[#577a4c]/30 transition-all duration-300 flex flex-col items-start text-left"
+                  className="bg-white rounded-xl border border-neutral-200/50 p-6 shadow-sm hover:shadow-md hover:scale-[1.02] hover:border-[#ffa326]/30 transition-all duration-300 flex flex-col items-start text-left"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-[#577a4c]/10 text-[#3d5636] flex items-center justify-center mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-[#ffa326]/10 text-[#cc7e14] flex items-center justify-center mb-4">
                     <Icon className="w-5 h-5" />
                   </div>
                   <h4 className="text-sm font-bold text-neutral-900 tracking-wide mb-2">{v.title}</h4>
@@ -781,7 +781,7 @@ export function LetUsTalkPage() {
               Service Area
             </h2>
             <p className="mt-4 text-sm text-neutral-700 leading-relaxed font-light">
-              We are based in San Antonio, TX and proudly serve homeowners and businesses within an 80-mile radius, including:
+              We are based in Clearwater, FL and proudly serve homeowners and businesses within an Clearwater and surrounding areas, including:
             </p>
           </motion.div>
 
@@ -793,16 +793,16 @@ export function LetUsTalkPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: idx * 0.04 }}
-                className="bg-white/80 border border-neutral-200/40 rounded-full py-2.5 px-4 shadow-sm hover:bg-white hover:border-[#577a4c]/30 hover:scale-[1.02] transition-all duration-300 text-xs font-semibold text-neutral-800 flex items-center justify-center gap-1.5 shrink-0"
+                className="bg-white/80 border border-neutral-200/40 rounded-full py-2.5 px-4 shadow-sm hover:bg-white hover:border-[#ffa326]/30 hover:scale-[1.02] transition-all duration-300 text-xs font-semibold text-neutral-800 flex items-center justify-center gap-1.5 shrink-0"
               >
-                <MapPin className="w-3.5 h-3.5 text-[#3d5636]" />
+                <MapPin className="w-3.5 h-3.5 text-[#cc7e14]" />
                 <span>{city}</span>
               </motion.div>
             ))}
           </div>
 
           <div className="mt-8 text-center">
-            <span className="inline-flex items-center gap-2 bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] font-bold text-xs px-5 py-2.5 rounded-full select-none shadow-sm">
+            <span className="inline-flex items-center gap-2 bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] font-bold text-xs px-5 py-2.5 rounded-full select-none shadow-sm">
               Not sure if you're in our area? Just ask!
             </span>
           </div>
@@ -828,40 +828,40 @@ export function LetUsTalkPage() {
             className="max-w-4xl mx-auto flex flex-col items-center"
           >
             {/* Logo */}
-            <img src={logo} alt="JRM" className="h-14 w-auto object-contain mb-8 filter brightness-110" />
+            <img src={logo} alt="Right Lane" className="h-14 w-auto object-contain mb-8 filter brightness-110" />
 
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-5">
               Let's Build Something Remarkable Together
             </h2>
 
             <p className="text-sm md:text-base text-neutral-300 leading-relaxed font-light mb-8 max-w-3xl">
-              The first step toward transforming your property is reaching out. We look forward to hearing about your vision and exploring how we can bring it to life with craftsmanship, integrity, and 35 years of trusted experience.
+              The first step toward transforming your property is reaching out. We look forward to hearing about your vision and exploring how we can bring it to life with craftsmanship, integrity, and 25+ Years of trusted experience.
             </p>
 
-            <p className="text-md font-bold text-[#a5b89d] mb-10 tracking-wide uppercase">
+            <p className="text-md font-bold text-[#ffa326] mb-10 tracking-wide uppercase">
               Contact us today. We're ready to talk.
             </p>
 
             <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-8 w-full max-w-3xl mb-10 text-left">
               <h3 className="text-md font-bold text-white mb-5 text-center sm:text-left tracking-wide">
-                JRM Construction Landscaping Design
+                Right Lane Handyman Services, LLC
               </h3>
               
               <div className="grid sm:grid-cols-2 gap-5 text-[15px] font-light">
-                <a href="tel:2104295526" className="flex items-center gap-3.5 hover:text-[#a5b89d] transition-colors">
-                  <Phone className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>(210) 429-5526</span>
+                <a href="tel:7276420201" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
+                  <Phone className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>(727) 642-0201</span>
                 </a>
-                <a href="mailto:robertsa210@icloud.com" className="flex items-center gap-3.5 hover:text-[#a5b89d] transition-colors">
-                  <Mail className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>robertsa210@icloud.com</span>
+                <a href="mailto:rightlanehandymanservice@yahoo.com" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
+                  <Mail className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>rightlanehandymanservice@yahoo.com</span>
                 </a>
                 <div className="flex items-center gap-3.5">
-                  <MapPin className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>Proudly Serving San Antonio & the Surrounding 80-Mile Area</span>
+                  <MapPin className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>Proudly Serving Clearwater & the Surrounding Clearwater area</span>
                 </div>
                 <div className="flex items-center gap-3.5">
-                  <ShieldCheck className="w-5 h-5 text-[#a5b89d] shrink-0" />
+                  <ShieldCheck className="w-5 h-5 text-[#ffa326] shrink-0" />
                   <span>Licensed · Insured · Bonded</span>
                 </div>
               </div>
@@ -869,10 +869,10 @@ export function LetUsTalkPage() {
 
             <div className="flex flex-wrap gap-4 justify-center">
               <a
-                href="tel:2104295526"
-                className="rounded-full bg-[#577a4c] hover:bg-[#4d6c43] px-8 py-3.5 text-white text-[14px] font-bold tracking-wider uppercase transition-all duration-300 shadow-lg hover:scale-[1.03]"
+                href="tel:7276420201"
+                className="rounded-full bg-[#ffa326] hover:bg-[#ffa326] px-8 py-3.5 text-white text-[14px] font-bold tracking-wider uppercase transition-all duration-300 shadow-lg hover:scale-[1.03]"
               >
-                Call Robert Now
+                Call Ronnie Now
               </a>
             </div>
           </motion.div>

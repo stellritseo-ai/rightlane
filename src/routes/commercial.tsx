@@ -21,15 +21,15 @@ import {
 
 import imgCommercial from "@/assets/stats-jobsite.jpg";
 import welBg from "@/assets/wel-bg.png";
-import logo from "@/assets/jrm-logo.png";
+import logo from "@/assets/logo.png";
 
 export const Route = createFileRoute("/commercial")({
   head: () => ({
     meta: [
-      { title: "Commercial Construction & Landscaping San Antonio | JRM Construction" },
-      { name: "description", content: "Expert commercial construction & landscaping services in San Antonio. New construction, build-outs, commercial landscaping & more. Licensed, insured & bonded. Call (210) 429-5526." },
-      { property: "og:title", content: "Commercial Construction & Landscaping San Antonio | JRM Construction" },
-      { property: "og:description", content: "Expert commercial construction & landscaping services in San Antonio. New construction, build-outs, commercial landscaping & more. Licensed, insured & bonded." },
+      { title: "Commercial Construction & Landscaping Clearwater | Right Lane Handyman Services, LLC" },
+      { name: "description", content: "Expert commercial construction & landscaping services in Clearwater. New construction, build-outs, commercial landscaping & more. Licensed, insured & bonded. Call (727) 642-0201." },
+      { property: "og:title", content: "Commercial Construction & Landscaping Clearwater | Right Lane Handyman Services, LLC" },
+      { property: "og:description", content: "Expert commercial construction & landscaping services in Clearwater. New construction, build-outs, commercial landscaping & more. Licensed, insured & bonded." },
       { property: "og:type", content: "website" }
     ],
   }),
@@ -87,12 +87,12 @@ function CommercialPage() {
     {
       number: "02",
       title: "Planning & Engineering",
-      desc: "Robert Thompson coordinates with architectural drafts, selects premium commercial materials, and coordinates specifications."
+      desc: "Right Lane Handyman coordinates with architectural drafts, selects premium commercial materials, and coordinates specifications."
     },
     {
       number: "03",
       title: "Permits & Administration",
-      desc: "JRM handles local San Antonio building permits, TCEQ irrigation filings, and coordinates utility safety layout checks."
+      desc: "Right Lane handles local Clearwater building permits, TCEQ irrigation filings, and coordinates utility safety layout checks."
     },
     {
       number: "04",
@@ -108,8 +108,8 @@ function CommercialPage() {
 
   const whyChooseUs = [
     {
-      title: "35 Years of Local General Contracting",
-      desc: "Robert Thompson's decades of hands-on building experience guarantees structural code compliance and aesthetic longevity."
+      title: "25+ Years of Local General Contracting",
+      desc: "Right Lane Handyman's decades of hands-on building experience guarantees structural code compliance and aesthetic longevity."
     },
     {
       title: "Licensed, Insured & Bonded",
@@ -125,7 +125,7 @@ function CommercialPage() {
     },
     {
       title: "Owner-Led Quality Oversight",
-      desc: "Every phase of site preparation, material delivery, and final construction undergoes direct quality reviews by Robert Thompson."
+      desc: "Every phase of site preparation, material delivery, and final construction undergoes direct quality reviews by Right Lane Handyman."
     }
   ];
 
@@ -146,7 +146,7 @@ function CommercialPage() {
           />
 
           {/* Forest Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#111a0a]/92 via-[#111a0a]/78 to-[#111a0a]/92 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1c140d]/92 via-[#1c140d]/78 to-[#1c140d]/92 z-10" />
 
           {/* Content container */}
           <motion.div
@@ -165,7 +165,7 @@ function CommercialPage() {
               className="text-[32px] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight capitalize tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
               style={{ fontFamily: "Georgia, serif" }}
             >
-              Commercial Construction & Landscaping San Antonio
+              Commercial Construction & Landscaping Clearwater
             </h1>
 
             {/* Subtitle */}
@@ -187,7 +187,7 @@ function CommercialPage() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute top-0 left-0 w-full h-1/3 bg-[#a5b89d] rounded-full"
+                className="absolute top-0 left-0 w-full h-1/3 bg-[#ffa326] rounded-full"
               />
             </div>
           </div>
@@ -209,7 +209,7 @@ function CommercialPage() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="space-y-6"
             >
-              <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-2">
+              <span className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-2">
                 Business Solutions
               </span>
               <h2 
@@ -218,11 +218,11 @@ function CommercialPage() {
               >
                 Curb Appeal & Structural Integrity for Your Business
               </h2>
-              <p className="text-base text-neutral-700 leading-relaxed font-light first-letter:text-5xl first-letter:font-extrabold first-letter:text-[#3d5636] first-letter:float-left first-letter:mr-3 first-letter:mt-1">
+              <p className="text-base text-neutral-700 leading-relaxed font-light first-letter:text-5xl first-letter:font-extrabold first-letter:text-[#cc7e14] first-letter:float-left first-letter:mr-3 first-letter:mt-1">
                 We bring the same dedication, quality, and professionalism to commercial projects. Whether you need commercial construction, landscaping, or hardscaping for your business, we deliver results that make a lasting impression.
               </p>
               <p className="text-base text-neutral-700 leading-relaxed font-light">
-                For over 35 years, owner Robert Thompson has led our team in creating professional, durable structures and inviting properties for local businesses, offices, retail spaces, and commercial developments across the San Antonio area.
+                For over 25+ Years, the Right Lane team has led our team in creating professional, durable structures and inviting properties for local businesses, offices, retail spaces, and commercial developments across the Clearwater area.
               </p>
               <p className="text-base text-neutral-700 leading-relaxed font-light">
                 As a fully licensed, insured, and bonded general contractor, we manage all phases of construction, exterior hardscaping, utility runs, code filings, and softscape perimeters, ensuring a flawless process with complete accountability.
@@ -238,15 +238,15 @@ function CommercialPage() {
               className="relative w-full max-w-[440px] mx-auto flex items-center justify-center py-6"
             >
               {/* Offset frame behind image */}
-              <div className="absolute top-2 left-2 right-[-4px] bottom-[-4px] sm:right-[-8px] sm:bottom-[-8px] border-2 border-[#577a4c]/20 rounded-2xl z-0 select-none pointer-events-none" />
+              <div className="absolute top-2 left-2 right-[-4px] bottom-[-4px] sm:right-[-8px] sm:bottom-[-8px] border-2 border-[#ffa326]/20 rounded-2xl z-0 select-none pointer-events-none" />
 
               <img
                 src={imgCommercial}
-                alt="Commercial construction framing by JRM"
+                alt="Commercial construction framing by Right Lane"
                 className="relative z-10 w-full h-auto object-cover rounded-2xl shadow-xl border border-neutral-200/50 aspect-[4/3]"
               />
               <div className="absolute -bottom-1 -right-2 sm:-right-8 bg-white/95 backdrop-blur-md border border-neutral-200 rounded-xl p-4 shadow-xl flex flex-col select-none z-20">
-                <span className="text-3xl font-black text-[#3d5636]">35+</span>
+                <span className="text-3xl font-black text-[#cc7e14]">35+</span>
                 <span className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest leading-none mt-0.5">Years Experience</span>
               </div>
             </motion.div>
@@ -264,7 +264,7 @@ function CommercialPage() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
+            <span className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
               Commercial Portfolio
             </span>
             <h2 
@@ -288,14 +288,14 @@ function CommercialPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: idx * 0.12, ease: "easeOut" }}
-                  className="bg-white rounded-2xl border border-neutral-200/50 p-8 shadow-sm hover:shadow-xl hover:border-[#577a4c]/30 transition-all duration-300 flex flex-col justify-between"
+                  className="bg-white rounded-2xl border border-neutral-200/50 p-8 shadow-sm hover:shadow-xl hover:border-[#ffa326]/30 transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-6">
-                      <div className="w-12 h-12 rounded-xl bg-[#577a4c]/10 text-[#3d5636] border border-[#577a4c]/20 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-xl bg-[#ffa326]/10 text-[#cc7e14] border border-[#ffa326]/20 flex items-center justify-center">
                         <IconComp className="w-6 h-6 animate-pulse" />
                       </div>
-                      <span className="text-[10px] font-bold bg-[#577a4c]/10 text-[#3d5636] px-3 py-1 rounded-full uppercase tracking-wider">
+                      <span className="text-[10px] font-bold bg-[#ffa326]/10 text-[#cc7e14] px-3 py-1 rounded-full uppercase tracking-wider">
                         {pillar.badge}
                       </span>
                     </div>
@@ -308,7 +308,7 @@ function CommercialPage() {
                     <ul className="space-y-4">
                       {pillar.items.map((item, itemIdx) => (
                         <li key={itemIdx} className="flex gap-3.5 items-start text-xs text-neutral-700 font-light leading-relaxed">
-                          <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#577a4c]/15 text-[#3d5636] select-none font-bold text-[9px]">✓</span>
+                          <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#ffa326]/15 text-[#cc7e14] select-none font-bold text-[9px]">✓</span>
                           <span>{item}</span>
                         </li>
                       ))}
@@ -331,17 +331,17 @@ function CommercialPage() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
+            <span className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
               Project Lifecycle
             </span>
             <h2 
               className="text-3xl md:text-4xl font-extrabold text-neutral-900 tracking-tight"
               style={{ fontFamily: "Georgia, serif" }}
             >
-              The JRM Commercial Process
+              The Right Lane Commercial Process
             </h2>
             <p className="mt-4 text-neutral-600 text-sm md:text-base leading-relaxed font-light">
-              How JRM coordinates timeline, blueprints, permits, and building execution safely.
+              How Right Lane coordinates timeline, blueprints, permits, and building execution safely.
             </p>
           </motion.div>
 
@@ -356,7 +356,7 @@ function CommercialPage() {
                 className="bg-white rounded-xl border border-neutral-200/50 p-5 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <span className="text-3xl font-black text-[#577a4c]/20 block mb-3">
+                  <span className="text-3xl font-black text-[#ffa326]/20 block mb-3">
                     {step.number}
                   </span>
                   <h3 className="text-[14px] font-bold text-neutral-900 tracking-wide mb-2">
@@ -387,14 +387,14 @@ function CommercialPage() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="space-y-5"
             >
-              <span className="inline-flex items-center bg-[#2d3f26] border border-[#23321e]/30 text-white rounded-full px-5 py-1.5 text-[10px] font-black uppercase tracking-widest shadow-sm">
+              <span className="inline-flex items-center bg-[#2b1a05] border border-[#593203]/30 text-white rounded-full px-5 py-1.5 text-[10px] font-black uppercase tracking-widest shadow-sm">
                 Corporate Integrity
               </span>
               <h2 
                 className="text-3xl md:text-4xl font-extrabold text-neutral-900 tracking-tight leading-tight"
                 style={{ fontFamily: "Georgia, serif" }}
               >
-                Why Choose JRM for Commercial Projects?
+                Why Choose Right Lane for Commercial Projects?
               </h2>
               <p className="text-base text-neutral-700 leading-relaxed font-light">
                 Commercial projects demand strict adherence to building plans, schedules, and code guidelines. Our licensed and bonded credentials ensure complete protection and quality.
@@ -412,7 +412,7 @@ function CommercialPage() {
                   transition={{ duration: 0.7, delay: idx * 0.12, ease: "easeOut" }}
                   className="bg-white/80 backdrop-blur-sm border border-neutral-200/50 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex gap-4"
                 >
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#577a4c]/10 text-[#3d5636] border border-[#577a4c]/20 select-none">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#ffa326]/10 text-[#cc7e14] border border-[#ffa326]/20 select-none">
                     <CheckCircle2 className="w-5 h-5" />
                   </span>
                   <div>
@@ -449,36 +449,36 @@ function CommercialPage() {
             className="max-w-4xl mx-auto flex flex-col items-center"
           >
             {/* Logo */}
-            <img src={logo} alt="JRM" className="h-14 w-auto object-contain mb-8 filter brightness-110" />
+            <img src={logo} alt="Right Lane" className="h-14 w-auto object-contain mb-8 filter brightness-110" />
 
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-5">
               Ready to Upgrade Your Commercial Property?
             </h2>
 
             <p className="text-sm md:text-base text-neutral-300 leading-relaxed font-light mb-8 max-w-3xl">
-              We bring the same dedication, quality, and professionalism to commercial projects. Contact us today to schedule your free consultation with Robert to discuss your construction or landscaping needs.
+              We bring the same dedication, quality, and professionalism to commercial projects. Contact us today to schedule your free consultation with Ronnie to discuss your construction or landscaping needs.
             </p>
 
             <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-8 w-full max-w-3xl mb-10 text-left">
               <h3 className="text-md font-bold text-white mb-5 text-center sm:text-left tracking-wide">
-                JRM Construction Landscaping Design
+                Right Lane Handyman Services, LLC
               </h3>
               
               <div className="grid sm:grid-cols-2 gap-5 text-[15px] font-light">
-                <a href="tel:2104295526" className="flex items-center gap-3.5 hover:text-[#a5b89d] transition-colors">
-                  <Phone className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>(210) 429-5526</span>
+                <a href="tel:7276420201" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
+                  <Phone className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>(727) 642-0201</span>
                 </a>
-                <a href="mailto:robertsa210@icloud.com" className="flex items-center gap-3.5 hover:text-[#a5b89d] transition-colors">
-                  <Mail className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>robertsa210@icloud.com</span>
+                <a href="mailto:rightlanehandymanservice@yahoo.com" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
+                  <Mail className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>rightlanehandymanservice@yahoo.com</span>
                 </a>
                 <div className="flex items-center gap-3.5">
-                  <MapPin className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>Serving San Antonio, New Braunfels, Boerne, Canyon Lake & surrounding 80-mile area</span>
+                  <MapPin className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>Serving Clearwater, St. Petersburg, Largo, Tarpon Springs & surrounding Clearwater area</span>
                 </div>
                 <div className="flex items-center gap-3.5">
-                  <ShieldCheck className="w-5 h-5 text-[#a5b89d] shrink-0" />
+                  <ShieldCheck className="w-5 h-5 text-[#ffa326] shrink-0" />
                   <span>Licensed · Insured · Bonded | Professional Commercial Contracting</span>
                 </div>
               </div>
@@ -486,10 +486,10 @@ function CommercialPage() {
 
             <div className="flex flex-wrap gap-4 justify-center">
               <a
-                href="tel:2104295526"
-                className="rounded-full bg-[#577a4c] hover:bg-[#4d6c43] px-8 py-3.5 text-white text-[14px] font-bold tracking-wider uppercase transition-all duration-300 shadow-lg hover:scale-[1.03]"
+                href="tel:7276420201"
+                className="rounded-full bg-[#ffa326] hover:bg-[#ffa326] px-8 py-3.5 text-white text-[14px] font-bold tracking-wider uppercase transition-all duration-300 shadow-lg hover:scale-[1.03]"
               >
-                Call Robert Now
+                Call Ronnie Now
               </a>
               <Link
                 to="/lets-talk"

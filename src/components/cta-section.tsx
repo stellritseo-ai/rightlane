@@ -159,16 +159,13 @@ export function CTASection() {
                   <option value="" disabled hidden>
                     {t("cta.form.services")}
                   </option>
-                  <option value="landscape-design">{t("services.softscapes")}</option>
-                  <option value="new-construction">{t("services.construction")}</option>
-                  <option value="covered-patios">{t("services.coveredpatios")}</option>
-                  <option value="outdoor-kitchens">{t("services.kitchens")}</option>
-                  <option value="fireplace">{t("services.fireplace")}</option>
-                  <option value="hardscapes">{t("services.hardscapes")}</option>
-                  <option value="fencing">{t("services.fencing")}</option>
-                  <option value="artificial-turf">{t("services.turf")}</option>
-                  <option value="palm-trees">{t("services.palmtrees")}</option>
-                  <option value="house-remodeling">{t("services.remodeling")}</option>
+                  <option value="post-construction-cleaning">{t("services.cleaning")}</option>
+                  <option value="pressure-washing">{t("services.pressurewash")}</option>
+                  <option value="demolition">{t("services.demolition")}</option>
+                  <option value="junk-hauling">{t("services.junkremoval")}</option>
+                  <option value="property-maintenance">{t("services.maintenance")}</option>
+                  <option value="debris-removal">{t("services.debrisremoval")}</option>
+                  <option value="landscaping">{t("services.landscaping")}</option>
                 </select>
                 <div className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 flex items-center">
                   <ChevronDown className="h-4.5 w-4.5 text-[#3f4a1f]/75" />

@@ -23,15 +23,15 @@ import {
 
 import imgHardscapes from "@/assets/svc-hardscapes.jpg";
 import welBg from "@/assets/wel-bg.png";
-import logo from "@/assets/jrm-logo.png";
+import logo from "@/assets/logo.png";
 
 export const Route = createFileRoute("/landscape-lighting")({
   head: () => ({
     meta: [
-      { title: "Landscape Lighting Design & Installation San Antonio — JRM Construction" },
-      { name: "description", content: "Enhance security and beautify your backyard with custom low-voltage LED landscape lighting. 35+ years experience in San Antonio, TX. Call (210) 429-5526." },
-      { property: "og:title", content: "Landscape Lighting Design & Installation in San Antonio" },
-      { property: "og:description", content: "Walkway lights, architectural uplighting, patio deck lights, smart timers, and energy-efficient systems designed and built by JRM." },
+      { title: "Landscape Lighting Design & Installation Clearwater — Right Lane Handyman Services, LLC" },
+      { name: "description", content: "Enhance security and beautify your backyard with custom low-voltage LED landscape lighting. 25+ Years experience in Clearwater, FL. Call (727) 642-0201." },
+      { property: "og:title", content: "Landscape Lighting Design & Installation in Clearwater" },
+      { property: "og:description", content: "Walkway lights, architectural uplighting, patio deck lights, smart timers, and energy-efficient systems designed and built by Right Lane." },
       { property: "og:type", content: "website" }
     ],
   }),
@@ -89,7 +89,7 @@ function LandscapeLightingPage() {
     {
       number: "02",
       title: "Custom Lighting Plan",
-      desc: "Robert designs a detailed layout map specifying wire runs, fixture styles, beam angles, wattages, and transformer sizes."
+      desc: "Ronnie designs a detailed layout map specifying wire runs, fixture styles, beam angles, wattages, and transformer sizes."
     },
     {
       number: "03",
@@ -111,7 +111,7 @@ function LandscapeLightingPage() {
   const whyChooseUs = [
     {
       title: "Designer's Eye, Builder's Precision",
-      desc: "With 35 years of masonry and landscaping experience, we know how to hide wiring and position fixtures for seamless structural integration."
+      desc: "With 25+ Years of masonry and landscaping experience, we know how to hide wiring and position fixtures for seamless structural integration."
     },
     {
       title: "Hardscape & Landscape Harmony",
@@ -122,7 +122,7 @@ function LandscapeLightingPage() {
       desc: "We design low-voltage LED layouts that draw minimal power, ensuring your home stays beautifully lit for pennies a night."
     },
     {
-      title: "San Antonio Element Protection",
+      title: "Clearwater Element Protection",
       desc: "We use only premium, weatherproof, and sealed fixtures (solid brass and copper) that resist Texas heat, moisture, and lawn mower stress."
     },
     {
@@ -148,7 +148,7 @@ function LandscapeLightingPage() {
           />
 
           {/* Forest Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#111a0a]/92 via-[#111a0a]/78 to-[#111a0a]/92 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1c140d]/92 via-[#1c140d]/78 to-[#1c140d]/92 z-10" />
 
           {/* Content container */}
           <motion.div
@@ -167,7 +167,7 @@ function LandscapeLightingPage() {
               className="text-[32px] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight capitalize tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
               style={{ fontFamily: "Georgia, serif" }}
             >
-              Landscape Lighting in San Antonio
+              Landscape Lighting in Clearwater
             </h1>
 
             {/* Subtitle */}
@@ -189,7 +189,7 @@ function LandscapeLightingPage() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute top-0 left-0 w-full h-1/3 bg-[#a5b89d] rounded-full"
+                className="absolute top-0 left-0 w-full h-1/3 bg-[#ffa326] rounded-full"
               />
             </div>
           </div>
@@ -211,7 +211,7 @@ function LandscapeLightingPage() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="space-y-6"
             >
-              <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-2">
+              <span className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-2">
                 Nightscape Artistry
               </span>
               <h2 
@@ -220,11 +220,11 @@ function LandscapeLightingPage() {
               >
                 Enjoy Your Landscape Long After the Sun Goes Down
               </h2>
-              <p className="text-base text-neutral-700 leading-relaxed font-light first-letter:text-5xl first-letter:font-extrabold first-letter:text-[#3d5636] first-letter:float-left first-letter:mr-3 first-letter:mt-1">
-                Your landscape deserves to be enjoyed long after the sun goes down. At JRM Construction Landscaping Design, we specialize in custom landscape lighting installation that transforms your outdoor spaces into stunning nighttime environments—enhancing beauty, improving security, and extending your usable living hours.
+              <p className="text-base text-neutral-700 leading-relaxed font-light first-letter:text-5xl first-letter:font-extrabold first-letter:text-[#cc7e14] first-letter:float-left first-letter:mr-3 first-letter:mt-1">
+                Your landscape deserves to be enjoyed long after the sun goes down. At Right Lane Handyman Services, LLC, we specialize in custom landscape lighting installation that transforms your outdoor spaces into stunning nighttime environments—enhancing beauty, improving security, and extending your usable living hours.
               </p>
               <p className="text-base text-neutral-700 leading-relaxed font-light">
-                With over 35 years of landscape and construction experience, owner Robert Thompson understands the art and science of proper illumination, creating lighting designs that highlight your property's best features while ensuring safety and efficiency.
+                With over 25+ Years of landscape and construction experience, the Right Lane team understands the art and science of proper illumination, creating lighting designs that highlight your property's best features while ensuring safety and efficiency.
               </p>
               <p className="text-base text-neutral-700 leading-relaxed font-light">
                 As a fully licensed, insured, and bonded contractor, we design and install professional-grade lighting systems that are durable, energy-efficient, and code-compliant. From subtle path lighting to dramatic uplighting and festive seasonal displays, we bring your outdoor spaces to life after dark.
@@ -240,15 +240,15 @@ function LandscapeLightingPage() {
               className="relative w-full max-w-[440px] mx-auto flex items-center justify-center py-6"
             >
               {/* Offset frame behind image */}
-              <div className="absolute top-2 left-2 right-[-4px] bottom-[-4px] sm:right-[-8px] sm:bottom-[-8px] border-2 border-[#577a4c]/20 rounded-2xl z-0 select-none pointer-events-none" />
+              <div className="absolute top-2 left-2 right-[-4px] bottom-[-4px] sm:right-[-8px] sm:bottom-[-8px] border-2 border-[#ffa326]/20 rounded-2xl z-0 select-none pointer-events-none" />
 
               <img
                 src={imgHardscapes}
-                alt="Beautiful illuminated columns and stone retaining wall at night by JRM"
+                alt="Beautiful illuminated columns and stone retaining wall at night by Right Lane"
                 className="relative z-10 w-full h-auto object-cover rounded-2xl shadow-xl border border-neutral-200/50 aspect-[4/3]"
               />
               <div className="absolute -bottom-1 -right-2 sm:-right-8 bg-white/95 backdrop-blur-md border border-neutral-200 rounded-xl p-4 shadow-xl flex flex-col select-none z-20">
-                <span className="text-3xl font-black text-[#3d5636]">35+</span>
+                <span className="text-3xl font-black text-[#cc7e14]">35+</span>
                 <span className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest leading-none mt-0.5">Years Masons</span>
               </div>
             </motion.div>
@@ -266,7 +266,7 @@ function LandscapeLightingPage() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
+            <span className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
               Illumination Options
             </span>
             <h2 
@@ -290,14 +290,14 @@ function LandscapeLightingPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: idx * 0.12, ease: "easeOut" }}
-                  className="bg-white rounded-2xl border border-neutral-200/50 p-8 shadow-sm hover:shadow-xl hover:border-[#577a4c]/30 transition-all duration-300 flex flex-col justify-between"
+                  className="bg-white rounded-2xl border border-neutral-200/50 p-8 shadow-sm hover:shadow-xl hover:border-[#ffa326]/30 transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-6">
-                      <div className="w-12 h-12 rounded-xl bg-[#577a4c]/10 text-[#3d5636] border border-[#577a4c]/20 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-xl bg-[#ffa326]/10 text-[#cc7e14] border border-[#ffa326]/20 flex items-center justify-center">
                         <IconComp className="w-6 h-6 animate-pulse" />
                       </div>
-                      <span className="text-[10px] font-bold bg-[#577a4c]/10 text-[#3d5636] px-3 py-1 rounded-full uppercase tracking-wider">
+                      <span className="text-[10px] font-bold bg-[#ffa326]/10 text-[#cc7e14] px-3 py-1 rounded-full uppercase tracking-wider">
                         {pillar.badge}
                       </span>
                     </div>
@@ -310,7 +310,7 @@ function LandscapeLightingPage() {
                     <ul className="space-y-4">
                       {pillar.items.map((item, itemIdx) => (
                         <li key={itemIdx} className="flex gap-3.5 items-start text-xs text-neutral-700 font-light leading-relaxed">
-                          <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#577a4c]/15 text-[#3d5636] select-none font-bold text-[9px]">✓</span>
+                          <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-[#ffa326]/15 text-[#cc7e14] select-none font-bold text-[9px]">✓</span>
                           <span>{item}</span>
                         </li>
                       ))}
@@ -333,7 +333,7 @@ function LandscapeLightingPage() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
+            <span className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
               Step-By-Step Flow
             </span>
             <h2 
@@ -343,7 +343,7 @@ function LandscapeLightingPage() {
               Bring Your Nightscape to Life
             </h2>
             <p className="mt-4 text-neutral-600 text-sm md:text-base leading-relaxed font-light">
-              How JRM designs and positions your custom outdoor lighting system.
+              How Right Lane designs and positions your custom outdoor lighting system.
             </p>
           </motion.div>
 
@@ -358,7 +358,7 @@ function LandscapeLightingPage() {
                 className="bg-white rounded-xl border border-neutral-200/50 p-5 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <span className="text-3xl font-black text-[#577a4c]/20 block mb-3">
+                  <span className="text-3xl font-black text-[#ffa326]/20 block mb-3">
                     {step.number}
                   </span>
                   <h3 className="text-[14px] font-bold text-neutral-900 tracking-wide mb-2">
@@ -389,17 +389,17 @@ function LandscapeLightingPage() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="space-y-5"
             >
-              <span className="inline-flex items-center bg-[#2d3f26] border border-[#23321e]/30 text-white rounded-full px-5 py-1.5 text-[10px] font-black uppercase tracking-widest shadow-sm">
+              <span className="inline-flex items-center bg-[#2b1a05] border border-[#593203]/30 text-white rounded-full px-5 py-1.5 text-[10px] font-black uppercase tracking-widest shadow-sm">
                 Builder's Standard
               </span>
               <h2 
                 className="text-3xl md:text-4xl font-extrabold text-neutral-900 tracking-tight leading-tight"
                 style={{ fontFamily: "Georgia, serif" }}
               >
-                Why Choose JRM for Your Landscape Lighting?
+                Why Choose Right Lane for Your Landscape Lighting?
               </h2>
               <p className="text-base text-neutral-700 leading-relaxed font-light">
-                Outdoor lighting must withstand Texas storms, freezing winters, and regular lawn maintenance. JRM pairs solid brass fixtures with code-compliant low-voltage cabling for permanent beauty.
+                Outdoor lighting must withstand Texas storms, freezing winters, and regular lawn maintenance. Right Lane pairs solid brass fixtures with code-compliant low-voltage cabling for permanent beauty.
               </p>
             </motion.div>
 
@@ -414,7 +414,7 @@ function LandscapeLightingPage() {
                   transition={{ duration: 0.7, delay: idx * 0.12, ease: "easeOut" }}
                   className="bg-white/80 backdrop-blur-sm border border-neutral-200/50 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex gap-4"
                 >
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#577a4c]/10 text-[#3d5636] border border-[#577a4c]/20 select-none">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#ffa326]/10 text-[#cc7e14] border border-[#ffa326]/20 select-none">
                     <CheckCircle2 className="w-5 h-5" />
                   </span>
                   <div>
@@ -451,7 +451,7 @@ function LandscapeLightingPage() {
             className="max-w-4xl mx-auto flex flex-col items-center"
           >
             {/* Logo */}
-            <img src={logo} alt="JRM" className="h-14 w-auto object-contain mb-8 filter brightness-110" />
+            <img src={logo} alt="Right Lane" className="h-14 w-auto object-contain mb-8 filter brightness-110" />
 
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-5">
               Illuminate Your Outdoor Living
@@ -463,24 +463,24 @@ function LandscapeLightingPage() {
 
             <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-8 w-full max-w-3xl mb-10 text-left">
               <h3 className="text-md font-bold text-white mb-5 text-center sm:text-left tracking-wide">
-                JRM Construction Landscaping Design
+                Right Lane Handyman Services, LLC
               </h3>
               
               <div className="grid sm:grid-cols-2 gap-5 text-[15px] font-light">
-                <a href="tel:2104295526" className="flex items-center gap-3.5 hover:text-[#a5b89d] transition-colors">
-                  <Phone className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>(210) 429-5526</span>
+                <a href="tel:7276420201" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
+                  <Phone className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>(727) 642-0201</span>
                 </a>
-                <a href="mailto:robertsa210@icloud.com" className="flex items-center gap-3.5 hover:text-[#a5b89d] transition-colors">
-                  <Mail className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>robertsa210@icloud.com</span>
+                <a href="mailto:rightlanehandymanservice@yahoo.com" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
+                  <Mail className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>rightlanehandymanservice@yahoo.com</span>
                 </a>
                 <div className="flex items-center gap-3.5">
-                  <MapPin className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>Serving San Antonio, New Braunfels, Boerne, Canyon Lake & surrounding 80-mile area</span>
+                  <MapPin className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>Serving Clearwater, St. Petersburg, Largo, Tarpon Springs & surrounding Clearwater area</span>
                 </div>
                 <div className="flex items-center gap-3.5">
-                  <ShieldCheck className="w-5 h-5 text-[#a5b89d] shrink-0" />
+                  <ShieldCheck className="w-5 h-5 text-[#ffa326] shrink-0" />
                   <span>Licensed · Insured · Bonded | Custom Landscape Lighting Artistry</span>
                 </div>
               </div>
@@ -488,10 +488,10 @@ function LandscapeLightingPage() {
 
             <div className="flex flex-wrap gap-4 justify-center">
               <a
-                href="tel:2104295526"
-                className="rounded-full bg-[#577a4c] hover:bg-[#4d6c43] px-8 py-3.5 text-white text-[14px] font-bold tracking-wider uppercase transition-all duration-300 shadow-lg hover:scale-[1.03]"
+                href="tel:7276420201"
+                className="rounded-full bg-[#ffa326] hover:bg-[#ffa326] px-8 py-3.5 text-white text-[14px] font-bold tracking-wider uppercase transition-all duration-300 shadow-lg hover:scale-[1.03]"
               >
-                Call Robert Now
+                Call Ronnie Now
               </a>
               <Link
                 to="/lets-talk"

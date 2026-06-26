@@ -1,122 +1,197 @@
-import { Facebook, Twitter, Youtube } from "lucide-react";
-import logo from "@/assets/jrm-logo.png";
-import { useTranslation } from "@/context/translation-context";
+import { Facebook, Twitter, Youtube, Phone, Mail, MapPin, ChevronUp } from "lucide-react";
+import bbbBadge from "@/assets/bbb-badge.png";
+import yelpBadge from "@/assets/yelp-badge.png";
+import homeAdvisorBadge from "@/assets/homeadvisor-badge.png";
 
 export function SiteFooter() {
-  const { t, language } = useTranslation();
-
-  const quickLinks = [
-    "/",
-    "/about",
-    "/services",
-    "/work",
-    "/reviews",
-    "/#consultation",
-    "/contact",
-  ];
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div className="w-full bg-[#f4f3ef] pt-0 pb-[15px] px-[15px]">
       <footer
-        className="mx-auto max-w-[1400px] w-full bg-[#1c140d] text-white px-8 md:px-12 py-16 rounded-t-none rounded-b-[10px] mt-0 border border-neutral-800/40 shadow-[0_20px_50px_rgba(0,0,0,0.15)] relative overflow-hidden"
-        style={{
-          backgroundImage: "linear-gradient(to bottom, rgba(28,20,13,0.97), rgba(28,20,13,0.98)), url(/src/assets/wel-bg.png)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+        className="mx-auto max-w-[1400px] w-full bg-gradient-to-b from-[#120b08] to-[#0a0604] text-white px-5 sm:px-8 md:px-12 py-12 sm:py-16 rounded-t-none rounded-b-[10px] mt-0 border border-neutral-900/60 shadow-[0_20px_50px_rgba(0,0,0,0.25)] relative overflow-hidden"
       >
+        {/* Subtle decorative top line highlight */}
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#ffa326]/40 to-transparent" />
+
         {/* Main 4-Column Grid */}
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-12 relative z-10">
-          {/* Column 1: Business Logo & Description (Width: 5/12) */}
-          <div className="lg:col-span-5">
-            <div className="flex items-center gap-3 mb-5">
-              <img src={logo} alt="JRM Construction Landscape Design" className="h-14 md:h-16 w-auto object-contain" />
+
+          {/* Column 1: Business Details & Badges */}
+          <div className="lg:col-span-5 flex flex-col justify-between">
+            <div>
+              <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-6 border-b border-white/5 pb-2.5 w-full">
+                Right Lane Handyman Services, LLC
+              </h4>
+              <p className="text-sm text-neutral-400 leading-relaxed font-light pr-0 lg:pr-8 mb-6">
+                We pride ourselves on the quality of our work as well as our commitment to outstanding results. We look forward to building lasting relationships with our clients and guarantee your satisfaction.
+              </p>
+              <div className="text-xs font-semibold uppercase tracking-wider text-[#ffa326] mt-4 mb-6 flex flex-wrap gap-x-2.5 gap-y-1.5 items-center select-none">
+                <span>Licensed</span>
+                <span className="text-neutral-700 font-bold">·</span>
+                <span>Insured</span>
+                <span className="text-neutral-700 font-bold">·</span>
+                <span>Bonded</span>
+                <span className="text-neutral-700 font-bold">·</span>
+                <span className="text-neutral-200">25 Years Of Experience</span>
+              </div>
+              <div className="flex flex-wrap gap-3.5 mt-5">
+                <img
+                  src={bbbBadge}
+                  alt="BBB Accredited"
+                  className="h-[42px] w-auto object-contain rounded-md filter brightness-95 hover:brightness-100 transition-all duration-300"
+                />
+                <img
+                  src={yelpBadge}
+                  alt="Yelp reviews"
+                  className="h-[42px] w-auto object-contain rounded-md filter brightness-95 hover:brightness-100 transition-all duration-300"
+                />
+                <img
+                  src={homeAdvisorBadge}
+                  alt="HomeAdvisor approved"
+                  className="h-[42px] w-auto object-contain rounded-md filter brightness-95 hover:brightness-100 transition-all duration-300"
+                />
+              </div>
             </div>
-            <p className="mt-4 text-sm text-neutral-300 leading-relaxed font-light pr-0 lg:pr-8">
-              {t("footer.desc")}
-            </p>
           </div>
 
-          {/* Column 2: Services (Width: 2/12) */}
+          {/* Column 2: Services */}
           <div className="lg:col-span-2">
-            <h4 className="text-lg font-bold text-white mb-5 tracking-wide">
-              {t("footer.title.services")}
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-6 border-b border-white/5 pb-2.5 w-full">
+              Services
             </h4>
-            <ul className="mt-4 space-y-3.5 text-[15px] text-neutral-300 font-light">
-              {[1, 2, 3, 4, 5, 6, 7].map((num) => (
-                <li key={num}>
-                  <a href="/services" className="hover:text-white hover:translate-x-0.5 transition-all duration-200 block">
-                    {t(`footer.service.${num}` as any)}
-                  </a>
-                </li>
-              ))}
+            <ul className="mt-4 space-y-3.5 text-sm text-neutral-400 font-light">
+              <li>
+                <a href="#" className="hover:text-[#ffa326] hover:translate-x-1 transition-all duration-300 block">
+                  Post Construction Cleaning
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#ffa326] hover:translate-x-1 transition-all duration-300 block">
+                  Pressure Washing
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#ffa326] hover:translate-x-1 transition-all duration-300 block">
+                  Demolition
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#ffa326] hover:translate-x-1 transition-all duration-300 block">
+                  Junk Removal & Hauling
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#ffa326] hover:translate-x-1 transition-all duration-300 block">
+                  Landscaping
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#ffa326] hover:translate-x-1 transition-all duration-300 block">
+                  Property maintenance
+                </a>
+              </li>
             </ul>
           </div>
 
-          {/* Column 3: Quick Links (Width: 2/12) */}
+          {/* Column 3: Quick Links */}
           <div className="lg:col-span-2">
-            <h4 className="text-lg font-bold text-white mb-5 tracking-wide">
-              {t("footer.title.links")}
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-6 border-b border-white/5 pb-2.5 w-full">
+              Quick Links
             </h4>
-            <ul className="mt-4 space-y-3.5 text-[15px] text-neutral-300 font-light">
-              {[1, 2, 3, 4, 5, 6, 7].map((num) => (
-                <li key={num}>
-                  <a href={quickLinks[num - 1]} className="hover:text-white hover:translate-x-0.5 transition-all duration-200 block">
-                    {t(`footer.link.${num}` as any)}
-                  </a>
-                </li>
-              ))}
+            <ul className="mt-4 space-y-3.5 text-sm text-neutral-400 font-light">
+              <li>
+                <a href="/" className="hover:text-[#ffa326] hover:translate-x-1 transition-all duration-300 block">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#ffa326] hover:translate-x-1 transition-all duration-300 block">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#ffa326] hover:translate-x-1 transition-all duration-300 block">
+                  Our Work
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#ffa326] hover:translate-x-1 transition-all duration-300 block">
+                  Reviews
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#ffa326] hover:translate-x-1 transition-all duration-300 block">
+                  Free Estimate
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#ffa326] hover:translate-x-1 transition-all duration-300 block">
+                  Contact Us
+                </a>
+              </li>
             </ul>
           </div>
 
-          {/* Column 4: Contact Us (Width: 3/12) */}
+          {/* Column 4: Contact Us */}
           <div className="lg:col-span-3">
-            <h4 className="text-lg font-bold text-white mb-5 tracking-wide">
-              {t("footer.title.contact")}
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-6 border-b border-white/5 pb-2.5 w-full">
+              Contact Us
             </h4>
-            <ul className="mt-4 space-y-3.5 text-[15px] text-neutral-300 font-light">
-              <li className="leading-normal">{t("footer.contact.consultant")}</li>
-              <li className="hover:text-white transition-colors duration-200">
-                <a href="tel:2104295526">{t("footer.contact.robert")}</a>
-              </li>
-              <li className="hover:text-white transition-colors duration-200">
-                <a href="tel:2103793505">{t("footer.contact.arturo")}</a>
-              </li>
-              <li className="hover:text-white transition-colors duration-200">
-                <a href="mailto:robertsa210@icloud.com">{t("footer.contact.email")}</a>
-              </li>
-              <li>{t("footer.contact.address")}</li>
-            </ul>
+            <div className="space-y-4 text-sm text-neutral-400 font-light leading-relaxed">
+              <p className="text-white font-medium">Right Lane Handyman Services, LLC</p>
+
+              <div className="flex items-center gap-3 hover:text-[#ffa326] transition-colors duration-200">
+                <Phone className="h-4.5 w-4.5 text-[#ffa326] fill-[#ffa326]/10" />
+                <a href="tel:7276420201">(727) 642-0201</a>
+              </div>
+
+              <div className="flex items-center gap-3 hover:text-[#ffa326] transition-colors duration-200">
+                <Mail className="h-4.5 w-4.5 text-[#ffa326]" />
+                <a href="mailto:rightlanehandymanservice@yahoo.com" className="break-all">rightlanehandymanservice@yahoo.com</a>
+              </div>
+
+              <div className="flex items-center gap-3 text-neutral-300">
+                <MapPin className="h-4.5 w-4.5 text-[#ffa326] fill-[#ffa326]/10" />
+                <span>Clearwater, FL 33756</span>
+              </div>
+            </div>
 
             {/* Social Icons */}
-            <div className="mt-6 flex gap-3.5">
+            <div className="mt-7 flex items-center gap-3">
               {/* Facebook */}
               <a
                 href="#"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-[#3b5998] hover:bg-[#3b5998]/80 text-white transition-all duration-300 shadow-sm"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-[#3b5998] hover:border-[#3b5998] text-white hover:scale-105 transition-all duration-300 shadow-sm"
+                aria-label="Facebook"
               >
-                <Facebook className="h-4.5 w-4.5 fill-current" />
+                <Facebook className="h-[15px] w-[15px] fill-current" />
               </a>
               {/* Twitter */}
               <a
                 href="#"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1da1f2] hover:bg-[#1da1f2]/80 text-white transition-all duration-300 shadow-sm"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-[#1da1f2] hover:border-[#1da1f2] text-white hover:scale-105 transition-all duration-300 shadow-sm"
+                aria-label="Twitter"
               >
-                <Twitter className="h-4.5 w-4.5 fill-current" />
+                <Twitter className="h-[15px] w-[15px] fill-current" />
               </a>
               {/* YouTube */}
               <a
                 href="#"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-[#ff0000] hover:bg-[#ff0000]/80 text-white transition-all duration-300 shadow-sm"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-[#ff0000] hover:border-[#ff0000] text-white hover:scale-105 transition-all duration-300 shadow-sm"
+                aria-label="YouTube"
               >
-                <Youtube className="h-4.5 w-4.5" />
+                <Youtube className="h-[15px] w-[15px]" />
               </a>
               {/* X */}
               <a
                 href="#"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-black hover:bg-neutral-800 text-white transition-all duration-300 shadow-sm"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-white hover:border-white hover:text-black hover:scale-105 transition-all duration-300 shadow-sm"
+                aria-label="X"
               >
-                <svg className="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg className="h-[14px] w-[14px] fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
               </a>
@@ -125,75 +200,35 @@ export function SiteFooter() {
         </div>
 
         {/* Underlined SEO Links Block */}
-        <div className="mt-14 border-t border-white/10 pt-8 flex flex-col gap-5 text-[13px] md:text-sm text-neutral-300 font-light text-center relative z-10 w-full">
-          {/* Row 1 */}
-          <div className="flex flex-wrap justify-center gap-x-6 md:gap-x-12 gap-y-3">
-            <a href="/services" className="underline hover:text-white transition-colors duration-200">
-              San Antonio Landscape Design Contractor
-            </a>
-            <a href="/services" className="underline hover:text-white transition-colors duration-200">
-              Licensed Remodeler San Antonio
-            </a>
-            <a href="/services" className="underline hover:text-white transition-colors duration-200">
-              Custom Outdoor Kitchen San Antonio
-            </a>
-            <a href="/services" className="underline hover:text-white transition-colors duration-200">
-              Hardscaping Contractor Near Me
-            </a>
-          </div>
-          {/* Row 2 */}
-          <div className="flex flex-wrap justify-center gap-x-6 md:gap-x-12 gap-y-3">
-            <a href="/services" className="underline hover:text-white transition-colors duration-200">
-              Landscaping and construction company
-            </a>
-            <a href="/services" className="underline hover:text-white transition-colors duration-200">
-              Kitchen remodel San Antonio
-            </a>
-            <a href="/services" className="underline hover:text-white transition-colors duration-200">
-              Whole house remodeling San Antonio
-            </a>
-            <a href="/services" className="underline hover:text-white transition-colors duration-200">
-              Custom home builder San Antonio
-            </a>
-          </div>
-          {/* Row 3 */}
-          <div className="flex flex-wrap justify-center gap-x-6 md:gap-x-12 gap-y-3">
-            <a href="/services" className="underline hover:text-white transition-colors duration-200">
-              New home construction contractor
-            </a>
-            <a href="/services" className="underline hover:text-white transition-colors duration-200">
-              Fireplace installation San Antonio
-            </a>
-            <a href="/services" className="underline hover:text-white transition-colors duration-200">
-              Fence installation San Antonio
-            </a>
-            <a href="/services" className="underline hover:text-white transition-colors duration-200">
-              Artificial grass installation San Antonio
-            </a>
-          </div>
+        <div className="mt-14 border-t border-white/5 pt-8 flex flex-wrap justify-center gap-x-8 md:gap-x-12 gap-y-3 text-xs text-neutral-500 font-light text-center relative z-10 w-full">
+          <a href="#" className="underline hover:text-[#ffa326] transition-colors duration-200">
+            Junk Removal Clearwater FL
+          </a>
+          <a href="#" className="underline hover:text-[#ffa326] transition-colors duration-200">
+            Demolition Services Pinellas County
+          </a>
+          <a href="#" className="underline hover:text-[#ffa326] transition-colors duration-200">
+            Hauling Services Palm Harbor
+          </a>
+          <a href="#" className="underline hover:text-[#ffa326] transition-colors duration-200">
+            Debris Removal Tarpon Springs
+          </a>
         </div>
 
-        {/* Copyright & Branding */}
-        <div className="mt-12 mb-[-32px] rounded-2xl sm:rounded-full bg-white/[0.02] border border-white/5 py-3 sm:py-3.5 text-xs text-neutral-400 tracking-wide relative z-10 w-full backdrop-blur-md px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3 text-center sm:text-left">
-          <span>
-            {t("footer.copyright")}{" "}
-            <span className="mx-1.5 text-neutral-700">|</span>{" "}
-            <a href="/dashboard" className="hover:text-white hover:underline transition-all">
-              Admin Portal
-            </a>
-          </span>
-          <span className="md:text-right shrink-0">
-            {language === "es" ? "Diseño por" : "Design By"}{" "}
-            <a
-              href="https://stellrit.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#a5b89d] hover:text-white font-bold transition-colors duration-200 hover:underline"
-            >
-              StellR IT LLC
-            </a>
-          </span>
+        {/* Copyright & Branding Banner */}
+        <div className="mt-10 rounded-xl bg-gradient-to-r from-[#ffa326]/10 to-[#cc7e14]/10 border border-[#ffa326]/20 py-3.5 text-center text-[11px] sm:text-xs font-medium text-neutral-300 px-6 select-none relative z-10 backdrop-blur-md">
+          Copyright © 2026 Right Lane Handyman Services | All Rights Reserved. Design By : STELLR IT.
         </div>
+
+        {/* Scroll To Top Button */}
+        <button
+          onClick={scrollToTop}
+          className="absolute bottom-4 right-6 bg-[#ffa326] hover:bg-[#cc7e14] text-neutral-950 p-2.5 rounded-full transition-all duration-300 shadow-[0_4px_14px_rgba(255,163,38,0.25)] hover:shadow-[0_6px_20px_rgba(255,163,38,0.4)] cursor-pointer flex items-center justify-center group active:scale-95 z-20 border border-[#ffa326]/20"
+          aria-label="Scroll to top"
+        >
+          <ChevronUp className="w-4 h-4 stroke-[3] group-hover:-translate-y-0.5 transition-transform" strokeWidth={3} />
+        </button>
+
       </footer>
     </div>
   );

@@ -1,3 +1,4 @@
+import "./config.server";
 import { v2 as cloudinary } from "cloudinary";
 
 const CLOUDINARY_CLOUD_NAME = process.env.CLOUDINARY_CLOUD_NAME || (import.meta.env as any).CLOUDINARY_CLOUD_NAME || "";
@@ -29,7 +30,7 @@ export async function uploadImage(base64Image: string): Promise<string> {
 
   try {
     const result = await cloudinary.uploader.upload(base64Image, {
-      folder: "jrm_construction",
+      folder: "rightlane_uploads",
     });
     return result.secure_url;
   } catch (error) {
@@ -56,7 +57,7 @@ export async function uploadLocalFile(filePath: string): Promise<string> {
 
   try {
     const result = await cloudinary.uploader.upload(filePath, {
-      folder: "jrm_construction",
+      folder: "rightlane_uploads",
     });
     return result.secure_url;
   } catch (error) {

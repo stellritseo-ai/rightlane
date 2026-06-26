@@ -25,15 +25,15 @@ import {
 
 import imgRemodeling from "@/assets/svc-house-remodeling.jpg";
 import welBg from "@/assets/wel-bg.png";
-import logo from "@/assets/jrm-logo.png";
+import logo from "@/assets/logo.png";
 
 export const Route = createFileRoute("/house-remodeling")({
   head: () => ({
     meta: [
-      { title: "House Remodeling San Antonio | Kitchen & Bathroom Renovations | JRM Construction" },
-      { name: "description", content: "Transform your home with expert remodeling services in San Antonio. 35 years of experience in kitchen remodels, bathroom renovations & whole-home renovations. Licensed & insured. Free consultation. Call (210) 429-5526." },
-      { property: "og:title", content: "House Remodeling San Antonio | Kitchen & Bathroom Renovations | JRM Construction" },
-      { property: "og:description", content: "Transform your home with expert remodeling services in San Antonio. 35 years of experience in kitchen remodels, bathroom renovations & whole-home renovations. Licensed & insured. Free consultation. Call (210) 429-5526." },
+      { title: "House Remodeling Clearwater | Kitchen & Bathroom Renovations | Right Lane Handyman Services, LLC" },
+      { name: "description", content: "Transform your home with expert remodeling services in Clearwater. 25+ Years of experience in kitchen remodels, bathroom renovations & whole-home renovations. Licensed & insured. Free consultation. Call (727) 642-0201." },
+      { property: "og:title", content: "House Remodeling Clearwater | Kitchen & Bathroom Renovations | Right Lane Handyman Services, LLC" },
+      { property: "og:description", content: "Transform your home with expert remodeling services in Clearwater. 25+ Years of experience in kitchen remodels, bathroom renovations & whole-home renovations. Licensed & insured. Free consultation. Call (727) 642-0201." },
       { property: "og:type", content: "website" }
     ],
   }),
@@ -49,7 +49,7 @@ function HouseRemodelingPage() {
       title: "Vision & Planning",
       subtitle: "Your Free Consultation",
       icon: MessageSquare,
-      desc: "We start by listening. During our detailed, no-obligation consultation, we discuss your goals, budget, and vision. Robert's 35 years of experience allow him to provide insightful, practical ideas that align with your lifestyle."
+      desc: "We start by listening. During our detailed, no-obligation consultation, we discuss your goals, budget, and vision. Ronnie's 25+ Years of experience allow him to provide insightful, practical ideas that align with your lifestyle."
     },
     {
       number: "02",
@@ -110,7 +110,7 @@ function HouseRemodelingPage() {
   const whyChooseUs = [
     {
       title: "Proven Local Experience",
-      desc: "35 years of successfully navigating San Antonio's unique soil, building codes, and climate considerations."
+      desc: "25+ Years of successfully navigating Clearwater's unique soil, building codes, and climate considerations."
     },
     {
       title: "Licensed & Insured Protection",
@@ -118,7 +118,7 @@ function HouseRemodelingPage() {
     },
     {
       title: "Owner-Direct Communication",
-      desc: "Robert Thompson maintains active day-to-day project involvement, providing you with direct updates and clear answers."
+      desc: "Right Lane Handyman maintains active day-to-day project involvement, providing you with direct updates and clear answers."
     },
     {
       title: "Seamless Indoor/Outdoor Flow",
@@ -147,7 +147,7 @@ function HouseRemodelingPage() {
           />
 
           {/* Forest Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#111a0a]/92 via-[#111a0a]/78 to-[#111a0a]/92 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1c140d]/92 via-[#1c140d]/78 to-[#1c140d]/92 z-10" />
 
           {/* Content container */}
           <motion.div
@@ -166,12 +166,12 @@ function HouseRemodelingPage() {
               className="text-[32px] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight capitalize tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
               style={{ fontFamily: "Georgia, serif" }}
             >
-              House Remodeling Services in San Antonio
+              House Remodeling Services in Clearwater
             </h1>
 
             {/* Subtitle */}
             <p className="mt-6 text-sm md:text-base text-neutral-300 font-light leading-relaxed max-w-3xl mx-auto">
-              Transform Your Home with 35 Years of Expert Craftsmanship
+              Transform Your Home with 25+ Years of Expert Craftsmanship
             </p>
           </motion.div>
 
@@ -188,7 +188,7 @@ function HouseRemodelingPage() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute top-0 left-0 w-full h-1/3 bg-[#a5b89d] rounded-full"
+                className="absolute top-0 left-0 w-full h-1/3 bg-[#ffa326] rounded-full"
               />
             </div>
           </div>
@@ -210,20 +210,20 @@ function HouseRemodelingPage() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="space-y-6"
             >
-              <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-2">
+              <span className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-2">
                 Home Transformation
               </span>
               <h2 
                 className="text-3xl md:text-4xl font-extrabold text-neutral-900 tracking-tight leading-tight"
                 style={{ fontFamily: "Georgia, serif" }}
               >
-                Is Your San Antonio Home Ready for a New Chapter?
+                Is Your Clearwater Home Ready for a New Chapter?
               </h2>
-              <p className="text-base text-neutral-700 leading-relaxed font-light first-letter:text-5xl first-letter:font-extrabold first-letter:text-[#3d5636] first-letter:float-left first-letter:mr-3 first-letter:mt-1">
-                At JRM Construction Landscaping Design, we specialize in full-service house remodeling that seamlessly blends innovative design with time-tested construction integrity. For over three decades, owner Robert Thompson has led our team in transforming outdated, inefficient, or damaged spaces into beautiful, functional areas that enhance your daily life and increase your property's value.
+              <p className="text-base text-neutral-700 leading-relaxed font-light first-letter:text-5xl first-letter:font-extrabold first-letter:text-[#cc7e14] first-letter:float-left first-letter:mr-3 first-letter:mt-1">
+                At Right Lane Handyman Services, LLC, we specialize in full-service house remodeling that seamlessly blends innovative design with time-tested construction integrity. For over over two decades, the Right Lane team has led our team in transforming outdated, inefficient, or damaged spaces into beautiful, functional areas that enhance your daily life and increase your property's value.
               </p>
               <p className="text-base text-neutral-700 leading-relaxed font-light">
-                We understand that remodeling your home is a significant investment of trust and resources. As a fully licensed, insured, and bonded contractor, we protect that investment at every stage. From the initial free consultation to the final walk-through, you benefit from Robert's direct oversight and our team's hands-on experience with every aspect of residential construction.
+                We understand that remodeling your home is a significant investment of trust and resources. As a fully licensed, insured, and bonded contractor, we protect that investment at every stage. From the initial free consultation to the final walk-through, you benefit from Ronnie's direct oversight and our team's hands-on experience with every aspect of residential construction.
               </p>
             </motion.div>
 
@@ -236,15 +236,15 @@ function HouseRemodelingPage() {
               className="relative w-full max-w-[440px] mx-auto flex items-center justify-center py-6"
             >
               {/* Offset frame behind image */}
-              <div className="absolute top-2 left-2 right-[-4px] bottom-[-4px] sm:right-[-8px] sm:bottom-[-8px] border-2 border-[#577a4c]/20 rounded-2xl z-0 select-none pointer-events-none" />
+              <div className="absolute top-2 left-2 right-[-4px] bottom-[-4px] sm:right-[-8px] sm:bottom-[-8px] border-2 border-[#ffa326]/20 rounded-2xl z-0 select-none pointer-events-none" />
 
               <img
                 src={imgRemodeling}
-                alt="Beautiful home kitchen interior renovation by JRM"
+                alt="Beautiful home kitchen interior renovation by Right Lane"
                 className="relative z-10 w-full h-auto object-cover rounded-2xl shadow-xl border border-neutral-200/50 aspect-[4/3]"
               />
               <div className="absolute -bottom-1 -right-2 sm:-right-8 bg-white/95 backdrop-blur-md border border-neutral-200 rounded-xl p-4 shadow-xl flex flex-col select-none z-20">
-                <span className="text-3xl font-black text-[#3d5636]">35+</span>
+                <span className="text-3xl font-black text-[#cc7e14]">35+</span>
                 <span className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest leading-none mt-0.5">Years of Trust</span>
               </div>
             </motion.div>
@@ -262,7 +262,7 @@ function HouseRemodelingPage() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
+            <span className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
               Our Method
             </span>
             <h2 
@@ -290,17 +290,17 @@ function HouseRemodelingPage() {
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-3xl font-black text-[#577a4c]/20">
+                      <span className="text-3xl font-black text-[#ffa326]/20">
                         {step.number}
                       </span>
-                      <div className="w-8 h-8 rounded-lg bg-[#577a4c]/10 text-[#3d5636] flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-lg bg-[#ffa326]/10 text-[#cc7e14] flex items-center justify-center">
                         <IconComp className="w-4 h-4" />
                       </div>
                     </div>
                     <h3 className="text-[15px] font-bold text-neutral-900 tracking-wide">
                       {step.title}
                     </h3>
-                    <h4 className="text-[10px] font-bold text-[#577a4c] uppercase tracking-wider mb-2">
+                    <h4 className="text-[10px] font-bold text-[#ffa326] uppercase tracking-wider mb-2">
                       {step.subtitle}
                     </h4>
                     <p className="text-xs text-neutral-600 font-light leading-relaxed">
@@ -324,7 +324,7 @@ function HouseRemodelingPage() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
+            <span className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
               Specialties
             </span>
             <h2 
@@ -348,10 +348,10 @@ function HouseRemodelingPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
-                  className="bg-white rounded-2xl border border-neutral-200/50 p-6 shadow-sm hover:shadow-xl hover:scale-[1.01] hover:border-[#577a4c]/30 transition-all duration-300 flex flex-col justify-between"
+                  className="bg-white rounded-2xl border border-neutral-200/50 p-6 shadow-sm hover:shadow-xl hover:scale-[1.01] hover:border-[#ffa326]/30 transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
-                    <div className="w-12 h-12 rounded-xl bg-[#577a4c]/10 text-[#3d5636] border border-[#577a4c]/20 flex items-center justify-center mb-5">
+                    <div className="w-12 h-12 rounded-xl bg-[#ffa326]/10 text-[#cc7e14] border border-[#ffa326]/20 flex items-center justify-center mb-5">
                       <IconComp className="w-5 h-5" />
                     </div>
                     <h3 className="text-md font-bold text-neutral-900 mb-2 tracking-wide capitalize">
@@ -383,14 +383,14 @@ function HouseRemodelingPage() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="space-y-5"
             >
-              <span className="inline-flex items-center bg-[#2d3f26] border border-[#23321e]/30 text-white rounded-full px-5 py-1.5 text-[10px] font-black uppercase tracking-widest shadow-sm">
-                The JRM Standard
+              <span className="inline-flex items-center bg-[#2b1a05] border border-[#593203]/30 text-white rounded-full px-5 py-1.5 text-[10px] font-black uppercase tracking-widest shadow-sm">
+                The Right Lane Standard
               </span>
               <h2 
                 className="text-3xl md:text-4xl font-extrabold text-neutral-900 tracking-tight leading-tight"
                 style={{ fontFamily: "Georgia, serif" }}
               >
-                Why Choose JRM for Your San Antonio Remodel?
+                Why Choose Right Lane for Your Clearwater Remodel?
               </h2>
               <p className="text-base text-neutral-700 leading-relaxed font-light">
                 A home remodel is a major journey. We stand by you as a trusted local contractor, ensuring every single layout addition, wall refacing, or custom cabinet installation holds a lifetime value.
@@ -408,7 +408,7 @@ function HouseRemodelingPage() {
                   transition={{ duration: 0.7, delay: idx * 0.12, ease: "easeOut" }}
                   className="bg-white/80 backdrop-blur-sm border border-neutral-200/50 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex gap-4"
                 >
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#577a4c]/10 text-[#3d5636] border border-[#577a4c]/20 select-none">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#ffa326]/10 text-[#cc7e14] border border-[#ffa326]/20 select-none">
                     <CheckCircle2 className="w-5 h-5" />
                   </span>
                   <div>
@@ -445,51 +445,51 @@ function HouseRemodelingPage() {
             className="max-w-4xl mx-auto flex flex-col items-center"
           >
             {/* Logo */}
-            <img src={logo} alt="JRM" className="h-14 w-auto object-contain mb-8 filter brightness-110" />
+            <img src={logo} alt="Right Lane" className="h-14 w-auto object-contain mb-8 filter brightness-110" />
 
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-5">
               Ready to Reimagine Your Home?
             </h2>
 
             <p className="text-sm md:text-base text-neutral-300 leading-relaxed font-light mb-8 max-w-3xl">
-              A successful remodel begins with the right partner. Let's discuss how we can bring new life, function, and value to your San Antonio home.
+              A successful remodel begins with the right partner. Let's discuss how we can bring new life, function, and value to your Clearwater home.
             </p>
 
-            <p className="text-md font-bold text-[#a5b89d] mb-10 tracking-wide uppercase">
+            <p className="text-md font-bold text-[#ffa326] mb-10 tracking-wide uppercase">
               Contact us today to schedule your free, on-site consultation.
             </p>
 
             <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-8 w-full max-w-3xl mb-10 text-left">
               <h3 className="text-md font-bold text-white mb-5 text-center sm:text-left tracking-wide">
-                JRM Construction Landscaping Design
+                Right Lane Handyman Services, LLC
               </h3>
               
               <div className="grid sm:grid-cols-2 gap-5 text-[15px] font-light">
-                <a href="tel:2104295526" className="flex items-center gap-3.5 hover:text-[#a5b89d] transition-colors">
-                  <Phone className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>(210) 429-5526</span>
+                <a href="tel:7276420201" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
+                  <Phone className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>(727) 642-0201</span>
                 </a>
-                <a href="mailto:robertsa210@icloud.com" className="flex items-center gap-3.5 hover:text-[#a5b89d] transition-colors">
-                  <Mail className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>robertsa210@icloud.com</span>
+                <a href="mailto:rightlanehandymanservice@yahoo.com" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
+                  <Mail className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>rightlanehandymanservice@yahoo.com</span>
                 </a>
                 <div className="flex items-center gap-3.5">
-                  <MapPin className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>Serving San Antonio, Boerne, New Braunfels & surrounding 80-mile area</span>
+                  <MapPin className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>Serving Clearwater, Largo, St. Petersburg & surrounding Clearwater area</span>
                 </div>
                 <div className="flex items-center gap-3.5">
-                  <ShieldCheck className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>Licensed · Insured · Bonded | Building Trust Since 1989</span>
+                  <ShieldCheck className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>Licensed · Insured · Bonded | Building Trust with 25 years of experience</span>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-wrap gap-4 justify-center">
               <a
-                href="tel:2104295526"
-                className="rounded-full bg-[#577a4c] hover:bg-[#4d6c43] px-8 py-3.5 text-white text-[14px] font-bold tracking-wider uppercase transition-all duration-300 shadow-lg hover:scale-[1.03]"
+                href="tel:7276420201"
+                className="rounded-full bg-[#ffa326] hover:bg-[#ffa326] px-8 py-3.5 text-white text-[14px] font-bold tracking-wider uppercase transition-all duration-300 shadow-lg hover:scale-[1.03]"
               >
-                Call Robert Now
+                Call Ronnie Now
               </a>
               <Link
                 to="/lets-talk"

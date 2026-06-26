@@ -1,124 +1,157 @@
+import {
+  Award,
+  ShieldCheck,
+  Building2,
+  Clock,
+  CircleDollarSign,
+  ThumbsUp,
+  Truck,
+  MapPin,
+} from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { useTranslation } from "@/context/translation-context";
-import { ClipboardList, Phone } from "lucide-react";
-import welBg from "@/assets/wel-bg.png";
-import { motion } from "framer-motion";
+import img1 from "@/assets/why-choose-1.png";
+import img2 from "@/assets/why-choose-2.png";
+import img3 from "@/assets/why-choose-3.png";
+
+const features = [
+  {
+    icon: Award,
+    titleKey: "whychoose.f1.title",
+    descKey: "whychoose.f1.desc",
+  },
+  {
+    icon: ShieldCheck,
+    titleKey: "whychoose.f2.title",
+    descKey: "whychoose.f2.desc",
+  },
+  {
+    icon: Building2,
+    titleKey: "whychoose.f3.title",
+    descKey: "whychoose.f3.desc",
+  },
+  {
+    icon: Clock,
+    titleKey: "whychoose.f4.title",
+    descKey: "whychoose.f4.desc",
+  },
+  {
+    icon: CircleDollarSign,
+    titleKey: "whychoose.f5.title",
+    descKey: "whychoose.f5.desc",
+  },
+  {
+    icon: ThumbsUp,
+    titleKey: "whychoose.f6.title",
+    descKey: "whychoose.f6.desc",
+  },
+  {
+    icon: Truck,
+    titleKey: "whychoose.f7.title",
+    descKey: "whychoose.f7.desc",
+  },
+  {
+    icon: MapPin,
+    titleKey: "whychoose.f8.title",
+    descKey: "whychoose.f8.desc",
+  },
+];
 
 export function WhyChooseSection() {
   const { t } = useTranslation();
 
-  const features = [
-    { title: "whychoose.f1.title", desc: "whychoose.f1.desc" },
-    { title: "whychoose.f2.title", desc: "whychoose.f2.desc" },
-    { title: "whychoose.f3.title", desc: "whychoose.f3.desc" },
-    { title: "whychoose.f4.title", desc: "whychoose.f4.desc" },
-    { title: "whychoose.f5.title", desc: "whychoose.f5.desc" },
-    { title: "whychoose.f6.title", desc: "whychoose.f6.desc" },
-  ] as const;
-
   return (
     <div className="w-full bg-[#f4f3ef] mt-[15px] mb-[15px] pt-[5px] pb-[5px] px-[15px]">
-      <section
-        className="mx-auto max-w-[1400px] w-full rounded-[10px] bg-[#f1e8db] bg-cover bg-center px-[30px] py-[50px] border border-[#eae8e1] shadow-[0_12px_40px_rgb(0,0,0,0.04)]"
-        style={{ backgroundImage: `url(${welBg})` }}
-      >
-        <div className="grid gap-10 lg:grid-cols-[1.55fr_1fr] lg:gap-16 items-start">
-          {/* Left Text Block */}
-          <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col justify-center h-full w-full"
-          >
-            <div className="flex flex-col items-center lg:items-start text-center lg:text-left w-full">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#23321e]/30 bg-[#2d3f26]/90 backdrop-blur-md text-white text-[10px] md:text-[11px] font-extrabold uppercase tracking-widest mb-6 shadow-sm select-none">
-                <span className="flex h-2 w-2 relative">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                <span>{t("whychoose.badge")}</span>
+      <section className="relative mx-auto max-w-[1400px] w-full rounded-[10px] overflow-hidden bg-white py-16 px-6 sm:px-8 lg:px-12 border border-[#eae8e1] shadow-[0_12px_40px_rgba(0,0,0,0.04)]">
+        {/* Background glowing blobs */}
+        <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-gradient-to-br from-[#ffa326]/5 to-transparent blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-gradient-to-tl from-neutral-400/5 to-transparent blur-[120px] rounded-full pointer-events-none" />
+
+        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+          {/* Left Column: Images Grid */}
+          <div className="lg:col-span-5 grid grid-cols-2 gap-4 w-full h-auto">
+            {/* Left tall image */}
+            <div className="w-full overflow-hidden rounded-2xl relative shadow-md border border-neutral-200/10 group/img">
+              <img
+                src={img1}
+                alt="Construction Cleaning"
+                loading="lazy"
+                className="w-full h-[220px] sm:h-[360px] md:h-[420px] lg:h-[540px] object-cover transition-transform duration-700 ease-out group-hover/img:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-500" />
+            </div>
+            {/* Right stacked images */}
+            <div className="flex flex-col gap-4 w-full justify-between">
+              <div className="w-full overflow-hidden rounded-2xl relative shadow-md border border-neutral-200/10 group/img2">
+                <img
+                  src={img2}
+                  alt="Pressure Washing"
+                  loading="lazy"
+                  className="w-full h-[140px] sm:h-[172px] md:h-[210px] lg:h-[262px] object-cover transition-transform duration-700 ease-out group-hover/img2:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover/img2:opacity-100 transition-opacity duration-500" />
               </div>
+              <div className="w-full overflow-hidden rounded-2xl relative shadow-md border border-neutral-200/10 group/img3">
+                <img
+                  src={img3}
+                  alt="Lawn Mowing"
+                  loading="lazy"
+                  className="w-full h-[172px] sm:h-[232px] lg:h-[262px] object-cover transition-transform duration-700 ease-out group-hover/img3:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover/img3:opacity-100 transition-opacity duration-500" />
+              </div>
+            </div>
+          </div>
 
-              {/* Title */}
-              <h2 className="text-[26px] sm:text-[30px] md:text-4xl lg:text-[38px] leading-[1.2] font-extrabold text-neutral-900 tracking-tight mb-[15px]">
-                {t("whychoose.title")}
-              </h2>
+          {/* Right Column: Content */}
+          <div className="lg:col-span-7 flex flex-col items-start text-left">
+            {/* Badge */}
+            <div className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-black uppercase tracking-widest mb-6 select-none cursor-default">
+              {t("whychoose.badge")}
+            </div>
 
-              {/* Descriptions */}
-              <p className="text-neutral-700 text-[15px] md:text-base leading-[36px] mb-6 font-normal">
-                {t("whychoose.desc1")} {t("whychoose.desc2")}
-              </p>
+            <h2 className="text-[22px] sm:text-[26px] lg:text-[30px] font-bold text-left text-[#ce8015] leading-tight mt-0 mb-5">
+              {t("whychoose.title")}
+            </h2>
 
-              {/* Feature items */}
-              <div className="space-y-1 mb-8 w-full">
-                {features.map((f, idx) => (
+            {/* Features Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8 w-full">
+              {features.map((feature, idx) => {
+                const Icon = feature.icon;
+                return (
                   <div
-                    key={f.title}
-                    className={`group flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left justify-center sm:justify-start gap-3 hover:bg-[#2d3f26]/5 p-2 rounded-xl transition-all duration-300 ${
-                      idx === 0 ? "lg:-mt-[15px]" : ""
-                    }`}
+                    key={idx}
+                    className="flex gap-4 items-start group transition-all duration-300"
                   >
-                    <span className="text-[17px] select-none shrink-0 group-hover:translate-x-1.5 transition-transform duration-300 ease-out">
-                      👉
-                    </span>
-                    <p className="text-neutral-800 text-sm md:text-[15px] leading-relaxed">
-                      <strong className="font-bold text-neutral-950">{t(f.title)}:</strong>{" "}
-                      <span className="text-neutral-700 font-normal">{t(f.desc)}</span>
-                    </p>
+                    <div className="flex-shrink-0 flex items-center justify-center w-11 h-11 rounded-xl bg-[#ffa326]/5 text-[#cc7e14] group-hover:bg-[#ffa326]/10 group-hover:scale-105 transition-all duration-300 shadow-sm border border-[#ffa326]/10">
+                      <Icon className="w-5.5 h-5.5 stroke-[2]" />
+                    </div>
+                    <div>
+                      <h4 className="font-extrabold text-[15px] sm:text-base text-neutral-900 mb-1 leading-tight group-hover:text-[#cc7e14] transition-colors duration-300">
+                        {t(feature.titleKey)}
+                      </h4>
+                      <p className="text-xs sm:text-sm text-neutral-500 leading-relaxed font-medium">
+                        {t(feature.descKey)}
+                      </p>
+                    </div>
                   </div>
-                ))}
-              </div>
-
-              {/* CTAs */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-                <a
-                  href="#consultation"
-                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#2c241d] to-[#1a1511] hover:from-[#3d3228] hover:to-[#221c16] text-white text-[11px] md:text-xs font-bold uppercase tracking-widest rounded-full px-8 py-4 transition-all duration-300 shadow-[0_4px_14px_rgba(34,28,22,0.25)] hover:scale-[1.03] active:scale-[0.97]"
-                >
-                  <ClipboardList className="w-4 h-4 text-white/90" />
-                  <span>{t("whychoose.btn.consultation")}</span>
-                </a>
-                <a
-                  href="tel:2104295526"
-                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#577a4c] to-[#3d5636] hover:from-[#4d6c43] hover:to-[#33472c] text-white text-[11px] md:text-xs font-bold uppercase tracking-widest rounded-full px-8 py-4 transition-all duration-300 shadow-[0_4px_14px_rgba(58,84,51,0.25)] hover:scale-[1.03] active:scale-[0.97]"
-                >
-                  <Phone className="w-4 h-4 text-white/90" />
-                  <span>{t("whychoose.btn.call")}</span>
-                </a>
-              </div>
+                );
+              })}
             </div>
-          </motion.div>
 
-          {/* Right Video Block */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative group rounded-2xl overflow-hidden shadow-lg border border-neutral-900/5 h-[360px] lg:h-[480px] lg:sticky lg:top-[40px] self-start w-full"
-          >
-            <video
-              src="https://res.cloudinary.com/dgpdydebp/video/upload/v1781722131/IMG_5476_n4xtt7.mp4"
-              className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-500 ease-out"
-              autoPlay
-              loop
-              muted
-              playsInline
-            />
-            {/* Premium Glassmorphic Overlay Card */}
-            <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md border border-white/20 rounded-xl p-4 shadow-lg flex items-center justify-between select-none transition-all duration-300 group-hover:bottom-6 group-hover:bg-white/95 group-hover:shadow-xl">
-              <div>
-                <p className="text-[10px] text-neutral-500 font-bold uppercase tracking-wider">{t("services.coveredpatios")}</p>
-                <p className="text-sm font-bold text-neutral-900 mt-0.5">Custom Outdoor Pavilion</p>
-              </div>
-              <span className="text-[10px] font-bold text-[#3d5636] bg-[#577a4c]/10 border border-[#577a4c]/20 px-2.5 py-1 rounded-full uppercase tracking-wider">
-                Featured Work
-              </span>
-            </div>
-          </motion.div>
+            {/* Button */}
+            <Link
+              to="#"
+              className="mt-10 inline-flex items-center justify-center bg-neutral-950 hover:bg-neutral-800 text-white rounded-full px-8 py-3.5 text-xs font-black uppercase tracking-wider shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+            >
+              {t("whychoose.btn.book")}
+            </Link>
+          </div>
         </div>
       </section>
     </div>
   );
 }
+
+

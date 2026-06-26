@@ -1,13 +1,10 @@
-import houseRemodeling from "@/assets/svc-house-remodeling.jpg";
-import newConstruction from "@/assets/svc-new-construction.jpg";
-import fireplace from "@/assets/svc-fireplace.jpg";
-import fencing from "@/assets/svc-fencing.jpg";
-import coveredPatios from "@/assets/svc-covered-patios.jpg";
-import artificialTurf from "@/assets/svc-artificial-turf.jpg";
-import softscapes from "@/assets/svc-softscapes.jpg";
-import outdoorKitchens from "@/assets/svc-outdoor-kitchens.jpg";
-import palmTrees from "@/assets/svc-palm-trees.jpg";
-import hardscapes from "@/assets/svc-hardscapes.jpg";
+import cleaning from "@/assets/svc-cleaning.png";
+import pressureWash from "@/assets/svc-pressure-wash.png";
+import demolition from "@/assets/svc-demolition.png";
+import junkRemoval from "@/assets/svc-junk-removal.png";
+import maintenance from "@/assets/svc-maintenance.png";
+import debrisRemoval from "@/assets/svc-debris-removal.png";
+import landscaping from "@/assets/svc-landscaping.png";
 import { useTranslation } from "@/context/translation-context";
 import { ArrowRight } from "lucide-react";
 import {
@@ -20,16 +17,13 @@ import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 
 const services = [
-  { key: "services.remodeling", image: houseRemodeling },
-  { key: "services.construction", image: newConstruction },
-  { key: "services.fireplace", image: fireplace },
-  { key: "services.fencing", image: fencing },
-  { key: "services.coveredpatios", image: coveredPatios },
-  { key: "services.turf", image: artificialTurf },
-  { key: "services.softscapes", image: softscapes },
-  { key: "services.kitchens", image: outdoorKitchens },
-  { key: "services.palmtrees", image: palmTrees },
-  { key: "services.hardscapes", image: hardscapes },
+  { key: "services.cleaning", image: cleaning },
+  { key: "services.pressurewash", image: pressureWash },
+  { key: "services.demolition", image: demolition },
+  { key: "services.junkremoval", image: junkRemoval },
+  { key: "services.maintenance", image: maintenance },
+  { key: "services.debrisremoval", image: debrisRemoval },
+  { key: "services.landscaping", image: landscaping },
 ] as const;
 
 export function ServicesSection() {
@@ -56,10 +50,10 @@ export function ServicesSection() {
             className="flex flex-col justify-center h-full"
           >
             <div className="pr-2 mb-6 lg:mb-0">
-              <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-5">
+              <span className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-5">
                 {t("services.badge")}
               </span>
-              <h2 className="text-[35px] -mt-[5px] -mb-[10px] leading-tight font-black text-neutral-900 tracking-tight">
+              <h2 className="text-[24px] sm:text-[30px] lg:text-[35px] -mt-[5px] -mb-[10px] leading-tight font-bold text-neutral-900 tracking-tight">
                 {t("services.title")}
               </h2>
               <p className="mt-5 text-neutral-600 text-sm md:text-base leading-relaxed font-normal">
@@ -67,8 +61,8 @@ export function ServicesSection() {
               </p>
               <div className="mt-7">
                 <Link
-                  to="/work"
-                  className="inline-flex items-center gap-2.5 bg-gradient-to-r from-[#577a4c] to-[#3d5636] hover:from-[#4d6c43] hover:to-[#33472c] text-white rounded-full px-7 py-3 text-[14px] font-bold shadow-[0_4px_14px_rgba(87,122,76,0.3)] hover:scale-[1.03] active:scale-[0.97] transition-all duration-300"
+                  to="#"
+                  className="inline-flex items-center gap-2.5 bg-gradient-to-r from-[#ffa326] to-[#cc7e14] hover:from-[#ffa326] hover:to-[#995906] text-white rounded-full px-7 py-3 text-[14px] font-bold shadow-[0_4px_14px_rgba(204,126,20,0.3)] hover:scale-[1.03] active:scale-[0.97] transition-all duration-300"
                 >
                   {t("services.btn.more")}
                 </Link>
@@ -77,7 +71,7 @@ export function ServicesSection() {
           </motion.div>
 
           {/* Top 3 Service Cards */}
-          <div className="grid sm:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
             {topItems.map((s, idx) => (
               <motion.div
                 key={s.key}
@@ -111,16 +105,16 @@ export function ServicesSection() {
                         {t((s.key + ".desc") as any)}
                       </p>
 
-                        <div className="pt-2">
-                          <Link
-                            to="/services"
-                            className="relative inline-flex items-center gap-1 text-[#84a377] font-bold text-[10px] uppercase tracking-widest pb-0.5"
-                          >
-                            <span>View More</span>
-                            <ArrowRight className="w-3 h-3" />
-                            <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[#84a377]" />
-                          </Link>
-                        </div>
+                      <div className="pt-2">
+                        <Link
+                          to="#"
+                          className="relative inline-flex items-center gap-1 text-[#cc7e14] hover:text-[#ffa326] font-bold text-[10px] uppercase tracking-widest pb-0.5 transition-colors duration-300"
+                        >
+                          <span>View More</span>
+                          <ArrowRight className="w-3 h-3" />
+                          <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[#cc7e14] hover:bg-[#ffa326] transition-colors duration-300" />
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -154,7 +148,7 @@ export function ServicesSection() {
           >
             <CarouselContent className="-ml-5">
               {slideItems.map((s, idx) => (
-                <CarouselItem key={`${s.key}-${idx}`} className="pl-5 sm:basis-1/2 md:basis-1/3 lg:basis-1/5">
+                <CarouselItem key={`${s.key}-${idx}`} className="pl-5 basis-full xs:basis-1/2 sm:basis-1/2 md:basis-1/3 lg:basis-1/5">
                   <div className="group relative rounded-2xl overflow-hidden shadow-md bg-neutral-950 h-[220px] sm:h-[280px] lg:h-[340px] xl:h-[380px] border border-neutral-900/5 cursor-pointer">
                     {/* Background image */}
                     <img
@@ -182,12 +176,12 @@ export function ServicesSection() {
 
                           <div className="pt-2">
                             <Link
-                              to="/services"
-                              className="relative inline-flex items-center gap-1 text-[#84a377] font-bold text-[10px] uppercase tracking-widest pb-0.5"
+                              to="#"
+                              className="relative inline-flex items-center gap-1 text-[#cc7e14] hover:text-[#ffa326] font-bold text-[10px] uppercase tracking-widest pb-0.5 transition-colors duration-300"
                             >
                               <span>View More</span>
                               <ArrowRight className="w-3 h-3" />
-                              <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[#84a377]" />
+                              <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[#cc7e14] hover:bg-[#ffa326] transition-colors duration-300" />
                             </Link>
                           </div>
                         </div>

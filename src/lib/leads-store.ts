@@ -25,6 +25,9 @@ export interface Review {
   replyText?: string;
   createdAt: string;
   photos?: string[];
+  role?: string;
+  initials?: string;
+  avatarColor?: string;
 }
 
 export interface WebEmail {
@@ -59,7 +62,7 @@ export const INITIAL_LEADS: Lead[] = [
     name: "Lisa Thompson",
     email: "lisa.thompson86@yahoo.com",
     phone: "(210) 555-8831",
-    address: "812 Walnut Ave, Seguin, TX 78155",
+    address: "812 Walnut Ave, Pinellas Park, TX 78155",
     projectType: "remodeling",
     description: "Interested in a full kitchen and master bath remodel. Our house was built in 1995 and needs a modern layout, new quartz countertops, custom cabinetry, and walk-in shower expansion.",
     contactTime: "afternoon",
@@ -72,7 +75,7 @@ export const INITIAL_LEADS: Lead[] = [
     name: "David Miller",
     email: "dmiller_sa@outlook.com",
     phone: "(830) 555-4421",
-    address: "102 Echo Ridge, New Braunfels, TX 78130",
+    address: "102 Echo Ridge, St. Petersburg, TX 78130",
     projectType: "outdoor-kitchen",
     description: "We want to install a high-end outdoor kitchen next to our pool. Need a built-in grill, under-counter fridge, granite bar seating for 6, and a stone accent column matching our pool coping.",
     contactTime: "evening",
@@ -85,7 +88,7 @@ export const INITIAL_LEADS: Lead[] = [
     name: "Emily Rodriguez",
     email: "emily.rod@gmail.com",
     phone: "(210) 555-7729",
-    address: "2209 Canyon Lake Dr, Canyon Lake, TX 78133",
+    address: "2209 Tarpon Springs Dr, Tarpon Springs, TX 78133",
     projectType: "fireplace",
     description: "Would love a custom floor-to-ceiling stone fireplace built in our double-height living room. Needs a rustic cedar mantel and built-in wood storage alcove.",
     contactTime: "afternoon",
@@ -98,7 +101,7 @@ export const INITIAL_LEADS: Lead[] = [
     name: "Amanda Taylor",
     email: "amanda.taylor@comcast.net",
     phone: "(210) 555-1284",
-    address: "7402 Crown Point, San Antonio, TX 78258",
+    address: "7402 Crown Point, Clearwater, FL 78258",
     projectType: "turf",
     description: "Need artificial turf installed in our backyard (~1,200 sq ft). We have two large dogs and the grass keeps dying. Also want proper sub-base drainage so there's no odors.",
     contactTime: "morning",
@@ -126,7 +129,7 @@ export const INITIAL_LEADS: Lead[] = [
     name: "Michael Brown",
     email: "mbrown.farm@yahoo.com",
     phone: "(830) 555-3312",
-    address: "202 Peach Orchard, Fredericksburg, TX 78624",
+    address: "202 Peach Orchard, Tampa, TX 78624",
     projectType: "softscapes",
     description: "Looking for planting design and softscape installation for our front entrance. Want drought-tolerant native Texas plants, landscape beds, mulch, and low-voltage drip irrigation.",
     contactTime: "morning",
@@ -152,7 +155,7 @@ export const INITIAL_LEADS: Lead[] = [
     name: "Kevin Thomas",
     email: "kthomas@thomasproperties.com",
     phone: "(210) 555-4040",
-    address: "8300 Medical Dr, San Antonio, TX 78229",
+    address: "8300 Medical Dr, Clearwater, FL 78229",
     projectType: "commercial",
     description: "Commercial landscaping and hardscaping upgrades for our medical office center. Needs high-durability plants, masonry retaining walls, and custom stone walkways.",
     contactTime: "afternoon",
@@ -175,48 +178,294 @@ export const INITIAL_LEADS: Lead[] = [
   }
 ];
 
-// Initial reviews pre-seeded from reviewsPage list
+// Initial reviews pre-seeded from reviewsPage list and landing page
 export const INITIAL_REVIEWS: Review[] = [
   {
     id: "review-1",
     title: "A Complete Home Transformation",
-    text: "Robert and his team just finished a complete remodel and backyard overhaul for us. From the new kitchen to the covered patio and outdoor kitchen, the entire process was professional and seamless. His 35 years of experience showed at every turn—he anticipated issues we never would have thought of. The crew was respectful, the site was kept clean, and the quality is outstanding. JRM is a true design-build contractor.",
+    text: "Ronnie and his team just finished a complete remodel and backyard overhaul for us. From the new kitchen to the covered patio and outdoor kitchen, the entire process was professional and seamless. His 25+ Years of experience showed at every turn—he anticipated issues we never would have thought of. The crew was respectful, the site was kept clean, and the quality is outstanding. Right Lane is a true design-build contractor.",
     author: "The Carter Family",
-    location: "San Antonio",
+    location: "Clearwater",
     rating: 5,
     featured: true,
-    createdAt: "2026-05-10T10:00:00Z"
+    createdAt: "2026-05-10T10:00:00Z",
+    initials: "CF",
+    avatarColor: "#1D4ED8",
+    role: "Homeowner, Clearwater"
   },
   {
     id: "review-2",
     title: "An Outdoor Oasis Created",
-    text: "Our backyard was just empty grass. Now, it's our favorite 'room' in the house! JRM built a stunning flagstone patio, a custom pergola, and a softscape garden that looks like it's always been there. Robert's design eye is incredible. We especially appreciated that they were licensed and insured; it gave us so much peace of mind. We recommend them to everyone.",
+    text: "Our backyard was just empty grass. Now, it's our favorite 'room' in the house! Right Lane built a stunning flagstone patio, a custom pergola, and a softscape garden that looks like it's always been there. Ronnie's design eye is incredible. We especially appreciated that they were licensed and insured; it gave us so much peace of mind. We recommend them to everyone.",
     author: "Melissa & Ben R.",
-    location: "Boerne",
+    location: "Largo",
     rating: 5,
     featured: true,
-    createdAt: "2026-05-18T14:30:00Z"
+    createdAt: "2026-05-18T14:30:00Z",
+    initials: "MR",
+    avatarColor: "#7C3AED",
+    role: "Homeowner, Largo"
   },
   {
     id: "review-3",
     title: "Trustworthy & Honest Repair",
-    text: "After a storm damaged our fence and part of our roof eaves, we needed emergency help. Robert answered his phone and had a crew out within hours for temporary protection. They scheduled the full repair promptly, provided a clear, fair quote, and did impeccable work. In a world of contractors who don't call back, JRM's 24/7 reliability and old-school integrity are priceless.",
+    text: "After a storm damaged our fence and part of our roof eaves, we needed emergency help. Ronnie answered his phone and had a crew out within hours for temporary protection. They scheduled the full repair promptly, provided a clear, fair quote, and did impeccable work. In a world of contractors who don't call back, Right Lane's 24/7 reliability and old-school integrity are priceless.",
     author: "David H.",
-    location: "New Braunfels",
+    location: "St. Petersburg",
     rating: 5,
     featured: true,
     replyText: "Thank you David! Storm damage is always stressful, so we make it a priority to respond quickly and secure your property. Glad we could help get things back to normal.",
-    createdAt: "2026-05-24T08:15:00Z"
+    createdAt: "2026-05-24T08:15:00Z",
+    initials: "DH",
+    avatarColor: "#065F46",
+    role: "Homeowner, St. Petersburg"
   },
   {
     id: "review-4",
     title: "Kitchen Remodel Perfection",
-    text: "We interviewed several contractors for our kitchen remodel. Robert from JRM stood out immediately. He was knowledgeable, listened to our ideas, and his quote was detailed and transparent—no hidden fees. The craftsmanship on the custom cabinets and tilework is beautiful. They finished on time and on budget. A stress-free, fantastic experience.",
+    text: "We interviewed several contractors for our kitchen remodel. Ronnie from Right Lane stood out immediately. He was knowledgeable, listened to our ideas, and his quote was detailed and transparent—no hidden fees. The craftsmanship on the custom cabinets and tilework is beautiful. They finished on time and on budget. A stress-free, fantastic experience.",
     author: "Sofia & Mark T.",
-    location: "San Antonio",
+    location: "Clearwater",
     rating: 5,
     featured: true,
-    createdAt: "2026-06-01T11:00:00Z"
+    createdAt: "2026-06-01T11:00:00Z",
+    initials: "SM",
+    avatarColor: "#B45309",
+    role: "Homeowner, Clearwater"
+  },
+  {
+    id: "review-5",
+    title: "Custom Fencing & Pergola",
+    text: "The backyard fencing and covered patio upgrade they did for our home was outstanding. Professional, clean, and finished ahead of schedule.",
+    author: "Marcus T.",
+    location: "Clearwater",
+    rating: 5,
+    featured: true,
+    createdAt: "2026-06-02T10:00:00Z",
+    initials: "MT",
+    avatarColor: "#1D4ED8",
+    role: "Homeowner, Clearwater"
+  },
+  {
+    id: "review-6",
+    title: "Emergency Storm Cleanup",
+    text: "Called them for emergency cleanup and debris removal after the storm — they arrived within 45 minutes and worked tirelessly. Truly 24/7 service.",
+    author: "Priya S.",
+    location: "Largo",
+    rating: 5,
+    featured: true,
+    createdAt: "2026-06-03T11:15:00Z",
+    initials: "PS",
+    avatarColor: "#7C3AED",
+    role: "Property Manager, Largo"
+  },
+  {
+    id: "review-7",
+    title: "Gorgeous Artificial Turf",
+    text: "They installed a gorgeous artificial turf and paved walkway in our courtyard. Flawless execution. I'll never use another handyman company again.",
+    author: "Jared W.",
+    location: "St. Petersburg",
+    rating: 5,
+    featured: true,
+    createdAt: "2026-06-04T12:00:00Z",
+    initials: "JW",
+    avatarColor: "#065F46",
+    role: "Homeowner, St. Petersburg"
+  },
+  {
+    id: "review-8",
+    title: "Office Renovation Work",
+    text: "Best remodeling contractor in Clearwater. They wired, painted, and finished our entire office renovation — on time, on budget, and zero issues.",
+    author: "Diana L.",
+    location: "Dunedin",
+    rating: 5,
+    featured: true,
+    createdAt: "2026-06-05T14:30:00Z",
+    initials: "DL",
+    avatarColor: "#B45309",
+    role: "Business Owner, Dunedin"
+  },
+  {
+    id: "review-9",
+    title: "Property Mulch & Landscaping",
+    text: "Mulching, landscaping, and property maintenance was seamless. They set up Lutron outdoor lighting and fixed all our deck issues.",
+    author: "Kenji M.",
+    location: "Clearwater Beach",
+    rating: 5,
+    featured: true,
+    createdAt: "2026-06-06T09:00:00Z",
+    initials: "KM",
+    avatarColor: "#BE185D",
+    role: "Homeowner, Clearwater Beach"
+  },
+  {
+    id: "review-10",
+    title: "Bungalow Drywall & Paint",
+    text: "Hired them for a complete drywall repair and painting of a 1970s bungalow. They passed every inspection. Excellent team.",
+    author: "Rosa F.",
+    location: "Pinellas Park",
+    rating: 5,
+    featured: true,
+    createdAt: "2026-06-07T15:20:00Z",
+    initials: "RF",
+    avatarColor: "#0F766E",
+    role: "Real Estate Investor, Pinellas Park"
+  },
+  {
+    id: "review-11",
+    title: "Limestone Pavement & Demo",
+    text: "Pressure washing and concrete demolition was smooth and the team was incredibly knowledgeable. They left the site spotless.",
+    author: "Tony B.",
+    location: "Tarpon Springs",
+    rating: 5,
+    featured: true,
+    createdAt: "2026-06-08T16:00:00Z",
+    initials: "TB",
+    avatarColor: "#9333EA",
+    role: "Restaurant Owner, Tarpon Springs"
+  },
+  {
+    id: "review-12",
+    title: "Safety Harbor Remodel",
+    text: "Outstanding service from start to finish. The crew was courteous, efficient, and clearly knew what they were doing. Highly recommend.",
+    author: "Sandra K.",
+    location: "Safety Harbor",
+    rating: 5,
+    featured: true,
+    createdAt: "2026-06-09T10:45:00Z",
+    initials: "SK",
+    avatarColor: "#DC2626",
+    role: "Property Manager, Safety Harbor"
+  },
+  {
+    id: "review-13",
+    title: "Fast Junk Hauling",
+    text: "Ronnie hauled away two truckloads of old deck lumber and yard waste in less than an hour. Great prices and prompt service in Largo.",
+    author: "Gary D.",
+    location: "Largo",
+    rating: 5,
+    featured: true,
+    createdAt: "2026-06-10T11:00:00Z",
+    initials: "GD",
+    avatarColor: "#1D4ED8",
+    role: "Homeowner, Largo"
+  },
+  {
+    id: "review-14",
+    title: "Driveway Looks Brand New",
+    text: "Professional pressure washing for our entire driveway and pool deck. It looks brand new again. Highly recommend Right Lane!",
+    author: "Linda K.",
+    location: "Clearwater Beach",
+    rating: 5,
+    featured: true,
+    createdAt: "2026-06-11T13:20:00Z",
+    initials: "LK",
+    avatarColor: "#7C3AED",
+    role: "Homeowner, Clearwater Beach"
+  },
+  {
+    id: "review-15",
+    title: "Perfect Drywall Repair",
+    text: "Right Lane repaired our drywall after a plumbing leak. They did the patching, texturing, and painting flawlessly. You can't even see where the hole was.",
+    author: "Mark A.",
+    location: "St. Petersburg",
+    rating: 5,
+    featured: true,
+    createdAt: "2026-06-12T14:15:00Z",
+    initials: "MA",
+    avatarColor: "#065F46",
+    role: "Homeowner, St. Petersburg"
+  },
+  {
+    id: "review-16",
+    title: "Excellent Garage Cleanout",
+    text: "Fast debris removal after clearing out our garage. They took care of everything from old furniture to broken appliances. Excellent service.",
+    author: "Sarah W.",
+    location: "Dunedin",
+    rating: 5,
+    featured: true,
+    createdAt: "2026-06-13T10:00:00Z",
+    initials: "SW",
+    avatarColor: "#B45309",
+    role: "Homeowner, Dunedin"
+  },
+  {
+    id: "review-17",
+    title: "Stunning Curb Appeal",
+    text: "Had our front yard mulched and garden beds bordered. Right Lane did a beautiful job. Our curb appeal has never looked better!",
+    author: "Thomas H.",
+    location: "Safety Harbor",
+    rating: 5,
+    featured: true,
+    createdAt: "2026-06-14T09:30:00Z",
+    initials: "TH",
+    avatarColor: "#BE185D",
+    role: "Homeowner, Safety Harbor"
+  },
+  {
+    id: "review-18",
+    title: "Sturdy Fence Repairs",
+    text: "Repaired our wooden fence gates and replaced three rotting posts. Very sturdy work and fair pricing. Will definitely hire Ronnie again.",
+    author: "Nancy P.",
+    location: "Pinellas Park",
+    rating: 5,
+    featured: true,
+    createdAt: "2026-06-15T16:00:00Z",
+    initials: "NP",
+    avatarColor: "#0F766E",
+    role: "Homeowner, Pinellas Park"
+  },
+  {
+    id: "review-19",
+    title: "Quick & Handy Help",
+    text: "Super responsive handyman service. They fixed our sticky doors, hung some heavy shelving, and replaced three light fixtures in one afternoon.",
+    author: "Jason B.",
+    location: "Clearwater",
+    rating: 5,
+    featured: true,
+    createdAt: "2026-06-16T12:00:00Z",
+    initials: "JB",
+    avatarColor: "#9333EA",
+    role: "Homeowner, Clearwater"
+  },
+  {
+    id: "review-20",
+    title: "Commercial Storm Cleanup",
+    text: "Cleaned up our commercial property after storm damage. Cleared fallen branches, loose gravel, and trash. Excellent communication throughout.",
+    author: "Robert T.",
+    location: "Tampa",
+    rating: 5,
+    featured: true,
+    createdAt: "2026-06-17T11:45:00Z",
+    initials: "RT",
+    avatarColor: "#DC2626",
+    role: "Business Owner, Tampa"
+  },
+  {
+    id: "review-21",
+    title: "Deck Sealing & Wash",
+    text: "Excellent deck pressure washing and sealing. Ronnie was professional, on time, and left our backyard spotless. 5 stars!",
+    author: "Rachel S.",
+    location: "Tarpon Springs",
+    rating: 5,
+    featured: true,
+    createdAt: "2026-06-18T10:15:00Z",
+    initials: "RS",
+    avatarColor: "#1D4ED8",
+    role: "Homeowner, Tarpon Springs"
+  },
+  {
+    id: "review-22",
+    title: "Heavy Junk Removal",
+    text: "They hauled away our old hot tub and concrete blocks. Very heavy work but the Right Lane crew handled it with ease. Outstanding service!",
+    author: "Michael F.",
+    location: "Largo",
+    rating: 5,
+    featured: true,
+    createdAt: "2026-06-19T14:30:00Z",
+    initials: "MF",
+    avatarColor: "#7C3AED",
+    role: "Homeowner, Largo"
   }
 ];
 
@@ -346,7 +595,7 @@ export const getChatSessionById = async (sessionId: string): Promise<ChatSession
 
 export const createChatSession = async (
   clientName: string, 
-  clientCity: string = "San Antonio",
+  clientCity: string = "Clearwater",
   clientEmail?: string,
   clientPhone?: string
 ): Promise<ChatSession> => {
@@ -459,7 +708,7 @@ export const getAnalyticsData = () => {
   leads.forEach(l => {
     // extract city from address: "..., <City>, TX ..."
     const parts = l.address.split(",");
-    let city = "San Antonio";
+    let city = "Clearwater";
     if (parts.length >= 2) {
       const cityPart = parts[parts.length - 2].trim();
       city = cityPart;
@@ -538,8 +787,8 @@ export const INITIAL_CHATS: ChatSession[] = [
   {
     id: "session-1",
     clientName: "David Miller",
-    clientCity: "New Braunfels",
-    lastMessage: "Hi Robert, when can you come out to estimate the outdoor kitchen?",
+    clientCity: "St. Petersburg",
+    lastMessage: "Hi Ronnie, when can you come out to estimate the outdoor kitchen?",
     lastMessageTime: new Date(Date.now() - 3600000 * 2).toISOString(),
     unread: true,
     messages: [
@@ -558,7 +807,7 @@ export const INITIAL_CHATS: ChatSession[] = [
       {
         id: "msg-3",
         sender: "client",
-        text: "Yes, about 12 feet long. Hi Robert, when can you come out to estimate the outdoor kitchen?",
+        text: "Yes, about 12 feet long. Hi Ronnie, when can you come out to estimate the outdoor kitchen?",
         timestamp: new Date(Date.now() - 3600000 * 2).toISOString()
       }
     ]
@@ -566,7 +815,7 @@ export const INITIAL_CHATS: ChatSession[] = [
   {
     id: "session-2",
     clientName: "Anonymous Visitor",
-    clientCity: "Boerne",
+    clientCity: "Largo",
     lastMessage: "Sounds good, thanks!",
     lastMessageTime: new Date(Date.now() - 3600000 * 5).toISOString(),
     unread: false,
@@ -574,13 +823,13 @@ export const INITIAL_CHATS: ChatSession[] = [
       {
         id: "msg-4",
         sender: "client",
-        text: "Do you serve the Boerne area for turf installations?",
+        text: "Do you serve the Largo area for turf installations?",
         timestamp: new Date(Date.now() - 3600000 * 5.2).toISOString()
       },
       {
         id: "msg-5",
         sender: "admin",
-        text: "Yes we do! We serve Boerne, Comfort, and all surrounding areas. Our artificial turf includes a premium 15-year warranty.",
+        text: "Yes we do! We serve Largo, Comfort, and all surrounding areas. Our artificial turf includes a premium 15-year warranty.",
         timestamp: new Date(Date.now() - 3600000 * 5.1).toISOString()
       },
       {

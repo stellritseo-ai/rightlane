@@ -147,6 +147,21 @@ export const addReviewFn = createServerFn({ method: "POST" })
       photosList.push(url);
     }
 
+    const authorName = data.author || "Anonymous";
+    const parts = authorName.trim().split(/\s+/);
+    let computedInitials = "";
+    if (parts.length > 0 && parts[0]) computedInitials += parts[0][0].toUpperCase();
+    if (parts.length > 1 && parts[parts.length - 1]) computedInitials += parts[parts.length - 1][0].toUpperCase();
+    if (!computedInitials) computedInitials = "U";
+
+    const palette = ["#1D4ED8", "#7C3AED", "#065F46", "#B45309", "#BE185D", "#0F766E", "#9333EA", "#DC2626"];
+    let hash = 0;
+    for (let i = 0; i < authorName.length; i++) {
+      hash = authorName.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const computedColor = palette[Math.abs(hash) % palette.length];
+    const computedRole = data.role || `Homeowner, ${data.location || "Clearwater"}`;
+
     const newReview = new ReviewModel({
       title: data.title,
       text: data.text,
@@ -155,7 +170,10 @@ export const addReviewFn = createServerFn({ method: "POST" })
       rating: data.rating,
       featured: true,
       createdAt: new Date().toISOString(),
-      photos: photosList
+      photos: photosList,
+      role: computedRole,
+      initials: computedInitials,
+      avatarColor: computedColor
     });
 
     await newReview.save();
@@ -246,7 +264,7 @@ export const createChatSessionFn = createServerFn({ method: "POST" })
 
     const newSession = new ChatSessionModel({
       clientName: data.clientName,
-      clientCity: data.clientCity || "San Antonio",
+      clientCity: data.clientCity || "Clearwater",
       clientEmail: data.clientEmail || "",
       clientPhone: data.clientPhone || "",
       lastMessage: "Chat started",
@@ -323,112 +341,10 @@ export const markChatAsReadFn = createServerFn({ method: "POST" })
 
 export const getGalleryPhotosFn = createServerFn({ method: "GET" })
   .handler(async () => {
-    const { connectDB, GalleryPhotoModel, GallerySettingsModel } = await import("../db.server");
-    const { uploadLocalFile } = await import("../cloudinary.server");
-    const path = await import("path");
-    const fs = await import("fs");
+    const { connectDB, GalleryPhotoModel } = await import("../db.server");
     await connectDB();
 
-    let photos = await GalleryPhotoModel.find().lean();
-
-    // Check if we have already seeded in the past
-    const settings = await GallerySettingsModel.findOne();
-    const hasSeeded = settings?.hasSeeded ?? false;
-
-    // Seed default photos ONLY if gallery collection is empty AND we have never seeded before
-    if (photos.length === 0 && !hasSeeded) {
-      console.log("Seeding default portfolio photos to MongoDB Atlas...");
-
-      const defaults = [
-        "/src/assets/svc-outdoor-kitchens.jpg",
-        "/src/assets/welcome-pavilion.jpg",
-        "/src/assets/svc-outdoor-kitchens.jpg",
-        "/src/assets/faq-pavilion.jpg",
-        "/src/assets/welcome-pavilion.jpg",
-        "/src/assets/welcome-pool.jpg",
-        "/src/assets/welcome-pool.jpg",
-        "/src/assets/hero-patio.jpg",
-        "/src/assets/stats-jobsite.jpg",
-        "/src/assets/svc-softscapes.jpg",
-        "/src/assets/svc-artificial-turf.jpg",
-        "/src/assets/svc-softscapes.jpg",
-        "/src/assets/svc-hardscapes.jpg",
-        "/src/assets/svc-fireplace.jpg",
-        "/src/assets/svc-softscapes.jpg",
-        "/src/assets/svc-fencing.jpg",
-        "/src/assets/svc-new-construction.jpg",
-        "/src/assets/svc-outdoor-kitchens.jpg",
-        "/src/assets/svc-house-remodeling.jpg"
-      ];
-
-      const seedData = [];
-      for (const relPath of defaults) {
-        let finalUrl = relPath;
-        const localPath = path.join(process.cwd(), relPath);
-        if (fs.existsSync(localPath)) {
-          try {
-            console.log(`Uploading seed asset to Cloudinary: ${relPath}`);
-            const cloudinaryUrl = await uploadLocalFile(localPath);
-            if (cloudinaryUrl) {
-              finalUrl = cloudinaryUrl;
-            }
-          } catch (err) {
-            console.error(`Failed to upload seed asset ${relPath} to Cloudinary:`, err);
-          }
-        }
-        seedData.push({
-          url: finalUrl,
-          uploadedAt: new Date().toISOString()
-        });
-      }
-
-      await GalleryPhotoModel.insertMany(seedData);
-
-      // Save seeding status
-      if (settings) {
-        settings.hasSeeded = true;
-        await settings.save();
-      } else {
-        const newSettings = new GallerySettingsModel({ hasSeeded: true });
-        await newSettings.save();
-      }
-
-      photos = await GalleryPhotoModel.find().lean();
-    } else {
-      // If there are already photos in the database and we haven't marked it as seeded, mark it now
-      if (photos.length > 0 && !hasSeeded) {
-        if (settings) {
-          settings.hasSeeded = true;
-          await settings.save();
-        } else {
-          const newSettings = new GallerySettingsModel({ hasSeeded: true });
-          await newSettings.save();
-        }
-      }
-
-      // Self-healing: migrate any existing local assets to Cloudinary
-      let needsRefetch = false;
-      for (const p of photos) {
-        if (p.url && p.url.startsWith("/src/assets/")) {
-          console.log(`Migrating existing database gallery photo to Cloudinary: ${p.url}`);
-          const localPath = path.join(process.cwd(), p.url);
-          if (fs.existsSync(localPath)) {
-            try {
-              const cloudinaryUrl = await uploadLocalFile(localPath);
-              if (cloudinaryUrl) {
-                await GalleryPhotoModel.findByIdAndUpdate(p._id, { url: cloudinaryUrl });
-                needsRefetch = true;
-              }
-            } catch (err) {
-              console.error(`Migration upload failed for ${p.url}:`, err);
-            }
-          }
-        }
-      }
-      if (needsRefetch) {
-        photos = await GalleryPhotoModel.find().lean();
-      }
-    }
+    const photos = await GalleryPhotoModel.find().lean();
 
     return photos.map((p: any) => ({
       id: p._id.toString(),

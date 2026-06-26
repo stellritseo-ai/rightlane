@@ -1,3 +1,4 @@
+import "./config.server";
 import mongoose from "mongoose";
 
 /**
@@ -70,7 +71,10 @@ const ReviewSchema = new mongoose.Schema({
   featured: { type: Boolean, default: true },
   replyText: { type: String },
   createdAt: { type: String, required: true },
-  photos: { type: [String], default: [] }
+  photos: { type: [String], default: [] },
+  role: { type: String },
+  initials: { type: String },
+  avatarColor: { type: String }
 });
 
 export const ReviewModel = mongoose.models.Review || mongoose.model("Review", ReviewSchema);

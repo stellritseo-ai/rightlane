@@ -1,114 +1,274 @@
-import { Star, User } from "lucide-react";
-import { useTranslation } from "@/context/translation-context";
-import reviewComp from "@/assets/review-comp.webp";
-import { Link } from "@tanstack/react-router";
+import { useRef, useState, useEffect } from "react";
+import { Star } from "lucide-react";
+import { getReviews } from "@/lib/leads-store";
 
-const reviewsList = [
-  { textKey: "reviews.1.text", nameKey: "reviews.1.name", dateKey: "reviews.1.date" },
-  { textKey: "reviews.2.text", nameKey: "reviews.2.name", dateKey: "reviews.2.date" },
-  { textKey: "reviews.3.text", nameKey: "reviews.3.name", dateKey: "reviews.3.date" },
-] as const;
+interface TestimonialType {
+  text: string;
+  name: string;
+  role: string;
+  rating: number;
+  initials: string;
+  avatarColor: string;
+}
+
+const FALLBACK_REVIEWS: TestimonialType[] = [
+  {
+    text: "The backyard fencing and covered patio upgrade they did for our home was outstanding. Professional, clean, and finished ahead of schedule.",
+    name: "Marcus T.",
+    role: "Homeowner, Clearwater",
+    rating: 5,
+    initials: "MT",
+    avatarColor: "#1D4ED8",
+  },
+  {
+    text: "Called them for emergency cleanup and debris removal after the storm — they arrived within 45 minutes and worked tirelessly. Truly 24/7 service.",
+    name: "Priya S.",
+    role: "Property Manager, Largo",
+    rating: 5,
+    initials: "PS",
+    avatarColor: "#7C3AED",
+  },
+  {
+    text: "They installed a gorgeous artificial turf and paved walkway in our courtyard. Flawless execution. I'll never use another handyman company again.",
+    name: "Jared W.",
+    role: "Homeowner, St. Petersburg",
+    rating: 5,
+    initials: "JW",
+    avatarColor: "#065F46",
+  },
+  {
+    text: "Best remodeling contractor in Clearwater. They wired, painted, and finished our entire office renovation — on time, on budget, and zero issues.",
+    name: "Diana L.",
+    role: "Business Owner, Dunedin",
+    rating: 5,
+    initials: "DL",
+    avatarColor: "#B45309",
+  },
+  {
+    text: "Mulching, landscaping, and property maintenance was seamless. They set up Lutron outdoor lighting and fixed all our deck issues.",
+    name: "Kenji M.",
+    role: "Homeowner, Clearwater Beach",
+    rating: 5,
+    initials: "KM",
+    avatarColor: "#BE185D",
+  },
+  {
+    text: "Hired them for a complete drywall repair and painting of a 1970s bungalow. They passed every inspection. Excellent team.",
+    name: "Rosa F.",
+    role: "Real Estate Investor, Pinellas Park",
+    rating: 5,
+    initials: "RF",
+    avatarColor: "#0F766E",
+  },
+  {
+    text: "Pressure washing and concrete demolition was smooth and the team was incredibly knowledgeable. They left the site spotless.",
+    name: "Tony B.",
+    role: "Restaurant Owner, Tarpon Springs",
+    rating: 5,
+    initials: "TB",
+    avatarColor: "#9333EA",
+  },
+  {
+    text: "Outstanding service from start to finish. The crew was courteous, efficient, and clearly knew what they were doing. Highly recommend.",
+    name: "Sandra K.",
+    role: "Property Manager, Safety Harbor",
+    rating: 5,
+    initials: "SK",
+    avatarColor: "#DC2626",
+  },
+];
+
+function StarRating({ count }: { count: number }) {
+  return (
+    <div className="flex gap-0.5">
+      {Array.from({ length: count }).map((_, i) => (
+        <Star
+          key={i}
+          className="w-3.5 h-3.5 fill-[#FBBF24] text-[#FBBF24]"
+        />
+      ))}
+    </div>
+  );
+}
+
+function TestimonialCard({ review }: { review: any }) {
+  const getInitials = (authorName: string) => {
+    const parts = authorName.trim().split(/\s+/);
+    let initials = "";
+    if (parts.length > 0 && parts[0]) initials += parts[0][0].toUpperCase();
+    if (parts.length > 1 && parts[parts.length - 1]) initials += parts[parts.length - 1][0].toUpperCase();
+    return initials || "U";
+  };
+
+  const palette = ["#1D4ED8", "#7C3AED", "#065F46", "#B45309", "#BE185D", "#0F766E", "#9333EA", "#DC2626"];
+  const getAvatarColor = (authorName: string) => {
+    let hash = 0;
+    for (let i = 0; i < authorName.length; i++) {
+      hash = authorName.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    return palette[Math.abs(hash) % palette.length];
+  };
+
+  const name = review.author || review.name || "Anonymous";
+  const initials = review.initials || getInitials(name);
+  const avatarColor = review.avatarColor || getAvatarColor(name);
+  const role = review.role || `Homeowner, ${review.location || "Clearwater"}`;
+  const rating = review.rating || 5;
+  const text = review.text || "";
+
+  return (
+    <div className="relative flex-shrink-0 w-[280px] sm:w-[340px] md:w-[380px] mx-3 bg-white border border-slate-200 shadow-[0_2px_20px_rgba(0,0,0,0.06)] rounded-2xl p-5 sm:p-6 flex flex-col gap-4 group hover:shadow-[0_6px_30px_rgba(0,0,0,0.10)] hover:border-slate-300 transition-all duration-300">
+      {/* Rating */}
+      <StarRating count={rating} />
+
+      {/* Text */}
+      <p className="text-slate-600 text-sm leading-relaxed font-medium flex-1">
+        "{text}"
+      </p>
+
+      {/* Author */}
+      <div className="flex items-center gap-3 pt-3 border-t border-slate-100">
+        <div
+          className="w-9 h-9 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0"
+          style={{ backgroundColor: avatarColor }}
+        >
+          {initials}
+        </div>
+        <div>
+          <p className="text-slate-900 font-semibold text-sm leading-tight">
+            {name}
+          </p>
+          <p className="text-slate-400 text-xs mt-0.5">{role}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MarqueeRow({
+  items,
+  direction = "left",
+}: {
+  items: any[];
+  direction?: "left" | "right";
+}) {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const duplicated = [...items, ...items, ...items];
+
+  const animClass =
+    direction === "left" ? "marquee-track-left" : "marquee-track-right";
+
+  return (
+    <div
+      className="overflow-hidden relative group/row"
+      onMouseEnter={() => {
+        if (trackRef.current) {
+          trackRef.current.style.animationPlayState = "paused";
+        }
+      }}
+      onMouseLeave={() => {
+        if (trackRef.current) {
+          trackRef.current.style.animationPlayState = "running";
+        }
+      }}
+    >
+      {/* Fade edges */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-24 z-10 bg-gradient-to-r from-[#fbfaf7] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-24 z-10 bg-gradient-to-l from-[#fbfaf7] to-transparent" />
+
+      <div ref={trackRef} className={`flex ${animClass}`}>
+        {duplicated.map((review, i) => (
+          <TestimonialCard key={i} review={review} />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export function ReviewsSection() {
-  const { t } = useTranslation();
+  const [dbReviews, setDbReviews] = useState<any[]>([]);
+
+  useEffect(() => {
+    let active = true;
+    const fetchReviews = async () => {
+      try {
+        const data = await getReviews();
+        if (active) {
+          const featured = data.filter((r) => r.featured);
+          setDbReviews(featured);
+        }
+      } catch (error) {
+        console.error("Error loading reviews for landing page:", error);
+      }
+    };
+    fetchReviews();
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const reviewsToUse = dbReviews.length > 0 ? dbReviews : FALLBACK_REVIEWS;
+  const half = Math.ceil(reviewsToUse.length / 2);
+  const row1 = reviewsToUse.slice(0, half);
+  const row2 = reviewsToUse.slice(half);
 
   return (
     <div className="w-full bg-[#f4f3ef] mt-[15px] mb-[15px] pt-[5px] pb-[5px] px-[15px]">
-      <section id="reviews" className="mx-auto max-w-[1400px] w-full rounded-[10px] bg-[#fbfaf7] px-6 py-12 md:px-10 lg:px-12 border border-[#eae8e1] shadow-[0_12px_40px_rgba(0,0,0,0.04)] grid gap-10 lg:grid-cols-[0.8fr_2fr] items-center overflow-hidden">
+      <section
+        id="reviews"
+        className="mx-auto max-w-[1400px] w-full rounded-[10px] bg-[#fbfaf7] border border-[#eae8e1] shadow-[0_12px_40px_rgba(0,0,0,0.04)] relative py-[60px] overflow-hidden"
+      >
+        {/* Background glow accents */}
+        <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-amber-200/40 blur-[120px]" />
+        <div className="pointer-events-none absolute bottom-0 left-1/4 w-[400px] h-[300px] rounded-full bg-orange-200/30 blur-[100px]" />
 
-        {/* Left Column: Rating & Trust */}
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-[420px] mx-auto lg:mx-0 w-full">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#23321e]/30 bg-[#2d3f26]/90 backdrop-blur-md text-white text-[10px] md:text-[11px] font-extrabold uppercase tracking-widest mb-6 shadow-sm select-none">
-            <span className="flex h-2 w-2 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span>{t("reviews.badge")}</span>
+        {/* Section Header */}
+        <div className="mx-auto w-[90%] max-w-7xl text-center mb-16 relative z-10">
+          <div className="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500 uppercase tracking-widest mb-5 shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse" />
+            Client Reviews
           </div>
 
-          {/* Title */}
-          <h2 className="text-[22px] sm:text-[25px] md:text-[27px] font-extrabold text-neutral-900 leading-tight mb-5 tracking-tight">
-            {t("reviews.title")}
+          <h2 className="text-[26px] sm:text-[32px] lg:text-[40px] font-extrabold text-slate-900 tracking-tight leading-tight capitalize -mt-[5px] mb-[10px]">
+            Trusted by{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffa326] to-[#cc7e14]">
+              hundreds
+            </span>{" "}
+            of customers
           </h2>
 
-          {/* Google Rating Widget Image */}
-          <img
-            src={reviewComp}
-            alt="Google Reviews Rating"
-            className="w-full max-w-[340px] mb-6 object-contain rounded-xl"
-          />
-
-          {/* CTA Button */}
-          <Link
-            to="/reviews"
-            className="inline-flex items-center justify-center bg-gradient-to-r from-[#2c241d] to-[#1a1511] hover:from-[#3d3228] hover:to-[#221c16] text-white text-[11px] md:text-xs font-bold uppercase tracking-widest rounded-full px-8 py-4 transition-all duration-300 shadow-[0_4px_14px_rgba(34,28,22,0.25)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
-          >
-            {t("reviews.readall")}
-          </Link>
+          <p className="mx-auto max-w-xl text-[#000] text-sm sm:text-base leading-relaxed -mb-[35px]">
+            Real experiences from real clients across Clearwater & Pinellas County. See
+            why homeowners and businesses choose us every time.
+          </p>
         </div>
 
-        {/* Right Column: Infinite Review Marquee */}
-        <div className="relative min-w-0 w-full overflow-hidden">
-          {/* Premium Fade Gradients */}
-          <div className="absolute inset-y-0 left-0 w-[40px] lg:w-[80px] bg-gradient-to-r from-[#fbfaf7] to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-[40px] lg:w-[80px] bg-gradient-to-l from-[#fbfaf7] to-transparent z-10 pointer-events-none" />
-
-          <div className="w-full overflow-hidden">
-            <div className="flex gap-6 w-fit animate-marquee">
-              {[...reviewsList, ...reviewsList].map((r, i) => (
-                <div
-                  key={i}
-                  className="shrink-0 w-[300px] md:w-[360px] bg-white rounded-2xl p-6 border border-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.03)] flex flex-col justify-between select-none"
-                >
-                  <div>
-                    {/* User Info */}
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-white shrink-0">
-                        <User className="w-5 h-5" />
-                      </div>
-                      <div className="flex flex-col min-w-0">
-                        <span className="font-bold text-neutral-900 text-[14px] leading-tight truncate">
-                          {t(r.nameKey)}
-                        </span>
-                        <span className="text-[12px] text-neutral-500 leading-tight mt-0.5 truncate">
-                          {t(r.dateKey)}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Stars */}
-                    <div className="flex gap-0.5 mb-3">
-                      {[...Array(5)].map((_, idx) => (
-                        <Star key={idx} className="w-4 h-4 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-
-                    {/* Review Text */}
-                    <p className="text-[13px] md:text-sm text-neutral-700 leading-relaxed italic">
-                      "{t(r.textKey)}"
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+        {/* Marquee Rows */}
+        <div className="relative z-10 flex flex-col gap-5">
+          {row1.length > 0 && <MarqueeRow items={row1} direction="left" />}
+          {row2.length > 0 && <MarqueeRow items={row2} direction="right" />}
         </div>
+
+        {/* CSS Animations */}
+        <style>{`
+          @keyframes marquee-left {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-33.3333%); }
+          }
+          @keyframes marquee-right {
+            0%   { transform: translateX(-33.3333%); }
+            100% { transform: translateX(0); }
+          }
+          .marquee-track-left {
+            animation: marquee-left 30s linear infinite;
+            width: max-content;
+          }
+          .marquee-track-right {
+            animation: marquee-right 30s linear infinite;
+            width: max-content;
+          }
+        `}</style>
       </section>
-
-      {/* Marquee Animation Styles */}
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          animation: marquee 35s linear infinite;
-        }
-        .animate-marquee:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </div>
   );
 }

@@ -87,7 +87,7 @@ import {
 } from "@/lib/leads-store";
 import { toast } from "sonner";
 import { io } from "socket.io-client";
-import logo from "@/assets/jrm-logo.png";
+import logo from "@/assets/logo.png";
 
 const formatChatTime = (timestamp: string) => {
   if (!timestamp) return "";
@@ -107,8 +107,8 @@ const formatChatTime = (timestamp: string) => {
 export const Route = createFileRoute("/dashboard")({
   head: () => ({
     meta: [
-      { title: "Robert's Office — JRM Construction Admin Portal" },
-      { name: "description", content: "Internal business management console for JRM Construction Landscape Design." }
+      { title: "Ronnie's Office — Right Lane Handyman Services, LLC Admin Portal" },
+      { name: "description", content: "Internal business management console for Right Lane Handyman Services, LLC." }
     ],
   }),
   component: DashboardPage,
@@ -506,7 +506,7 @@ function DashboardPage() {
       typeCounts[l.projectType].value += l.estimatedValue;
     });
 
-    const COLORS_PIE = ["#577a4c", "#3d5636", "#8fa886", "#a5b89d", "#b49876", "#8c6f4c", "#5a4533", "#2c2015", "#c5b59f", "#808a70"];
+    const COLORS_PIE = ["#ffa326", "#cc7e14", "#8fa886", "#ffa326", "#b49876", "#8c6f4c", "#5a4533", "#2c2015", "#c5b59f", "#808a70"];
     const projectTypesChart = Object.entries(typeCounts).map(([name, data], idx) => ({
       name: name.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" "),
       value: data.count,
@@ -547,7 +547,7 @@ function DashboardPage() {
     const cityCounts: Record<string, number> = {};
     leads.forEach(l => {
       const parts = l.address.split(",");
-      let city = "San Antonio";
+      let city = "Clearwater";
       if (parts.length >= 2) {
         city = parts[parts.length - 2].trim();
       }
@@ -862,9 +862,9 @@ function DashboardPage() {
       const messagesList = [
         "Hey! We're looking at a budget of around $25,000.",
         "Could you send me some project photos of covered patios you've built?",
-        "Do you have openings next Wednesday morning for Robert to stop by?",
+        "Do you have openings next Wednesday morning for Ronnie to stop by?",
         "Thanks for the prompt response! Let's schedule it.",
-        "Awesome! Looking forward to meeting Robert."
+        "Awesome! Looking forward to meeting Ronnie."
       ];
       const randomMsg = messagesList[Math.floor(Math.random() * messagesList.length)];
       const updated = await sendChatMessage(activeSessionId, "client", randomMsg);
@@ -901,7 +901,7 @@ function DashboardPage() {
       name: newLeadData.name,
       email: newLeadData.email || `${newLeadData.name.toLowerCase().replace(/\s+/g, "")}@example.com`,
       phone: newLeadData.phone,
-      address: newLeadData.address || "San Antonio, TX",
+      address: newLeadData.address || "Clearwater, FL",
       projectType: newLeadData.projectType,
       description: newLeadData.description || "Manually logged customer lead.",
       contactTime: newLeadData.contactTime,
@@ -933,7 +933,7 @@ function DashboardPage() {
     title: "",
     text: "",
     author: "",
-    location: "San Antonio",
+    location: "Clearwater",
     rating: 5
   });
 
@@ -974,7 +974,7 @@ function DashboardPage() {
       title: "",
       text: "",
       author: "",
-      location: "San Antonio",
+      location: "Clearwater",
       rating: 5
     });
     toast.success("Client review added successfully.");
@@ -982,9 +982,9 @@ function DashboardPage() {
 
   // Settings mock state
   const [settings, setSettings] = useState({
-    adminEmail: "robertsa210@icloud.com",
-    officePhone: "(210) 429-5526",
-    autoSmsTemplate: "Hi {Name}, thank you for contacting JRM Construction! Robert Thompson will contact you during the {Time} to discuss your {Type} project.",
+    adminEmail: "rightlanehandymanservice@yahoo.com",
+    officePhone: "(727) 642-0201",
+    autoSmsTemplate: "Hi {Name}, thank you for contacting Right Lane Handyman Services, LLC! Right Lane Handyman will contact you during the {Time} to discuss your {Type} project.",
     sendAutoEmail: true,
     sendAutoSms: true,
     hoursWeekday: "8:00 AM - 5:00 PM",
@@ -1002,7 +1002,7 @@ function DashboardPage() {
       <div className="min-h-screen bg-[#1c140d] flex flex-col items-center justify-center text-white" style={{ backgroundImage: "linear-gradient(to bottom, rgba(28, 20, 13, 0.95), rgba(20, 16, 13, 0.98)), url('/src/assets/wel-bg.png')" }}>
         <div className="flex flex-col items-center gap-3">
           <div className="h-10 w-10 rounded-full border-2 border-white/20 border-t-white animate-spin"></div>
-          <p className="text-xs text-neutral-400 font-light tracking-widest uppercase mt-4">Robert's Office — Loading Portal...</p>
+          <p className="text-xs text-neutral-400 font-light tracking-widest uppercase mt-4">Ronnie's Office — Loading Portal...</p>
         </div>
       </div>
     );
@@ -1018,25 +1018,25 @@ function DashboardPage() {
       <header className="bg-[#1c140d] text-white py-4 px-6 md:px-12 flex items-center justify-between shadow-md shrink-0 border-b border-neutral-800">
         <div className="flex items-center gap-3">
           <Link to="/" className="hover:opacity-85 transition-opacity">
-            <img src={logo} alt="JRM" className="h-10 w-auto object-contain brightness-110" />
+            <img src={logo} alt="Right Lane" className="h-10 w-auto object-contain brightness-110" />
           </Link>
           <div className="hidden sm:block h-5 w-[1px] bg-neutral-700 mx-2" />
           <div className="hidden sm:block">
-            <h2 className="text-sm font-semibold tracking-wider text-[#a5b89d] uppercase">Admin Portal</h2>
-            <p className="text-[10px] text-neutral-400 font-light">Robert's Office v1.2</p>
+            <h2 className="text-sm font-semibold tracking-wider text-[#ffa326] uppercase">Admin Portal</h2>
+            <p className="text-[10px] text-neutral-400 font-light">Ronnie's Office v1.2</p>
           </div>
         </div>
 
         <div className="flex items-center gap-4">
           <div className="text-right hidden md:block">
             <p className="text-xs font-semibold text-neutral-200 capitalize">
-              {currentUser?.username || "Robert Thompson"}
+              {currentUser?.username || "Right Lane Handyman"}
             </p>
             <p className="text-[10px] text-neutral-400 capitalize">
               {currentUser?.role ? `${currentUser.role} Account` : "Owner & Administrator"}
             </p>
           </div>
-          <div className="h-9 w-9 rounded-full bg-[#577a4c] text-white flex items-center justify-center font-bold text-sm shadow-inner uppercase">
+          <div className="h-9 w-9 rounded-full bg-[#ffa326] text-white flex items-center justify-center font-bold text-sm shadow-inner uppercase">
             {currentUser?.username ? currentUser.username.substring(0, 2) : "RT"}
           </div>
           <button
@@ -1062,8 +1062,8 @@ function DashboardPage() {
           </div>
           <button
             onClick={() => setActiveTab("overview")}
-            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${activeTab === "overview"
-              ? "bg-[#577a4c]/10 text-[#3d5636] border-l-4 border-[#577a4c]"
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ffa326]/50 ${activeTab === "overview"
+              ? "bg-[#ffa326]/10 text-[#cc7e14] border-l-4 border-[#ffa326]"
               : "text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900"
               }`}
           >
@@ -1073,8 +1073,8 @@ function DashboardPage() {
 
           <button
             onClick={() => setActiveTab("leads")}
-            className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-left text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${activeTab === "leads"
-              ? "bg-[#577a4c]/10 text-[#3d5636] border-l-4 border-[#577a4c]"
+            className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-left text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ffa326]/50 ${activeTab === "leads"
+              ? "bg-[#ffa326]/10 text-[#cc7e14] border-l-4 border-[#ffa326]"
               : "text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900"
               }`}
           >
@@ -1083,7 +1083,7 @@ function DashboardPage() {
               <span>Leads Manager</span>
             </span>
             {leads.filter(l => l.status === "new").length > 0 && (
-              <span className="bg-[#577a4c] text-white text-[9px] font-bold h-4.5 min-w-4.5 px-1 rounded-full flex items-center justify-center animate-pulse">
+              <span className="bg-[#ffa326] text-white text-[9px] font-bold h-4.5 min-w-4.5 px-1 rounded-full flex items-center justify-center animate-pulse">
                 {leads.filter(l => l.status === "new").length}
               </span>
             )}
@@ -1091,8 +1091,8 @@ function DashboardPage() {
 
           <button
             onClick={() => setActiveTab("reviews")}
-            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${activeTab === "reviews"
-              ? "bg-[#577a4c]/10 text-[#3d5636] border-l-4 border-[#577a4c]"
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ffa326]/50 ${activeTab === "reviews"
+              ? "bg-[#ffa326]/10 text-[#cc7e14] border-l-4 border-[#ffa326]"
               : "text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900"
               }`}
           >
@@ -1102,8 +1102,8 @@ function DashboardPage() {
 
           <button
             onClick={() => setActiveTab("chat")}
-            className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-left text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${activeTab === "chat"
-              ? "bg-[#577a4c]/10 text-[#3d5636] border-l-4 border-[#577a4c]"
+            className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-left text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ffa326]/50 ${activeTab === "chat"
+              ? "bg-[#ffa326]/10 text-[#cc7e14] border-l-4 border-[#ffa326]"
               : "text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900"
               }`}
           >
@@ -1112,7 +1112,7 @@ function DashboardPage() {
               <span>Live Chat</span>
             </span>
             {chatSessions.filter(s => s.unread).length > 0 && (
-              <span className="bg-[#577a4c] text-white text-[9px] font-bold h-4.5 min-w-4.5 px-1 rounded-full flex items-center justify-center animate-pulse">
+              <span className="bg-[#ffa326] text-white text-[9px] font-bold h-4.5 min-w-4.5 px-1 rounded-full flex items-center justify-center animate-pulse">
                 {chatSessions.filter(s => s.unread).length}
               </span>
             )}
@@ -1120,8 +1120,8 @@ function DashboardPage() {
 
           <button
             onClick={() => setActiveTab("gallery")}
-            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${activeTab === "gallery"
-              ? "bg-[#577a4c]/10 text-[#3d5636] border-l-4 border-[#577a4c]"
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ffa326]/50 ${activeTab === "gallery"
+              ? "bg-[#ffa326]/10 text-[#cc7e14] border-l-4 border-[#ffa326]"
               : "text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900"
               }`}
           >
@@ -1131,8 +1131,8 @@ function DashboardPage() {
 
           <button
             onClick={() => setActiveTab("emails")}
-            className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-left text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${activeTab === "emails"
-              ? "bg-[#577a4c]/10 text-[#3d5636] border-l-4 border-[#577a4c]"
+            className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-left text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ffa326]/50 ${activeTab === "emails"
+              ? "bg-[#ffa326]/10 text-[#cc7e14] border-l-4 border-[#ffa326]"
               : "text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900"
               }`}
           >
@@ -1141,7 +1141,7 @@ function DashboardPage() {
               <span>Web Emails</span>
             </span>
             {webEmails.length > 0 && (
-              <span className="bg-[#577a4c]/15 text-[#3d5636] text-[9px] font-bold h-4.5 min-w-4.5 px-1.5 rounded-full flex items-center justify-center">
+              <span className="bg-[#ffa326]/15 text-[#cc7e14] text-[9px] font-bold h-4.5 min-w-4.5 px-1.5 rounded-full flex items-center justify-center">
                 {webEmails.length}
               </span>
             )}
@@ -1149,8 +1149,8 @@ function DashboardPage() {
 
           <button
             onClick={() => setActiveTab("settings")}
-            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${activeTab === "settings"
-              ? "bg-[#577a4c]/10 text-[#3d5636] border-l-4 border-[#577a4c]"
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ffa326]/50 ${activeTab === "settings"
+              ? "bg-[#ffa326]/10 text-[#cc7e14] border-l-4 border-[#ffa326]"
               : "text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900"
               }`}
           >
@@ -1161,8 +1161,8 @@ function DashboardPage() {
           {currentUser?.role === "admin" && (
             <button
               onClick={() => setActiveTab("security")}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${activeTab === "security"
-                ? "bg-[#577a4c]/10 text-[#3d5636] border-l-4 border-[#577a4c]"
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ffa326]/50 ${activeTab === "security"
+                ? "bg-[#ffa326]/10 text-[#cc7e14] border-l-4 border-[#ffa326]"
                 : "text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900"
                 }`}
             >
@@ -1173,7 +1173,7 @@ function DashboardPage() {
 
           <div className="pt-4 border-t border-[#eae8e1] mt-4">
             <div className="bg-[#fcfbf8] border border-neutral-100 rounded-xl p-3.5 space-y-2 text-left">
-              <div className="flex items-center gap-2 text-[#3d5636] font-bold text-[11px] uppercase tracking-wide">
+              <div className="flex items-center gap-2 text-[#cc7e14] font-bold text-[11px] uppercase tracking-wide">
                 <CheckCircle className="h-3.5 w-3.5" />
                 <span>Quick Assist</span>
               </div>
@@ -1181,8 +1181,8 @@ function DashboardPage() {
                 Log leads, check performance logs, moderate public review widgets, and track conversion values in real time.
               </p>
               <a
-                href="tel:2104295526"
-                className="block text-center text-[10px] font-bold text-[#3d5636] border border-[#577a4c]/30 hover:bg-[#577a4c]/5 py-1.5 rounded-lg mt-2 transition-all"
+                href="tel:7276420201"
+                className="block text-center text-[10px] font-bold text-[#cc7e14] border border-[#ffa326]/30 hover:bg-[#ffa326]/5 py-1.5 rounded-lg mt-2 transition-all"
               >
                 Call Support
               </a>
@@ -1210,7 +1210,7 @@ function DashboardPage() {
                     <p className="text-xs text-neutral-500 font-light mt-1">Real-time indicators and visualizations calculated from customer activities.</p>
                   </div>
                   <div className="flex items-center gap-2 bg-white border border-[#eae8e1] px-4 py-2 rounded-xl text-xs font-semibold text-neutral-600 shadow-xs">
-                    <Calendar className="h-4 w-4 text-[#3d5636]" />
+                    <Calendar className="h-4 w-4 text-[#cc7e14]" />
                     <span>June 2026 Summary</span>
                   </div>
                 </div>
@@ -1221,7 +1221,7 @@ function DashboardPage() {
                   <div className="bg-white border border-[#eae8e1] rounded-2xl p-4 md:p-5 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
                     <div className="flex items-center justify-between text-neutral-400">
                       <span className="text-[10px] font-bold uppercase tracking-wider">Pipeline Value</span>
-                      <DollarSign className="h-4 w-4 text-[#577a4c]" />
+                      <DollarSign className="h-4 w-4 text-[#ffa326]" />
                     </div>
                     <div className="mt-3.5">
                       <h3 className="text-xl md:text-2xl font-extrabold text-neutral-900 leading-none">
@@ -1238,7 +1238,7 @@ function DashboardPage() {
                   <div className="bg-white border border-[#eae8e1] rounded-2xl p-4 md:p-5 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
                     <div className="flex items-center justify-between text-neutral-400">
                       <span className="text-[10px] font-bold uppercase tracking-wider">Active Deals</span>
-                      <Briefcase className="h-4 w-4 text-[#577a4c]" />
+                      <Briefcase className="h-4 w-4 text-[#ffa326]" />
                     </div>
                     <div className="mt-3.5">
                       <h3 className="text-xl md:text-2xl font-extrabold text-neutral-900 leading-none">
@@ -1254,7 +1254,7 @@ function DashboardPage() {
                   <div className="bg-white border border-[#eae8e1] rounded-2xl p-4 md:p-5 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
                     <div className="flex items-center justify-between text-neutral-400">
                       <span className="text-[10px] font-bold uppercase tracking-wider">Win Rate</span>
-                      <TrendingUp className="h-4 w-4 text-[#577a4c]" />
+                      <TrendingUp className="h-4 w-4 text-[#ffa326]" />
                     </div>
                     <div className="mt-3.5">
                       <h3 className="text-xl md:text-2xl font-extrabold text-neutral-900 leading-none">
@@ -1271,10 +1271,10 @@ function DashboardPage() {
                   <div className="bg-white border border-[#eae8e1] rounded-2xl p-4 md:p-5 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
                     <div className="flex items-center justify-between text-neutral-400">
                       <span className="text-[10px] font-bold uppercase tracking-wider">Won Revenue</span>
-                      <DollarSign className="h-4 w-4 text-[#577a4c]" />
+                      <DollarSign className="h-4 w-4 text-[#ffa326]" />
                     </div>
                     <div className="mt-3.5">
-                      <h3 className="text-xl md:text-2xl font-extrabold text-[#3d5636] leading-none">
+                      <h3 className="text-xl md:text-2xl font-extrabold text-[#cc7e14] leading-none">
                         ${analytics.wonValue.toLocaleString()}
                       </h3>
                       <p className="text-[10px] text-neutral-500 font-light mt-1.5">
@@ -1287,7 +1287,7 @@ function DashboardPage() {
                   <div className="bg-white border border-[#eae8e1] rounded-2xl p-4 md:p-5 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow col-span-2 lg:col-span-1">
                     <div className="flex items-center justify-between text-neutral-400">
                       <span className="text-[10px] font-bold uppercase tracking-wider">Avg Deal Value</span>
-                      <Users className="h-4 w-4 text-[#577a4c]" />
+                      <Users className="h-4 w-4 text-[#ffa326]" />
                     </div>
                     <div className="mt-3.5">
                       <h3 className="text-xl md:text-2xl font-extrabold text-neutral-900 leading-none">
@@ -1313,8 +1313,8 @@ function DashboardPage() {
                         <AreaChart data={analytics.timelineChart} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                           <defs>
                             <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
-                              <stop offset="5%" stopColor="#577a4c" stopOpacity={0.4} />
-                              <stop offset="95%" stopColor="#577a4c" stopOpacity={0.0} />
+                              <stop offset="5%" stopColor="#ffa326" stopOpacity={0.4} />
+                              <stop offset="95%" stopColor="#ffa326" stopOpacity={0.0} />
                             </linearGradient>
                           </defs>
                           <CartesianGrid strokeDasharray="3 3" stroke="#f1eeeb" />
@@ -1322,7 +1322,7 @@ function DashboardPage() {
                           <YAxis stroke="#a3a3a3" fontSize={10} tickLine={false} />
                           <RechartsTooltip />
                           <Legend verticalAlign="top" height={36} iconSize={10} wrapperStyle={{ fontSize: 11 }} />
-                          <Area name="Pipeline Value ($K)" type="monotone" dataKey="revenue" stroke="#577a4c" fillOpacity={1} fill="url(#colorRevenue)" strokeWidth={2} />
+                          <Area name="Pipeline Value ($K)" type="monotone" dataKey="revenue" stroke="#ffa326" fillOpacity={1} fill="url(#colorRevenue)" strokeWidth={2} />
                           <Area name="Leads Count" type="monotone" dataKey="leads" stroke="#1c140d" fill="none" strokeWidth={1.5} strokeDasharray="4 4" />
                         </AreaChart>
                       </ResponsiveContainer>
@@ -1385,9 +1385,9 @@ function DashboardPage() {
                           <XAxis type="number" stroke="#a3a3a3" fontSize={10} tickLine={false} />
                           <YAxis type="category" dataKey="name" stroke="#a3a3a3" fontSize={9} tickLine={false} width={110} />
                           <RechartsTooltip />
-                          <Bar dataKey="value" fill="#3d5636" radius={[0, 4, 4, 0]}>
+                          <Bar dataKey="value" fill="#cc7e14" radius={[0, 4, 4, 0]}>
                             {analytics.statusChart.map((entry, index) => (
-                              <Cell key={`cell-${index}`} fill={entry.name.includes("Won") ? "#577a4c" : entry.name.includes("Lost") ? "#cc5c5c" : "#b49876"} />
+                              <Cell key={`cell-${index}`} fill={entry.name.includes("Won") ? "#ffa326" : entry.name.includes("Lost") ? "#cc5c5c" : "#b49876"} />
                             ))}
                           </Bar>
                         </BarChart>
@@ -1456,7 +1456,7 @@ function DashboardPage() {
                       placeholder="Search name, phone, address..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="w-full pl-10 pr-4 py-2 bg-neutral-50 border border-neutral-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-[#577a4c]/20 focus:border-[#577a4c] transition-all placeholder-neutral-400"
+                      className="w-full pl-10 pr-4 py-2 bg-neutral-50 border border-neutral-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-[#ffa326]/20 focus:border-[#ffa326] transition-all placeholder-neutral-400"
                     />
                   </div>
 
@@ -1468,7 +1468,7 @@ function DashboardPage() {
                       <select
                         value={statusFilter}
                         onChange={(e) => setStatusFilter(e.target.value)}
-                        className="bg-neutral-50 border border-neutral-200 rounded-lg py-1.5 px-3 text-xs text-neutral-700 focus:outline-none focus:ring-1 focus:ring-[#577a4c] focus:border-[#577a4c] cursor-pointer"
+                        className="bg-neutral-50 border border-neutral-200 rounded-lg py-1.5 px-3 text-xs text-neutral-700 focus:outline-none focus:ring-1 focus:ring-[#ffa326] focus:border-[#ffa326] cursor-pointer"
                       >
                         <option value="all">All Statuses</option>
                         <option value="new">New Lead</option>
@@ -1486,7 +1486,7 @@ function DashboardPage() {
                       <select
                         value={typeFilter}
                         onChange={(e) => setTypeFilter(e.target.value)}
-                        className="bg-neutral-50 border border-neutral-200 rounded-lg py-1.5 px-3 text-xs text-neutral-700 focus:outline-none focus:ring-1 focus:ring-[#577a4c] focus:border-[#577a4c] cursor-pointer"
+                        className="bg-neutral-50 border border-neutral-200 rounded-lg py-1.5 px-3 text-xs text-neutral-700 focus:outline-none focus:ring-1 focus:ring-[#ffa326] focus:border-[#ffa326] cursor-pointer"
                       >
                         <option value="all">All Projects</option>
                         <option value="remodeling">House Remodeling</option>
@@ -1523,7 +1523,7 @@ function DashboardPage() {
                         {filteredLeads.length > 0 ? (
                           filteredLeads.map((lead) => {
                             const parts = lead.address.split(",");
-                            let city = "San Antonio";
+                            let city = "Clearwater";
                             if (parts.length >= 2) {
                               city = parts[parts.length - 2].trim();
                             }
@@ -1533,7 +1533,7 @@ function DashboardPage() {
                               contacted: "bg-blue-600/10 text-blue-700 border-blue-600/20",
                               consultation_scheduled: "bg-[#b49876]/10 text-[#8c6f4c] border-[#b49876]/20",
                               proposal_sent: "bg-orange-500/10 text-orange-700 border-orange-500/20",
-                              won: "bg-[#577a4c]/15 text-[#3d5636] border-[#577a4c]/20",
+                              won: "bg-[#ffa326]/15 text-[#cc7e14] border-[#ffa326]/20",
                               lost: "bg-red-500/10 text-red-700 border-red-500/20"
                             };
 
@@ -1573,7 +1573,7 @@ function DashboardPage() {
                                   <div className="flex items-center justify-end gap-1.5">
                                     <button
                                       onClick={() => handleOpenLeadDetails(lead)}
-                                      className="flex h-7 w-7 items-center justify-center rounded-lg bg-neutral-100 hover:bg-[#577a4c]/10 hover:text-[#3d5636] text-neutral-600 transition-all cursor-pointer"
+                                      className="flex h-7 w-7 items-center justify-center rounded-lg bg-neutral-100 hover:bg-[#ffa326]/10 hover:text-[#cc7e14] text-neutral-600 transition-all cursor-pointer"
                                       title={isViewer ? "View Lead Details" : "Review / Edit Lead"}
                                     >
                                       {isViewer ? <Eye className="h-3.5 w-3.5" /> : <Edit2 className="h-3.5 w-3.5" />}
@@ -1655,7 +1655,7 @@ function DashboardPage() {
 
                   {/* Score Card 2 */}
                   <div className="bg-white border border-[#eae8e1] rounded-2xl p-5 shadow-xs flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#577a4c]/10 text-[#3d5636] flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-xl bg-[#ffa326]/10 text-[#cc7e14] flex items-center justify-center">
                       <ThumbsUp className="h-5 w-5" />
                     </div>
                     <div>
@@ -1692,7 +1692,7 @@ function DashboardPage() {
                           <div className="flex items-center gap-1.5">
                             <span className="font-semibold text-neutral-900 text-sm">{review.author}</span>
                             <span className="text-neutral-300">·</span>
-                            <span className="inline-flex items-center gap-1 bg-[#577a4c]/10 text-[#3d5636] text-[9px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                            <span className="inline-flex items-center gap-1 bg-[#ffa326]/10 text-[#cc7e14] text-[9px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                               <MapPin className="w-2.5 h-2.5" />
                               {review.location}
                             </span>
@@ -1719,13 +1719,13 @@ function DashboardPage() {
                           "{review.text}"
                         </p>
 
-                        {/* Robert's Reply Column */}
+                        {/* Ronnie's Reply Column */}
                         {review.replyText ? (
                           <div className="bg-[#fcfbf8] border border-neutral-100 rounded-xl p-3.5 space-y-1.5 ml-4 relative">
-                            <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#577a4c] rounded-full" />
-                            <div className="flex items-center gap-1.5 text-[#3d5636] font-bold text-[10px] uppercase tracking-wider">
+                            <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#ffa326] rounded-full" />
+                            <div className="flex items-center gap-1.5 text-[#cc7e14] font-bold text-[10px] uppercase tracking-wider">
                               <Building className="h-3 w-3" />
-                              <span>Owner Reply (Robert Thompson)</span>
+                              <span>Owner Reply (Right Lane Handyman)</span>
                             </div>
                             <p className="text-xs text-neutral-600 leading-relaxed font-light font-sans">
                               "{review.replyText}"
@@ -1736,14 +1736,14 @@ function DashboardPage() {
                             <div className="flex items-center gap-2">
                               <input
                                 type="text"
-                                placeholder="Write Robert's reply here..."
+                                placeholder="Write Ronnie's reply here..."
                                 value={replyTextMap[review.id] || ""}
                                 onChange={(e) => setReplyTextMap(prev => ({ ...prev, [review.id]: e.target.value }))}
-                                className="flex-1 bg-neutral-50 border border-neutral-200 rounded-lg py-1.5 px-3 text-xs focus:outline-none focus:ring-1 focus:ring-[#577a4c] placeholder-neutral-400"
+                                className="flex-1 bg-neutral-50 border border-neutral-200 rounded-lg py-1.5 px-3 text-xs focus:outline-none focus:ring-1 focus:ring-[#ffa326] placeholder-neutral-400"
                               />
                               <button
                                 onClick={() => handleSaveReply(review.id)}
-                                className="bg-[#577a4c] hover:bg-[#3d5636] text-white px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-all cursor-pointer shadow-sm active:scale-95"
+                                className="bg-[#ffa326] hover:bg-[#cc7e14] text-white px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-all cursor-pointer shadow-sm active:scale-95"
                               >
                                 Reply
                               </button>
@@ -1770,7 +1770,7 @@ function DashboardPage() {
                             onChange={() => handleToggleFeatured(review.id)}
                             className="sr-only peer"
                           />
-                          <div className="w-9 h-5 bg-neutral-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#577a4c]" />
+                          <div className="w-9 h-5 bg-neutral-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#ffa326]" />
                         </label>
                       </div>
                     </div>
@@ -1806,7 +1806,7 @@ function DashboardPage() {
                         disabled={isViewer}
                         value={settings.adminEmail}
                         onChange={(e) => setSettings({ ...settings, adminEmail: e.target.value })}
-                        className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200 px-4 py-2.5 text-xs text-neutral-800 focus:outline-none focus:ring-1 focus:ring-[#577a4c]"
+                        className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200 px-4 py-2.5 text-xs text-neutral-800 focus:outline-none focus:ring-1 focus:ring-[#ffa326]"
                       />
                     </div>
                     <div>
@@ -1818,7 +1818,7 @@ function DashboardPage() {
                         disabled={isViewer}
                         value={settings.officePhone}
                         onChange={(e) => setSettings({ ...settings, officePhone: e.target.value })}
-                        className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200 px-4 py-2.5 text-xs text-neutral-800 focus:outline-none focus:ring-1 focus:ring-[#577a4c]"
+                        className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200 px-4 py-2.5 text-xs text-neutral-800 focus:outline-none focus:ring-1 focus:ring-[#ffa326]"
                       />
                     </div>
                   </div>
@@ -1833,7 +1833,7 @@ function DashboardPage() {
                       disabled={isViewer}
                       value={settings.autoSmsTemplate}
                       onChange={(e) => setSettings({ ...settings, autoSmsTemplate: e.target.value })}
-                      className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200 px-4 py-2.5 text-xs text-neutral-800 focus:outline-none focus:ring-1 focus:ring-[#577a4c] resize-none font-light leading-relaxed"
+                      className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200 px-4 py-2.5 text-xs text-neutral-800 focus:outline-none focus:ring-1 focus:ring-[#ffa326] resize-none font-light leading-relaxed"
                     />
                     <span className="text-[10px] text-neutral-450 mt-1 block">
                       Variables auto-populated: {'{Name}'}, {'{Time}'}, {'{Type}'}
@@ -1845,7 +1845,7 @@ function DashboardPage() {
                     <div className="flex items-center justify-between p-4 bg-[#fcfbf8] rounded-xl border border-neutral-100">
                       <div>
                         <span className="text-xs font-bold text-neutral-800 block">Automated Email Alert</span>
-                        <span className="text-[10px] text-neutral-400 font-light">Send receipt copies to Robert</span>
+                        <span className="text-[10px] text-neutral-400 font-light">Send receipt copies to Ronnie</span>
                       </div>
                       <label className={`relative inline-flex items-center ${isViewer ? "cursor-not-allowed opacity-50" : "cursor-pointer"}`}>
                         <input
@@ -1855,7 +1855,7 @@ function DashboardPage() {
                           onChange={(e) => setSettings({ ...settings, sendAutoEmail: e.target.checked })}
                           className="sr-only peer"
                         />
-                        <div className="w-9 h-5 bg-neutral-200 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#577a4c]" />
+                        <div className="w-9 h-5 bg-neutral-200 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#ffa326]" />
                       </label>
                     </div>
 
@@ -1872,7 +1872,7 @@ function DashboardPage() {
                           onChange={(e) => setSettings({ ...settings, sendAutoSms: e.target.checked })}
                           className="sr-only peer"
                         />
-                        <div className="w-9 h-5 bg-neutral-200 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#577a4c]" />
+                        <div className="w-9 h-5 bg-neutral-200 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#ffa326]" />
                       </label>
                     </div>
                   </div>
@@ -1963,7 +1963,7 @@ function DashboardPage() {
                             type="button"
                             onClick={() => handleSelectSession(session.id)}
                             className={`w-full text-left p-4 transition-all duration-200 cursor-pointer flex flex-col gap-1.5 ${activeSessionId === session.id
-                              ? "bg-[#577a4c]/5 border-l-4 border-[#577a4c]"
+                              ? "bg-[#ffa326]/5 border-l-4 border-[#ffa326]"
                               : "hover:bg-neutral-50/80 bg-transparent border-l-4 border-transparent"
                               }`}
                           >
@@ -1980,7 +1980,7 @@ function DashboardPage() {
                                 {lastMsg ? lastMsg.text : "No messages yet"}
                               </span>
                               {session.unread && (
-                                <span className="bg-[#577a4c] text-white text-[9px] font-bold h-4.5 min-w-4.5 px-1.5 rounded-full flex items-center justify-center shrink-0 animate-pulse">
+                                <span className="bg-[#ffa326] text-white text-[9px] font-bold h-4.5 min-w-4.5 px-1.5 rounded-full flex items-center justify-center shrink-0 animate-pulse">
                                   NEW
                                 </span>
                               )}
@@ -2009,13 +2009,13 @@ function DashboardPage() {
                               <div className="flex items-center gap-2">
                                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
                                 <h4 className="text-sm font-bold text-neutral-900">{session.clientName}</h4>
-                                <span className="text-[9px] bg-[#577a4c]/10 text-[#577a4c] font-semibold px-2 py-0.5 rounded-full uppercase tracking-wider">
+                                <span className="text-[9px] bg-[#ffa326]/10 text-[#ffa326] font-semibold px-2 py-0.5 rounded-full uppercase tracking-wider">
                                   {session.clientCity}
                                 </span>
                               </div>
                               <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-neutral-500 font-light mt-1">
                                 {session.clientPhone && (
-                                  <a href={`tel:${session.clientPhone}`} className="hover:text-[#577a4c] hover:underline transition-colors flex items-center gap-1">
+                                  <a href={`tel:${session.clientPhone}`} className="hover:text-[#ffa326] hover:underline transition-colors flex items-center gap-1">
                                     <Phone className="h-3 w-3 text-neutral-450" />
                                     <span>{session.clientPhone}</span>
                                   </a>
@@ -2024,7 +2024,7 @@ function DashboardPage() {
                                   <span className="text-neutral-300">|</span>
                                 )}
                                 {session.clientEmail && (
-                                  <a href={`mailto:${session.clientEmail}`} className="hover:text-[#577a4c] hover:underline transition-colors flex items-center gap-1">
+                                  <a href={`mailto:${session.clientEmail}`} className="hover:text-[#ffa326] hover:underline transition-colors flex items-center gap-1">
                                     <Mail className="h-3 w-3 text-neutral-450" />
                                     <span>{session.clientEmail}</span>
                                   </a>
@@ -2055,7 +2055,7 @@ function DashboardPage() {
                                 >
                                   <div
                                     className={`p-3 rounded-2xl text-xs leading-relaxed text-left ${isAdmin
-                                      ? "bg-[#577a4c] text-white rounded-tr-none shadow-sm"
+                                      ? "bg-[#ffa326] text-white rounded-tr-none shadow-sm"
                                       : "bg-white border border-neutral-200 text-neutral-800 rounded-tl-none shadow-xs"
                                       }`}
                                   >
@@ -2081,7 +2081,7 @@ function DashboardPage() {
                                 placeholder={isViewer ? "Chat replies are deactivated for read-only viewer role" : "Type response message here..."}
                                 value={adminReplyText}
                                 onChange={(e) => setAdminReplyText(e.target.value)}
-                                className="flex-1 bg-[#fbfaf7] rounded-xl border border-neutral-200 px-4 py-2.5 text-xs text-neutral-800 focus:outline-none focus:ring-1 focus:ring-[#577a4c]"
+                                className="flex-1 bg-[#fbfaf7] rounded-xl border border-neutral-200 px-4 py-2.5 text-xs text-neutral-800 focus:outline-none focus:ring-1 focus:ring-[#ffa326]"
                               />
                               <button
                                 type="submit"
@@ -2089,7 +2089,7 @@ function DashboardPage() {
                                 className={`px-4 rounded-xl text-xs font-bold uppercase tracking-wider transition-all shadow-md cursor-pointer flex items-center justify-center gap-1 ${
                                   isViewer
                                     ? "bg-neutral-300 text-neutral-500 cursor-not-allowed opacity-60"
-                                    : "bg-[#577a4c] hover:bg-[#3d5636] text-white"
+                                    : "bg-[#ffa326] hover:bg-[#cc7e14] text-white"
                                 }`}
                               >
                                 Send
@@ -2104,7 +2104,7 @@ function DashboardPage() {
                     })()
                   ) : (
                     <div className="flex-1 flex flex-col items-center justify-center p-8 text-center bg-[#fcfbf8]">
-                      <div className="h-12 w-12 rounded-full bg-[#577a4c]/10 text-[#3d5636] flex items-center justify-center mb-3">
+                      <div className="h-12 w-12 rounded-full bg-[#ffa326]/10 text-[#cc7e14] flex items-center justify-center mb-3">
                         <MessageCircle className="h-6 w-6" />
                       </div>
                       <h4 className="text-xs font-bold text-neutral-805 uppercase tracking-wider">
@@ -2136,7 +2136,7 @@ function DashboardPage() {
                     <p className="text-xs text-neutral-500 font-light mt-1">
                       {galleryPhotos.length} photo{galleryPhotos.length !== 1 ? "s" : ""} in gallery
                       {selectMode && selectedIndices.size > 0 && (
-                        <span className="ml-2 text-[#577a4c] font-semibold">· {selectedIndices.size} selected</span>
+                        <span className="ml-2 text-[#ffa326] font-semibold">· {selectedIndices.size} selected</span>
                       )}
                     </p>
                   </div>
@@ -2179,7 +2179,7 @@ function DashboardPage() {
 
                       {/* Upload Button */}
                       {!selectMode && (
-                        <label className="flex items-center gap-2 px-4 py-2 bg-[#577a4c] hover:bg-[#3d5636] text-white rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md cursor-pointer select-none">
+                        <label className="flex items-center gap-2 px-4 py-2 bg-[#ffa326] hover:bg-[#cc7e14] text-white rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md cursor-pointer select-none">
                           <Plus className="h-4.5 w-4.5" />
                           <span>Upload Photos</span>
                           <input
@@ -2201,18 +2201,18 @@ function DashboardPage() {
 
                 {/* Upload Progress Bar */}
                 {uploadProgress && (
-                  <div className="rounded-xl border border-[#577a4c]/30 bg-[#577a4c]/5 px-5 py-4 space-y-2">
+                  <div className="rounded-xl border border-[#ffa326]/30 bg-[#ffa326]/5 px-5 py-4 space-y-2">
                     <div className="flex items-center justify-between">
-                      <p className="text-xs font-bold text-[#3d5636] uppercase tracking-wider">
+                      <p className="text-xs font-bold text-[#cc7e14] uppercase tracking-wider">
                         Uploading to Cloudinary...
                       </p>
-                      <span className="text-xs font-black text-[#577a4c]">
+                      <span className="text-xs font-black text-[#ffa326]">
                         {uploadProgress.current} / {uploadProgress.total}
                       </span>
                     </div>
                     <div className="w-full h-2 bg-neutral-200 rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-[#577a4c] rounded-full transition-all duration-500 ease-out"
+                        className="h-full bg-[#ffa326] rounded-full transition-all duration-500 ease-out"
                         style={{ width: `${(uploadProgress.current / uploadProgress.total) * 100}%` }}
                       />
                     </div>
@@ -2258,7 +2258,7 @@ function DashboardPage() {
                       return (
                         <div
                           key={index}
-                          className={`group relative aspect-video rounded-xl overflow-hidden border-2 bg-neutral-50 shadow-xs hover:shadow-md transition-all duration-300 cursor-pointer ${isSelected ? "border-[#577a4c] ring-2 ring-[#577a4c]/40" : "border-neutral-200"
+                          className={`group relative aspect-video rounded-xl overflow-hidden border-2 bg-neutral-50 shadow-xs hover:shadow-md transition-all duration-300 cursor-pointer ${isSelected ? "border-[#ffa326] ring-2 ring-[#ffa326]/40" : "border-neutral-200"
                             }`}
                           onClick={() => selectMode ? toggleSelectPhoto(index) : undefined}
                         >
@@ -2270,10 +2270,10 @@ function DashboardPage() {
 
                           {/* Select Mode Checkbox Overlay */}
                           {selectMode && (
-                            <div className={`absolute inset-0 transition-all duration-200 flex items-start justify-start p-2.5 ${isSelected ? "bg-[#577a4c]/20" : "bg-black/10 opacity-0 group-hover:opacity-100"
+                            <div className={`absolute inset-0 transition-all duration-200 flex items-start justify-start p-2.5 ${isSelected ? "bg-[#ffa326]/20" : "bg-black/10 opacity-0 group-hover:opacity-100"
                               }`}>
                               <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center shadow-md transition-all duration-200 ${isSelected
-                                ? "bg-[#577a4c] border-[#577a4c]"
+                                ? "bg-[#ffa326] border-[#ffa326]"
                                 : "bg-white/80 border-white backdrop-blur-sm"
                                 }`}>
                                 {isSelected && (
@@ -2392,7 +2392,7 @@ function DashboardPage() {
                                 <div className="font-bold text-neutral-900">{email.name}</div>
                                 <div className="text-[10px] text-neutral-400 mt-0.5">{email.email}</div>
                                 {email.phone && (
-                                  <div className="text-[10px] text-[#577a4c] font-medium mt-0.5">{email.phone}</div>
+                                  <div className="text-[10px] text-[#ffa326] font-medium mt-0.5">{email.phone}</div>
                                 )}
                               </td>
                               <td className="p-4 whitespace-nowrap">
@@ -2411,7 +2411,7 @@ function DashboardPage() {
                                   <button
                                     type="button"
                                     onClick={() => setSelectedWebEmail(email)}
-                                    className="p-2 bg-neutral-50 hover:bg-[#577a4c]/10 hover:text-[#3d5636] text-neutral-600 rounded-lg transition-all cursor-pointer"
+                                    className="p-2 bg-neutral-50 hover:bg-[#ffa326]/10 hover:text-[#cc7e14] text-neutral-600 rounded-lg transition-all cursor-pointer"
                                     title="View Details"
                                   >
                                     <Eye className="h-4 w-4" />
@@ -2472,7 +2472,7 @@ function DashboardPage() {
                           required
                           value={updateUsername}
                           onChange={(e) => setUpdateUsername(e.target.value)}
-                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200 px-3.5 py-2 text-xs text-neutral-800 focus:outline-none focus:ring-1 focus:ring-[#577a4c]"
+                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200 px-3.5 py-2 text-xs text-neutral-800 focus:outline-none focus:ring-1 focus:ring-[#ffa326]"
                         />
                       </div>
 
@@ -2485,13 +2485,13 @@ function DashboardPage() {
                           value={updatePassword}
                           onChange={(e) => setUpdatePassword(e.target.value)}
                           placeholder="•••••••• (leave blank to keep unchanged)"
-                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200 px-3.5 py-2 text-xs text-neutral-800 focus:outline-none focus:ring-1 focus:ring-[#577a4c]"
+                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200 px-3.5 py-2 text-xs text-neutral-800 focus:outline-none focus:ring-1 focus:ring-[#ffa326]"
                         />
                       </div>
 
                       <button
                         type="submit"
-                        className="w-full bg-[#577a4c] hover:bg-[#3d5636] text-white py-2 rounded-xl text-[10px] font-bold uppercase tracking-wider transition-all shadow-md cursor-pointer select-none active:scale-98"
+                        className="w-full bg-[#ffa326] hover:bg-[#cc7e14] text-white py-2 rounded-xl text-[10px] font-bold uppercase tracking-wider transition-all shadow-md cursor-pointer select-none active:scale-98"
                       >
                         Update Credentials
                       </button>
@@ -2514,10 +2514,10 @@ function DashboardPage() {
                           <input
                             type="text"
                             required
-                            placeholder="e.g. jrm-assistant"
+                            placeholder="e.g. Right Lane Assistant"
                             value={addUsername}
                             onChange={(e) => setAddUsername(e.target.value)}
-                            className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200 px-3.5 py-2 text-xs text-neutral-800 focus:outline-none focus:ring-1 focus:ring-[#577a4c]"
+                            className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200 px-3.5 py-2 text-xs text-neutral-800 focus:outline-none focus:ring-1 focus:ring-[#ffa326]"
                           />
                         </div>
                         <div>
@@ -2530,7 +2530,7 @@ function DashboardPage() {
                             placeholder="Enter secure password"
                             value={addPassword}
                             onChange={(e) => setAddPassword(e.target.value)}
-                            className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200 px-3.5 py-2 text-xs text-neutral-800 focus:outline-none focus:ring-1 focus:ring-[#577a4c]"
+                            className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200 px-3.5 py-2 text-xs text-neutral-800 focus:outline-none focus:ring-1 focus:ring-[#ffa326]"
                           />
                         </div>
                       </div>
@@ -2542,7 +2542,7 @@ function DashboardPage() {
                         <select
                           value={addRole}
                           onChange={(e) => setAddRole(e.target.value as "admin" | "editor" | "viewer")}
-                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200 px-3.5 py-2 text-xs text-neutral-800 focus:outline-none focus:ring-1 focus:ring-[#577a4c] cursor-pointer"
+                          className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200 px-3.5 py-2 text-xs text-neutral-800 focus:outline-none focus:ring-1 focus:ring-[#ffa326] cursor-pointer"
                         >
                           <option value="admin">Administrator (Full Access & User Control)</option>
                           <option value="editor">Editor (Read/Write Content, No Security Access)</option>
@@ -2567,7 +2567,7 @@ function DashboardPage() {
                       <h4 className="text-xs font-bold text-neutral-900 uppercase tracking-wide">Active Portal Accounts</h4>
                       <p className="text-[10px] text-neutral-400 font-light mt-0.5">Database log of authenticated users authorized to access this dashboard.</p>
                     </div>
-                    <span className="bg-[#577a4c]/10 text-[#3d5636] border border-[#577a4c]/20 text-[9.5px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                    <span className="bg-[#ffa326]/10 text-[#cc7e14] border border-[#ffa326]/20 text-[9.5px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                       {portalUsers.length} accounts
                     </span>
                   </div>
@@ -2600,7 +2600,7 @@ function DashboardPage() {
                                 <User className="h-3.5 w-3.5 text-neutral-450" />
                                 <span>{user.username}</span>
                                 {isSelf && (
-                                  <span className="text-[8px] bg-[#577a4c]/15 text-[#3d5636] font-bold px-1.5 py-0.5 rounded uppercase">
+                                  <span className="text-[8px] bg-[#ffa326]/15 text-[#cc7e14] font-bold px-1.5 py-0.5 rounded uppercase">
                                     Current User
                                   </span>
                                 )}
@@ -2644,7 +2644,7 @@ function DashboardPage() {
 
       {/* ── FOOTER BAR ── */}
       <footer className="bg-[#1c140d] border-t border-neutral-800 text-neutral-400 py-4 text-center text-[10px] font-medium tracking-wide">
-        <span>© 2026 JRM Construction Landscape Design · Internal Admin Portal · Secured Session Design By <a href="https://stellrit.com" target="_blank" rel="noopener noreferrer" className="text-[#577a4c]">StellR IT LLC</a></span>
+        <span>© 2026 Right Lane Handyman Services, LLC · Internal Admin Portal · Secured Session Design By <a href="https://stellrit.com" target="_blank" rel="noopener noreferrer" className="text-[#ffa326]">StellR IT LLC</a></span>
       </footer>
 
       {/* ── MODAL: LEAD REVIEW & DETAILS ── */}
@@ -2660,7 +2660,7 @@ function DashboardPage() {
               {/* Header */}
               <div className="bg-[#1c140d] text-white px-6 py-4 flex items-center justify-between">
                 <div>
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-[#a5b89d]">Lead Details</h3>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-[#ffa326]">Lead Details</h3>
                   <p className="text-[10px] text-neutral-400 font-light">ID: {selectedLead.id}</p>
                 </div>
                 <button
@@ -2677,22 +2677,22 @@ function DashboardPage() {
                   <div>
                     <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider block">Client Name</span>
                     <span className="text-sm font-bold text-neutral-900 mt-1 flex items-center gap-1.5">
-                      <User className="h-4 w-4 text-[#577a4c]" />
+                      <User className="h-4 w-4 text-[#ffa326]" />
                       {selectedLead.name}
                     </span>
                   </div>
                   <div>
                     <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider block">Date Submitted</span>
                     <span className="text-sm font-semibold text-neutral-700 mt-1 flex items-center gap-1.5">
-                      <Calendar className="h-4 w-4 text-[#577a4c]" />
+                      <Calendar className="h-4 w-4 text-[#ffa326]" />
                       {new Date(selectedLead.createdAt).toLocaleString([], { month: "short", day: "numeric", year: "numeric", hour: "2-digit", minute: "2-digit" })}
                     </span>
                   </div>
                   <div>
                     <a href={`tel:${selectedLead.phone}`} className="group block">
                       <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider block">Phone Number</span>
-                      <span className="text-sm font-semibold text-[#3d5636] group-hover:underline mt-1 flex items-center gap-1.5">
-                        <Phone className="h-4 w-4 text-[#577a4c]" />
+                      <span className="text-sm font-semibold text-[#cc7e14] group-hover:underline mt-1 flex items-center gap-1.5">
+                        <Phone className="h-4 w-4 text-[#ffa326]" />
                         {selectedLead.phone}
                       </span>
                     </a>
@@ -2700,8 +2700,8 @@ function DashboardPage() {
                   <div>
                     <a href={`mailto:${selectedLead.email}`} className="group block">
                       <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider block">Email Address</span>
-                      <span className="text-sm font-semibold text-[#3d5636] group-hover:underline mt-1 flex items-center gap-1.5">
-                        <Mail className="h-4 w-4 text-[#577a4c]" />
+                      <span className="text-sm font-semibold text-[#cc7e14] group-hover:underline mt-1 flex items-center gap-1.5">
+                        <Mail className="h-4 w-4 text-[#ffa326]" />
                         {selectedLead.email}
                       </span>
                     </a>
@@ -2711,7 +2711,7 @@ function DashboardPage() {
                 <div className="border-t border-neutral-100 pt-4">
                   <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider block">Property Address</span>
                   <span className="text-xs font-semibold text-neutral-700 mt-1 flex items-start gap-1.5">
-                    <MapPin className="h-4 w-4 text-[#577a4c] shrink-0 mt-0.5" />
+                    <MapPin className="h-4 w-4 text-[#ffa326] shrink-0 mt-0.5" />
                     {selectedLead.address}
                   </span>
                 </div>
@@ -2762,7 +2762,7 @@ function DashboardPage() {
 
                 <div>
                   <label className="block text-[10px] font-bold text-neutral-400 uppercase tracking-wider mb-1">
-                    Robert's Notes / Reminders
+                    Ronnie's Notes / Reminders
                   </label>
                   <textarea
                     rows={2}
@@ -2804,8 +2804,8 @@ function DashboardPage() {
 
                     {/* Add Photo Button Slot */}
                     {!isViewer && (
-                      <label className="aspect-square flex flex-col items-center justify-center border-2 border-dashed border-neutral-200 hover:border-[#577a4c] rounded-lg bg-[#fbfaf7] hover:bg-[#577a4c]/5 cursor-pointer transition-all duration-200 text-center p-2 select-none">
-                        <Plus className="h-4 w-4 text-neutral-400 group-hover:text-[#577a4c]" />
+                      <label className="aspect-square flex flex-col items-center justify-center border-2 border-dashed border-neutral-200 hover:border-[#ffa326] rounded-lg bg-[#fbfaf7] hover:bg-[#ffa326]/5 cursor-pointer transition-all duration-200 text-center p-2 select-none">
+                        <Plus className="h-4 w-4 text-neutral-400 group-hover:text-[#ffa326]" />
                         <span className="text-[9px] font-bold text-neutral-500 mt-1 uppercase tracking-wide">
                           Upload
                         </span>
@@ -2843,7 +2843,7 @@ function DashboardPage() {
                   {!isViewer && (
                     <button
                       onClick={handleSaveLeadDetails}
-                      className="bg-[#577a4c] hover:bg-[#3d5636] text-white px-4 py-2 rounded-xl text-[10px] font-bold uppercase tracking-wider transition-all shadow-md cursor-pointer"
+                      className="bg-[#ffa326] hover:bg-[#cc7e14] text-white px-4 py-2 rounded-xl text-[10px] font-bold uppercase tracking-wider transition-all shadow-md cursor-pointer"
                     >
                       Save Changes
                     </button>
@@ -2868,7 +2868,7 @@ function DashboardPage() {
               {/* Header */}
               <div className="bg-[#1c140d] text-white px-6 py-4 flex items-center justify-between">
                 <div>
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-[#a5b89d]">Web Email Details</h3>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-[#ffa326]">Web Email Details</h3>
                   <p className="text-[10px] text-neutral-400 font-light">ID: {selectedWebEmail.id}</p>
                 </div>
                 <button
@@ -2885,14 +2885,14 @@ function DashboardPage() {
                   <div>
                     <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider block">Visitor Name</span>
                     <span className="text-sm font-bold text-neutral-900 mt-1 flex items-center gap-1.5">
-                      <User className="h-4 w-4 text-[#577a4c]" />
+                      <User className="h-4 w-4 text-[#ffa326]" />
                       {selectedWebEmail.name}
                     </span>
                   </div>
                   <div>
                     <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider block">Date Submitted</span>
                     <span className="text-sm font-semibold text-neutral-700 mt-1 flex items-center gap-1.5">
-                      <Calendar className="h-4 w-4 text-[#577a4c]" />
+                      <Calendar className="h-4 w-4 text-[#ffa326]" />
                       {new Date(selectedWebEmail.createdAt).toLocaleString([], { month: "short", day: "numeric", year: "numeric", hour: "2-digit", minute: "2-digit" })}
                     </span>
                   </div>
@@ -2900,8 +2900,8 @@ function DashboardPage() {
                     {selectedWebEmail.phone ? (
                       <a href={`tel:${selectedWebEmail.phone}`} className="group block">
                         <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider block">Phone Number</span>
-                        <span className="text-sm font-semibold text-[#3d5636] group-hover:underline mt-1 flex items-center gap-1.5">
-                          <Phone className="h-4 w-4 text-[#577a4c]" />
+                        <span className="text-sm font-semibold text-[#cc7e14] group-hover:underline mt-1 flex items-center gap-1.5">
+                          <Phone className="h-4 w-4 text-[#ffa326]" />
                           {selectedWebEmail.phone}
                         </span>
                       </a>
@@ -2918,8 +2918,8 @@ function DashboardPage() {
                   <div>
                     <a href={`mailto:${selectedWebEmail.email}`} className="group block">
                       <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider block">Email Address</span>
-                      <span className="text-sm font-semibold text-[#3d5636] group-hover:underline mt-1 flex items-center gap-1.5">
-                        <Mail className="h-4 w-4 text-[#577a4c]" />
+                      <span className="text-sm font-semibold text-[#cc7e14] group-hover:underline mt-1 flex items-center gap-1.5">
+                        <Mail className="h-4 w-4 text-[#ffa326]" />
                         {selectedWebEmail.email}
                       </span>
                     </a>
@@ -3008,7 +3008,7 @@ function DashboardPage() {
             >
               <div className="bg-[#1c140d] text-white px-6 py-4 flex items-center justify-between">
                 <div>
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-[#a5b89d]">Log Inquiry Manually</h3>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-[#ffa326]">Log Inquiry Manually</h3>
                   <p className="text-[10px] text-neutral-400 font-light">Register walk-ins or telephone inquiries.</p>
                 </div>
                 <button
@@ -3212,7 +3212,7 @@ function DashboardPage() {
             >
               <div className="bg-[#1c140d] text-white px-6 py-4 flex items-center justify-between">
                 <div>
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-[#a5b89d]">Log Client Review</h3>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-[#ffa326]">Log Client Review</h3>
                   <p className="text-[10px] text-neutral-400 font-light">Append verified client feedback to the reviews database.</p>
                 </div>
                 <button
@@ -3250,7 +3250,7 @@ function DashboardPage() {
                         value={newReviewData.location}
                         onChange={(e) => setNewReviewData({ ...newReviewData, location: e.target.value })}
                         className="w-full bg-[#fbfaf7] rounded-lg border border-neutral-200 px-3 py-2 text-xs focus:outline-none"
-                        placeholder="e.g. San Antonio or Boerne"
+                        placeholder="e.g. Clearwater or Largo"
                       />
                     </div>
                   </div>
@@ -3325,7 +3325,7 @@ function DashboardPage() {
                         </button>
                       </div>
                     ) : (
-                      <label className="flex items-center gap-2 px-3 py-2 border border-dashed border-neutral-250 hover:border-[#577a4c] rounded-lg bg-[#fbfaf7] hover:bg-[#577a4c]/5 cursor-pointer transition-all duration-200 w-full sm:w-auto inline-flex select-none">
+                      <label className="flex items-center gap-2 px-3 py-2 border border-dashed border-neutral-250 hover:border-[#ffa326] rounded-lg bg-[#fbfaf7] hover:bg-[#ffa326]/5 cursor-pointer transition-all duration-200 w-full sm:w-auto inline-flex select-none">
                         <Plus className="h-4 w-4 text-neutral-400" />
                         <span className="text-[10px] font-bold text-neutral-500 uppercase tracking-wider">
                           Select Photo
@@ -3382,7 +3382,7 @@ function DashboardPage() {
                   ? 'bg-red-50 text-red-600'
                   : confirmConfig.type === 'warning'
                     ? 'bg-amber-50 text-amber-600'
-                    : 'bg-[#577a4c]/10 text-[#3d5636]'
+                    : 'bg-[#ffa326]/10 text-[#cc7e14]'
                   }`}>
                   {confirmConfig.type === 'danger' ? (
                     <Trash2 className="h-6 w-6" />
@@ -3419,7 +3419,7 @@ function DashboardPage() {
                     ? 'bg-red-600 hover:bg-red-750 shadow-red-200'
                     : confirmConfig.type === 'warning'
                       ? 'bg-amber-500 hover:bg-amber-600 shadow-amber-100'
-                      : 'bg-[#577a4c] hover:bg-[#3d5636]'
+                      : 'bg-[#ffa326] hover:bg-[#cc7e14]'
                     }`}
                 >
                   {confirmConfig.confirmText || "Confirm"}

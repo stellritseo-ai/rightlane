@@ -79,16 +79,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "JRM Construction Landscaping Design | San Antonio's Trusted Remodeling & Outdoor Living Experts Since 1989" },
-      { name: "description", content: "San Antonio's premier licensed, insured, and bonded construction company. 35+ years of experience in house remodeling, outdoor kitchens, custom fireplaces, hardscapes & artificial turf. Free consultations. Call (210) 429-5526." },
-      { name: "author", content: "JRM Construction Landscaping Design" },
-      { property: "og:title", content: "JRM Construction Landscaping Design | San Antonio's Trusted Remodeling & Outdoor Living Experts Since 1989" },
-      { property: "og:description", content: "San Antonio's premier licensed, insured, and bonded construction company. 35+ years of experience in house remodeling, outdoor kitchens, custom fireplaces, hardscapes & artificial turf. Free consultations. Call (210) 429-5526." },
+      { title: "Right Lane Handyman Services, LLC | Clearwater's Trusted Handyman & Remodeling Experts" },
+      { name: "description", content: "Clearwater's premier licensed, insured, and bonded handyman and remodeling company. 25+ years of experience in home repairs, fencing, covered patios, hardscapes & artificial turf. Free consultations. Call (727) 642-0201." },
+      { name: "author", content: "Right Lane Handyman Services, LLC" },
+      { property: "og:title", content: "Right Lane Handyman Services, LLC | Clearwater's Trusted Handyman & Remodeling Experts" },
+      { property: "og:description", content: "Clearwater's premier licensed, insured, and bonded handyman and remodeling company. 25+ years of experience in home repairs, fencing, covered patios, hardscapes & artificial turf. Free consultations. Call (727) 642-0201." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://jrmconstruction.vercel.app" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "JRM Construction Landscaping Design | San Antonio" },
-      { name: "twitter:description", content: "35+ years of trusted construction & landscaping in San Antonio. Licensed, insured & bonded. Call (210) 429-5526." },
+      { name: "twitter:title", content: "Right Lane Handyman Services, LLC | Clearwater, FL" },
+      { name: "twitter:description", content: "25+ years of trusted handyman services & home repairs in Clearwater. Licensed, insured & bonded. Call (727) 642-0201." },
     ],
     links: [
       {

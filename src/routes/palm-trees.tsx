@@ -24,15 +24,15 @@ import {
 
 import imgPalms from "@/assets/svc-palm-trees.jpg";
 import welBg from "@/assets/wel-bg.png";
-import logo from "@/assets/jrm-logo.png";
+import logo from "@/assets/logo.png";
 
 export const Route = createFileRoute("/palm-trees")({
   head: () => ({
     meta: [
-      { title: "Palm Tree Installation & Landscape Design San Antonio — JRM Construction" },
-      { name: "description", content: "Transform your San Antonio property with cold-hardy palm trees and expert resort-style landscape design by Robert Thompson and JRM. Call (210) 429-5526." },
-      { property: "og:title", content: "Palm Tree Installation & Landscape Design in San Antonio" },
-      { property: "og:description", content: "Professional palm tree selection, strategic installation, and tropical-themed landscape design in Texas with 35+ years of expertise." },
+      { title: "Palm Tree Installation & Landscape Design Clearwater — Right Lane Handyman Services, LLC" },
+      { name: "description", content: "Transform your Clearwater property with cold-hardy palm trees and expert resort-style landscape design by Right Lane Handyman and Right Lane. Call (727) 642-0201." },
+      { property: "og:title", content: "Palm Tree Installation & Landscape Design in Clearwater" },
+      { property: "og:description", content: "Professional palm tree selection, strategic installation, and tropical-themed landscape design in Texas with 25+ Years of expertise." },
       { property: "og:type", content: "website" }
     ],
   }),
@@ -79,7 +79,7 @@ function PalmTreesPage() {
     {
       number: "01",
       title: "On-Site Consultation",
-      desc: "Robert Thompson meets you on-site to evaluate sun exposure, wind patterns, drainage, and home architecture to recommend the perfect species."
+      desc: "Right Lane Handyman meets you on-site to evaluate sun exposure, wind patterns, drainage, and home architecture to recommend the perfect species."
     },
     {
       number: "02",
@@ -101,11 +101,11 @@ function PalmTreesPage() {
   const whyChooseUs = [
     {
       title: "Horticultural & Construction Expertise",
-      desc: "With 35 years of experience, we understand how to structurally plant heavy trees without disrupting utilities, walkways, or foundation structures."
+      desc: "With 25+ Years of experience, we understand how to structurally plant heavy trees without disrupting utilities, walkways, or foundation structures."
     },
     {
       title: "Honest, Climate-First Advice",
-      desc: "We won't sell you a species that cannot survive Texas freezes. We recommend beautiful, cold-hardy varieties suited for San Antonio winters."
+      desc: "We won't sell you a species that cannot survive Texas freezes. We recommend beautiful, cold-hardy varieties suited for Clearwater winters."
     },
     {
       title: "Holistic Landscape Integration",
@@ -138,7 +138,7 @@ function PalmTreesPage() {
           />
 
           {/* Forest Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#111a0a]/92 via-[#111a0a]/78 to-[#111a0a]/92 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1c140d]/92 via-[#1c140d]/78 to-[#1c140d]/92 z-10" />
 
           {/* Content container */}
           <motion.div
@@ -179,7 +179,7 @@ function PalmTreesPage() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute top-0 left-0 w-full h-1/3 bg-[#a5b89d] rounded-full"
+                className="absolute top-0 left-0 w-full h-1/3 bg-[#ffa326] rounded-full"
               />
             </div>
           </div>
@@ -201,7 +201,7 @@ function PalmTreesPage() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="space-y-6"
             >
-              <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-2">
+              <span className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-2">
                 Resort Living at Home
               </span>
               <h2 
@@ -210,11 +210,11 @@ function PalmTreesPage() {
               >
                 Create a Texas Oasis with Majestic Palms
               </h2>
-              <p className="text-base text-neutral-700 leading-relaxed font-light first-letter:text-5xl first-letter:font-extrabold first-letter:text-[#3d5636] first-letter:float-left first-letter:mr-3 first-letter:mt-1">
-                Create an instant oasis of relaxation and resort-style elegance with professionally installed palm trees. At JRM Construction Landscaping Design, we specialize in integrating majestic palm tree installations into cohesive landscape designs that thrive in the San Antonio climate.
+              <p className="text-base text-neutral-700 leading-relaxed font-light first-letter:text-5xl first-letter:font-extrabold first-letter:text-[#cc7e14] first-letter:float-left first-letter:mr-3 first-letter:mt-1">
+                Create an instant oasis of relaxation and resort-style elegance with professionally installed palm trees. At Right Lane Handyman Services, LLC, we specialize in integrating majestic palm tree installations into cohesive landscape designs that thrive in the Clearwater climate.
               </p>
               <p className="text-base text-neutral-700 leading-relaxed font-light">
-                With over 35 years of horticultural and construction expertise, owner Robert Thompson knows that successful palm cultivation in Texas is about more than just planting—it's about expert selection, strategic placement, and holistic design that complements your home's architecture and your outdoor living spaces.
+                With over 25+ Years of horticultural and construction expertise, the Right Lane team knows that successful palm cultivation in Texas is about more than just planting—it's about expert selection, strategic placement, and holistic design that complements your home's architecture and your outdoor living spaces.
               </p>
               <p className="text-base text-neutral-700 leading-relaxed font-light">
                 A palm tree is a statement of style and a long-term investment in your property's curb appeal. As a fully licensed, insured, and bonded contractor, we ensure every palm is selected for hardiness, installed with precision, and cared for as part of your complete landscape vision.
@@ -230,7 +230,7 @@ function PalmTreesPage() {
               className="relative w-full max-w-[440px] mx-auto flex items-center justify-center py-6"
             >
               {/* Offset frame behind image */}
-              <div className="absolute top-2 left-2 right-[-4px] bottom-[-4px] sm:right-[-8px] sm:bottom-[-8px] border-2 border-[#577a4c]/20 rounded-2xl z-0 select-none pointer-events-none" />
+              <div className="absolute top-2 left-2 right-[-4px] bottom-[-4px] sm:right-[-8px] sm:bottom-[-8px] border-2 border-[#ffa326]/20 rounded-2xl z-0 select-none pointer-events-none" />
 
               <img
                 src={imgPalms}
@@ -238,7 +238,7 @@ function PalmTreesPage() {
                 className="relative z-10 w-full h-auto object-cover rounded-2xl shadow-xl border border-neutral-200/50 aspect-[4/5]"
               />
               <div className="absolute -bottom-1 -right-2 sm:-right-8 bg-white/95 backdrop-blur-md border border-neutral-200 rounded-xl p-4 shadow-xl flex flex-col select-none z-20">
-                <span className="text-3xl font-black text-[#3d5636]">35+</span>
+                <span className="text-3xl font-black text-[#cc7e14]">35+</span>
                 <span className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest leading-none mt-0.5">Years of Expertise</span>
               </div>
             </motion.div>
@@ -256,7 +256,7 @@ function PalmTreesPage() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
+            <span className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
               Our Services
             </span>
             <h2 
@@ -280,10 +280,10 @@ function PalmTreesPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: idx * 0.12, ease: "easeOut" }}
-                  className="bg-white rounded-2xl border border-neutral-200/50 p-8 shadow-sm hover:shadow-xl hover:scale-[1.02] hover:border-[#577a4c]/30 transition-all duration-300 flex flex-col justify-between"
+                  className="bg-white rounded-2xl border border-neutral-200/50 p-8 shadow-sm hover:shadow-xl hover:scale-[1.02] hover:border-[#ffa326]/30 transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
-                    <div className="w-12 h-12 rounded-xl bg-[#577a4c]/10 text-[#3d5636] border border-[#577a4c]/20 flex items-center justify-center mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-[#ffa326]/10 text-[#cc7e14] border border-[#ffa326]/20 flex items-center justify-center mb-6">
                       <IconComp className="w-6 h-6" />
                     </div>
                     <h3 className="text-lg font-bold text-neutral-900 mb-3 tracking-wide capitalize">
@@ -295,7 +295,7 @@ function PalmTreesPage() {
                     <ul className="space-y-3.5">
                       {pillar.items.map((item, itemIdx) => (
                         <li key={itemIdx} className="flex gap-3 items-start text-xs text-neutral-700 font-light leading-relaxed">
-                          <CheckCircle2 className="w-4 h-4 text-[#3d5636] shrink-0 mt-0.5" />
+                          <CheckCircle2 className="w-4 h-4 text-[#cc7e14] shrink-0 mt-0.5" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -308,7 +308,7 @@ function PalmTreesPage() {
         </section>
       </div>
 
-      {/* ── THE JRM PROCESS SECTION ── */}
+      {/* ── THE Right Lane PROCESS SECTION ── */}
       <div className="w-full bg-[#f4f3ef] pt-[10px] pb-[10px] px-[15px]">
         <section className="mx-auto max-w-[1400px] w-full rounded-[10px] bg-[#fbfaf7] border border-[#eae8e1] shadow-[0_12px_40px_rgb(0,0,0,0.03)] px-6 py-20 md:px-12 lg:px-16">
           <motion.div
@@ -318,14 +318,14 @@ function PalmTreesPage() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
+            <span className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
               Step By Step
             </span>
             <h2 
               className="text-3xl md:text-4xl font-extrabold text-neutral-900 tracking-tight"
               style={{ fontFamily: "Georgia, serif" }}
             >
-              The JRM Palm Tree Process
+              The Right Lane Palm Tree Process
             </h2>
             <p className="mt-4 text-neutral-600 text-sm md:text-base leading-relaxed font-light">
               Crafting premium resort landscapes requires careful steps, precision tools, and horticulture oversight.
@@ -343,7 +343,7 @@ function PalmTreesPage() {
                 className="bg-white rounded-xl border border-neutral-200/50 p-6 shadow-sm hover:shadow-md transition-all duration-300 relative flex flex-col justify-between"
               >
                 <div>
-                  <span className="text-3xl font-black text-[#577a4c]/20 block mb-4">
+                  <span className="text-3xl font-black text-[#ffa326]/20 block mb-4">
                     {step.number}
                   </span>
                   <h3 className="text-[15px] font-bold text-neutral-900 tracking-wide mb-2">
@@ -374,17 +374,17 @@ function PalmTreesPage() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="space-y-5"
             >
-              <span className="inline-flex items-center bg-[#2d3f26] border border-[#23321e]/30 text-white rounded-full px-5 py-1.5 text-[10px] font-black uppercase tracking-widest shadow-sm">
-                The JRM Advantage
+              <span className="inline-flex items-center bg-[#2b1a05] border border-[#593203]/30 text-white rounded-full px-5 py-1.5 text-[10px] font-black uppercase tracking-widest shadow-sm">
+                The Right Lane Advantage
               </span>
               <h2 
                 className="text-3xl md:text-4xl font-extrabold text-neutral-900 tracking-tight leading-tight"
                 style={{ fontFamily: "Georgia, serif" }}
               >
-                Why Choose JRM for Your Palm Trees?
+                Why Choose Right Lane for Your Palm Trees?
               </h2>
               <p className="text-base text-neutral-700 leading-relaxed font-light">
-                Palm trees are a beautiful investment, but planting them in the South Texas climate requires specialized knowledge. We combine 35 years of construction strength and softscape wisdom to ensure they look beautiful and stand strong for years.
+                Palm trees are a beautiful investment, but planting them in the South Texas climate requires specialized knowledge. We combine 25+ Years of construction strength and softscape wisdom to ensure they look beautiful and stand strong for years.
               </p>
             </motion.div>
 
@@ -399,7 +399,7 @@ function PalmTreesPage() {
                   transition={{ duration: 0.7, delay: idx * 0.12, ease: "easeOut" }}
                   className="bg-white/80 backdrop-blur-sm border border-neutral-200/50 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex gap-4"
                 >
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#577a4c]/10 text-[#3d5636] border border-[#577a4c]/20 select-none">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#ffa326]/10 text-[#cc7e14] border border-[#ffa326]/20 select-none">
                     <CheckCircle2 className="w-5 h-5" />
                   </span>
                   <div>
@@ -436,7 +436,7 @@ function PalmTreesPage() {
             className="max-w-4xl mx-auto flex flex-col items-center"
           >
             {/* Logo */}
-            <img src={logo} alt="JRM" className="h-14 w-auto object-contain mb-8 filter brightness-110" />
+            <img src={logo} alt="Right Lane" className="h-14 w-auto object-contain mb-8 filter brightness-110" />
 
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-5">
               Transform Your Yard into a Year-Round Retreat
@@ -446,41 +446,41 @@ function PalmTreesPage() {
               A strategically placed palm tree adds height, texture, and a timeless sense of vacation to your own backyard. It’s an investment in creating a personal paradise for daily enjoyment and exceptional entertaining.
             </p>
 
-            <p className="text-md font-bold text-[#a5b89d] mb-10 tracking-wide uppercase">
+            <p className="text-md font-bold text-[#ffa326] mb-10 tracking-wide uppercase">
               Ready to explore the possibilities? Contact us for a free landscape design consultation.
             </p>
 
             <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-8 w-full max-w-3xl mb-10 text-left">
               <h3 className="text-md font-bold text-white mb-5 text-center sm:text-left tracking-wide">
-                JRM Construction Landscaping Design
+                Right Lane Handyman Services, LLC
               </h3>
               
               <div className="grid sm:grid-cols-2 gap-5 text-[15px] font-light">
-                <a href="tel:2104295526" className="flex items-center gap-3.5 hover:text-[#a5b89d] transition-colors">
-                  <Phone className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>(210) 429-5526</span>
+                <a href="tel:7276420201" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
+                  <Phone className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>(727) 642-0201</span>
                 </a>
-                <a href="mailto:robertsa210@icloud.com" className="flex items-center gap-3.5 hover:text-[#a5b89d] transition-colors">
-                  <Mail className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>robertsa210@icloud.com</span>
+                <a href="mailto:rightlanehandymanservice@yahoo.com" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
+                  <Mail className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>rightlanehandymanservice@yahoo.com</span>
                 </a>
                 <div className="flex items-center gap-3.5">
-                  <MapPin className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>Serving San Antonio, Boerne, New Braunfels, Canyon Lake & Surroundings</span>
+                  <MapPin className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>Serving Clearwater, Largo, St. Petersburg, Tarpon Springs & Surroundings</span>
                 </div>
                 <div className="flex items-center gap-3.5">
-                  <ShieldCheck className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>Licensed · Insured · Bonded | 35+ Years Experience</span>
+                  <ShieldCheck className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>Licensed · Insured · Bonded | 25+ Years Experience</span>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-wrap gap-4 justify-center">
               <a
-                href="tel:2104295526"
-                className="rounded-full bg-[#577a4c] hover:bg-[#4d6c43] px-8 py-3.5 text-white text-[14px] font-bold tracking-wider uppercase transition-all duration-300 shadow-lg hover:scale-[1.03]"
+                href="tel:7276420201"
+                className="rounded-full bg-[#ffa326] hover:bg-[#ffa326] px-8 py-3.5 text-white text-[14px] font-bold tracking-wider uppercase transition-all duration-300 shadow-lg hover:scale-[1.03]"
               >
-                Call Robert Now
+                Call Ronnie Now
               </a>
               <Link
                 to="/lets-talk"

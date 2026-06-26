@@ -14,7 +14,7 @@ import {
   ChevronRight,
   ZoomIn,
 } from "lucide-react";
-import logo from "@/assets/jrm-logo.png";
+import logo from "@/assets/logo.png";
 import welBg from "@/assets/wel-bg.png";
 import workHero from "@/assets/welcome-pool.jpg";
 import { getGalleryPhotos } from "@/lib/leads-store";
@@ -32,10 +32,10 @@ import statsJobsite from "@/assets/stats-jobsite.jpg";
 export const Route = createFileRoute("/work")({
   head: () => ({
     meta: [
-      { title: "Our Work & Portfolio — JRM Construction, San Antonio" },
-      { name: "description", content: "Explore the JRM Construction portfolio of completed home remodels, masonry hardscapes, covered patios, outdoor kitchens, and landscape designs." },
-      { property: "og:title", content: "Our Work & Portfolio — JRM Construction" },
-      { property: "og:description", content: "Browse featured design-build projects and landscape masterpieces in San Antonio and surrounding Texas communities." },
+      { title: "Our Work & Portfolio — Right Lane Handyman Services, LLC, Clearwater" },
+      { name: "description", content: "Explore the Right Lane Handyman Services, LLC portfolio of completed home remodels, masonry hardscapes, covered patios, outdoor kitchens, and landscape designs." },
+      { property: "og:title", content: "Our Work & Portfolio — Right Lane Handyman Services, LLC" },
+      { property: "og:description", content: "Browse featured design-build projects and landscape masterpieces in Clearwater and surrounding Texas communities." },
       { property: "og:type", content: "website" }
     ],
   }),
@@ -47,49 +47,49 @@ const CATEGORIES = ["All", "Remodeling", "Outdoor Living", "Landscaping", "Const
 const STATIC_PROJECTS = [
   {
     title: "Complete Home Remodel & Backyard Transformation",
-    location: "San Antonio, TX",
+    location: "Clearwater, FL",
     image: houseRemodeling,
     category: "Remodeling",
     services: ["House Remodeling", "Covered Patio", "Outdoor Kitchen", "Hardscapes", "Softscapes"],
   },
   {
     title: "Custom Indoor Stone Fireplace & Mantel",
-    location: "Boerne, TX",
+    location: "Largo, TX",
     image: fireplace,
     category: "Outdoor Living",
     services: ["Custom Fireplace", "Interior Finishing"],
   },
   {
     title: "Resort-Style Backyard & Artificial Turf",
-    location: "San Antonio, TX",
+    location: "Clearwater, FL",
     image: artificialTurf,
     category: "Landscaping",
     services: ["Artificial Turf", "Hardscapes", "Softscapes", "Fire Pit Installation"],
   },
   {
     title: "Commercial New Construction & Landscaping",
-    location: "San Antonio Medical Center",
+    location: "Clearwater Medical Center",
     image: newConstruction,
     category: "Construction",
     services: ["New Construction", "Commercial Landscaping", "Hardscapes", "Softscapes"],
   },
   {
     title: "Custom Outdoor Kitchen & Covered Patio",
-    location: "New Braunfels, TX",
+    location: "St. Petersburg, TX",
     image: outdoorKitchens,
     category: "Outdoor Living",
     services: ["Outdoor Kitchen", "Covered Patio", "Hardscapes", "Softscapes"],
   },
   {
     title: "Full Landscape Design & Palm Tree Installation",
-    location: "Canyon Lake, TX",
+    location: "Tarpon Springs, TX",
     image: softscapes,
     category: "Landscaping",
     services: ["Softscapes", "Palm Tree Installation", "Hardscapes", "Retaining Wall"],
   },
   {
     title: "Custom Fencing & Privacy Screen",
-    location: "San Antonio, TX",
+    location: "Clearwater, FL",
     image: fencing,
     category: "Fencing",
     services: ["Fencing", "Hardscapes", "Softscapes"],
@@ -116,7 +116,7 @@ function OurWorkPage() {
           const mapped = photos.map((photo, index) => {
             const url = photo.url.toLowerCase();
             let category = "Outdoor Living";
-            let title = "JRM Custom Craftsmanship";
+            let title = "Right Lane Custom Craftsmanship";
             let services = ["Design-Build", "Custom Masonry"];
 
             // Infer category and details based on file name patterns
@@ -172,10 +172,10 @@ function OurWorkPage() {
 
             // Distribute locations based on index
             const locations = [
-              "San Antonio, TX",
-              "Boerne, TX",
-              "New Braunfels, TX",
-              "Seguin, TX",
+              "Clearwater, FL",
+              "Largo, TX",
+              "St. Petersburg, TX",
+              "Pinellas Park, TX",
               "Bulverde, TX",
               "Schertz, TX"
             ];
@@ -252,7 +252,7 @@ function OurWorkPage() {
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${workHero})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#111a0a]/92 via-[#111a0a]/78 to-[#111a0a]/92 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1c140d]/92 via-[#1c140d]/78 to-[#1c140d]/92 z-10" />
 
           <motion.div
             initial={{ opacity: 0, y: 25 }}
@@ -264,10 +264,10 @@ function OurWorkPage() {
               Our Portfolio
             </span>
             <h1 className="text-[26px] sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight capitalize tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
-              Transforming San Antonio Properties,<br className="hidden sm:inline" /> One Project at a Time
+              Transforming Clearwater Properties,<br className="hidden sm:inline" /> One Project at a Time
             </h1>
             <p className="mt-6 text-sm md:text-base text-neutral-300 font-light leading-relaxed max-w-3xl mx-auto">
-              For over 35 years, JRM Construction Landscaping Design has stood as a hallmark of quality, integrity, and craftsmanship. Click any project to explore it in full detail.
+              For over 25+ Years, Right Lane Handyman Services, LLC has stood as a hallmark of quality, integrity, and craftsmanship. Click any project to explore it in full detail.
             </p>
           </motion.div>
 
@@ -277,7 +277,7 @@ function OurWorkPage() {
               <motion.div
                 animate={{ y: ["-100%", "200%"] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-0 left-0 w-full h-1/3 bg-[#a5b89d] rounded-full"
+                className="absolute top-0 left-0 w-full h-1/3 bg-[#ffa326] rounded-full"
               />
             </div>
           </div>
@@ -302,7 +302,7 @@ function OurWorkPage() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-center max-w-3xl mx-auto mb-10"
           >
-            <span className="inline-flex items-center bg-[#577a4c]/10 border border-[#577a4c]/20 text-[#3d5636] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
+            <span className="inline-flex items-center bg-[#ffa326]/10 border border-[#ffa326]/20 text-[#cc7e14] rounded-full px-5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider mb-4">
               Featured Gallery
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-neutral-900 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
@@ -321,8 +321,8 @@ function OurWorkPage() {
                 onClick={() => { setActiveCategory(cat); setLightboxIndex(null); }}
                 className={`whitespace-nowrap px-5 py-2 rounded-full text-[12px] font-bold uppercase tracking-wider border transition-all duration-300 ${
                   activeCategory === cat
-                    ? "bg-[#577a4c] text-white border-[#577a4c] shadow-md"
-                    : "bg-white/80 text-neutral-600 border-neutral-200 hover:border-[#577a4c] hover:text-[#577a4c]"
+                    ? "bg-[#ffa326] text-white border-[#ffa326] shadow-md"
+                    : "bg-white/80 text-neutral-600 border-neutral-200 hover:border-[#ffa326] hover:text-[#ffa326]"
                 }`}
               >
                 {cat}
@@ -369,13 +369,13 @@ function OurWorkPage() {
                       </div>
                     </div>
                     {/* Category pill */}
-                    <span className="absolute top-3 right-3 bg-[#577a4c]/90 text-white text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                    <span className="absolute top-3 right-3 bg-[#ffa326]/90 text-white text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
                       {p.category}
                     </span>
                   </div>
 
                   {/* Always visible location for mobile */}
-                  <span className="absolute top-2.5 left-2.5 inline-flex items-center gap-1 bg-white/90 backdrop-blur-md text-[#3d5636] text-[9px] font-black px-2 py-1 rounded-full uppercase tracking-wider shadow-sm select-none group-hover:opacity-0 transition-opacity duration-200">
+                  <span className="absolute top-2.5 left-2.5 inline-flex items-center gap-1 bg-white/90 backdrop-blur-md text-[#cc7e14] text-[9px] font-black px-2 py-1 rounded-full uppercase tracking-wider shadow-sm select-none group-hover:opacity-0 transition-opacity duration-200">
                     <MapPin className="w-2.5 h-2.5" />
                     {p.location}
                   </span>
@@ -403,7 +403,7 @@ function OurWorkPage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-4xl mx-auto flex flex-col items-center"
           >
-            <img src={logo} alt="JRM" className="h-14 w-auto object-contain mb-8 filter brightness-110" />
+            <img src={logo} alt="Right Lane" className="h-14 w-auto object-contain mb-8 filter brightness-110" />
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-5">
               Ready to Start Your Project?
             </h2>
@@ -416,31 +416,31 @@ function OurWorkPage() {
                 Contact us today to schedule your free consultation.
               </h3>
               <div className="grid sm:grid-cols-2 gap-5 text-[15px] font-light">
-                <a href="tel:2104295526" className="flex items-center gap-3.5 hover:text-[#a5b89d] transition-colors">
-                  <Phone className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>(210) 429-5526</span>
+                <a href="tel:7276420201" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
+                  <Phone className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>(727) 642-0201</span>
                 </a>
-                <a href="mailto:robertsa210@icloud.com" className="flex items-center gap-3.5 hover:text-[#a5b89d] transition-colors">
-                  <Mail className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>robertsa210@icloud.com</span>
+                <a href="mailto:rightlanehandymanservice@yahoo.com" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
+                  <Mail className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>rightlanehandymanservice@yahoo.com</span>
                 </a>
                 <div className="flex items-center gap-3.5">
-                  <MapPin className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>Proudly Serving San Antonio & 80-Mile Surrounding Area</span>
+                  <MapPin className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>Proudly Serving Clearwater & 80-Mile Surrounding Area</span>
                 </div>
                 <div className="flex items-center gap-3.5">
-                  <ThumbsUp className="w-5 h-5 text-[#a5b89d] shrink-0" />
-                  <span>Licensed · Insured · Bonded Since 1989</span>
+                  <ThumbsUp className="w-5 h-5 text-[#ffa326] shrink-0" />
+                  <span>Licensed · Insured · Bonded with 25 years of experience</span>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-wrap gap-4 justify-center">
               <a
-                href="tel:2104295526"
-                className="rounded-full bg-[#577a4c] hover:bg-[#4d6c43] px-8 py-3.5 text-white text-[14px] font-bold tracking-wider uppercase transition-all duration-300 shadow-lg hover:scale-[1.03]"
+                href="tel:7276420201"
+                className="rounded-full bg-[#ffa326] hover:bg-[#ffa326] px-8 py-3.5 text-white text-[14px] font-bold tracking-wider uppercase transition-all duration-300 shadow-lg hover:scale-[1.03]"
               >
-                Call Robert Now
+                Call Ronnie Now
               </a>
               <Link
                 to="/lets-talk"
@@ -493,7 +493,7 @@ function OurWorkPage() {
                   {lightboxIndex + 1} / {filtered.length}
                 </span>
                 {/* Category badge */}
-                <span className="absolute top-3 left-3 bg-[#577a4c]/90 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                <span className="absolute top-3 left-3 bg-[#ffa326]/90 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                   {filtered[lightboxIndex].category}
                 </span>
               </div>
