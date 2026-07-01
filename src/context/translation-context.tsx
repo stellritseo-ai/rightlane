@@ -52,6 +52,7 @@ export const translations = {
     "nav.reviews": "Reviews",
     "nav.contact": "Contact Us",
     "nav.talk": "Let's Talk",
+    "nav.estimate": "Free Estimate",
 
     // Hero Section
     "hero.title": "25 Years of Trusted Handyman Service",
@@ -255,6 +256,7 @@ export const translations = {
     "nav.reviews": "Opiniones",
     "nav.contact": "Contacto",
     "nav.talk": "Hablemos",
+    "nav.estimate": "Presupuesto Gratis",
 
     // Hero Section
     "hero.title": "25 Años de Servicio de Handyman de Confianza",

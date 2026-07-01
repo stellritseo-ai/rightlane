@@ -1,4 +1,4 @@
-import heroImage from "@/assets/hero-patio.jpg";
+import heroImage from "@/assets/wel-img.png";
 import heroVideo from "@/assets/rightlane.mp4";
 import { useTranslation } from "@/context/translation-context";
 import { Phone, CheckCircle2, ChevronRight } from "lucide-react";

@@ -34,10 +34,10 @@ import imgJunkRemoval from "@/assets/svc-junk-removal.png";
 import imgMaintenance from "@/assets/svc-maintenance.png";
 import imgDebrisRemoval from "@/assets/svc-debris-removal.png";
 import imgLandscaping from "@/assets/svc-landscaping.png";
-import imgCommercial from "@/assets/stats-jobsite.jpg";
+import imgCommercial from "@/assets/stats-cleanup.png";
 import logo from "@/assets/logo.png";
 import welBg from "@/assets/wel-bg.png";
-import heroBg from "@/assets/hero-patio.jpg";
+import heroBg from "@/assets/wel-img.png";
 
 export const Route = createFileRoute("/services")({
   head: () => ({

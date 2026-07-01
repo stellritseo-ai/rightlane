@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 import logo from "@/assets/logo.png";
 import welBg from "@/assets/wel-bg.png";
-import contactHero from "@/assets/stats-jobsite.jpg";
+import contactHero from "@/assets/stats-cleanup.png";
 
 export const Route = createFileRoute("/lets-talk")({
   head: () => ({

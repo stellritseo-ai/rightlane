@@ -3,3 +3,5 @@ node_modules
 node_modules/.vite
 .env
 .tanstack
+dist
+.DS_Store

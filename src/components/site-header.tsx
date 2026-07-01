@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { Phone, ChevronDown, X, Menu, ExternalLink, Sparkles, Droplets, Hammer, Truck, Wrench, Trash2, Leaf } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
@@ -8,29 +8,52 @@ import { useTranslation } from "@/context/translation-context";
 
 const navItems = [
   { key: "nav.home", to: "/", label: "Home" },
-  { key: "nav.about", to: "#", label: "About" },
+  { key: "nav.about", to: "/about-us", label: "About" },
   { key: "nav.services", to: "#", label: "Services" },
-  { key: "nav.work", to: "#", label: "Our Work" },
-  { key: "nav.reviews", to: "#", label: "Reviews" },
-  { key: "nav.contact", to: "#", label: "Contact" },
+  { key: "nav.work", to: "/our-work", label: "Our Work" },
+  { key: "nav.reviews", to: "/reviews", label: "Reviews" },
+  { key: "nav.contact", to: "/contact-us", label: "Contact" },
 ] as const;
 
 const servicesSubMenu = [
-  { label: "Post Construction Cleaning", to: "#", hash: "cleaning", icon: Sparkles, desc: "Detailed move-in ready cleaning" },
-  { label: "Pressure Washing",           to: "#", hash: "pressurewash", icon: Droplets, desc: "Restore driveways, decks & siding" },
-  { label: "Demolition",                 to: "#", hash: "demolition", icon: Hammer, desc: "Safe structural dismantling" },
-  { label: "Junk Removal & Hauling",     to: "#", hash: "junkremoval", icon: Truck, desc: "Full-service waste hauling" },
-  { label: "Property Maintenance",       to: "#", hash: "maintenance", icon: Wrench, desc: "General handyman & home repairs" },
-  { label: "Waste & Debris Removal",     to: "#", hash: "debrisremoval", icon: Trash2, desc: "Drywall, metal & concrete clearing" },
-  { label: "Landscaping",                to: "#", hash: "landscaping", icon: Leaf, desc: "Garden upkeep, sod & mulching" },
+  { label: "Post Construction Cleaning", to: "/post-construction-cleaning", hash: undefined, icon: Sparkles, desc: "Detailed move-in ready cleaning" },
+  { label: "Pressure Washing",           to: "/pressure-washing",           hash: undefined, icon: Droplets, desc: "Restore driveways, decks & siding" },
+  { label: "Demolition",                 to: "/demolition",                 hash: undefined, icon: Hammer, desc: "Safe structural dismantling" },
+  { label: "Junk Removal & Hauling",     to: "/junk-removal",               hash: undefined, icon: Truck, desc: "Full-service waste hauling" },
+  { label: "Property Maintenance",       to: "/property-maintenance",       hash: undefined, icon: Wrench, desc: "General handyman & home repairs" },
+  { label: "Waste & Debris Removal",     to: "/waste-debris-removal",       hash: undefined, icon: Trash2, desc: "Drywall, metal & concrete clearing" },
+  { label: "Landscaping",                to: "/landscaping",                hash: undefined, icon: Leaf, desc: "Garden upkeep, sod & mulching" },
 ] as const;
 
 export function SiteHeader() {
   const { t } = useTranslation();
-  const [activeItem, setActiveItem] = useState("nav.home");
+  const location = useLocation();
+  const currentPath = location.pathname;
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+
+  const getActiveItem = () => {
+    if (currentPath === "/") return "nav.home";
+    if (currentPath.startsWith("/about-us")) return "nav.about";
+    if (
+      currentPath.startsWith("/services") ||
+      currentPath.startsWith("/post-construction-cleaning") ||
+      currentPath.startsWith("/pressure-washing") ||
+      currentPath.startsWith("/demolition") ||
+      currentPath.startsWith("/junk-removal") ||
+      currentPath.startsWith("/property-maintenance") ||
+      currentPath.startsWith("/waste-debris-removal") ||
+      currentPath.startsWith("/landscaping")
+    )
+      return "nav.services";
+    if (currentPath.startsWith("/our-work")) return "nav.work";
+    if (currentPath.startsWith("/reviews")) return "nav.reviews";
+    if (currentPath.startsWith("/contact-us")) return "nav.contact";
+    if (currentPath.startsWith("/free-estimate")) return "nav.estimate";
+    return "";
+  };
+  const activeItem = getActiveItem();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -121,7 +144,6 @@ export function SiteHeader() {
                     <div key={item.key} className="relative group py-2">
                       <Link
                         to={item.to}
-                        onClick={() => setActiveItem(item.key)}
                         className={
                           isActive
                             ? "border border-[#cc7e14] px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md text-[15px] font-medium text-[#cc7e14] transition-all duration-200 shadow-[0_1px_2px_rgba(0,0,0,0.05)] flex items-center gap-1.5"
@@ -162,7 +184,6 @@ export function SiteHeader() {
                   <Link
                     key={item.key}
                     to={item.to}
-                    onClick={() => setActiveItem(item.key)}
                     className={
                       isActive
                         ? "border border-[#cc7e14] px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md text-[15px] font-medium text-[#cc7e14] transition-all duration-200 shadow-[0_1px_2px_rgba(0,0,0,0.05)]"
@@ -178,8 +199,12 @@ export function SiteHeader() {
             {/* Desktop CTAs */}
             <div className="hidden lg:flex items-center gap-3">
               <Link
-                to="#"
-                className="rounded-full bg-gradient-to-r from-[#ffa326] to-[#cc7e14] hover:from-[#ffa326] hover:to-[#995906] px-6 py-2 text-white text-sm font-normal hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-sm"
+                to="/free-estimate"
+                className={`rounded-full px-6 py-2 text-sm transition-all duration-200 shadow-sm hover:scale-[1.02] active:scale-[0.98] ${
+                  activeItem === "nav.estimate"
+                    ? "bg-[#cc7e14] text-white ring-2 ring-[#ffa326] ring-offset-2 font-bold"
+                    : "bg-gradient-to-r from-[#ffa326] to-[#cc7e14] hover:from-[#ffa326] hover:to-[#995906] text-white font-normal"
+                }`}
               >
                 Free Estimate
               </Link>
@@ -296,6 +321,8 @@ export function SiteHeader() {
                     );
                   }
 
+                  const isActive = item.to === currentPath;
+
                   return (
                     <motion.div
                       key={item.key}
@@ -306,9 +333,15 @@ export function SiteHeader() {
                       <Link
                         to={item.to}
                         onClick={closeMenu}
-                        className="flex items-center gap-3 w-full px-4 py-3.5 rounded-xl font-semibold text-[15px] text-neutral-800 hover:bg-[#ffa326]/8 hover:text-[#cc7e14] transition-all duration-200"
+                        className={`flex items-center gap-3 w-full px-4 py-3.5 rounded-xl font-semibold text-[15px] transition-all duration-200 ${
+                          isActive
+                            ? "bg-[#ffa326]/10 text-[#cc7e14]"
+                            : "text-neutral-800 hover:bg-[#ffa326]/8 hover:text-[#cc7e14]"
+                        }`}
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+                        <span className={`w-1.5 h-1.5 rounded-full shrink-0 transition-colors ${
+                          isActive ? "bg-[#cc7e14]" : "bg-neutral-300"
+                        }`} />
                         {item.label}
                       </Link>
                     </motion.div>
@@ -325,12 +358,16 @@ export function SiteHeader() {
               {/* ── Bottom CTA Bar ── */}
               <div className="p-4 border-t border-[#eae8e1] bg-white space-y-3">
                 <Link
-                  to="#"
+                  to="/free-estimate"
                   onClick={closeMenu}
-                  className="flex items-center justify-center gap-2 w-full rounded-xl bg-gradient-to-r from-[#ffa326] to-[#cc7e14] hover:from-[#ffa326] hover:to-[#995906] py-3.5 text-white text-[13px] font-bold tracking-wide uppercase shadow-md hover:shadow-lg hover:scale-[1.01] active:scale-[0.98] transition-all duration-200"
+                  className={`flex items-center justify-center gap-2 w-full rounded-xl py-3.5 text-[13px] font-bold tracking-wide uppercase transition-all duration-200 shadow-md hover:shadow-lg hover:scale-[1.01] active:scale-[0.98] ${
+                    currentPath === "/free-estimate"
+                      ? "bg-[#cc7e14] text-white ring-2 ring-[#ffa326] ring-offset-2"
+                      : "bg-gradient-to-r from-[#ffa326] to-[#cc7e14] hover:from-[#ffa326] hover:to-[#995906] text-white"
+                  }`}
                 >
                   <ExternalLink className="h-3.5 w-3.5" />
-                  Free Consultation
+                  Free Estimate
                 </Link>
                 <a
                   href="tel:7276420201"

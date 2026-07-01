@@ -10,28 +10,22 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorkRouteImport } from './routes/work'
-import { Route as SoftscapesRouteImport } from './routes/softscapes'
+import { Route as WasteDebrisRemovalRouteImport } from './routes/waste-debris-removal'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ReviewsRouteImport } from './routes/reviews'
-import { Route as PalmTreesRouteImport } from './routes/palm-trees'
-import { Route as OutdoorKitchensRouteImport } from './routes/outdoor-kitchens'
+import { Route as PropertyMaintenanceRouteImport } from './routes/property-maintenance'
+import { Route as PressureWashingRouteImport } from './routes/pressure-washing'
+import { Route as PostConstructionCleaningRouteImport } from './routes/post-construction-cleaning'
 import { Route as OurWorkRouteImport } from './routes/our-work'
-import { Route as NewConstructionRouteImport } from './routes/new-construction'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as LetsTalkRouteImport } from './routes/lets-talk'
-import { Route as LandscapeLightingRouteImport } from './routes/landscape-lighting'
-import { Route as IrrigationRouteImport } from './routes/irrigation'
-import { Route as HouseRemodelingRouteImport } from './routes/house-remodeling'
-import { Route as HardscapesRouteImport } from './routes/hardscapes'
-import { Route as GetFreeConsultationRouteImport } from './routes/get-free-consultation'
-import { Route as FencingRouteImport } from './routes/fencing'
+import { Route as LandscapingRouteImport } from './routes/landscaping'
+import { Route as JunkRemovalRouteImport } from './routes/junk-removal'
+import { Route as FreeEstimateRouteImport } from './routes/free-estimate'
+import { Route as DemolitionRouteImport } from './routes/demolition'
 import { Route as DashboardRouteImport } from './routes/dashboard'
-import { Route as CustomFireplacesRouteImport } from './routes/custom-fireplaces'
-import { Route as CoveredPatiosRouteImport } from './routes/covered-patios'
 import { Route as ContactUsRouteImport } from './routes/contact-us'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CommercialRouteImport } from './routes/commercial'
-import { Route as ArtificialTurfRouteImport } from './routes/artificial-turf'
 import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -41,9 +35,9 @@ const WorkRoute = WorkRouteImport.update({
   path: '/work',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SoftscapesRoute = SoftscapesRouteImport.update({
-  id: '/softscapes',
-  path: '/softscapes',
+const WasteDebrisRemovalRoute = WasteDebrisRemovalRouteImport.update({
+  id: '/waste-debris-removal',
+  path: '/waste-debris-removal',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -56,24 +50,25 @@ const ReviewsRoute = ReviewsRouteImport.update({
   path: '/reviews',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PalmTreesRoute = PalmTreesRouteImport.update({
-  id: '/palm-trees',
-  path: '/palm-trees',
+const PropertyMaintenanceRoute = PropertyMaintenanceRouteImport.update({
+  id: '/property-maintenance',
+  path: '/property-maintenance',
   getParentRoute: () => rootRouteImport,
 } as any)
-const OutdoorKitchensRoute = OutdoorKitchensRouteImport.update({
-  id: '/outdoor-kitchens',
-  path: '/outdoor-kitchens',
+const PressureWashingRoute = PressureWashingRouteImport.update({
+  id: '/pressure-washing',
+  path: '/pressure-washing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PostConstructionCleaningRoute =
+  PostConstructionCleaningRouteImport.update({
+    id: '/post-construction-cleaning',
+    path: '/post-construction-cleaning',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const OurWorkRoute = OurWorkRouteImport.update({
   id: '/our-work',
   path: '/our-work',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NewConstructionRoute = NewConstructionRouteImport.update({
-  id: '/new-construction',
-  path: '/new-construction',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -86,49 +81,29 @@ const LetsTalkRoute = LetsTalkRouteImport.update({
   path: '/lets-talk',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LandscapeLightingRoute = LandscapeLightingRouteImport.update({
-  id: '/landscape-lighting',
-  path: '/landscape-lighting',
+const LandscapingRoute = LandscapingRouteImport.update({
+  id: '/landscaping',
+  path: '/landscaping',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IrrigationRoute = IrrigationRouteImport.update({
-  id: '/irrigation',
-  path: '/irrigation',
+const JunkRemovalRoute = JunkRemovalRouteImport.update({
+  id: '/junk-removal',
+  path: '/junk-removal',
   getParentRoute: () => rootRouteImport,
 } as any)
-const HouseRemodelingRoute = HouseRemodelingRouteImport.update({
-  id: '/house-remodeling',
-  path: '/house-remodeling',
+const FreeEstimateRoute = FreeEstimateRouteImport.update({
+  id: '/free-estimate',
+  path: '/free-estimate',
   getParentRoute: () => rootRouteImport,
 } as any)
-const HardscapesRoute = HardscapesRouteImport.update({
-  id: '/hardscapes',
-  path: '/hardscapes',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GetFreeConsultationRoute = GetFreeConsultationRouteImport.update({
-  id: '/get-free-consultation',
-  path: '/get-free-consultation',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FencingRoute = FencingRouteImport.update({
-  id: '/fencing',
-  path: '/fencing',
+const DemolitionRoute = DemolitionRouteImport.update({
+  id: '/demolition',
+  path: '/demolition',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CustomFireplacesRoute = CustomFireplacesRouteImport.update({
-  id: '/custom-fireplaces',
-  path: '/custom-fireplaces',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CoveredPatiosRoute = CoveredPatiosRouteImport.update({
-  id: '/covered-patios',
-  path: '/covered-patios',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactUsRoute = ContactUsRouteImport.update({
@@ -139,16 +114,6 @@ const ContactUsRoute = ContactUsRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CommercialRoute = CommercialRouteImport.update({
-  id: '/commercial',
-  path: '/commercial',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ArtificialTurfRoute = ArtificialTurfRouteImport.update({
-  id: '/artificial-turf',
-  path: '/artificial-turf',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutUsRoute = AboutUsRouteImport.update({
@@ -171,56 +136,44 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/about-us': typeof AboutUsRoute
-  '/artificial-turf': typeof ArtificialTurfRoute
-  '/commercial': typeof CommercialRoute
   '/contact': typeof ContactRoute
   '/contact-us': typeof ContactUsRoute
-  '/covered-patios': typeof CoveredPatiosRoute
-  '/custom-fireplaces': typeof CustomFireplacesRoute
   '/dashboard': typeof DashboardRoute
-  '/fencing': typeof FencingRoute
-  '/get-free-consultation': typeof GetFreeConsultationRoute
-  '/hardscapes': typeof HardscapesRoute
-  '/house-remodeling': typeof HouseRemodelingRoute
-  '/irrigation': typeof IrrigationRoute
-  '/landscape-lighting': typeof LandscapeLightingRoute
+  '/demolition': typeof DemolitionRoute
+  '/free-estimate': typeof FreeEstimateRoute
+  '/junk-removal': typeof JunkRemovalRoute
+  '/landscaping': typeof LandscapingRoute
   '/lets-talk': typeof LetsTalkRoute
   '/login': typeof LoginRoute
-  '/new-construction': typeof NewConstructionRoute
   '/our-work': typeof OurWorkRoute
-  '/outdoor-kitchens': typeof OutdoorKitchensRoute
-  '/palm-trees': typeof PalmTreesRoute
+  '/post-construction-cleaning': typeof PostConstructionCleaningRoute
+  '/pressure-washing': typeof PressureWashingRoute
+  '/property-maintenance': typeof PropertyMaintenanceRoute
   '/reviews': typeof ReviewsRoute
   '/services': typeof ServicesRoute
-  '/softscapes': typeof SoftscapesRoute
+  '/waste-debris-removal': typeof WasteDebrisRemovalRoute
   '/work': typeof WorkRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/about-us': typeof AboutUsRoute
-  '/artificial-turf': typeof ArtificialTurfRoute
-  '/commercial': typeof CommercialRoute
   '/contact': typeof ContactRoute
   '/contact-us': typeof ContactUsRoute
-  '/covered-patios': typeof CoveredPatiosRoute
-  '/custom-fireplaces': typeof CustomFireplacesRoute
   '/dashboard': typeof DashboardRoute
-  '/fencing': typeof FencingRoute
-  '/get-free-consultation': typeof GetFreeConsultationRoute
-  '/hardscapes': typeof HardscapesRoute
-  '/house-remodeling': typeof HouseRemodelingRoute
-  '/irrigation': typeof IrrigationRoute
-  '/landscape-lighting': typeof LandscapeLightingRoute
+  '/demolition': typeof DemolitionRoute
+  '/free-estimate': typeof FreeEstimateRoute
+  '/junk-removal': typeof JunkRemovalRoute
+  '/landscaping': typeof LandscapingRoute
   '/lets-talk': typeof LetsTalkRoute
   '/login': typeof LoginRoute
-  '/new-construction': typeof NewConstructionRoute
   '/our-work': typeof OurWorkRoute
-  '/outdoor-kitchens': typeof OutdoorKitchensRoute
-  '/palm-trees': typeof PalmTreesRoute
+  '/post-construction-cleaning': typeof PostConstructionCleaningRoute
+  '/pressure-washing': typeof PressureWashingRoute
+  '/property-maintenance': typeof PropertyMaintenanceRoute
   '/reviews': typeof ReviewsRoute
   '/services': typeof ServicesRoute
-  '/softscapes': typeof SoftscapesRoute
+  '/waste-debris-removal': typeof WasteDebrisRemovalRoute
   '/work': typeof WorkRoute
 }
 export interface FileRoutesById {
@@ -228,28 +181,22 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/about-us': typeof AboutUsRoute
-  '/artificial-turf': typeof ArtificialTurfRoute
-  '/commercial': typeof CommercialRoute
   '/contact': typeof ContactRoute
   '/contact-us': typeof ContactUsRoute
-  '/covered-patios': typeof CoveredPatiosRoute
-  '/custom-fireplaces': typeof CustomFireplacesRoute
   '/dashboard': typeof DashboardRoute
-  '/fencing': typeof FencingRoute
-  '/get-free-consultation': typeof GetFreeConsultationRoute
-  '/hardscapes': typeof HardscapesRoute
-  '/house-remodeling': typeof HouseRemodelingRoute
-  '/irrigation': typeof IrrigationRoute
-  '/landscape-lighting': typeof LandscapeLightingRoute
+  '/demolition': typeof DemolitionRoute
+  '/free-estimate': typeof FreeEstimateRoute
+  '/junk-removal': typeof JunkRemovalRoute
+  '/landscaping': typeof LandscapingRoute
   '/lets-talk': typeof LetsTalkRoute
   '/login': typeof LoginRoute
-  '/new-construction': typeof NewConstructionRoute
   '/our-work': typeof OurWorkRoute
-  '/outdoor-kitchens': typeof OutdoorKitchensRoute
-  '/palm-trees': typeof PalmTreesRoute
+  '/post-construction-cleaning': typeof PostConstructionCleaningRoute
+  '/pressure-washing': typeof PressureWashingRoute
+  '/property-maintenance': typeof PropertyMaintenanceRoute
   '/reviews': typeof ReviewsRoute
   '/services': typeof ServicesRoute
-  '/softscapes': typeof SoftscapesRoute
+  '/waste-debris-removal': typeof WasteDebrisRemovalRoute
   '/work': typeof WorkRoute
 }
 export interface FileRouteTypes {
@@ -258,84 +205,66 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/about-us'
-    | '/artificial-turf'
-    | '/commercial'
     | '/contact'
     | '/contact-us'
-    | '/covered-patios'
-    | '/custom-fireplaces'
     | '/dashboard'
-    | '/fencing'
-    | '/get-free-consultation'
-    | '/hardscapes'
-    | '/house-remodeling'
-    | '/irrigation'
-    | '/landscape-lighting'
+    | '/demolition'
+    | '/free-estimate'
+    | '/junk-removal'
+    | '/landscaping'
     | '/lets-talk'
     | '/login'
-    | '/new-construction'
     | '/our-work'
-    | '/outdoor-kitchens'
-    | '/palm-trees'
+    | '/post-construction-cleaning'
+    | '/pressure-washing'
+    | '/property-maintenance'
     | '/reviews'
     | '/services'
-    | '/softscapes'
+    | '/waste-debris-removal'
     | '/work'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/about-us'
-    | '/artificial-turf'
-    | '/commercial'
     | '/contact'
     | '/contact-us'
-    | '/covered-patios'
-    | '/custom-fireplaces'
     | '/dashboard'
-    | '/fencing'
-    | '/get-free-consultation'
-    | '/hardscapes'
-    | '/house-remodeling'
-    | '/irrigation'
-    | '/landscape-lighting'
+    | '/demolition'
+    | '/free-estimate'
+    | '/junk-removal'
+    | '/landscaping'
     | '/lets-talk'
     | '/login'
-    | '/new-construction'
     | '/our-work'
-    | '/outdoor-kitchens'
-    | '/palm-trees'
+    | '/post-construction-cleaning'
+    | '/pressure-washing'
+    | '/property-maintenance'
     | '/reviews'
     | '/services'
-    | '/softscapes'
+    | '/waste-debris-removal'
     | '/work'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/about-us'
-    | '/artificial-turf'
-    | '/commercial'
     | '/contact'
     | '/contact-us'
-    | '/covered-patios'
-    | '/custom-fireplaces'
     | '/dashboard'
-    | '/fencing'
-    | '/get-free-consultation'
-    | '/hardscapes'
-    | '/house-remodeling'
-    | '/irrigation'
-    | '/landscape-lighting'
+    | '/demolition'
+    | '/free-estimate'
+    | '/junk-removal'
+    | '/landscaping'
     | '/lets-talk'
     | '/login'
-    | '/new-construction'
     | '/our-work'
-    | '/outdoor-kitchens'
-    | '/palm-trees'
+    | '/post-construction-cleaning'
+    | '/pressure-washing'
+    | '/property-maintenance'
     | '/reviews'
     | '/services'
-    | '/softscapes'
+    | '/waste-debris-removal'
     | '/work'
   fileRoutesById: FileRoutesById
 }
@@ -343,28 +272,22 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AboutUsRoute: typeof AboutUsRoute
-  ArtificialTurfRoute: typeof ArtificialTurfRoute
-  CommercialRoute: typeof CommercialRoute
   ContactRoute: typeof ContactRoute
   ContactUsRoute: typeof ContactUsRoute
-  CoveredPatiosRoute: typeof CoveredPatiosRoute
-  CustomFireplacesRoute: typeof CustomFireplacesRoute
   DashboardRoute: typeof DashboardRoute
-  FencingRoute: typeof FencingRoute
-  GetFreeConsultationRoute: typeof GetFreeConsultationRoute
-  HardscapesRoute: typeof HardscapesRoute
-  HouseRemodelingRoute: typeof HouseRemodelingRoute
-  IrrigationRoute: typeof IrrigationRoute
-  LandscapeLightingRoute: typeof LandscapeLightingRoute
+  DemolitionRoute: typeof DemolitionRoute
+  FreeEstimateRoute: typeof FreeEstimateRoute
+  JunkRemovalRoute: typeof JunkRemovalRoute
+  LandscapingRoute: typeof LandscapingRoute
   LetsTalkRoute: typeof LetsTalkRoute
   LoginRoute: typeof LoginRoute
-  NewConstructionRoute: typeof NewConstructionRoute
   OurWorkRoute: typeof OurWorkRoute
-  OutdoorKitchensRoute: typeof OutdoorKitchensRoute
-  PalmTreesRoute: typeof PalmTreesRoute
+  PostConstructionCleaningRoute: typeof PostConstructionCleaningRoute
+  PressureWashingRoute: typeof PressureWashingRoute
+  PropertyMaintenanceRoute: typeof PropertyMaintenanceRoute
   ReviewsRoute: typeof ReviewsRoute
   ServicesRoute: typeof ServicesRoute
-  SoftscapesRoute: typeof SoftscapesRoute
+  WasteDebrisRemovalRoute: typeof WasteDebrisRemovalRoute
   WorkRoute: typeof WorkRoute
 }
 
@@ -377,11 +300,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/softscapes': {
-      id: '/softscapes'
-      path: '/softscapes'
-      fullPath: '/softscapes'
-      preLoaderRoute: typeof SoftscapesRouteImport
+    '/waste-debris-removal': {
+      id: '/waste-debris-removal'
+      path: '/waste-debris-removal'
+      fullPath: '/waste-debris-removal'
+      preLoaderRoute: typeof WasteDebrisRemovalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -398,18 +321,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReviewsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/palm-trees': {
-      id: '/palm-trees'
-      path: '/palm-trees'
-      fullPath: '/palm-trees'
-      preLoaderRoute: typeof PalmTreesRouteImport
+    '/property-maintenance': {
+      id: '/property-maintenance'
+      path: '/property-maintenance'
+      fullPath: '/property-maintenance'
+      preLoaderRoute: typeof PropertyMaintenanceRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/outdoor-kitchens': {
-      id: '/outdoor-kitchens'
-      path: '/outdoor-kitchens'
-      fullPath: '/outdoor-kitchens'
-      preLoaderRoute: typeof OutdoorKitchensRouteImport
+    '/pressure-washing': {
+      id: '/pressure-washing'
+      path: '/pressure-washing'
+      fullPath: '/pressure-washing'
+      preLoaderRoute: typeof PressureWashingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/post-construction-cleaning': {
+      id: '/post-construction-cleaning'
+      path: '/post-construction-cleaning'
+      fullPath: '/post-construction-cleaning'
+      preLoaderRoute: typeof PostConstructionCleaningRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/our-work': {
@@ -417,13 +347,6 @@ declare module '@tanstack/react-router' {
       path: '/our-work'
       fullPath: '/our-work'
       preLoaderRoute: typeof OurWorkRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/new-construction': {
-      id: '/new-construction'
-      path: '/new-construction'
-      fullPath: '/new-construction'
-      preLoaderRoute: typeof NewConstructionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -440,46 +363,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LetsTalkRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/landscape-lighting': {
-      id: '/landscape-lighting'
-      path: '/landscape-lighting'
-      fullPath: '/landscape-lighting'
-      preLoaderRoute: typeof LandscapeLightingRouteImport
+    '/landscaping': {
+      id: '/landscaping'
+      path: '/landscaping'
+      fullPath: '/landscaping'
+      preLoaderRoute: typeof LandscapingRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/irrigation': {
-      id: '/irrigation'
-      path: '/irrigation'
-      fullPath: '/irrigation'
-      preLoaderRoute: typeof IrrigationRouteImport
+    '/junk-removal': {
+      id: '/junk-removal'
+      path: '/junk-removal'
+      fullPath: '/junk-removal'
+      preLoaderRoute: typeof JunkRemovalRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/house-remodeling': {
-      id: '/house-remodeling'
-      path: '/house-remodeling'
-      fullPath: '/house-remodeling'
-      preLoaderRoute: typeof HouseRemodelingRouteImport
+    '/free-estimate': {
+      id: '/free-estimate'
+      path: '/free-estimate'
+      fullPath: '/free-estimate'
+      preLoaderRoute: typeof FreeEstimateRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/hardscapes': {
-      id: '/hardscapes'
-      path: '/hardscapes'
-      fullPath: '/hardscapes'
-      preLoaderRoute: typeof HardscapesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/get-free-consultation': {
-      id: '/get-free-consultation'
-      path: '/get-free-consultation'
-      fullPath: '/get-free-consultation'
-      preLoaderRoute: typeof GetFreeConsultationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/fencing': {
-      id: '/fencing'
-      path: '/fencing'
-      fullPath: '/fencing'
-      preLoaderRoute: typeof FencingRouteImport
+    '/demolition': {
+      id: '/demolition'
+      path: '/demolition'
+      fullPath: '/demolition'
+      preLoaderRoute: typeof DemolitionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard': {
@@ -487,20 +396,6 @@ declare module '@tanstack/react-router' {
       path: '/dashboard'
       fullPath: '/dashboard'
       preLoaderRoute: typeof DashboardRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/custom-fireplaces': {
-      id: '/custom-fireplaces'
-      path: '/custom-fireplaces'
-      fullPath: '/custom-fireplaces'
-      preLoaderRoute: typeof CustomFireplacesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/covered-patios': {
-      id: '/covered-patios'
-      path: '/covered-patios'
-      fullPath: '/covered-patios'
-      preLoaderRoute: typeof CoveredPatiosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact-us': {
@@ -515,20 +410,6 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/commercial': {
-      id: '/commercial'
-      path: '/commercial'
-      fullPath: '/commercial'
-      preLoaderRoute: typeof CommercialRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/artificial-turf': {
-      id: '/artificial-turf'
-      path: '/artificial-turf'
-      fullPath: '/artificial-turf'
-      preLoaderRoute: typeof ArtificialTurfRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about-us': {
@@ -559,28 +440,22 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AboutUsRoute: AboutUsRoute,
-  ArtificialTurfRoute: ArtificialTurfRoute,
-  CommercialRoute: CommercialRoute,
   ContactRoute: ContactRoute,
   ContactUsRoute: ContactUsRoute,
-  CoveredPatiosRoute: CoveredPatiosRoute,
-  CustomFireplacesRoute: CustomFireplacesRoute,
   DashboardRoute: DashboardRoute,
-  FencingRoute: FencingRoute,
-  GetFreeConsultationRoute: GetFreeConsultationRoute,
-  HardscapesRoute: HardscapesRoute,
-  HouseRemodelingRoute: HouseRemodelingRoute,
-  IrrigationRoute: IrrigationRoute,
-  LandscapeLightingRoute: LandscapeLightingRoute,
+  DemolitionRoute: DemolitionRoute,
+  FreeEstimateRoute: FreeEstimateRoute,
+  JunkRemovalRoute: JunkRemovalRoute,
+  LandscapingRoute: LandscapingRoute,
   LetsTalkRoute: LetsTalkRoute,
   LoginRoute: LoginRoute,
-  NewConstructionRoute: NewConstructionRoute,
   OurWorkRoute: OurWorkRoute,
-  OutdoorKitchensRoute: OutdoorKitchensRoute,
-  PalmTreesRoute: PalmTreesRoute,
+  PostConstructionCleaningRoute: PostConstructionCleaningRoute,
+  PressureWashingRoute: PressureWashingRoute,
+  PropertyMaintenanceRoute: PropertyMaintenanceRoute,
   ReviewsRoute: ReviewsRoute,
   ServicesRoute: ServicesRoute,
-  SoftscapesRoute: SoftscapesRoute,
+  WasteDebrisRemovalRoute: WasteDebrisRemovalRoute,
   WorkRoute: WorkRoute,
 }
 export const routeTree = rootRouteImport
