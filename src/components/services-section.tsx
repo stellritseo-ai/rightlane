@@ -5,6 +5,12 @@ import junkRemoval from "@/assets/svc-junk-removal.png";
 import maintenance from "@/assets/svc-maintenance.png";
 import debrisRemoval from "@/assets/svc-debris-removal.png";
 import landscaping from "@/assets/svc-landscaping.png";
+import fenceRemoval from "@/assets/svc-fence-removal.png";
+import windowCleaning from "@/assets/svc-window-cleaning.png";
+import bankOccupancy from "@/assets/svc-bank-occupancy.png";
+import industrialCleaning from "@/assets/svc-industrial-cleaning.png";
+import residentialLeasing from "@/assets/svc-residential-leasing-cleaning.png";
+import cleaningContracts from "@/assets/svc-cleaning-contracts.png";
 import { useTranslation } from "@/context/translation-context";
 import { ArrowRight } from "lucide-react";
 import {
@@ -17,13 +23,19 @@ import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 
 const services = [
-  { key: "services.cleaning", image: cleaning },
-  { key: "services.pressurewash", image: pressureWash },
-  { key: "services.demolition", image: demolition },
-  { key: "services.junkremoval", image: junkRemoval },
-  { key: "services.maintenance", image: maintenance },
-  { key: "services.debrisremoval", image: debrisRemoval },
-  { key: "services.landscaping", image: landscaping },
+  { key: "services.cleaning",            image: cleaning,            to: "/post-construction-cleaning" },
+  { key: "services.pressurewash",        image: pressureWash,        to: "/pressure-washing" },
+  { key: "services.demolition",          image: demolition,          to: "/demolition" },
+  { key: "services.junkremoval",         image: junkRemoval,         to: "/junk-removal" },
+  { key: "services.maintenance",         image: maintenance,         to: "/property-maintenance" },
+  { key: "services.debrisremoval",       image: debrisRemoval,       to: "/waste-debris-removal" },
+  { key: "services.landscaping",         image: landscaping,         to: "/landscaping" },
+  { key: "services.fenceremoval",        image: fenceRemoval,        to: "/fence-removal" },
+  { key: "services.windowcleaning",      image: windowCleaning,      to: "/window-cleaning-removal" },
+  { key: "services.bankoccupancy",       image: bankOccupancy,       to: "/bank-occupancy-licences" },
+  { key: "services.industrialcleaning",  image: industrialCleaning,  to: "/industrial-leases-cleaning" },
+  { key: "services.residentialleasing",  image: residentialLeasing,  to: "/residential-leases-cleaning" },
+  { key: "services.cleaningcontracts",   image: cleaningContracts,   to: "/cleaning-contracts" },
 ] as const;
 
 export function ServicesSection() {
@@ -107,7 +119,7 @@ export function ServicesSection() {
 
                       <div className="pt-2">
                         <Link
-                          to="#"
+                          to={s.to}
                           className="relative inline-flex items-center gap-1 text-[#cc7e14] hover:text-[#ffa326] font-bold text-[10px] uppercase tracking-widest pb-0.5 transition-colors duration-300"
                         >
                           <span>View More</span>
@@ -176,7 +188,7 @@ export function ServicesSection() {
 
                           <div className="pt-2">
                             <Link
-                              to="#"
+                              to={s.to}
                               className="relative inline-flex items-center gap-1 text-[#cc7e14] hover:text-[#ffa326] font-bold text-[10px] uppercase tracking-widest pb-0.5 transition-colors duration-300"
                             >
                               <span>View More</span>

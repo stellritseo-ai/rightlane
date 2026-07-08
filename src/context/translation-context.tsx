@@ -86,6 +86,18 @@ export const translations = {
     "services.maintenance.desc": "General handyman repairs, preventative upkeep, and custom improvements for home and business owners.",
     "services.debrisremoval.desc": "Fast cleanup and removal of construction waste, metal, concrete, drywall, and leftover building materials.",
     "services.landscaping.desc": "Complete garden setup, cleanups, sod installation, mulching, and custom landscape maintenance.",
+    "services.fenceremoval": "Fence Removal",
+    "services.windowcleaning": "Window Cleaning & Removal",
+    "services.bankoccupancy": "Bank Occupancy Licences",
+    "services.industrialcleaning": "Industrial Leases Cleaning Services",
+    "services.residentialleasing": "Residential Leases Cleaning Service",
+    "services.cleaningcontracts": "Cleaning Contracts",
+    "services.fenceremoval.desc": "Safe and efficient removal of wood, vinyl, or chain-link fencing, including post extraction and haul-away.",
+    "services.windowcleaning.desc": "Professional-grade interior and exterior window washing, hard water stain detailing, and window frame cleaning.",
+    "services.bankoccupancy.desc": "Surgical cleanups and pre-occupancy preparation services specifically for bank branches and commercial financial spaces.",
+    "services.industrialcleaning.desc": "Heavy-duty cleaning contracts, floor scrubbing, and post-lease cleanup for warehouses, manufacturing, and industrial sites.",
+    "services.residentialleasing.desc": "Complete move-in and move-out turnover deep cleanings for apartments, condominiums, townhouses, and single-family homes.",
+    "services.cleaningcontracts.desc": "Flexible short-term or long-term regular cleaning contracts tailored for commercial offices and residential properties.",
     "services.btn.more": "View More of Our Work",
 
     // Get Started Section
@@ -135,7 +147,7 @@ export const translations = {
     "quote.area.badge": "Service Areas",
     "quote.area.title": "Proudly Serving Clearwater and Surrounding Areas",
     "quote.form.title": "Request a Quote",
-    "quote.form.desc": "We proudly serve Clearwater, Largo, St. Petersburg, Dunedin, Pinellas Park, Tarpon Springs, and the surrounding Pinellas County, FL area.",
+    "quote.form.desc": "We proudly serve the Tampa Bay Area, Hillsborough County, and Pinellas County, FL, including Clearwater, Largo, St. Petersburg, Dunedin, Tarpon Springs, and surrounding communities.",
     "quote.form.first": "First Name",
     "quote.form.last": "Last Name",
     "quote.form.phone": "Phone Number",
@@ -192,7 +204,7 @@ export const translations = {
     "faq.q4": "Do I Need To Be Home For A Quote?",
     "faq.a4": "No, you do not need to be home for exterior projects (like pressure washing, debris hauling, or landscaping) as long as we have clear access to the property. For interior repairs or remodeling, we will schedule a time when you are present.",
     "faq.q5": "What's Your Service Area?",
-    "faq.a5": "We proudly serve Clearwater, Largo, St. Petersburg, Dunedin, Pinellas Park, Tarpon Springs, and all of Pinellas County, FL.",
+    "faq.a5": "We proudly serve the Tampa Bay Area, Hillsborough County, and Pinellas County, FL, including Clearwater, Largo, St. Petersburg, Dunedin, Pinellas Park, Tarpon Springs, and surrounding communities.",
 
     // Prompt CTA Section
     "cta.prompt.badge": "Clearwater's Trusted Handyman",
@@ -290,6 +302,18 @@ export const translations = {
     "services.maintenance.desc": "Reparaciones de handyman generales, mantenimiento preventivo y mejoras personalizadas para propietarios de hogares y negocios.",
     "services.debrisremoval.desc": "Limpieza rápida y eliminación de residuos de construcción, metales, concreto, paneles de yeso y materiales sobrantes.",
     "services.landscaping.desc": "Configuración completa de jardines, limpiezas, instalación de césped, mantillo y mantenimiento de paisajismo personalizado.",
+    "services.fenceremoval": "Remoción de Cercas",
+    "services.windowcleaning": "Limpieza y Remoción de Ventanas",
+    "services.bankoccupancy": "Licencias de Ocupación Bancaria",
+    "services.industrialcleaning": "Limpieza de Arrendamientos Industriales",
+    "services.residentialleasing": "Limpieza de Arrendamientos Residenciales",
+    "services.cleaningcontracts": "Contratos de Limpieza",
+    "services.fenceremoval.desc": "Remoción segura y eficiente de cercas de madera, vinilo o alambre, incluyendo extracción de postes y transporte de escombros.",
+    "services.windowcleaning.desc": "Lavado profesional de ventanas interiores y exteriores, eliminación de manchas de agua dura y limpieza de marcos.",
+    "services.bankoccupancy.desc": "Limpieza profunda y servicios de preparación previa a la ocupación para sucursales bancarias y espacios financieros comerciales.",
+    "services.industrialcleaning.desc": "Servicio de limpieza pesada, lavado de pisos y limpieza posterior al arrendamiento de almacenes y plantas industriales.",
+    "services.residentialleasing.desc": "Limpieza profunda completa para mudanzas en apartamentos, condominios, casas adosadas y viviendas unifamiliares.",
+    "services.cleaningcontracts.desc": "Contratos de limpieza regular flexibles a corto o largo plazo adaptados para oficinas comerciales y propiedades residenciales.",
     "services.btn.more": "Ver Más de Nuestro Trabajo",
 
     // Get Started Section
@@ -339,7 +363,7 @@ export const translations = {
     "quote.area.badge": "Áreas de Servicio",
     "quote.area.title": "Sirviendo Orgullosamente a Clearwater y Áreas Cercanas",
     "quote.form.title": "Solicitar una Cotización",
-    "quote.form.desc": "Servimos orgullosamente a Clearwater, Largo, St. Petersburg, Dunedin, Pinellas Park, Tarpon Springs y el área circundante del condado de Pinellas, FL.",
+    "quote.form.desc": "Servimos orgullosamente al área de la Bahía de Tampa, al condado de Hillsborough y al condado de Pinellas, FL, incluyendo Clearwater, Largo, St. Petersburg, Dunedin, Tarpon Springs y las comunidades circundantes.",
     "quote.form.first": "Nombre",
     "quote.form.last": "Apellido",
     "quote.form.phone": "Número de Teléfono",
@@ -396,7 +420,7 @@ export const translations = {
     "faq.q4": "¿Necesito Estar en Casa Para una Cotización?",
     "faq.a4": "No, no necesita estar en casa para proyectos exteriores siempre que tengamos acceso libre a la propiedad. Para reparaciones interiores o remodelaciones, programaremos una cita con usted presente.",
     "faq.q5": "¿Cuál es su Área de Servicio?",
-    "faq.a5": "Servimos con orgullo a Clearwater, Largo, St. Petersburg, Dunedin, Pinellas Park, Tarpon Springs y todo Pinellas County, FL.",
+    "faq.a5": "Servimos con orgullo al área de la Bahía de Tampa, al condado de Hillsborough y al condado de Pinellas, FL, incluyendo Clearwater, Largo, St. Petersburg, Dunedin, Pinellas Park, Tarpon Springs y las comunidades circundantes.",
 
     // Prompt CTA Section
     "cta.prompt.badge": "Handyman de Confianza de Clearwater",

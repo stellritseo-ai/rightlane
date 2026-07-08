@@ -63,6 +63,12 @@ const SERVICES = [
   "Handyman Services (Repairs, Carpentry, etc.)",
   "Remodeling",
   "Emergency Cleanup",
+  "Fence Removal",
+  "Window Cleaning & Removal",
+  "Bank Occupancy Licences",
+  "Industrial Leases Cleaning Services",
+  "Residential Leases (Apartments, Condos, Houses) Cleaning Service",
+  "Cleaning Contracts",
   "Other (Please specify below)",
 ];
 
@@ -126,6 +132,7 @@ const PROCESS_STEPS = [
 ];
 
 const SERVICE_CITIES = [
+  "Tampa Bay Area", "Hillsborough County", "Pinellas County",
   "Clearwater", "Largo", "St. Petersburg",
   "Dunedin", "Tarpon Springs", "Safety Harbor",
   "Palm Harbor", "Pinellas Park", "Seminole",
@@ -158,7 +165,7 @@ const FAQS = [
   {
     question: "Do you charge for travel?",
     answer:
-      "No. We serve all of Pinellas County and do not charge travel fees within our service area.",
+      "No. We serve the Tampa Bay Area, Hillsborough County, and Pinellas County and do not charge travel fees within our service area.",
   },
   {
     question: "What payment methods do you accept?",
@@ -789,7 +796,7 @@ function FreeEstimatePage() {
               Service Areas
             </h2>
             <p className="mt-2 text-xs sm:text-sm text-neutral-500 font-light">
-              We proudly serve residential, commercial, and industrial clients across all of Pinellas County:
+              We proudly serve residential, commercial, and industrial clients across the Tampa Bay Area, Hillsborough County, and Pinellas County:
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-2.5 max-w-3xl mx-auto">
@@ -912,7 +919,7 @@ function FreeEstimatePage() {
               Contact Us Today For a Free Estimate
             </span>
             <p className="text-xs text-neutral-400 font-light mb-8">
-              Right Lane Handyman Services, LLC · Clearwater, FL 33756 · Proudly Serving All of Pinellas County
+              Right Lane Handyman Services, LLC · Clearwater, FL 33756 · Proudly Serving the Tampa Bay Area, Hillsborough County, and Pinellas County
             </p>
 
             {/* Quick Contact Table */}
@@ -923,7 +930,7 @@ function FreeEstimatePage() {
                   { label: "Phone", value: "(727) 642-0201", href: "tel:7276420201" },
                   { label: "Email", value: "rightlanehandymanservice@yahoo.com", href: "mailto:rightlanehandymanservice@yahoo.com" },
                   { label: "Address", value: "Clearwater, FL 33756", href: undefined },
-                  { label: "Service Area", value: "All of Pinellas County", href: undefined },
+                  { label: "Service Area", value: "Tampa Bay Area, Hillsborough County, Pinellas County", href: undefined },
                 ].map((row) => (
                   <div key={row.label} className="flex items-center justify-between py-3 gap-4">
                     <span className="text-neutral-400 font-semibold text-xs uppercase tracking-wide shrink-0">{row.label}</span>

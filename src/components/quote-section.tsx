@@ -4,6 +4,9 @@ import { MapPin, Hammer } from "lucide-react";
 import { useTranslation } from "@/context/translation-context";
 
 const areasData = [
+  { name: "Tampa Bay Area", x: "32%", y: "45%", primary: true },
+  { name: "Hillsborough County", x: "65%", y: "50%", primary: true },
+  { name: "Pinellas County", x: "50%", y: "40%", primary: true },
   { name: "Belleair", x: "48%", y: "51%", primary: true },
   { name: "Clearwater", x: "46%", y: "38%", primary: true },
   { name: "Saint Petersburg", x: "78%", y: "85%" },
@@ -50,14 +53,14 @@ export function ServiceArea() {
               </span>
               
               <h2 className="text-3xl sm:text-[40px] font-extrabold text-neutral-900 leading-tight tracking-tight mb-4 font-serif">
-                Proudly Serving Clearwater &{" "}
+                Proudly Serving the{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffa326] to-[#cc7e14]">
-                  Pinellas County
-                </span>.
+                  Tampa Bay Area
+                </span>, Hillsborough, and Pinellas Counties.
               </h2>
               
               <p className="text-[15px] sm:text-base text-neutral-500 leading-relaxed font-light mb-8 max-w-lg">
-                We provide prompt, dependable handyman, remodeling, and property maintenance solutions across Clearwater and the surrounding Pinellas County area.
+                We provide prompt, dependable handyman, remodeling, property maintenance, and cleanups across Pinellas County, Hillsborough County, and the greater Tampa Bay region.
               </p>
 
               {/* Premium Capsule Chips */}

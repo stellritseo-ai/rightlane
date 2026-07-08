@@ -423,6 +423,24 @@ export const addWebEmailFn = createServerFn({ method: "POST" })
       createdAt: new Date().toISOString()
     });
     await newEmail.save();
+
+    // Send email notification to rightlanehandymanservice@yahoo.com
+    try {
+      const { sendLeadNotificationEmail } = await import("../email.server");
+      await sendLeadNotificationEmail({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        service: data.service,
+        message: data.message,
+        address: data.address,
+        source: data.source,
+      });
+    } catch (emailErr) {
+      console.error("[Email] Failed to send lead notification:", emailErr);
+      // Do not throw — email failure should not break the form submission
+    }
+
     return { ...newEmail.toObject(), id: newEmail._id.toString(), _id: undefined };
   });
 

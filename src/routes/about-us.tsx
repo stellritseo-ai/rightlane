@@ -101,6 +101,9 @@ function AboutUsPage() {
   ];
 
   const serviceAreas = [
+    "Tampa Bay Area",
+    "Hillsborough County",
+    "Pinellas County",
     "Clearwater",
     "Largo",
     "St. Petersburg",

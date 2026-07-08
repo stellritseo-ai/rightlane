@@ -59,6 +59,9 @@ export function LetUsTalkPage() {
   });
 
   const cities = [
+    "Tampa Bay Area",
+    "Hillsborough County",
+    "Pinellas County",
     "St. Petersburg",
     "Largo",
     "Dunedin",

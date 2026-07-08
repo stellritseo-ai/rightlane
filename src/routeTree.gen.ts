@@ -10,9 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorkRouteImport } from './routes/work'
+import { Route as WindowCleaningRemovalRouteImport } from './routes/window-cleaning-removal'
 import { Route as WasteDebrisRemovalRouteImport } from './routes/waste-debris-removal'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as ResidentialLeasesCleaningRouteImport } from './routes/residential-leases-cleaning'
 import { Route as PropertyMaintenanceRouteImport } from './routes/property-maintenance'
 import { Route as PressureWashingRouteImport } from './routes/pressure-washing'
 import { Route as PostConstructionCleaningRouteImport } from './routes/post-construction-cleaning'
@@ -21,11 +23,15 @@ import { Route as LoginRouteImport } from './routes/login'
 import { Route as LetsTalkRouteImport } from './routes/lets-talk'
 import { Route as LandscapingRouteImport } from './routes/landscaping'
 import { Route as JunkRemovalRouteImport } from './routes/junk-removal'
+import { Route as IndustrialLeasesCleaningRouteImport } from './routes/industrial-leases-cleaning'
 import { Route as FreeEstimateRouteImport } from './routes/free-estimate'
+import { Route as FenceRemovalRouteImport } from './routes/fence-removal'
 import { Route as DemolitionRouteImport } from './routes/demolition'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as ContactUsRouteImport } from './routes/contact-us'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CleaningContractsRouteImport } from './routes/cleaning-contracts'
+import { Route as BankOccupancyLicencesRouteImport } from './routes/bank-occupancy-licences'
 import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -33,6 +39,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const WorkRoute = WorkRouteImport.update({
   id: '/work',
   path: '/work',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WindowCleaningRemovalRoute = WindowCleaningRemovalRouteImport.update({
+  id: '/window-cleaning-removal',
+  path: '/window-cleaning-removal',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WasteDebrisRemovalRoute = WasteDebrisRemovalRouteImport.update({
@@ -50,6 +61,12 @@ const ReviewsRoute = ReviewsRouteImport.update({
   path: '/reviews',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResidentialLeasesCleaningRoute =
+  ResidentialLeasesCleaningRouteImport.update({
+    id: '/residential-leases-cleaning',
+    path: '/residential-leases-cleaning',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PropertyMaintenanceRoute = PropertyMaintenanceRouteImport.update({
   id: '/property-maintenance',
   path: '/property-maintenance',
@@ -91,9 +108,20 @@ const JunkRemovalRoute = JunkRemovalRouteImport.update({
   path: '/junk-removal',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IndustrialLeasesCleaningRoute =
+  IndustrialLeasesCleaningRouteImport.update({
+    id: '/industrial-leases-cleaning',
+    path: '/industrial-leases-cleaning',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const FreeEstimateRoute = FreeEstimateRouteImport.update({
   id: '/free-estimate',
   path: '/free-estimate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FenceRemovalRoute = FenceRemovalRouteImport.update({
+  id: '/fence-removal',
+  path: '/fence-removal',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DemolitionRoute = DemolitionRouteImport.update({
@@ -116,6 +144,16 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CleaningContractsRoute = CleaningContractsRouteImport.update({
+  id: '/cleaning-contracts',
+  path: '/cleaning-contracts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BankOccupancyLicencesRoute = BankOccupancyLicencesRouteImport.update({
+  id: '/bank-occupancy-licences',
+  path: '/bank-occupancy-licences',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutUsRoute = AboutUsRouteImport.update({
   id: '/about-us',
   path: '/about-us',
@@ -136,11 +174,15 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/about-us': typeof AboutUsRoute
+  '/bank-occupancy-licences': typeof BankOccupancyLicencesRoute
+  '/cleaning-contracts': typeof CleaningContractsRoute
   '/contact': typeof ContactRoute
   '/contact-us': typeof ContactUsRoute
   '/dashboard': typeof DashboardRoute
   '/demolition': typeof DemolitionRoute
+  '/fence-removal': typeof FenceRemovalRoute
   '/free-estimate': typeof FreeEstimateRoute
+  '/industrial-leases-cleaning': typeof IndustrialLeasesCleaningRoute
   '/junk-removal': typeof JunkRemovalRoute
   '/landscaping': typeof LandscapingRoute
   '/lets-talk': typeof LetsTalkRoute
@@ -149,20 +191,26 @@ export interface FileRoutesByFullPath {
   '/post-construction-cleaning': typeof PostConstructionCleaningRoute
   '/pressure-washing': typeof PressureWashingRoute
   '/property-maintenance': typeof PropertyMaintenanceRoute
+  '/residential-leases-cleaning': typeof ResidentialLeasesCleaningRoute
   '/reviews': typeof ReviewsRoute
   '/services': typeof ServicesRoute
   '/waste-debris-removal': typeof WasteDebrisRemovalRoute
+  '/window-cleaning-removal': typeof WindowCleaningRemovalRoute
   '/work': typeof WorkRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/about-us': typeof AboutUsRoute
+  '/bank-occupancy-licences': typeof BankOccupancyLicencesRoute
+  '/cleaning-contracts': typeof CleaningContractsRoute
   '/contact': typeof ContactRoute
   '/contact-us': typeof ContactUsRoute
   '/dashboard': typeof DashboardRoute
   '/demolition': typeof DemolitionRoute
+  '/fence-removal': typeof FenceRemovalRoute
   '/free-estimate': typeof FreeEstimateRoute
+  '/industrial-leases-cleaning': typeof IndustrialLeasesCleaningRoute
   '/junk-removal': typeof JunkRemovalRoute
   '/landscaping': typeof LandscapingRoute
   '/lets-talk': typeof LetsTalkRoute
@@ -171,9 +219,11 @@ export interface FileRoutesByTo {
   '/post-construction-cleaning': typeof PostConstructionCleaningRoute
   '/pressure-washing': typeof PressureWashingRoute
   '/property-maintenance': typeof PropertyMaintenanceRoute
+  '/residential-leases-cleaning': typeof ResidentialLeasesCleaningRoute
   '/reviews': typeof ReviewsRoute
   '/services': typeof ServicesRoute
   '/waste-debris-removal': typeof WasteDebrisRemovalRoute
+  '/window-cleaning-removal': typeof WindowCleaningRemovalRoute
   '/work': typeof WorkRoute
 }
 export interface FileRoutesById {
@@ -181,11 +231,15 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/about-us': typeof AboutUsRoute
+  '/bank-occupancy-licences': typeof BankOccupancyLicencesRoute
+  '/cleaning-contracts': typeof CleaningContractsRoute
   '/contact': typeof ContactRoute
   '/contact-us': typeof ContactUsRoute
   '/dashboard': typeof DashboardRoute
   '/demolition': typeof DemolitionRoute
+  '/fence-removal': typeof FenceRemovalRoute
   '/free-estimate': typeof FreeEstimateRoute
+  '/industrial-leases-cleaning': typeof IndustrialLeasesCleaningRoute
   '/junk-removal': typeof JunkRemovalRoute
   '/landscaping': typeof LandscapingRoute
   '/lets-talk': typeof LetsTalkRoute
@@ -194,9 +248,11 @@ export interface FileRoutesById {
   '/post-construction-cleaning': typeof PostConstructionCleaningRoute
   '/pressure-washing': typeof PressureWashingRoute
   '/property-maintenance': typeof PropertyMaintenanceRoute
+  '/residential-leases-cleaning': typeof ResidentialLeasesCleaningRoute
   '/reviews': typeof ReviewsRoute
   '/services': typeof ServicesRoute
   '/waste-debris-removal': typeof WasteDebrisRemovalRoute
+  '/window-cleaning-removal': typeof WindowCleaningRemovalRoute
   '/work': typeof WorkRoute
 }
 export interface FileRouteTypes {
@@ -205,11 +261,15 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/about-us'
+    | '/bank-occupancy-licences'
+    | '/cleaning-contracts'
     | '/contact'
     | '/contact-us'
     | '/dashboard'
     | '/demolition'
+    | '/fence-removal'
     | '/free-estimate'
+    | '/industrial-leases-cleaning'
     | '/junk-removal'
     | '/landscaping'
     | '/lets-talk'
@@ -218,20 +278,26 @@ export interface FileRouteTypes {
     | '/post-construction-cleaning'
     | '/pressure-washing'
     | '/property-maintenance'
+    | '/residential-leases-cleaning'
     | '/reviews'
     | '/services'
     | '/waste-debris-removal'
+    | '/window-cleaning-removal'
     | '/work'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/about-us'
+    | '/bank-occupancy-licences'
+    | '/cleaning-contracts'
     | '/contact'
     | '/contact-us'
     | '/dashboard'
     | '/demolition'
+    | '/fence-removal'
     | '/free-estimate'
+    | '/industrial-leases-cleaning'
     | '/junk-removal'
     | '/landscaping'
     | '/lets-talk'
@@ -240,20 +306,26 @@ export interface FileRouteTypes {
     | '/post-construction-cleaning'
     | '/pressure-washing'
     | '/property-maintenance'
+    | '/residential-leases-cleaning'
     | '/reviews'
     | '/services'
     | '/waste-debris-removal'
+    | '/window-cleaning-removal'
     | '/work'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/about-us'
+    | '/bank-occupancy-licences'
+    | '/cleaning-contracts'
     | '/contact'
     | '/contact-us'
     | '/dashboard'
     | '/demolition'
+    | '/fence-removal'
     | '/free-estimate'
+    | '/industrial-leases-cleaning'
     | '/junk-removal'
     | '/landscaping'
     | '/lets-talk'
@@ -262,9 +334,11 @@ export interface FileRouteTypes {
     | '/post-construction-cleaning'
     | '/pressure-washing'
     | '/property-maintenance'
+    | '/residential-leases-cleaning'
     | '/reviews'
     | '/services'
     | '/waste-debris-removal'
+    | '/window-cleaning-removal'
     | '/work'
   fileRoutesById: FileRoutesById
 }
@@ -272,11 +346,15 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AboutUsRoute: typeof AboutUsRoute
+  BankOccupancyLicencesRoute: typeof BankOccupancyLicencesRoute
+  CleaningContractsRoute: typeof CleaningContractsRoute
   ContactRoute: typeof ContactRoute
   ContactUsRoute: typeof ContactUsRoute
   DashboardRoute: typeof DashboardRoute
   DemolitionRoute: typeof DemolitionRoute
+  FenceRemovalRoute: typeof FenceRemovalRoute
   FreeEstimateRoute: typeof FreeEstimateRoute
+  IndustrialLeasesCleaningRoute: typeof IndustrialLeasesCleaningRoute
   JunkRemovalRoute: typeof JunkRemovalRoute
   LandscapingRoute: typeof LandscapingRoute
   LetsTalkRoute: typeof LetsTalkRoute
@@ -285,9 +363,11 @@ export interface RootRouteChildren {
   PostConstructionCleaningRoute: typeof PostConstructionCleaningRoute
   PressureWashingRoute: typeof PressureWashingRoute
   PropertyMaintenanceRoute: typeof PropertyMaintenanceRoute
+  ResidentialLeasesCleaningRoute: typeof ResidentialLeasesCleaningRoute
   ReviewsRoute: typeof ReviewsRoute
   ServicesRoute: typeof ServicesRoute
   WasteDebrisRemovalRoute: typeof WasteDebrisRemovalRoute
+  WindowCleaningRemovalRoute: typeof WindowCleaningRemovalRoute
   WorkRoute: typeof WorkRoute
 }
 
@@ -298,6 +378,13 @@ declare module '@tanstack/react-router' {
       path: '/work'
       fullPath: '/work'
       preLoaderRoute: typeof WorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/window-cleaning-removal': {
+      id: '/window-cleaning-removal'
+      path: '/window-cleaning-removal'
+      fullPath: '/window-cleaning-removal'
+      preLoaderRoute: typeof WindowCleaningRemovalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/waste-debris-removal': {
@@ -319,6 +406,13 @@ declare module '@tanstack/react-router' {
       path: '/reviews'
       fullPath: '/reviews'
       preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/residential-leases-cleaning': {
+      id: '/residential-leases-cleaning'
+      path: '/residential-leases-cleaning'
+      fullPath: '/residential-leases-cleaning'
+      preLoaderRoute: typeof ResidentialLeasesCleaningRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/property-maintenance': {
@@ -377,11 +471,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof JunkRemovalRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/industrial-leases-cleaning': {
+      id: '/industrial-leases-cleaning'
+      path: '/industrial-leases-cleaning'
+      fullPath: '/industrial-leases-cleaning'
+      preLoaderRoute: typeof IndustrialLeasesCleaningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/free-estimate': {
       id: '/free-estimate'
       path: '/free-estimate'
       fullPath: '/free-estimate'
       preLoaderRoute: typeof FreeEstimateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fence-removal': {
+      id: '/fence-removal'
+      path: '/fence-removal'
+      fullPath: '/fence-removal'
+      preLoaderRoute: typeof FenceRemovalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/demolition': {
@@ -412,6 +520,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cleaning-contracts': {
+      id: '/cleaning-contracts'
+      path: '/cleaning-contracts'
+      fullPath: '/cleaning-contracts'
+      preLoaderRoute: typeof CleaningContractsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bank-occupancy-licences': {
+      id: '/bank-occupancy-licences'
+      path: '/bank-occupancy-licences'
+      fullPath: '/bank-occupancy-licences'
+      preLoaderRoute: typeof BankOccupancyLicencesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about-us': {
       id: '/about-us'
       path: '/about-us'
@@ -440,11 +562,15 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AboutUsRoute: AboutUsRoute,
+  BankOccupancyLicencesRoute: BankOccupancyLicencesRoute,
+  CleaningContractsRoute: CleaningContractsRoute,
   ContactRoute: ContactRoute,
   ContactUsRoute: ContactUsRoute,
   DashboardRoute: DashboardRoute,
   DemolitionRoute: DemolitionRoute,
+  FenceRemovalRoute: FenceRemovalRoute,
   FreeEstimateRoute: FreeEstimateRoute,
+  IndustrialLeasesCleaningRoute: IndustrialLeasesCleaningRoute,
   JunkRemovalRoute: JunkRemovalRoute,
   LandscapingRoute: LandscapingRoute,
   LetsTalkRoute: LetsTalkRoute,
@@ -453,9 +579,11 @@ const rootRouteChildren: RootRouteChildren = {
   PostConstructionCleaningRoute: PostConstructionCleaningRoute,
   PressureWashingRoute: PressureWashingRoute,
   PropertyMaintenanceRoute: PropertyMaintenanceRoute,
+  ResidentialLeasesCleaningRoute: ResidentialLeasesCleaningRoute,
   ReviewsRoute: ReviewsRoute,
   ServicesRoute: ServicesRoute,
   WasteDebrisRemovalRoute: WasteDebrisRemovalRoute,
+  WindowCleaningRemovalRoute: WindowCleaningRemovalRoute,
   WorkRoute: WorkRoute,
 }
 export const routeTree = rootRouteImport

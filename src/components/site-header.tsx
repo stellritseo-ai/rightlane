@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "@tanstack/react-router";
-import { Phone, ChevronDown, X, Menu, ExternalLink, Sparkles, Droplets, Hammer, Truck, Wrench, Trash2, Leaf } from "lucide-react";
+import { Phone, ChevronDown, X, Menu, ExternalLink, Sparkles, Droplets, Hammer, Truck, Wrench, Trash2, Leaf, Key, FileText, Fence, MonitorDot, Landmark, Factory, Home, RepeatIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
 import { TopBar } from "./top-bar";
@@ -16,13 +16,19 @@ const navItems = [
 ] as const;
 
 const servicesSubMenu = [
-  { label: "Post Construction Cleaning", to: "/post-construction-cleaning", hash: undefined, icon: Sparkles, desc: "Detailed move-in ready cleaning" },
-  { label: "Pressure Washing",           to: "/pressure-washing",           hash: undefined, icon: Droplets, desc: "Restore driveways, decks & siding" },
-  { label: "Demolition",                 to: "/demolition",                 hash: undefined, icon: Hammer, desc: "Safe structural dismantling" },
-  { label: "Junk Removal & Hauling",     to: "/junk-removal",               hash: undefined, icon: Truck, desc: "Full-service waste hauling" },
-  { label: "Property Maintenance",       to: "/property-maintenance",       hash: undefined, icon: Wrench, desc: "General handyman & home repairs" },
-  { label: "Waste & Debris Removal",     to: "/waste-debris-removal",       hash: undefined, icon: Trash2, desc: "Drywall, metal & concrete clearing" },
-  { label: "Landscaping",                to: "/landscaping",                hash: undefined, icon: Leaf, desc: "Garden upkeep, sod & mulching" },
+  { label: "Post Construction Cleaning",   to: "/post-construction-cleaning",   hash: undefined, icon: Sparkles,    desc: "Detailed move-in ready cleaning" },
+  { label: "Pressure Washing",             to: "/pressure-washing",             hash: undefined, icon: Droplets,    desc: "Restore driveways, decks & siding" },
+  { label: "Demolition",                   to: "/demolition",                   hash: undefined, icon: Hammer,      desc: "Safe structural dismantling" },
+  { label: "Junk Removal & Hauling",       to: "/junk-removal",                 hash: undefined, icon: Truck,       desc: "Full-service waste hauling" },
+  { label: "Property Maintenance",         to: "/property-maintenance",         hash: undefined, icon: Wrench,      desc: "General handyman & home repairs" },
+  { label: "Waste & Debris Removal",       to: "/waste-debris-removal",         hash: undefined, icon: Trash2,      desc: "Drywall, metal & concrete clearing" },
+  { label: "Landscaping",                  to: "/landscaping",                  hash: undefined, icon: Leaf,        desc: "Garden upkeep, sod & mulching" },
+  { label: "Fence Removal",                to: "/fence-removal",                hash: undefined, icon: Fence,       desc: "Safe, complete fence haul-away" },
+  { label: "Window Cleaning & Removal",    to: "/window-cleaning-removal",      hash: undefined, icon: MonitorDot,  desc: "Crystal-clear residential & commercial" },
+  { label: "Bank Occupancy Licences",      to: "/bank-occupancy-licences",      hash: undefined, icon: Landmark,    desc: "Inspection-ready bank cleaning" },
+  { label: "Industrial Leases Cleaning",   to: "/industrial-leases-cleaning",   hash: undefined, icon: Factory,     desc: "Warehouses & manufacturing plants" },
+  { label: "Residential Leases Cleaning",  to: "/residential-leases-cleaning",  hash: undefined, icon: Home,        desc: "Apartments, condos & houses" },
+  { label: "Cleaning Contracts",           to: "/cleaning-contracts",           hash: undefined, icon: RepeatIcon,  desc: "Short & long-term property care" },
 ] as const;
 
 export function SiteHeader() {
@@ -44,7 +50,13 @@ export function SiteHeader() {
       currentPath.startsWith("/junk-removal") ||
       currentPath.startsWith("/property-maintenance") ||
       currentPath.startsWith("/waste-debris-removal") ||
-      currentPath.startsWith("/landscaping")
+      currentPath.startsWith("/landscaping") ||
+      currentPath.startsWith("/fence-removal") ||
+      currentPath.startsWith("/window-cleaning-removal") ||
+      currentPath.startsWith("/bank-occupancy-licences") ||
+      currentPath.startsWith("/industrial-leases-cleaning") ||
+      currentPath.startsWith("/residential-leases-cleaning") ||
+      currentPath.startsWith("/cleaning-contracts")
     )
       return "nav.services";
     if (currentPath.startsWith("/our-work")) return "nav.work";

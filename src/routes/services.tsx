@@ -24,7 +24,9 @@ import {
   Smile,
   Zap,
   ArrowRight,
-  ChevronRight
+  ChevronRight,
+  Key,
+  FileText
 } from "lucide-react";
 
 import imgCleaning from "@/assets/svc-cleaning.png";
@@ -38,6 +40,8 @@ import imgCommercial from "@/assets/stats-cleanup.png";
 import logo from "@/assets/logo.png";
 import welBg from "@/assets/wel-bg.png";
 import heroBg from "@/assets/wel-img.png";
+import imgLeasing from "@/assets/svc-leasing-licensing.png";
+import imgPropertyCare from "@/assets/svc-property-care.png";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -60,7 +64,8 @@ function ServicesPage() {
     { key: "all", label: "Show All" },
     { key: "maintenance", label: "Property Maintenance" },
     { key: "hauling", label: "Hauling & Demolition" },
-    { key: "cleaning", label: "Cleaning & Washing" }
+    { key: "cleaning", label: "Cleaning & Washing" },
+    { key: "leasing-licensing", label: "Leasing & Licensing" }
   ];
 
   const servicesData = [
@@ -74,7 +79,7 @@ function ServicesPage() {
       desc: "Spotless and detailed cleaning services to make your newly built or renovated property move-in ready. We remove dust, paint overspray, adhesive residue, and fine construction particles from every corner.",
       items: [
         "Dust & Debris Removal",
-        "Window & Glass Detailing",
+        "Window Cleaning, Glass Detailing & Removal",
         "Floor Scraping & Polishing",
         "Cabinet & Drawer Cleaning",
         "Paint & Caulking Cleanup",
@@ -114,7 +119,7 @@ function ServicesPage() {
         "Interior Strip-Outs & Remodel Prep",
         "Shed & Outbuilding Demolition",
         "Concrete & Asphalt Breaking",
-        "Deck & Fence Tear-Downs",
+        "Deck & Fence Tear-Downs & Fence Removal",
         "Safety Inspections & Permits",
         "Post-Demo Cleanup & Disposal"
       ],
@@ -196,6 +201,44 @@ function ServicesPage() {
       ],
       link: "/lets-talk",
       linkText: "Request Landscaping Services →"
+    },
+    {
+      id: "leasing-licensing",
+      category: "leasing-licensing",
+      title: "Leasing & Licensing Services",
+      icon: Key,
+      image: imgLeasing,
+      badge: "🔑",
+      desc: "Commercial, banking, and residential property leasing preparation and licensing compliance support. We specialize in Bank Occupancy Licences and Industrial Leases, as well as rental agreements for apartments, condominiums, and houses.",
+      items: [
+        "Bank Occupancy Licences Support",
+        "Industrial Leases Cleaning & Prep",
+        "Residential Rental Agreements Prep",
+        "Apartment, Condo & House Cleanups",
+        "Regulatory Inspection Cleanings",
+        "Commercial & Banking Compliance"
+      ],
+      link: "/free-estimate",
+      linkText: "Request a Leasing Quote →"
+    },
+    {
+      id: "property-care",
+      category: "cleaning",
+      title: "Property Care & Cleaning Contracts",
+      icon: FileText,
+      image: imgPropertyCare,
+      badge: "📋",
+      desc: "Short-term and long-term cleaning contracts and dedicated property care plans. Custom-tailored custodial maintenance schedules to keep residential, commercial, and industrial properties in peak condition.",
+      items: [
+        "Short-Term Cleaning Contracts",
+        "Long-Term Property Care Plans",
+        "Commercial Custodial Services",
+        "Residential Property Care Contracts",
+        "Industrial Facilities Upkeep",
+        "Scheduled Maintenance Cleaning"
+      ],
+      link: "/free-estimate",
+      linkText: "Request a Property Care Quote →"
     }
   ];
 
@@ -520,7 +563,7 @@ function ServicesPage() {
                 </a>
                 <div className="flex items-center gap-3.5">
                   <MapPin className="w-5 h-5 text-[#ffa326] shrink-0" />
-                  <span>Proudly Serving Clearwater & the Surrounding Clearwater area</span>
+                  <span>Proudly Serving the Tampa Bay Area, Hillsborough County, and Pinellas County</span>
                 </div>
                 <div className="flex items-center gap-3.5">
                   <ShieldCheck className="w-5 h-5 text-[#ffa326] shrink-0" />

@@ -79,10 +79,17 @@ function ContactUsPage() {
     "Handyman Services",
     "Remodeling",
     "Emergency Cleanup",
+    "Fence Removal",
+    "Window Cleaning & Removal",
+    "Bank Occupancy Licences",
+    "Industrial Leases Cleaning Services",
+    "Residential Leases (Apartments, Condos, Houses) Cleaning Service",
+    "Cleaning Contracts",
     "Other"
   ];
 
   const serviceCities = [
+    "Tampa Bay Area", "Hillsborough County", "Pinellas County",
     "Clearwater", "Largo", "St. Petersburg", "Dunedin",
     "Tarpon Springs", "Safety Harbor", "Palm Harbor", "Pinellas Park",
     "Seminole", "Belleair", "Belleair Beach", "Bay Pines",
@@ -103,7 +110,7 @@ function ContactUsPage() {
   const faqs: FAQItem[] = [
     {
       question: "What areas do you serve?",
-      answer: "We proudly serve all of Pinellas County, including Clearwater, Largo, St. Petersburg, Dunedin, Tarpon Springs, Safety Harbor, Palm Harbor, Pinellas Park, Seminole, and surrounding communities."
+      answer: "We proudly serve the Tampa Bay Area, Hillsborough County, and Pinellas County, including Clearwater, Largo, St. Petersburg, Dunedin, Tarpon Springs, Safety Harbor, Palm Harbor, Pinellas Park, Seminole, and surrounding communities."
     },
     {
       question: "Are you licensed, insured, and bonded?",
@@ -282,10 +289,10 @@ function ContactUsPage() {
                 </div>
               </div>
 
-              {/* Card 3: Pinellas County service areas */}
+              {/* Card 3: Service Areas */}
               <div className="bg-white border border-neutral-200/50 rounded-2xl p-6 sm:p-8 shadow-sm space-y-4">
                 <h3 className="text-sm font-extrabold text-neutral-900 uppercase tracking-widest">
-                  Proudly Serving All of Pinellas County
+                  Proudly Serving the Tampa Bay Area & Surrounding Counties
                 </h3>
                 <div className="flex flex-wrap gap-2 pt-2">
                   {serviceCities.map((city) => (
@@ -773,7 +780,7 @@ function ContactUsPage() {
             </div>
 
             <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400 mt-2 select-none">
-              Proudly Serving Clearwater, Largo, St. Petersburg, and All of Pinellas County
+              Proudly Serving the Tampa Bay Area, Hillsborough County, and Pinellas County
             </p>
           </motion.div>
         </section>
