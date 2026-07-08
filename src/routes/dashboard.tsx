@@ -230,8 +230,8 @@ function DashboardPage() {
 
   // Delete portal user handler
   const handleDeleteUser = (userId: string, username: string) => {
-    if (username === "jrm") {
-      toast.error("The primary administrator account 'jrm' cannot be deleted.");
+    if (username === "right") {
+      toast.error("The primary administrator account 'right' cannot be deleted.");
       return;
     }
     if (currentUser && userId === currentUser.id) {
@@ -2585,7 +2585,7 @@ function DashboardPage() {
                       <tbody className="divide-y divide-[#f4f3ef]">
                         {portalUsers.map((user) => {
                           const isSelf = currentUser && user.id === currentUser.id;
-                          const isPrimaryAdmin = user.username === "jrm";
+                          const isPrimaryAdmin = user.username === "right";
                           
                           let badgeStyle = "bg-neutral-100 text-neutral-600 border border-neutral-200";
                           if (user.role === "admin") {

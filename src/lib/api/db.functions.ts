@@ -457,17 +457,20 @@ export const loginAdminFn = createServerFn({ method: "POST" })
     const { connectDB, AdminUserModel } = await import("../db.server");
     await connectDB();
     
-    // Seed default admin if none exists
-    let admin = await AdminUserModel.findOne({ username: "jrm" });
+    // Delete jrm user if it exists in the database
+    await AdminUserModel.deleteOne({ username: "jrm" });
+
+    // Seed default admin 'right' if none exists
+    let admin = await AdminUserModel.findOne({ username: "right" });
     if (!admin) {
       admin = new AdminUserModel({
-        username: "jrm",
-        password: "jrm123",
+        username: "right",
+        password: "right123",
         role: "admin",
         sessionToken: ""
       });
       await admin.save();
-      console.log("[Auth] Default admin user jrm seeded in database.");
+      console.log("[Auth] Default admin user right seeded in database.");
     }
     
     // Check credentials dynamically against database records
@@ -578,12 +581,12 @@ export const deletePortalUserFn = createServerFn({ method: "POST" })
     const { connectDB, AdminUserModel } = await import("../db.server");
     await connectDB();
     
-    // Prevent self-deletion or default admin jrm deletion
+    // Prevent self-deletion or default admin right deletion
     const user = await AdminUserModel.findById(data.userId);
     if (!user) {
       throw new Error("User not found");
     }
-    if (user.username === "jrm") {
+    if (user.username === "right") {
       throw new Error("Cannot delete primary administrator account");
     }
     
