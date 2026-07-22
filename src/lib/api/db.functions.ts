@@ -39,6 +39,23 @@ export const addCustomLeadFn = createServerFn({ method: "POST" })
       photos: []
     });
     await newLead.save();
+
+    // Send email notification to NOTIFY_EMAIL
+    try {
+      const { sendLeadNotificationEmail } = await import("../email.server");
+      await sendLeadNotificationEmail({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        service: data.projectType || data.service,
+        message: data.description || data.message,
+        address: data.address,
+        source: data.source || "contact form",
+      });
+    } catch (emailErr) {
+      console.error("[Email] Failed to send lead notification:", emailErr);
+    }
+
     return { ...newLead.toObject(), id: newLead._id.toString(), _id: undefined };
   });
 
