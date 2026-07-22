@@ -149,8 +149,11 @@ function ContactUsPage() {
     }));
   };
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     const fullAddress = `${formData.address1}${formData.address2 ? ", " + formData.address2 : ""}, ${formData.city}, ${formData.state} ${formData.zip}`;
     try {
       await addLead({
@@ -174,6 +177,8 @@ function ContactUsPage() {
       setIsSubmitted(true);
     } catch (error) {
       console.error("Error submitting lead:", error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -552,9 +557,10 @@ function ContactUsPage() {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full rounded-xl bg-[#cc7e14] hover:bg-[#ffa326] py-3.5 text-white text-[13px] sm:text-[14px] font-bold tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-lg mt-4 cursor-pointer"
+                    disabled={isSubmitting}
+                    className="w-full rounded-xl bg-[#cc7e14] hover:bg-[#ffa326] py-3.5 text-white text-[13px] sm:text-[14px] font-bold tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-lg mt-4 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                   >
-                    Submit Request
+                    {isSubmitting ? "Sending..." : "Submit Request"}
                   </button>
 
                 </form>

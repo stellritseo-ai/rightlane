@@ -229,8 +229,11 @@ function FreeEstimatePage() {
     setUploadedFile(file);
   };
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     const fullAddress = `${formData.address1}${formData.address2 ? ", " + formData.address2 : ""}, ${formData.city}, ${formData.state} ${formData.zip}`;
     const servicesList = selectedServices.join(", ") || "Not specified";
     try {
@@ -254,6 +257,8 @@ function FreeEstimatePage() {
       setIsSubmitted(true);
     } catch (err) {
       console.error("Error submitting estimate request:", err);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -685,10 +690,11 @@ function FreeEstimatePage() {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2.5 rounded-xl bg-copper hover:bg-copper-deep py-4 text-white font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-lg mt-2 cursor-pointer hover:scale-[1.01]"
+                    disabled={isSubmitting}
+                    className="w-full flex items-center justify-center gap-2.5 rounded-xl bg-copper hover:bg-copper-deep py-4 text-white font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-lg mt-2 cursor-pointer hover:scale-[1.01] disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
                     <Send className="w-4 h-4" />
-                    Submit Request for Free Estimate
+                    {isSubmitting ? "Sending..." : "Submit Request for Free Estimate"}
                   </button>
                 </form>
               )}
