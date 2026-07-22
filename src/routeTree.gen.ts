@@ -22,11 +22,15 @@ import { Route as OurWorkRouteImport } from './routes/our-work'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as LetsTalkRouteImport } from './routes/lets-talk'
 import { Route as LandscapingRouteImport } from './routes/landscaping'
+import { Route as JunkRemovalClearwaterFlRouteImport } from './routes/junk-removal-clearwater-fl'
 import { Route as JunkRemovalRouteImport } from './routes/junk-removal'
 import { Route as IndustrialLeasesCleaningRouteImport } from './routes/industrial-leases-cleaning'
+import { Route as HaulingServicesPalmHarborRouteImport } from './routes/hauling-services-palm-harbor'
 import { Route as FreeEstimateRouteImport } from './routes/free-estimate'
 import { Route as FenceRemovalRouteImport } from './routes/fence-removal'
+import { Route as DemolitionServicesPinellasCountyRouteImport } from './routes/demolition-services-pinellas-county'
 import { Route as DemolitionRouteImport } from './routes/demolition'
+import { Route as DebrisRemovalTarponSpringsRouteImport } from './routes/debris-removal-tarpon-springs'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as ContactUsRouteImport } from './routes/contact-us'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -103,6 +107,11 @@ const LandscapingRoute = LandscapingRouteImport.update({
   path: '/landscaping',
   getParentRoute: () => rootRouteImport,
 } as any)
+const JunkRemovalClearwaterFlRoute = JunkRemovalClearwaterFlRouteImport.update({
+  id: '/junk-removal-clearwater-fl',
+  path: '/junk-removal-clearwater-fl',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const JunkRemovalRoute = JunkRemovalRouteImport.update({
   id: '/junk-removal',
   path: '/junk-removal',
@@ -112,6 +121,12 @@ const IndustrialLeasesCleaningRoute =
   IndustrialLeasesCleaningRouteImport.update({
     id: '/industrial-leases-cleaning',
     path: '/industrial-leases-cleaning',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const HaulingServicesPalmHarborRoute =
+  HaulingServicesPalmHarborRouteImport.update({
+    id: '/hauling-services-palm-harbor',
+    path: '/hauling-services-palm-harbor',
     getParentRoute: () => rootRouteImport,
   } as any)
 const FreeEstimateRoute = FreeEstimateRouteImport.update({
@@ -124,11 +139,23 @@ const FenceRemovalRoute = FenceRemovalRouteImport.update({
   path: '/fence-removal',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DemolitionServicesPinellasCountyRoute =
+  DemolitionServicesPinellasCountyRouteImport.update({
+    id: '/demolition-services-pinellas-county',
+    path: '/demolition-services-pinellas-county',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DemolitionRoute = DemolitionRouteImport.update({
   id: '/demolition',
   path: '/demolition',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DebrisRemovalTarponSpringsRoute =
+  DebrisRemovalTarponSpringsRouteImport.update({
+    id: '/debris-removal-tarpon-springs',
+    path: '/debris-removal-tarpon-springs',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
@@ -179,11 +206,15 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/contact-us': typeof ContactUsRoute
   '/dashboard': typeof DashboardRoute
+  '/debris-removal-tarpon-springs': typeof DebrisRemovalTarponSpringsRoute
   '/demolition': typeof DemolitionRoute
+  '/demolition-services-pinellas-county': typeof DemolitionServicesPinellasCountyRoute
   '/fence-removal': typeof FenceRemovalRoute
   '/free-estimate': typeof FreeEstimateRoute
+  '/hauling-services-palm-harbor': typeof HaulingServicesPalmHarborRoute
   '/industrial-leases-cleaning': typeof IndustrialLeasesCleaningRoute
   '/junk-removal': typeof JunkRemovalRoute
+  '/junk-removal-clearwater-fl': typeof JunkRemovalClearwaterFlRoute
   '/landscaping': typeof LandscapingRoute
   '/lets-talk': typeof LetsTalkRoute
   '/login': typeof LoginRoute
@@ -207,11 +238,15 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/contact-us': typeof ContactUsRoute
   '/dashboard': typeof DashboardRoute
+  '/debris-removal-tarpon-springs': typeof DebrisRemovalTarponSpringsRoute
   '/demolition': typeof DemolitionRoute
+  '/demolition-services-pinellas-county': typeof DemolitionServicesPinellasCountyRoute
   '/fence-removal': typeof FenceRemovalRoute
   '/free-estimate': typeof FreeEstimateRoute
+  '/hauling-services-palm-harbor': typeof HaulingServicesPalmHarborRoute
   '/industrial-leases-cleaning': typeof IndustrialLeasesCleaningRoute
   '/junk-removal': typeof JunkRemovalRoute
+  '/junk-removal-clearwater-fl': typeof JunkRemovalClearwaterFlRoute
   '/landscaping': typeof LandscapingRoute
   '/lets-talk': typeof LetsTalkRoute
   '/login': typeof LoginRoute
@@ -236,11 +271,15 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/contact-us': typeof ContactUsRoute
   '/dashboard': typeof DashboardRoute
+  '/debris-removal-tarpon-springs': typeof DebrisRemovalTarponSpringsRoute
   '/demolition': typeof DemolitionRoute
+  '/demolition-services-pinellas-county': typeof DemolitionServicesPinellasCountyRoute
   '/fence-removal': typeof FenceRemovalRoute
   '/free-estimate': typeof FreeEstimateRoute
+  '/hauling-services-palm-harbor': typeof HaulingServicesPalmHarborRoute
   '/industrial-leases-cleaning': typeof IndustrialLeasesCleaningRoute
   '/junk-removal': typeof JunkRemovalRoute
+  '/junk-removal-clearwater-fl': typeof JunkRemovalClearwaterFlRoute
   '/landscaping': typeof LandscapingRoute
   '/lets-talk': typeof LetsTalkRoute
   '/login': typeof LoginRoute
@@ -266,11 +305,15 @@ export interface FileRouteTypes {
     | '/contact'
     | '/contact-us'
     | '/dashboard'
+    | '/debris-removal-tarpon-springs'
     | '/demolition'
+    | '/demolition-services-pinellas-county'
     | '/fence-removal'
     | '/free-estimate'
+    | '/hauling-services-palm-harbor'
     | '/industrial-leases-cleaning'
     | '/junk-removal'
+    | '/junk-removal-clearwater-fl'
     | '/landscaping'
     | '/lets-talk'
     | '/login'
@@ -294,11 +337,15 @@ export interface FileRouteTypes {
     | '/contact'
     | '/contact-us'
     | '/dashboard'
+    | '/debris-removal-tarpon-springs'
     | '/demolition'
+    | '/demolition-services-pinellas-county'
     | '/fence-removal'
     | '/free-estimate'
+    | '/hauling-services-palm-harbor'
     | '/industrial-leases-cleaning'
     | '/junk-removal'
+    | '/junk-removal-clearwater-fl'
     | '/landscaping'
     | '/lets-talk'
     | '/login'
@@ -322,11 +369,15 @@ export interface FileRouteTypes {
     | '/contact'
     | '/contact-us'
     | '/dashboard'
+    | '/debris-removal-tarpon-springs'
     | '/demolition'
+    | '/demolition-services-pinellas-county'
     | '/fence-removal'
     | '/free-estimate'
+    | '/hauling-services-palm-harbor'
     | '/industrial-leases-cleaning'
     | '/junk-removal'
+    | '/junk-removal-clearwater-fl'
     | '/landscaping'
     | '/lets-talk'
     | '/login'
@@ -351,11 +402,15 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   ContactUsRoute: typeof ContactUsRoute
   DashboardRoute: typeof DashboardRoute
+  DebrisRemovalTarponSpringsRoute: typeof DebrisRemovalTarponSpringsRoute
   DemolitionRoute: typeof DemolitionRoute
+  DemolitionServicesPinellasCountyRoute: typeof DemolitionServicesPinellasCountyRoute
   FenceRemovalRoute: typeof FenceRemovalRoute
   FreeEstimateRoute: typeof FreeEstimateRoute
+  HaulingServicesPalmHarborRoute: typeof HaulingServicesPalmHarborRoute
   IndustrialLeasesCleaningRoute: typeof IndustrialLeasesCleaningRoute
   JunkRemovalRoute: typeof JunkRemovalRoute
+  JunkRemovalClearwaterFlRoute: typeof JunkRemovalClearwaterFlRoute
   LandscapingRoute: typeof LandscapingRoute
   LetsTalkRoute: typeof LetsTalkRoute
   LoginRoute: typeof LoginRoute
@@ -464,6 +519,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LandscapingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/junk-removal-clearwater-fl': {
+      id: '/junk-removal-clearwater-fl'
+      path: '/junk-removal-clearwater-fl'
+      fullPath: '/junk-removal-clearwater-fl'
+      preLoaderRoute: typeof JunkRemovalClearwaterFlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/junk-removal': {
       id: '/junk-removal'
       path: '/junk-removal'
@@ -476,6 +538,13 @@ declare module '@tanstack/react-router' {
       path: '/industrial-leases-cleaning'
       fullPath: '/industrial-leases-cleaning'
       preLoaderRoute: typeof IndustrialLeasesCleaningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hauling-services-palm-harbor': {
+      id: '/hauling-services-palm-harbor'
+      path: '/hauling-services-palm-harbor'
+      fullPath: '/hauling-services-palm-harbor'
+      preLoaderRoute: typeof HaulingServicesPalmHarborRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/free-estimate': {
@@ -492,11 +561,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FenceRemovalRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/demolition-services-pinellas-county': {
+      id: '/demolition-services-pinellas-county'
+      path: '/demolition-services-pinellas-county'
+      fullPath: '/demolition-services-pinellas-county'
+      preLoaderRoute: typeof DemolitionServicesPinellasCountyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/demolition': {
       id: '/demolition'
       path: '/demolition'
       fullPath: '/demolition'
       preLoaderRoute: typeof DemolitionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/debris-removal-tarpon-springs': {
+      id: '/debris-removal-tarpon-springs'
+      path: '/debris-removal-tarpon-springs'
+      fullPath: '/debris-removal-tarpon-springs'
+      preLoaderRoute: typeof DebrisRemovalTarponSpringsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard': {
@@ -567,11 +650,15 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   ContactUsRoute: ContactUsRoute,
   DashboardRoute: DashboardRoute,
+  DebrisRemovalTarponSpringsRoute: DebrisRemovalTarponSpringsRoute,
   DemolitionRoute: DemolitionRoute,
+  DemolitionServicesPinellasCountyRoute: DemolitionServicesPinellasCountyRoute,
   FenceRemovalRoute: FenceRemovalRoute,
   FreeEstimateRoute: FreeEstimateRoute,
+  HaulingServicesPalmHarborRoute: HaulingServicesPalmHarborRoute,
   IndustrialLeasesCleaningRoute: IndustrialLeasesCleaningRoute,
   JunkRemovalRoute: JunkRemovalRoute,
+  JunkRemovalClearwaterFlRoute: JunkRemovalClearwaterFlRoute,
   LandscapingRoute: LandscapingRoute,
   LetsTalkRoute: LetsTalkRoute,
   LoginRoute: LoginRoute,

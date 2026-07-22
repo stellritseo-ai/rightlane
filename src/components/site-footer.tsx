@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { Facebook, Twitter, Youtube, Phone, Mail, MapPin, ChevronUp } from "lucide-react";
 import bbbBadge from "@/assets/bbb-badge.png";
 import yelpBadge from "@/assets/yelp-badge.png";
@@ -201,18 +202,18 @@ export function SiteFooter() {
 
         {/* Underlined SEO Links Block */}
         <div className="mt-14 border-t border-white/5 pt-8 flex flex-wrap justify-center gap-x-8 md:gap-x-12 gap-y-3 text-xs text-neutral-500 font-light text-center relative z-10 w-full">
-          <a href="#" className="underline hover:text-[#ffa326] transition-colors duration-200">
+          <Link to="/junk-removal-clearwater-fl" className="underline hover:text-[#ffa326] transition-colors duration-200">
             Junk Removal Clearwater FL
-          </a>
-          <a href="#" className="underline hover:text-[#ffa326] transition-colors duration-200">
+          </Link>
+          <Link to="/demolition-services-pinellas-county" className="underline hover:text-[#ffa326] transition-colors duration-200">
             Demolition Services Pinellas County
-          </a>
-          <a href="#" className="underline hover:text-[#ffa326] transition-colors duration-200">
+          </Link>
+          <Link to="/hauling-services-palm-harbor" className="underline hover:text-[#ffa326] transition-colors duration-200">
             Hauling Services Palm Harbor
-          </a>
-          <a href="#" className="underline hover:text-[#ffa326] transition-colors duration-200">
+          </Link>
+          <Link to="/debris-removal-tarpon-springs" className="underline hover:text-[#ffa326] transition-colors duration-200">
             Debris Removal Tarpon Springs
-          </a>
+          </Link>
         </div>
 
         {/* Copyright & Branding Banner */}
