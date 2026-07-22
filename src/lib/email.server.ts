@@ -4,9 +4,9 @@
  */
 import nodemailer from "nodemailer";
 
-const SMTP_EMAIL = process.env.SMTP_EMAIL || "rightlanehandymanservice@yahoo.com";
+const SMTP_EMAIL = process.env.SMTP_EMAIL || "eva@stellrit.com";
 const SMTP_PASS = process.env.SMTP_PASS || "";
-const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "rightlanehandymanservice@yahoo.com,eva@stellrit.com";
+const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "eva@stellrit.com";
 
 function createTransporter() {
   const host = process.env.SMTP_HOST || "smtp.mail.yahoo.com";
