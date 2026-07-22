@@ -4,12 +4,12 @@
  */
 import nodemailer from "nodemailer";
 
-const SMTP_EMAIL = process.env.SMTP_EMAIL || "eva@stellrit.com";
+const SMTP_EMAIL = process.env.SMTP_EMAIL || "stellritinc@gmail.com";
 const SMTP_PASS = process.env.SMTP_PASS || "";
-const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "eva@stellrit.com";
+const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "stellritinc@gmail.com";
 
 function createTransporter() {
-  const host = process.env.SMTP_HOST || "smtp.mail.yahoo.com";
+  const host = process.env.SMTP_HOST || "smtp.gmail.com";
   const port = parseInt(process.env.SMTP_PORT || "465", 10);
   
   return nodemailer.createTransport({
