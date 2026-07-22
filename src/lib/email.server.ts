@@ -9,10 +9,13 @@ const SMTP_PASS = process.env.SMTP_PASS || "";
 const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "rightlanehandymanservice@yahoo.com,eva@stellrit.com";
 
 function createTransporter() {
+  const host = process.env.SMTP_HOST || "smtp.mail.yahoo.com";
+  const port = parseInt(process.env.SMTP_PORT || "465", 10);
+  
   return nodemailer.createTransport({
-    host: "smtp.mail.yahoo.com",
-    port: 465,
-    secure: true,
+    host,
+    port,
+    secure: port === 465, // true for 465, false for other ports
     auth: {
       user: SMTP_EMAIL,
       pass: SMTP_PASS,
