@@ -1,24 +1,40 @@
 /**
- * Email notification utility using nodemailer + Yahoo SMTP.
+ * Email notification utility using nodemailer (Zoho / Gmail SMTP).
  * Server-side only — do not import from client code.
  */
 import nodemailer from "nodemailer";
 
-const SMTP_EMAIL = process.env.SMTP_EMAIL || "stellritinc@gmail.com";
-const SMTP_PASS = process.env.SMTP_PASS || "";
-const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "contact@rightlanehandymanservicellc.com";
+function getSmtpConfig() {
+  const smtpEmail = process.env.SMTP_EMAIL || "contact@rightlanehandymanservicellc.com";
+  const smtpPass = process.env.SMTP_PASS || "";
+  const host =
+    process.env.SMTP_HOST ||
+    (smtpEmail.includes("zoho") || smtpEmail.includes("rightlanehandymanservicellc.com")
+      ? "smtppro.zoho.com"
+      : "smtp.gmail.com");
+  const port = parseInt(process.env.SMTP_PORT || "465", 10);
+  const notifyEmail =
+    process.env.NOTIFY_EMAIL || "contact@rightlanehandymanservicellc.com,stellritinc@gmail.com";
+
+  return {
+    smtpEmail,
+    smtpPass,
+    host,
+    port,
+    notifyEmail,
+  };
+}
 
 function createTransporter() {
-  const host = process.env.SMTP_HOST || "smtp.gmail.com";
-  const port = parseInt(process.env.SMTP_PORT || "465", 10);
-  
+  const { smtpEmail, smtpPass, host, port } = getSmtpConfig();
+
   return nodemailer.createTransport({
     host,
     port,
-    secure: port === 465, // true for 465, false for other ports
+    secure: port === 465, // true for 465 (SSL), false for 587 (TLS/STARTTLS)
     auth: {
-      user: SMTP_EMAIL,
-      pass: SMTP_PASS,
+      user: smtpEmail,
+      pass: smtpPass,
     },
     tls: {
       rejectUnauthorized: false,
@@ -37,7 +53,9 @@ export interface LeadEmailData {
 }
 
 export async function sendLeadNotificationEmail(data: LeadEmailData): Promise<void> {
-  if (!SMTP_PASS || SMTP_PASS === "your-yahoo-app-password-here") {
+  const { smtpEmail, smtpPass, notifyEmail, host, port } = getSmtpConfig();
+
+  if (!smtpPass || smtpPass === "your-yahoo-app-password-here") {
     console.warn("[Email] SMTP_PASS not configured. Skipping email notification.");
     return;
   }
@@ -166,13 +184,18 @@ ${data.message ? `Message:\n${data.message}` : ""}
 Source: ${data.source || "website form"}
   `.trim();
 
+  const recipients = notifyEmail
+    .split(",")
+    .map((e) => e.trim())
+    .filter(Boolean);
+
   await transporter.sendMail({
-    from: `"Right Lane Website" <${SMTP_EMAIL}>`,
-    to: NOTIFY_EMAIL,
+    from: `"Right Lane Handyman Services" <${smtpEmail}>`,
+    to: recipients.length === 1 ? recipients[0] : recipients,
     subject,
     text,
     html,
   });
 
-  console.log(`[Email] Lead notification sent to ${NOTIFY_EMAIL} for ${data.name}`);
+  console.log(`[Email via ${host}:${port}] Lead notification sent to ${notifyEmail} for ${data.name}`);
 }
