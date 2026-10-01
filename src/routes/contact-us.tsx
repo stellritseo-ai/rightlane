@@ -299,8 +299,8 @@ function ContactUsPage() {
                   </span>
                   <div>
                     <h2 className="text-md font-extrabold text-neutral-900 tracking-wide">Email Us</h2>
-                    <a href="mailto:rightlanehandymanservice@yahoo.com" className="text-sm font-semibold text-[#cc7e14] hover:underline break-all">
-                      rightlanehandymanservice@yahoo.com
+                    <a href="mailto:contact@rightlanehandymanservicellc.com" className="text-sm font-semibold text-[#cc7e14] hover:underline break-all">
+                      contact@rightlanehandymanservicellc.com
                     </a>
                   </div>
                 </div>
@@ -799,9 +799,9 @@ function ContactUsPage() {
                   <Phone className="w-4 h-4 text-[#ffa326] shrink-0" />
                   <span>(727) 642-0201</span>
                 </a>
-                <a href="mailto:rightlanehandymanservice@yahoo.com" className="flex items-center gap-2.5 hover:text-[#ffa326] transition-colors">
+                <a href="mailto:contact@rightlanehandymanservicellc.com" className="flex items-center gap-2.5 hover:text-[#ffa326] transition-colors">
                   <Mail className="w-4 h-4 text-[#ffa326] shrink-0" />
-                  <span className="truncate">rightlanehandymanservice@yahoo.com</span>
+                  <span className="truncate">contact@rightlanehandymanservicellc.com</span>
                 </a>
                 <div className="flex items-center gap-2.5">
                   <MapPin className="w-4 h-4 text-[#ffa326] shrink-0" />

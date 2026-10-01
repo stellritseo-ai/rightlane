@@ -482,7 +482,7 @@ function LetUsTalkPage() {
 
                 {/* Email Card */}
                 <a 
-                  href="mailto:rightlanehandymanservice@yahoo.com"
+                  href="mailto:contact@rightlanehandymanservicellc.com"
                   className="group block p-5 rounded-xl border border-neutral-200/50 bg-white hover:border-[#ffa326]/40 hover:shadow-md transition-all duration-300 text-left"
                 >
                   <div className="w-10 h-10 rounded-lg bg-[#ffa326]/10 text-[#cc7e14] flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
@@ -492,7 +492,7 @@ function LetUsTalkPage() {
                   <p className="mt-2.5 text-xs text-neutral-500 font-light leading-relaxed">
                     Share your project details, inspirations, or questions with us.
                   </p>
-                  <p className="mt-3 text-sm font-bold text-[#cc7e14] group-hover:underline truncate font-light">rightlanehandymanservice@yahoo.com</p>
+                  <p className="mt-3 text-sm font-bold text-[#cc7e14] group-hover:underline truncate font-light">contact@rightlanehandymanservicellc.com</p>
                 </a>
               </div>
             </motion.div>
@@ -884,9 +884,9 @@ function LetUsTalkPage() {
                   <Phone className="w-5 h-5 text-[#ffa326] shrink-0" />
                   <span>(727) 642-0201</span>
                 </a>
-                <a href="mailto:rightlanehandymanservice@yahoo.com" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
+                <a href="mailto:contact@rightlanehandymanservicellc.com" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
                   <Mail className="w-5 h-5 text-[#ffa326] shrink-0" />
-                  <span>rightlanehandymanservice@yahoo.com</span>
+                  <span>contact@rightlanehandymanservicellc.com</span>
                 </a>
                 <div className="flex items-center gap-3.5">
                   <MapPin className="w-5 h-5 text-[#ffa326] shrink-0" />

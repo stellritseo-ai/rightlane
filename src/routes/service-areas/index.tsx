@@ -143,7 +143,7 @@ function ServiceAreasHubPage() {
     addLead({
       name: formData.name,
       phone: formData.phone,
-      email: formData.email || "info@rightlanehandyman.com",
+      email: formData.email || "contact@rightlanehandymanservicellc.com",
       address: formData.location,
       projectType: formData.service,
       description: `[Service Areas Form - ${formData.location}] ${formData.message}`,

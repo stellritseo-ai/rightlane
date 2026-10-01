@@ -45,7 +45,7 @@ export function WelcomeSection() {
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
               <ContactCard label={t("welcome.contact.title")} value="(727) 642-0201" />
-              <ContactCard label="Email Us" value="rightlanehandymanservice@yahoo.com" isEmail={true} />
+              <ContactCard label="Email Us" value="contact@rightlanehandymanservicellc.com" isEmail={true} />
             </div>
 
             <div className="mt-7 flex flex-wrap gap-3 sm:gap-4">

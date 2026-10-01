@@ -982,7 +982,7 @@ function DashboardPage() {
 
   // Settings mock state
   const [settings, setSettings] = useState({
-    adminEmail: "rightlanehandymanservice@yahoo.com",
+    adminEmail: "contact@rightlanehandymanservicellc.com",
     officePhone: "(727) 642-0201",
     autoSmsTemplate: "Hi {Name}, thank you for contacting Right Lane Handyman Services, LLC! Right Lane Handyman will contact you during the {Time} to discuss your {Type} project.",
     sendAutoEmail: true,

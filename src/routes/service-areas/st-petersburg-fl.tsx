@@ -126,7 +126,7 @@ function StPetersburgLocationPage() {
     addLead({
       name: formData.name,
       phone: formData.phone,
-      email: formData.email || "info@rightlanehandyman.com",
+      email: formData.email || "contact@rightlanehandymanservicellc.com",
       address: `St. Petersburg, FL (${formData.neighborhood})`,
       projectType: formData.service,
       description: `[St Petersburg FL Form - ${formData.neighborhood}] ${formData.message}`,

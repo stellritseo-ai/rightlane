@@ -374,7 +374,7 @@ export function FloatingChat() {
                         
                         {/* Email */}
                         <a 
-                          href="mailto:rightlanehandymanservice@yahoo.com"
+                          href="mailto:contact@rightlanehandymanservicellc.com"
                           className="flex items-center justify-center gap-2 w-full bg-white hover:bg-neutral-50 text-neutral-800 border border-neutral-200 py-2 px-3 rounded-lg font-bold text-[10px] uppercase tracking-wider transition-all shadow-xs active:scale-98"
                         >
                           <Mail className="h-3.5 w-3.5 text-neutral-500" />

@@ -4,7 +4,7 @@
 > **Business Name**: Right Lane Handyman Services LLC  
 > **Owner / Principal**: Ronnie Lane  
 > **Phone**: (727) 642-0201 | `tel:7276420201`  
-> **Email**: `rightlanehandymanservice@yahoo.com`  
+> **Email**: `contact@rightlanehandymanservicellc.com`  
 > **Operating Base / HQ**: Clearwater, FL 33756  
 > **Primary Target Market**: Tampa, Florida  
 > **Regional Service Footprint**: Tampa Bay Area (Hillsborough County & Pinellas County)  
@@ -101,7 +101,7 @@ Every route has been engineered with:
 |---|---|
 | **Legal Business Name** | Right Lane Handyman Services LLC |
 | **Phone Number** | (727) 642-0201 |
-| **Email Address** | rightlanehandymanservice@yahoo.com |
+| **Email Address** | contact@rightlanehandymanservicellc.com |
 | **Headquarters Address** | Clearwater, FL 33756 |
 | **Primary Target Market** | Tampa, FL |
 | **Primary Regional Market** | Tampa Bay Area, Florida |
@@ -172,7 +172,7 @@ The content incorporates localized terminology and Florida coastal climate consi
 
 1. **Direct Clickable Contact**:
    - Primary Phone: `<a href="tel:7276420201">(727) 642-0201</a>` in TopBar, Header, Hero banners, and Footer.
-   - Email: `<a href="mailto:rightlanehandymanservice@yahoo.com">`
+   - Email: `<a href="mailto:contact@rightlanehandymanservicellc.com">`
 2. **Interactive Lead Capture Funnel**:
    - Multi-step Free Estimate form on `/free-estimate`.
    - Floating Contact Drawer / Chat with quick quote shortcuts.

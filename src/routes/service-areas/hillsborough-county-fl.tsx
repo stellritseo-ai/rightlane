@@ -126,7 +126,7 @@ function HillsboroughCountyPage() {
     addLead({
       name: formData.name,
       phone: formData.phone,
-      email: formData.email || "info@rightlanehandyman.com",
+      email: formData.email || "contact@rightlanehandymanservicellc.com",
       address: `Hillsborough County (${formData.city})`,
       projectType: formData.service,
       description: `[Hillsborough County Form - ${formData.city}] ${formData.message}`,

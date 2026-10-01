@@ -557,9 +557,9 @@ function AboutUsPage() {
                   <Phone className="w-5 h-5 text-[#ffa326] shrink-0" />
                   <span>Phone: (727) 642-0201</span>
                 </a>
-                <a href="mailto:rightlanehandymanservice@yahoo.com" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
+                <a href="mailto:contact@rightlanehandymanservicellc.com" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
                   <Mail className="w-5 h-5 text-[#ffa326] shrink-0" />
-                  <span>Email: rightlanehandymanservice@yahoo.com</span>
+                  <span>Email: contact@rightlanehandymanservicellc.com</span>
                 </a>
                 <div className="flex flex-row items-center gap-3.5 col-span-1 sm:col-span-2">
                   <MapPin className="w-5 h-5 text-[#ffa326] shrink-0" />

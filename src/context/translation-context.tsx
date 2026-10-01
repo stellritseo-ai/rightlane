@@ -42,7 +42,7 @@ export function useTranslation() {
 export const translations = {
   en: {
     // TopBar & Header
-    "topbar.email": "rightlanehandymanservice@yahoo.com",
+    "topbar.email": "contact@rightlanehandymanservicellc.com",
     "topbar.location": "Clearwater, FL",
     "topbar.emergency": "Emergency Services: 24/7 Emergency Assistance Available.",
     "nav.home": "Home",
@@ -253,13 +253,13 @@ export const translations = {
     "footer.contact.consultant": "Licensed | Insured | Bonded",
     "footer.contact.robert": "Phone: (727) 642-0201",
     "footer.contact.arturo": "25 Years Of Experience",
-    "footer.contact.email": "Email: rightlanehandymanservice@yahoo.com",
+    "footer.contact.email": "Email: contact@rightlanehandymanservicellc.com",
     "footer.contact.address": "Address: Clearwater, FL 33756",
     "footer.copyright": "Copyright © 2026 Right Lane Handyman Services, LLC. All rights reserved.",
   },
   es: {
     // TopBar & Header
-    "topbar.email": "rightlanehandymanservice@yahoo.com",
+    "topbar.email": "contact@rightlanehandymanservicellc.com",
     "topbar.location": "Clearwater, FL",
     "topbar.emergency": "Servicios de Emergencia: Asistencia 24/7 disponible.",
     "nav.home": "Inicio",
@@ -470,7 +470,7 @@ export const translations = {
     "footer.contact.consultant": "Licenciado | Asegurado | Con Fianza",
     "footer.contact.robert": "Teléfono: (727) 642-0201",
     "footer.contact.arturo": "25 Años de Experiencia",
-    "footer.contact.email": "Correo: rightlanehandymanservice@yahoo.com",
+    "footer.contact.email": "Correo: contact@rightlanehandymanservicellc.com",
     "footer.contact.address": "Dirección: Clearwater, FL 33756",
     "footer.copyright": "Copyright © 2026 Right Lane Handyman Services, LLC. Todos los derechos reservados.",
   }

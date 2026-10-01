@@ -959,7 +959,7 @@ function FreeEstimatePage() {
               <div className="divide-y divide-white/10 text-sm">
                 {[
                   { label: "Phone", value: "(727) 642-0201", href: "tel:7276420201" },
-                  { label: "Email", value: "rightlanehandymanservice@yahoo.com", href: "mailto:rightlanehandymanservice@yahoo.com" },
+                  { label: "Email", value: "contact@rightlanehandymanservicellc.com", href: "mailto:contact@rightlanehandymanservicellc.com" },
                   { label: "Address", value: "Clearwater, FL 33756", href: undefined },
                   { label: "Service Area", value: "Tampa Bay Area, Hillsborough County, Pinellas County", href: undefined },
                 ].map((row) => (

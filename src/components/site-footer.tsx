@@ -171,7 +171,7 @@ export function SiteFooter() {
 
               <div className="flex items-center gap-3 hover:text-[#ffa326] transition-colors duration-200">
                 <Mail className="h-4.5 w-4.5 text-[#ffa326]" />
-                <a href="mailto:rightlanehandymanservice@yahoo.com" className="break-all">rightlanehandymanservice@yahoo.com</a>
+                <a href="mailto:contact@rightlanehandymanservicellc.com" className="break-all">contact@rightlanehandymanservicellc.com</a>
               </div>
 
               <div className="flex items-center gap-3 text-neutral-300">

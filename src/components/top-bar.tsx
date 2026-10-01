@@ -10,7 +10,7 @@ export function TopBar() {
         {/* Contact info list - hidden on xs, shown on sm+ */}
         <div className="hidden sm:flex flex-wrap items-center justify-center gap-4 sm:gap-6">
           <a
-            href="mailto:rightlanehandymanservice@yahoo.com"
+            href="mailto:contact@rightlanehandymanservicellc.com"
             className="flex items-center gap-2 group transition-colors"
           >
             <span className="flex items-center justify-center rounded-full bg-white/10 group-hover:bg-white/20 border border-white/10 text-white p-1.5 transition-all duration-200">

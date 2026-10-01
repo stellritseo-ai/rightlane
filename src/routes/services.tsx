@@ -584,9 +584,9 @@ function ServicesPage() {
                   <Phone className="w-5 h-5 text-[#ffa326] shrink-0" />
                   <span>(727) 642-0201</span>
                 </a>
-                <a href="mailto:rightlanehandymanservice@yahoo.com" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
+                <a href="mailto:contact@rightlanehandymanservicellc.com" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
                   <Mail className="w-5 h-5 text-[#ffa326] shrink-0" />
-                  <span>rightlanehandymanservice@yahoo.com</span>
+                  <span>contact@rightlanehandymanservicellc.com</span>
                 </a>
                 <div className="flex items-center gap-3.5">
                   <MapPin className="w-5 h-5 text-[#ffa326] shrink-0" />

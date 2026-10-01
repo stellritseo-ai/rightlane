@@ -112,7 +112,7 @@ function BrandonLocationPage() {
     addLead({
       name: formData.name,
       phone: formData.phone,
-      email: formData.email || "info@rightlanehandyman.com",
+      email: formData.email || "contact@rightlanehandymanservicellc.com",
       address: "Brandon, FL",
       projectType: formData.service,
       description: `[Brandon FL Form] ${formData.message}`,

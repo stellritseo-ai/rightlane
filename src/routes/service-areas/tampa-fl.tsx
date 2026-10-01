@@ -130,7 +130,7 @@ function TampaLocationPage() {
     addLead({
       name: formData.name,
       phone: formData.phone,
-      email: formData.email || "info@rightlanehandyman.com",
+      email: formData.email || "contact@rightlanehandymanservicellc.com",
       address: `Tampa, FL (${formData.neighborhood})`,
       projectType: formData.service,
       description: `[Tampa FL Form - ${formData.neighborhood}] ${formData.message}`,

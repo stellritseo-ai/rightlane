@@ -11,7 +11,7 @@ export const BUSINESS_INFO = {
   domain: "https://www.rightlanehandymanservicellc.com",
   phone: "(727) 642-0201",
   telephone: "+1-727-642-0201",
-  email: "rightlanehandymanservice@yahoo.com",
+  email: "contact@rightlanehandymanservicellc.com",
   owner: "Ronnie Lane",
   streetAddress: "Clearwater Service Hub",
   addressLocality: "Clearwater",

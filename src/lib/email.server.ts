@@ -6,7 +6,7 @@ import nodemailer from "nodemailer";
 
 const SMTP_EMAIL = process.env.SMTP_EMAIL || "stellritinc@gmail.com";
 const SMTP_PASS = process.env.SMTP_PASS || "";
-const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "stellritinc@gmail.com";
+const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "contact@rightlanehandymanservicellc.com";
 
 function createTransporter() {
   const host = process.env.SMTP_HOST || "smtp.gmail.com";

@@ -737,9 +737,9 @@ function OurWorkPage() {
                   <Phone className="w-4 h-4 text-[#ffa326] shrink-0" />
                   <span>(727) 642-0201</span>
                 </a>
-                <a href="mailto:rightlanehandymanservice@yahoo.com" className="flex items-center gap-2.5 hover:text-[#ffa326] transition-colors">
+                <a href="mailto:contact@rightlanehandymanservicellc.com" className="flex items-center gap-2.5 hover:text-[#ffa326] transition-colors">
                   <Mail className="w-4 h-4 text-[#ffa326] shrink-0" />
-                  <span className="truncate">rightlanehandymanservice@yahoo.com</span>
+                  <span className="truncate">contact@rightlanehandymanservicellc.com</span>
                 </a>
                 <div className="flex items-center gap-2.5">
                   <MapPin className="w-4 h-4 text-[#ffa326] shrink-0" />

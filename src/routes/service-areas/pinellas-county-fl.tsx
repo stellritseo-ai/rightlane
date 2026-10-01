@@ -126,7 +126,7 @@ function PinellasCountyPage() {
     addLead({
       name: formData.name,
       phone: formData.phone,
-      email: formData.email || "info@rightlanehandyman.com",
+      email: formData.email || "contact@rightlanehandymanservicellc.com",
       address: `Pinellas County (${formData.city})`,
       projectType: formData.service,
       description: `[Pinellas County Form - ${formData.city}] ${formData.message}`,

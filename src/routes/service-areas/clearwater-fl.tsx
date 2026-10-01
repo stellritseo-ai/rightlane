@@ -112,7 +112,7 @@ function ClearwaterLocationPage() {
     addLead({
       name: formData.name,
       phone: formData.phone,
-      email: formData.email || "info@rightlanehandyman.com",
+      email: formData.email || "contact@rightlanehandymanservicellc.com",
       address: "Clearwater, FL",
       projectType: formData.service,
       description: `[Clearwater FL Form] ${formData.message}`,
