@@ -225,7 +225,7 @@ export function FloatingChat() {
     }
   };
 
-  const whatsappNumber = "17276420201";
+  const whatsappNumber = "17273310238";
   const defaultMessage = "Hi, I'm interested in your handyman and remodeling services.";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
 

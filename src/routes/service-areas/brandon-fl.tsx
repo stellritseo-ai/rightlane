@@ -35,7 +35,7 @@ export const Route = createFileRoute("/service-areas/brandon-fl")({
       {
         name: "description",
         content:
-          "Trusted handyman services in Brandon, FL. Quality drywall patching, painting, door repairs, pressure washing, fencing & property maintenance. Call (727) 642-0201.",
+          "Trusted handyman services in Brandon, FL. Quality drywall patching, painting, door repairs, pressure washing, fencing & property maintenance. Call (727) 331-0238.",
       },
       { property: "og:title", content: "Handyman Services in Brandon, FL | Right Lane Handyman" },
       {
@@ -73,7 +73,7 @@ const BRANDON_FAQS = [
   {
     question: "How quickly can you give an estimate for a home repair in Brandon, FL?",
     answer:
-      "We respond to estimate requests within 24 hours. Call Ronnie Lane directly at (727) 642-0201 for prompt scheduling.",
+      "We respond to estimate requests within 24 hours. Call Ronnie Lane directly at (727) 331-0238 for prompt scheduling.",
   },
 ];
 
@@ -164,11 +164,11 @@ function BrandonLocationPage() {
 
             <div className="flex flex-wrap items-center gap-4">
               <a
-                href="tel:7276420201"
+                href="tel:7273310238"
                 className="inline-flex items-center gap-2 rounded-full bg-[#ffa326] hover:bg-[#cc7e14] px-7 py-3.5 text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md hover:scale-[1.02]"
               >
                 <Phone className="w-4 h-4 fill-current" />
-                <span>Call Ronnie: (727) 642-0201</span>
+                <span>Call Ronnie: (727) 331-0238</span>
               </a>
               <Link
                 to="/free-estimate"

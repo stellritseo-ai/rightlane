@@ -52,7 +52,7 @@ export const Route = createFileRoute("/debris-removal-tarpon-springs")({
       {
         name: "description",
         content:
-          "Top-rated Debris Removal in Tarpon Springs. Professional storm cleanup, yard waste, and post-construction debris removal. Call (727) 642-0201 today.",
+          "Top-rated Debris Removal in Tarpon Springs. Professional storm cleanup, yard waste, and post-construction debris removal. Call (727) 331-0238 today.",
       },
       { property: "og:title", content: "Debris Removal Tarpon Springs - Right Lane Handyman" },
       { property: "og:description", content: "Top-rated Debris Removal in Tarpon Springs. Professional storm cleanup and debris removal." },
@@ -723,7 +723,7 @@ function DebrisRemovalTarponSpringsPage() {
                   </p>
                   <div className="pt-4 flex flex-wrap gap-4 justify-center">
                     <a
-                      href="tel:7276420201"
+                      href="tel:7273310238"
                       className="rounded-full bg-copper hover:bg-copper-deep px-6 py-2.5 text-white text-sm font-bold uppercase tracking-wide transition-all shadow-md"
                     >
                       Call Us Now
@@ -751,7 +751,7 @@ function DebrisRemovalTarponSpringsPage() {
                   <div className="grid sm:grid-cols-3 gap-4">
                     {[
                       { id: "name", label: "Full Name", required: true, type: "text", placeholder: "John Doe", icon: User },
-                      { id: "phone", label: "Phone Number", required: true, type: "tel", placeholder: "(727) 642-0201", icon: Smartphone },
+                      { id: "phone", label: "Phone Number", required: true, type: "tel", placeholder: "(727) 331-0238", icon: Smartphone },
                       { id: "email", label: "Email Address", required: false, type: "email", placeholder: "john@example.com", icon: MailIcon },
                     ].map((field) => (
                       <div key={field.id} className="flex flex-col gap-1.5">
@@ -919,11 +919,11 @@ function DebrisRemovalTarponSpringsPage() {
                 Prefer to speak with someone right away? Call Ronnie Lane directly at:
               </p>
               <a
-                href="tel:7276420201"
+                href="tel:7273310238"
                 className="inline-flex items-center gap-3 text-2xl sm:text-3xl font-extrabold text-copper hover:text-copper-deep transition-colors bg-white/80 px-6 py-3.5 rounded-2xl border border-neutral-200/40 shadow-xs hover:shadow-sm"
               >
                 <Phone className="w-6 h-6 shrink-0 fill-current" />
-                (727) 642-0201
+                (727) 331-0238
               </a>
               <p className="text-xs text-neutral-600 font-light pt-4 border-t border-neutral-300/40 leading-relaxed">
                 We offer 24/7 Emergency Service for storm damage, debris removal, and urgent hauling needs. Call anytime – nights, weekends, and holidays included.
@@ -1121,10 +1121,10 @@ function DebrisRemovalTarponSpringsPage() {
                 Request Free Estimate
               </a>
               <a
-                href="tel:7276420201"
+                href="tel:7273310238"
                 className="rounded-full border border-white/30 bg-white/10 hover:bg-white hover:text-neutral-900 px-8 py-3.5 text-white text-sm font-bold uppercase tracking-wider transition-all duration-300 shadow-lg hover:scale-[1.03]"
               >
-                Call (727) 642-0201
+                Call (727) 331-0238
               </a>
             </div>
 

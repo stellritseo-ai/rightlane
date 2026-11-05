@@ -26,7 +26,7 @@ export const Route = createFileRoute("/bank-occupancy-licences")({
       {
         name: "description",
         content:
-          "Professional pre-occupancy cleaning and compliance preparation for bank branches across Tampa, Clearwater, and Hillsborough & Pinellas Counties. Call (727) 642-0201.",
+          "Professional pre-occupancy cleaning and compliance preparation for bank branches across Tampa, Clearwater, and Hillsborough & Pinellas Counties. Call (727) 331-0238.",
       },
       { property: "og:title", content: "Bank Occupancy Licences Cleaning - Right Lane Handyman" },
       {
@@ -100,7 +100,7 @@ const FAQS = [
   { question: "How long does a bank occupancy cleaning take?", answer: "Timeline depends on facility size, but most bank branch preparations can be completed within 1-3 business days. We work quickly without compromising quality." },
   { question: "Do you provide a cleaning checklist?", answer: "Yes. We provide a detailed service checklist and can complete documentation to support your occupancy inspection process." },
   { question: "Are you insured?", answer: "Yes! Right Lane Handyman Services, LLC is fully licensed, insured, and bonded for your protection and peace of mind." },
-  { question: "Do you offer free estimates?", answer: "Absolutely. We provide free, no-obligation estimates for all bank occupancy cleaning projects. Call (727) 642-0201 or submit our form." },
+  { question: "Do you offer free estimates?", answer: "Absolutely. We provide free, no-obligation estimates for all bank occupancy cleaning projects. Call (727) 331-0238 or submit our form." },
 ];
 
 const REVIEWS = [
@@ -342,7 +342,7 @@ function BankOccupancyLicencesPage() {
                 <motion.div key="success" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-16 px-8 bg-[#f9f7f2] rounded-2xl border border-neutral-200">
                   <div className="h-16 w-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-5"><Check className="h-8 w-8 text-emerald-600" /></div>
                   <h3 className="text-xl font-bold text-neutral-900 mb-2">Request Received!</h3>
-                  <p className="text-sm text-neutral-500 font-light">We'll contact you within 24 hours. Call us at <a href="tel:7276420201" className="text-copper font-bold">(727) 642-0201</a>.</p>
+                  <p className="text-sm text-neutral-500 font-light">We'll contact you within 24 hours. Call us at <a href="tel:7273310238" className="text-copper font-bold">(727) 331-0238</a>.</p>
                 </motion.div>
               ) : (
                 <motion.form key="form" onSubmit={handleSubmit} className="grid gap-5">
@@ -421,7 +421,7 @@ function BankOccupancyLicencesPage() {
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-4" style={{ fontFamily: "Georgia, serif" }}>Ready for Your Occupancy Inspection?</h2>
           <p className="text-sm text-neutral-400 font-light mb-8 max-w-xl mx-auto">Let Right Lane Handyman Services prepare your banking facility. Serving the Tampa Bay Area, Hillsborough County, Pinellas County, and surrounding communities.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:7276420201" className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#ffa326] to-[#cc7e14] text-white rounded-full px-8 py-3.5 text-sm font-bold uppercase tracking-wider shadow-lg hover:scale-[1.03] transition-all"><Phone className="h-4 w-4" />(727) 642-0201</a>
+            <a href="tel:7273310238" className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#ffa326] to-[#cc7e14] text-white rounded-full px-8 py-3.5 text-sm font-bold uppercase tracking-wider shadow-lg hover:scale-[1.03] transition-all"><Phone className="h-4 w-4" />(727) 331-0238</a>
             <Link to="/free-estimate" className="inline-flex items-center justify-center gap-2 border border-white/20 text-white rounded-full px-8 py-3.5 text-sm font-bold uppercase tracking-wider hover:bg-white/10 transition-all">Get Free Estimate</Link>
           </div>
         </section>

@@ -166,7 +166,7 @@ export function SiteFooter() {
 
               <div className="flex items-center gap-3 hover:text-[#ffa326] transition-colors duration-200">
                 <Phone className="h-4.5 w-4.5 text-[#ffa326] fill-[#ffa326]/10" />
-                <a href="tel:7276420201">(727) 642-0201</a>
+                <a href="tel:7273310238">(727) 331-0238</a>
               </div>
 
               <div className="flex items-center gap-3 hover:text-[#ffa326] transition-colors duration-200">

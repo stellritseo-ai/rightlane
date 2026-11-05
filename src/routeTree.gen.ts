@@ -9,152 +9,82 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WorkRouteImport } from './routes/work'
-import { Route as WindowCleaningRemovalRouteImport } from './routes/window-cleaning-removal'
-import { Route as WasteDebrisRemovalRouteImport } from './routes/waste-debris-removal'
-import { Route as ServicesRouteImport } from './routes/services'
-import { Route as ReviewsRouteImport } from './routes/reviews'
-import { Route as ResidentialLeasesCleaningRouteImport } from './routes/residential-leases-cleaning'
-import { Route as PropertyMaintenanceRouteImport } from './routes/property-maintenance'
-import { Route as PressureWashingRouteImport } from './routes/pressure-washing'
-import { Route as PostConstructionCleaningRouteImport } from './routes/post-construction-cleaning'
-import { Route as OurWorkRouteImport } from './routes/our-work'
-import { Route as LoginRouteImport } from './routes/login'
-import { Route as LetsTalkRouteImport } from './routes/lets-talk'
-import { Route as LandscapingRouteImport } from './routes/landscaping'
-import { Route as JunkRemovalClearwaterFlRouteImport } from './routes/junk-removal-clearwater-fl'
-import { Route as JunkRemovalRouteImport } from './routes/junk-removal'
-import { Route as IndustrialLeasesCleaningRouteImport } from './routes/industrial-leases-cleaning'
-import { Route as HaulingServicesPalmHarborRouteImport } from './routes/hauling-services-palm-harbor'
-import { Route as FreeEstimateRouteImport } from './routes/free-estimate'
-import { Route as FenceRemovalRouteImport } from './routes/fence-removal'
-import { Route as DemolitionServicesPinellasCountyRouteImport } from './routes/demolition-services-pinellas-county'
-import { Route as DemolitionRouteImport } from './routes/demolition'
-import { Route as DebrisRemovalTarponSpringsRouteImport } from './routes/debris-removal-tarpon-springs'
-import { Route as DashboardRouteImport } from './routes/dashboard'
-import { Route as ContactUsRouteImport } from './routes/contact-us'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CleaningContractsRouteImport } from './routes/cleaning-contracts'
-import { Route as BankOccupancyLicencesRouteImport } from './routes/bank-occupancy-licences'
-import { Route as AboutUsRouteImport } from './routes/about-us'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AboutUsRouteImport } from './routes/about-us'
+import { Route as BankOccupancyLicencesRouteImport } from './routes/bank-occupancy-licences'
+import { Route as CleaningContractsRouteImport } from './routes/cleaning-contracts'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ContactUsRouteImport } from './routes/contact-us'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as DebrisRemovalTarponSpringsRouteImport } from './routes/debris-removal-tarpon-springs'
+import { Route as DemolitionRouteImport } from './routes/demolition'
+import { Route as DemolitionServicesPinellasCountyRouteImport } from './routes/demolition-services-pinellas-county'
+import { Route as FenceRemovalRouteImport } from './routes/fence-removal'
+import { Route as FreeEstimateRouteImport } from './routes/free-estimate'
+import { Route as HaulingServicesPalmHarborRouteImport } from './routes/hauling-services-palm-harbor'
+import { Route as IndustrialLeasesCleaningRouteImport } from './routes/industrial-leases-cleaning'
+import { Route as JunkRemovalRouteImport } from './routes/junk-removal'
+import { Route as JunkRemovalClearwaterFlRouteImport } from './routes/junk-removal-clearwater-fl'
+import { Route as LandscapingRouteImport } from './routes/landscaping'
+import { Route as LetsTalkRouteImport } from './routes/lets-talk'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as OurWorkRouteImport } from './routes/our-work'
+import { Route as PostConstructionCleaningRouteImport } from './routes/post-construction-cleaning'
+import { Route as PressureWashingRouteImport } from './routes/pressure-washing'
+import { Route as PropertyMaintenanceRouteImport } from './routes/property-maintenance'
+import { Route as ResidentialLeasesCleaningRouteImport } from './routes/residential-leases-cleaning'
+import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as WasteDebrisRemovalRouteImport } from './routes/waste-debris-removal'
+import { Route as WindowCleaningRemovalRouteImport } from './routes/window-cleaning-removal'
+import { Route as WorkRouteImport } from './routes/work'
 import { Route as ServiceAreasIndexRouteImport } from './routes/service-areas/index'
-import { Route as ServiceAreasTampaFlRouteImport } from './routes/service-areas/tampa-fl'
-import { Route as ServiceAreasStPetersburgFlRouteImport } from './routes/service-areas/st-petersburg-fl'
-import { Route as ServiceAreasPinellasCountyFlRouteImport } from './routes/service-areas/pinellas-county-fl'
-import { Route as ServiceAreasHillsboroughCountyFlRouteImport } from './routes/service-areas/hillsborough-county-fl'
-import { Route as ServiceAreasClearwaterFlRouteImport } from './routes/service-areas/clearwater-fl'
 import { Route as ServiceAreasBrandonFlRouteImport } from './routes/service-areas/brandon-fl'
+import { Route as ServiceAreasClearwaterFlRouteImport } from './routes/service-areas/clearwater-fl'
+import { Route as ServiceAreasHillsboroughCountyFlRouteImport } from './routes/service-areas/hillsborough-county-fl'
+import { Route as ServiceAreasPinellasCountyFlRouteImport } from './routes/service-areas/pinellas-county-fl'
+import { Route as ServiceAreasStPetersburgFlRouteImport } from './routes/service-areas/st-petersburg-fl'
+import { Route as ServiceAreasTampaFlRouteImport } from './routes/service-areas/tampa-fl'
 
-const WorkRoute = WorkRouteImport.update({
-  id: '/work',
-  path: '/work',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WindowCleaningRemovalRoute = WindowCleaningRemovalRouteImport.update({
-  id: '/window-cleaning-removal',
-  path: '/window-cleaning-removal',
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WasteDebrisRemovalRoute = WasteDebrisRemovalRouteImport.update({
-  id: '/waste-debris-removal',
-  path: '/waste-debris-removal',
+const AboutUsRoute = AboutUsRouteImport.update({
+  id: '/about-us',
+  path: '/about-us',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
+const BankOccupancyLicencesRoute = BankOccupancyLicencesRouteImport.update({
+  id: '/bank-occupancy-licences',
+  path: '/bank-occupancy-licences',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ReviewsRoute = ReviewsRouteImport.update({
-  id: '/reviews',
-  path: '/reviews',
+const CleaningContractsRoute = CleaningContractsRouteImport.update({
+  id: '/cleaning-contracts',
+  path: '/cleaning-contracts',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ResidentialLeasesCleaningRoute =
-  ResidentialLeasesCleaningRouteImport.update({
-    id: '/residential-leases-cleaning',
-    path: '/residential-leases-cleaning',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const PropertyMaintenanceRoute = PropertyMaintenanceRouteImport.update({
-  id: '/property-maintenance',
-  path: '/property-maintenance',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PressureWashingRoute = PressureWashingRouteImport.update({
-  id: '/pressure-washing',
-  path: '/pressure-washing',
+const ContactUsRoute = ContactUsRouteImport.update({
+  id: '/contact-us',
+  path: '/contact-us',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PostConstructionCleaningRoute =
-  PostConstructionCleaningRouteImport.update({
-    id: '/post-construction-cleaning',
-    path: '/post-construction-cleaning',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const OurWorkRoute = OurWorkRouteImport.update({
-  id: '/our-work',
-  path: '/our-work',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LoginRoute = LoginRouteImport.update({
-  id: '/login',
-  path: '/login',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LetsTalkRoute = LetsTalkRouteImport.update({
-  id: '/lets-talk',
-  path: '/lets-talk',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LandscapingRoute = LandscapingRouteImport.update({
-  id: '/landscaping',
-  path: '/landscaping',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const JunkRemovalClearwaterFlRoute = JunkRemovalClearwaterFlRouteImport.update({
-  id: '/junk-removal-clearwater-fl',
-  path: '/junk-removal-clearwater-fl',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const JunkRemovalRoute = JunkRemovalRouteImport.update({
-  id: '/junk-removal',
-  path: '/junk-removal',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IndustrialLeasesCleaningRoute =
-  IndustrialLeasesCleaningRouteImport.update({
-    id: '/industrial-leases-cleaning',
-    path: '/industrial-leases-cleaning',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const HaulingServicesPalmHarborRoute =
-  HaulingServicesPalmHarborRouteImport.update({
-    id: '/hauling-services-palm-harbor',
-    path: '/hauling-services-palm-harbor',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const FreeEstimateRoute = FreeEstimateRouteImport.update({
-  id: '/free-estimate',
-  path: '/free-estimate',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FenceRemovalRoute = FenceRemovalRouteImport.update({
-  id: '/fence-removal',
-  path: '/fence-removal',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DemolitionServicesPinellasCountyRoute =
-  DemolitionServicesPinellasCountyRouteImport.update({
-    id: '/demolition-services-pinellas-county',
-    path: '/demolition-services-pinellas-county',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const DemolitionRoute = DemolitionRouteImport.update({
-  id: '/demolition',
-  path: '/demolition',
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DebrisRemovalTarponSpringsRoute =
@@ -163,44 +93,114 @@ const DebrisRemovalTarponSpringsRoute =
     path: '/debris-removal-tarpon-springs',
     getParentRoute: () => rootRouteImport,
   } as any)
-const DashboardRoute = DashboardRouteImport.update({
-  id: '/dashboard',
-  path: '/dashboard',
+const DemolitionRoute = DemolitionRouteImport.update({
+  id: '/demolition',
+  path: '/demolition',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ContactUsRoute = ContactUsRouteImport.update({
-  id: '/contact-us',
-  path: '/contact-us',
+const DemolitionServicesPinellasCountyRoute =
+  DemolitionServicesPinellasCountyRouteImport.update({
+    id: '/demolition-services-pinellas-county',
+    path: '/demolition-services-pinellas-county',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const FenceRemovalRoute = FenceRemovalRouteImport.update({
+  id: '/fence-removal',
+  path: '/fence-removal',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
+const FreeEstimateRoute = FreeEstimateRouteImport.update({
+  id: '/free-estimate',
+  path: '/free-estimate',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CleaningContractsRoute = CleaningContractsRouteImport.update({
-  id: '/cleaning-contracts',
-  path: '/cleaning-contracts',
+const HaulingServicesPalmHarborRoute =
+  HaulingServicesPalmHarborRouteImport.update({
+    id: '/hauling-services-palm-harbor',
+    path: '/hauling-services-palm-harbor',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const IndustrialLeasesCleaningRoute =
+  IndustrialLeasesCleaningRouteImport.update({
+    id: '/industrial-leases-cleaning',
+    path: '/industrial-leases-cleaning',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const JunkRemovalRoute = JunkRemovalRouteImport.update({
+  id: '/junk-removal',
+  path: '/junk-removal',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BankOccupancyLicencesRoute = BankOccupancyLicencesRouteImport.update({
-  id: '/bank-occupancy-licences',
-  path: '/bank-occupancy-licences',
+const JunkRemovalClearwaterFlRoute = JunkRemovalClearwaterFlRouteImport.update({
+  id: '/junk-removal-clearwater-fl',
+  path: '/junk-removal-clearwater-fl',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AboutUsRoute = AboutUsRouteImport.update({
-  id: '/about-us',
-  path: '/about-us',
+const LandscapingRoute = LandscapingRouteImport.update({
+  id: '/landscaping',
+  path: '/landscaping',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
+const LetsTalkRoute = LetsTalkRouteImport.update({
+  id: '/lets-talk',
+  path: '/lets-talk',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OurWorkRoute = OurWorkRouteImport.update({
+  id: '/our-work',
+  path: '/our-work',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PostConstructionCleaningRoute =
+  PostConstructionCleaningRouteImport.update({
+    id: '/post-construction-cleaning',
+    path: '/post-construction-cleaning',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PressureWashingRoute = PressureWashingRouteImport.update({
+  id: '/pressure-washing',
+  path: '/pressure-washing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PropertyMaintenanceRoute = PropertyMaintenanceRouteImport.update({
+  id: '/property-maintenance',
+  path: '/property-maintenance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResidentialLeasesCleaningRoute =
+  ResidentialLeasesCleaningRouteImport.update({
+    id: '/residential-leases-cleaning',
+    path: '/residential-leases-cleaning',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ReviewsRoute = ReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WasteDebrisRemovalRoute = WasteDebrisRemovalRouteImport.update({
+  id: '/waste-debris-removal',
+  path: '/waste-debris-removal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WindowCleaningRemovalRoute = WindowCleaningRemovalRouteImport.update({
+  id: '/window-cleaning-removal',
+  path: '/window-cleaning-removal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkRoute = WorkRouteImport.update({
+  id: '/work',
+  path: '/work',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServiceAreasIndexRoute = ServiceAreasIndexRouteImport.update({
@@ -208,21 +208,15 @@ const ServiceAreasIndexRoute = ServiceAreasIndexRouteImport.update({
   path: '/service-areas/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServiceAreasTampaFlRoute = ServiceAreasTampaFlRouteImport.update({
-  id: '/service-areas/tampa-fl',
-  path: '/service-areas/tampa-fl',
+const ServiceAreasBrandonFlRoute = ServiceAreasBrandonFlRouteImport.update({
+  id: '/service-areas/brandon-fl',
+  path: '/service-areas/brandon-fl',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServiceAreasStPetersburgFlRoute =
-  ServiceAreasStPetersburgFlRouteImport.update({
-    id: '/service-areas/st-petersburg-fl',
-    path: '/service-areas/st-petersburg-fl',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ServiceAreasPinellasCountyFlRoute =
-  ServiceAreasPinellasCountyFlRouteImport.update({
-    id: '/service-areas/pinellas-county-fl',
-    path: '/service-areas/pinellas-county-fl',
+const ServiceAreasClearwaterFlRoute =
+  ServiceAreasClearwaterFlRouteImport.update({
+    id: '/service-areas/clearwater-fl',
+    path: '/service-areas/clearwater-fl',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ServiceAreasHillsboroughCountyFlRoute =
@@ -231,15 +225,21 @@ const ServiceAreasHillsboroughCountyFlRoute =
     path: '/service-areas/hillsborough-county-fl',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ServiceAreasClearwaterFlRoute =
-  ServiceAreasClearwaterFlRouteImport.update({
-    id: '/service-areas/clearwater-fl',
-    path: '/service-areas/clearwater-fl',
+const ServiceAreasPinellasCountyFlRoute =
+  ServiceAreasPinellasCountyFlRouteImport.update({
+    id: '/service-areas/pinellas-county-fl',
+    path: '/service-areas/pinellas-county-fl',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ServiceAreasBrandonFlRoute = ServiceAreasBrandonFlRouteImport.update({
-  id: '/service-areas/brandon-fl',
-  path: '/service-areas/brandon-fl',
+const ServiceAreasStPetersburgFlRoute =
+  ServiceAreasStPetersburgFlRouteImport.update({
+    id: '/service-areas/st-petersburg-fl',
+    path: '/service-areas/st-petersburg-fl',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServiceAreasTampaFlRoute = ServiceAreasTampaFlRouteImport.update({
+  id: '/service-areas/tampa-fl',
+  path: '/service-areas/tampa-fl',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -523,200 +523,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/work': {
-      id: '/work'
-      path: '/work'
-      fullPath: '/work'
-      preLoaderRoute: typeof WorkRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/window-cleaning-removal': {
-      id: '/window-cleaning-removal'
-      path: '/window-cleaning-removal'
-      fullPath: '/window-cleaning-removal'
-      preLoaderRoute: typeof WindowCleaningRemovalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/waste-debris-removal': {
-      id: '/waste-debris-removal'
-      path: '/waste-debris-removal'
-      fullPath: '/waste-debris-removal'
-      preLoaderRoute: typeof WasteDebrisRemovalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/reviews': {
-      id: '/reviews'
-      path: '/reviews'
-      fullPath: '/reviews'
-      preLoaderRoute: typeof ReviewsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/residential-leases-cleaning': {
-      id: '/residential-leases-cleaning'
-      path: '/residential-leases-cleaning'
-      fullPath: '/residential-leases-cleaning'
-      preLoaderRoute: typeof ResidentialLeasesCleaningRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/property-maintenance': {
-      id: '/property-maintenance'
-      path: '/property-maintenance'
-      fullPath: '/property-maintenance'
-      preLoaderRoute: typeof PropertyMaintenanceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pressure-washing': {
-      id: '/pressure-washing'
-      path: '/pressure-washing'
-      fullPath: '/pressure-washing'
-      preLoaderRoute: typeof PressureWashingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/post-construction-cleaning': {
-      id: '/post-construction-cleaning'
-      path: '/post-construction-cleaning'
-      fullPath: '/post-construction-cleaning'
-      preLoaderRoute: typeof PostConstructionCleaningRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/our-work': {
-      id: '/our-work'
-      path: '/our-work'
-      fullPath: '/our-work'
-      preLoaderRoute: typeof OurWorkRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/login': {
-      id: '/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof LoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/lets-talk': {
-      id: '/lets-talk'
-      path: '/lets-talk'
-      fullPath: '/lets-talk'
-      preLoaderRoute: typeof LetsTalkRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/landscaping': {
-      id: '/landscaping'
-      path: '/landscaping'
-      fullPath: '/landscaping'
-      preLoaderRoute: typeof LandscapingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/junk-removal-clearwater-fl': {
-      id: '/junk-removal-clearwater-fl'
-      path: '/junk-removal-clearwater-fl'
-      fullPath: '/junk-removal-clearwater-fl'
-      preLoaderRoute: typeof JunkRemovalClearwaterFlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/junk-removal': {
-      id: '/junk-removal'
-      path: '/junk-removal'
-      fullPath: '/junk-removal'
-      preLoaderRoute: typeof JunkRemovalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/industrial-leases-cleaning': {
-      id: '/industrial-leases-cleaning'
-      path: '/industrial-leases-cleaning'
-      fullPath: '/industrial-leases-cleaning'
-      preLoaderRoute: typeof IndustrialLeasesCleaningRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/hauling-services-palm-harbor': {
-      id: '/hauling-services-palm-harbor'
-      path: '/hauling-services-palm-harbor'
-      fullPath: '/hauling-services-palm-harbor'
-      preLoaderRoute: typeof HaulingServicesPalmHarborRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/free-estimate': {
-      id: '/free-estimate'
-      path: '/free-estimate'
-      fullPath: '/free-estimate'
-      preLoaderRoute: typeof FreeEstimateRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/fence-removal': {
-      id: '/fence-removal'
-      path: '/fence-removal'
-      fullPath: '/fence-removal'
-      preLoaderRoute: typeof FenceRemovalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/demolition-services-pinellas-county': {
-      id: '/demolition-services-pinellas-county'
-      path: '/demolition-services-pinellas-county'
-      fullPath: '/demolition-services-pinellas-county'
-      preLoaderRoute: typeof DemolitionServicesPinellasCountyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/demolition': {
-      id: '/demolition'
-      path: '/demolition'
-      fullPath: '/demolition'
-      preLoaderRoute: typeof DemolitionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/debris-removal-tarpon-springs': {
-      id: '/debris-removal-tarpon-springs'
-      path: '/debris-removal-tarpon-springs'
-      fullPath: '/debris-removal-tarpon-springs'
-      preLoaderRoute: typeof DebrisRemovalTarponSpringsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dashboard': {
-      id: '/dashboard'
-      path: '/dashboard'
-      fullPath: '/dashboard'
-      preLoaderRoute: typeof DashboardRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact-us': {
-      id: '/contact-us'
-      path: '/contact-us'
-      fullPath: '/contact-us'
-      preLoaderRoute: typeof ContactUsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cleaning-contracts': {
-      id: '/cleaning-contracts'
-      path: '/cleaning-contracts'
-      fullPath: '/cleaning-contracts'
-      preLoaderRoute: typeof CleaningContractsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/bank-occupancy-licences': {
-      id: '/bank-occupancy-licences'
-      path: '/bank-occupancy-licences'
-      fullPath: '/bank-occupancy-licences'
-      preLoaderRoute: typeof BankOccupancyLicencesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about-us': {
-      id: '/about-us'
-      path: '/about-us'
-      fullPath: '/about-us'
-      preLoaderRoute: typeof AboutUsRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -726,11 +537,200 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/about-us': {
+      id: '/about-us'
+      path: '/about-us'
+      fullPath: '/about-us'
+      preLoaderRoute: typeof AboutUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bank-occupancy-licences': {
+      id: '/bank-occupancy-licences'
+      path: '/bank-occupancy-licences'
+      fullPath: '/bank-occupancy-licences'
+      preLoaderRoute: typeof BankOccupancyLicencesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cleaning-contracts': {
+      id: '/cleaning-contracts'
+      path: '/cleaning-contracts'
+      fullPath: '/cleaning-contracts'
+      preLoaderRoute: typeof CleaningContractsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact-us': {
+      id: '/contact-us'
+      path: '/contact-us'
+      fullPath: '/contact-us'
+      preLoaderRoute: typeof ContactUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/debris-removal-tarpon-springs': {
+      id: '/debris-removal-tarpon-springs'
+      path: '/debris-removal-tarpon-springs'
+      fullPath: '/debris-removal-tarpon-springs'
+      preLoaderRoute: typeof DebrisRemovalTarponSpringsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/demolition': {
+      id: '/demolition'
+      path: '/demolition'
+      fullPath: '/demolition'
+      preLoaderRoute: typeof DemolitionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/demolition-services-pinellas-county': {
+      id: '/demolition-services-pinellas-county'
+      path: '/demolition-services-pinellas-county'
+      fullPath: '/demolition-services-pinellas-county'
+      preLoaderRoute: typeof DemolitionServicesPinellasCountyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fence-removal': {
+      id: '/fence-removal'
+      path: '/fence-removal'
+      fullPath: '/fence-removal'
+      preLoaderRoute: typeof FenceRemovalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/free-estimate': {
+      id: '/free-estimate'
+      path: '/free-estimate'
+      fullPath: '/free-estimate'
+      preLoaderRoute: typeof FreeEstimateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hauling-services-palm-harbor': {
+      id: '/hauling-services-palm-harbor'
+      path: '/hauling-services-palm-harbor'
+      fullPath: '/hauling-services-palm-harbor'
+      preLoaderRoute: typeof HaulingServicesPalmHarborRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industrial-leases-cleaning': {
+      id: '/industrial-leases-cleaning'
+      path: '/industrial-leases-cleaning'
+      fullPath: '/industrial-leases-cleaning'
+      preLoaderRoute: typeof IndustrialLeasesCleaningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/junk-removal': {
+      id: '/junk-removal'
+      path: '/junk-removal'
+      fullPath: '/junk-removal'
+      preLoaderRoute: typeof JunkRemovalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/junk-removal-clearwater-fl': {
+      id: '/junk-removal-clearwater-fl'
+      path: '/junk-removal-clearwater-fl'
+      fullPath: '/junk-removal-clearwater-fl'
+      preLoaderRoute: typeof JunkRemovalClearwaterFlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/landscaping': {
+      id: '/landscaping'
+      path: '/landscaping'
+      fullPath: '/landscaping'
+      preLoaderRoute: typeof LandscapingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lets-talk': {
+      id: '/lets-talk'
+      path: '/lets-talk'
+      fullPath: '/lets-talk'
+      preLoaderRoute: typeof LetsTalkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-work': {
+      id: '/our-work'
+      path: '/our-work'
+      fullPath: '/our-work'
+      preLoaderRoute: typeof OurWorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/post-construction-cleaning': {
+      id: '/post-construction-cleaning'
+      path: '/post-construction-cleaning'
+      fullPath: '/post-construction-cleaning'
+      preLoaderRoute: typeof PostConstructionCleaningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pressure-washing': {
+      id: '/pressure-washing'
+      path: '/pressure-washing'
+      fullPath: '/pressure-washing'
+      preLoaderRoute: typeof PressureWashingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/property-maintenance': {
+      id: '/property-maintenance'
+      path: '/property-maintenance'
+      fullPath: '/property-maintenance'
+      preLoaderRoute: typeof PropertyMaintenanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/residential-leases-cleaning': {
+      id: '/residential-leases-cleaning'
+      path: '/residential-leases-cleaning'
+      fullPath: '/residential-leases-cleaning'
+      preLoaderRoute: typeof ResidentialLeasesCleaningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reviews': {
+      id: '/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/waste-debris-removal': {
+      id: '/waste-debris-removal'
+      path: '/waste-debris-removal'
+      fullPath: '/waste-debris-removal'
+      preLoaderRoute: typeof WasteDebrisRemovalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/window-cleaning-removal': {
+      id: '/window-cleaning-removal'
+      path: '/window-cleaning-removal'
+      fullPath: '/window-cleaning-removal'
+      preLoaderRoute: typeof WindowCleaningRemovalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work': {
+      id: '/work'
+      path: '/work'
+      fullPath: '/work'
+      preLoaderRoute: typeof WorkRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/service-areas/': {
@@ -740,32 +740,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServiceAreasIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/service-areas/tampa-fl': {
-      id: '/service-areas/tampa-fl'
-      path: '/service-areas/tampa-fl'
-      fullPath: '/service-areas/tampa-fl'
-      preLoaderRoute: typeof ServiceAreasTampaFlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/service-areas/st-petersburg-fl': {
-      id: '/service-areas/st-petersburg-fl'
-      path: '/service-areas/st-petersburg-fl'
-      fullPath: '/service-areas/st-petersburg-fl'
-      preLoaderRoute: typeof ServiceAreasStPetersburgFlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/service-areas/pinellas-county-fl': {
-      id: '/service-areas/pinellas-county-fl'
-      path: '/service-areas/pinellas-county-fl'
-      fullPath: '/service-areas/pinellas-county-fl'
-      preLoaderRoute: typeof ServiceAreasPinellasCountyFlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/service-areas/hillsborough-county-fl': {
-      id: '/service-areas/hillsborough-county-fl'
-      path: '/service-areas/hillsborough-county-fl'
-      fullPath: '/service-areas/hillsborough-county-fl'
-      preLoaderRoute: typeof ServiceAreasHillsboroughCountyFlRouteImport
+    '/service-areas/brandon-fl': {
+      id: '/service-areas/brandon-fl'
+      path: '/service-areas/brandon-fl'
+      fullPath: '/service-areas/brandon-fl'
+      preLoaderRoute: typeof ServiceAreasBrandonFlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/service-areas/clearwater-fl': {
@@ -775,11 +754,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServiceAreasClearwaterFlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/service-areas/brandon-fl': {
-      id: '/service-areas/brandon-fl'
-      path: '/service-areas/brandon-fl'
-      fullPath: '/service-areas/brandon-fl'
-      preLoaderRoute: typeof ServiceAreasBrandonFlRouteImport
+    '/service-areas/hillsborough-county-fl': {
+      id: '/service-areas/hillsborough-county-fl'
+      path: '/service-areas/hillsborough-county-fl'
+      fullPath: '/service-areas/hillsborough-county-fl'
+      preLoaderRoute: typeof ServiceAreasHillsboroughCountyFlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-areas/pinellas-county-fl': {
+      id: '/service-areas/pinellas-county-fl'
+      path: '/service-areas/pinellas-county-fl'
+      fullPath: '/service-areas/pinellas-county-fl'
+      preLoaderRoute: typeof ServiceAreasPinellasCountyFlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-areas/st-petersburg-fl': {
+      id: '/service-areas/st-petersburg-fl'
+      path: '/service-areas/st-petersburg-fl'
+      fullPath: '/service-areas/st-petersburg-fl'
+      preLoaderRoute: typeof ServiceAreasStPetersburgFlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-areas/tampa-fl': {
+      id: '/service-areas/tampa-fl'
+      path: '/service-areas/tampa-fl'
+      fullPath: '/service-areas/tampa-fl'
+      preLoaderRoute: typeof ServiceAreasTampaFlRouteImport
       parentRoute: typeof rootRouteImport
     }
   }

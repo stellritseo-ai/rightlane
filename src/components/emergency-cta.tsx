@@ -125,7 +125,7 @@ export function EmergencyCTA() {
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-[#ffa326] to-[#cc7e14] rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
 
                 <a
-                  href="tel:7276420201"
+                  href="tel:7273310238"
                   className="relative flex items-center justify-between gap-4 rounded-2xl bg-gradient-to-r from-[#ffa326] to-[#cc7e14] p-5 sm:p-6 font-semibold text-white shadow-2xl hover:brightness-110 transition-all duration-300 w-full"
                 >
                   <div className="flex items-center gap-4">
@@ -137,7 +137,7 @@ export function EmergencyCTA() {
                         {t("cta.prompt.btn.sub")}
                       </span>
                       <span className="block text-xl sm:text-2xl font-sans font-black leading-tight tracking-tight mt-0.5">
-                        (727) 642-0201
+                        (727) 331-0238
                       </span>
                     </div>
                   </div>

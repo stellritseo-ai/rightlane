@@ -11,7 +11,7 @@ const steps = [
   {
     icon: CalendarCheck,
     title: "Schedule Service",
-    desc: "Book a consultation online or call Ronnie at (727) 642-0201 for immediate response.",
+    desc: "Book a consultation online or call Ronnie at (727) 331-0238 for immediate response.",
   },
   {
     icon: Search,

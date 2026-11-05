@@ -983,7 +983,7 @@ function DashboardPage() {
   // Settings mock state
   const [settings, setSettings] = useState({
     adminEmail: "contact@rightlanehandymanservicellc.com",
-    officePhone: "(727) 642-0201",
+    officePhone: "(727) 331-0238",
     autoSmsTemplate: "Hi {Name}, thank you for contacting Right Lane Handyman Services, LLC! Right Lane Handyman will contact you during the {Time} to discuss your {Type} project.",
     sendAutoEmail: true,
     sendAutoSms: true,
@@ -1181,7 +1181,7 @@ function DashboardPage() {
                 Log leads, check performance logs, moderate public review widgets, and track conversion values in real time.
               </p>
               <a
-                href="tel:7276420201"
+                href="tel:7273310238"
                 className="block text-center text-[10px] font-bold text-[#cc7e14] border border-[#ffa326]/30 hover:bg-[#ffa326]/5 py-1.5 rounded-lg mt-2 transition-all"
               >
                 Call Support

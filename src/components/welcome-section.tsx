@@ -44,13 +44,13 @@ export function WelcomeSection() {
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-              <ContactCard label={t("welcome.contact.title")} value="(727) 642-0201" />
+              <ContactCard label={t("welcome.contact.title")} value="(727) 331-0238" />
               <ContactCard label="Email Us" value="contact@rightlanehandymanservicellc.com" isEmail={true} />
             </div>
 
             <div className="mt-7 flex flex-wrap gap-3 sm:gap-4">
               <a
-                href="tel:7276420201"
+                href="tel:7273310238"
                 className="rounded-full bg-gradient-to-r from-[#32322d] to-[#1e1e1a] hover:from-[#23231f] hover:to-[#121210] px-6 sm:px-7 py-3 text-white text-sm font-normal hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-md"
               >
                 {t("welcome.btn.call")}

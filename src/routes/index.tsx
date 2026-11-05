@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Trusted handyman, home repair & property maintenance in Tampa, FL & Tampa Bay. 25+ years experience. Licensed, insured & bonded. Call Ronnie: (727) 642-0201.",
+          "Trusted handyman, home repair & property maintenance in Tampa, FL & Tampa Bay. 25+ years experience. Licensed, insured & bonded. Call Ronnie: (727) 331-0238.",
       },
       { property: "og:title", content: "Handyman in Tampa, FL | Right Lane Handyman Services" },
       {
@@ -63,7 +63,7 @@ const HOMEPAGE_FAQS = [
   {
     question: "How do I get an estimate for my repair or maintenance project?",
     answer:
-      "Call Ronnie Lane directly at (727) 642-0201 or fill out our online estimate request form. We provide prompt, upfront, and transparent pricing.",
+      "Call Ronnie Lane directly at (727) 331-0238 or fill out our online estimate request form. We provide prompt, upfront, and transparent pricing.",
   },
 ];
 

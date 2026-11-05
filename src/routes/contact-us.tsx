@@ -40,13 +40,13 @@ export const Route = createFileRoute("/contact-us")({
       {
         name: "description",
         content:
-          "Contact Ronnie Lane at Right Lane Handyman Services LLC for free estimates on handyman repairs, property maintenance & hauling in Tampa Bay. Call (727) 642-0201.",
+          "Contact Ronnie Lane at Right Lane Handyman Services LLC for free estimates on handyman repairs, property maintenance & hauling in Tampa Bay. Call (727) 331-0238.",
       },
       { property: "og:title", content: "Contact Right Lane Handyman Services, LLC" },
       {
         property: "og:description",
         content:
-          "Get in touch for professional home repairs, pressure washing, junk removal, and handyman solutions across Tampa, Hillsborough, and Pinellas Counties. Call (727) 642-0201.",
+          "Get in touch for professional home repairs, pressure washing, junk removal, and handyman solutions across Tampa, Hillsborough, and Pinellas Counties. Call (727) 331-0238.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://www.rightlanehandymanservicellc.com/contact-us" },
@@ -139,7 +139,7 @@ function ContactUsPage() {
     },
     {
       question: "Do you offer emergency services?",
-      answer: "Yes, we offer 24/7 emergency service for storm damage, debris removal, and urgent property cleanouts. Call (727) 642-0201 anytime."
+      answer: "Yes, we offer 24/7 emergency service for storm damage, debris removal, and urgent property cleanouts. Call (727) 331-0238 anytime."
     },
     {
       question: "What types of jobs do you handle?",
@@ -265,8 +265,8 @@ function ContactUsPage() {
                   </span>
                   <div>
                     <h2 className="text-md font-extrabold text-neutral-900 tracking-wide">Call or Text</h2>
-                    <a href="tel:7276420201" className="text-sm font-bold text-[#cc7e14] hover:underline">
-                      (727) 642-0201
+                    <a href="tel:7273310238" className="text-sm font-bold text-[#cc7e14] hover:underline">
+                      (727) 331-0238
                     </a>
                   </div>
                 </div>
@@ -754,10 +754,10 @@ function ContactUsPage() {
             </p>
           </div>
           <a
-            href="tel:7276420201"
+            href="tel:7273310238"
             className="rounded-full bg-red-650 hover:bg-red-700 px-8 py-3.5 text-white text-[14px] font-bold tracking-wider uppercase transition-all duration-300 shadow-md whitespace-nowrap shrink-0"
           >
-            Call (727) 642-0201
+            Call (727) 331-0238
           </a>
         </section>
       </div>
@@ -795,9 +795,9 @@ function ContactUsPage() {
               </h3>
 
               <div className="grid sm:grid-cols-3 gap-5 text-[14px] font-light">
-                <a href="tel:7276420201" className="flex items-center gap-2.5 hover:text-[#ffa326] transition-colors">
+                <a href="tel:7273310238" className="flex items-center gap-2.5 hover:text-[#ffa326] transition-colors">
                   <Phone className="w-4 h-4 text-[#ffa326] shrink-0" />
-                  <span>(727) 642-0201</span>
+                  <span>(727) 331-0238</span>
                 </a>
                 <a href="mailto:contact@rightlanehandymanservicellc.com" className="flex items-center gap-2.5 hover:text-[#ffa326] transition-colors">
                   <Mail className="w-4 h-4 text-[#ffa326] shrink-0" />

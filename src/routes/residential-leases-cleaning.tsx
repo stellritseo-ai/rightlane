@@ -26,7 +26,7 @@ export const Route = createFileRoute("/residential-leases-cleaning")({
       {
         name: "description",
         content:
-          "Professional residential lease, move-in & move-out deep cleaning for apartments, condos, and houses in Tampa, Clearwater, and Hillsborough & Pinellas Counties. Call (727) 642-0201.",
+          "Professional residential lease, move-in & move-out deep cleaning for apartments, condos, and houses in Tampa, Clearwater, and Hillsborough & Pinellas Counties. Call (727) 331-0238.",
       },
       { property: "og:title", content: "Residential Leases Cleaning - Right Lane Handyman" },
       {
@@ -100,7 +100,7 @@ const FAQS = [
   { question: "How long does a residential lease cleaning take?", answer: "A typical 1-2 bedroom apartment takes 3-5 hours. Larger homes may require a full day or multi-day service. We'll provide an accurate time estimate when you book." },
   { question: "Do you clean inside appliances?", answer: "Yes. Our service includes cleaning inside and outside the oven, refrigerator, dishwasher, and microwave as part of the kitchen cleaning." },
   { question: "Are your cleaning products safe for pets and children?", answer: "We offer eco-friendly cleaning options that are safe for pets and children. Let us know your preference when booking and we'll use appropriate products." },
-  { question: "Do you offer same-day or emergency move-out cleaning?", answer: "We do our best to accommodate urgent move-out timelines. Call (727) 642-0201 and we'll do our best to schedule your cleaning as quickly as possible." },
+  { question: "Do you offer same-day or emergency move-out cleaning?", answer: "We do our best to accommodate urgent move-out timelines. Call (727) 331-0238 and we'll do our best to schedule your cleaning as quickly as possible." },
   { question: "Are you insured?", answer: "Yes! Right Lane Handyman Services, LLC is fully licensed, insured, and bonded for residential cleaning operations." },
 ];
 
@@ -343,7 +343,7 @@ function ResidentialLeasesCleaningPage() {
                 <motion.div key="success" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-16 px-8 bg-[#f9f7f2] rounded-2xl border border-neutral-200">
                   <div className="h-16 w-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-5"><Check className="h-8 w-8 text-emerald-600" /></div>
                   <h3 className="text-xl font-bold text-neutral-900 mb-2">Request Received!</h3>
-                  <p className="text-sm text-neutral-500 font-light">We'll contact you within 24 hours. Call <a href="tel:7276420201" className="text-copper font-bold">(727) 642-0201</a>.</p>
+                  <p className="text-sm text-neutral-500 font-light">We'll contact you within 24 hours. Call <a href="tel:7273310238" className="text-copper font-bold">(727) 331-0238</a>.</p>
                 </motion.div>
               ) : (
                 <motion.form key="form" onSubmit={handleSubmit} className="grid gap-5">
@@ -422,7 +422,7 @@ function ResidentialLeasesCleaningPage() {
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-4" style={{ fontFamily: "Georgia, serif" }}>Ready to Move In or Out with Confidence?</h2>
           <p className="text-sm text-neutral-400 font-light mb-8 max-w-xl mx-auto">Call Ronnie Lane today for a free, no-obligation residential lease cleaning estimate. Serving Clearwater, Tampa Bay Area, Hillsborough County, and Pinellas County.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:7276420201" className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#ffa326] to-[#cc7e14] text-white rounded-full px-8 py-3.5 text-sm font-bold uppercase tracking-wider shadow-lg hover:scale-[1.03] transition-all"><Phone className="h-4 w-4" />(727) 642-0201</a>
+            <a href="tel:7273310238" className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#ffa326] to-[#cc7e14] text-white rounded-full px-8 py-3.5 text-sm font-bold uppercase tracking-wider shadow-lg hover:scale-[1.03] transition-all"><Phone className="h-4 w-4" />(727) 331-0238</a>
             <Link to="/free-estimate" className="inline-flex items-center justify-center gap-2 border border-white/20 text-white rounded-full px-8 py-3.5 text-sm font-bold uppercase tracking-wider hover:bg-white/10 transition-all">Get Free Estimate</Link>
           </div>
         </section>

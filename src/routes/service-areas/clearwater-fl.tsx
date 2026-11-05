@@ -35,7 +35,7 @@ export const Route = createFileRoute("/service-areas/clearwater-fl")({
       {
         name: "description",
         content:
-          "Clearwater's trusted local handyman for 25+ years. Professional home repairs, drywall, painting, pressure washing & property maintenance. Call (727) 642-0201.",
+          "Clearwater's trusted local handyman for 25+ years. Professional home repairs, drywall, painting, pressure washing & property maintenance. Call (727) 331-0238.",
       },
       { property: "og:title", content: "Handyman Services in Clearwater, FL | Right Lane Handyman" },
       {
@@ -164,11 +164,11 @@ function ClearwaterLocationPage() {
 
             <div className="flex flex-wrap items-center gap-4">
               <a
-                href="tel:7276420201"
+                href="tel:7273310238"
                 className="inline-flex items-center gap-2 rounded-full bg-[#ffa326] hover:bg-[#cc7e14] px-7 py-3.5 text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md hover:scale-[1.02]"
               >
                 <Phone className="w-4 h-4 fill-current" />
-                <span>Call (727) 642-0201</span>
+                <span>Call (727) 331-0238</span>
               </a>
               <Link
                 to="/free-estimate"

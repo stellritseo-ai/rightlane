@@ -99,10 +99,10 @@ export function StatsSection() {
               {/* Gradient Pill Button */}
               <div className="mb-8 select-none">
                 <a
-                  href="tel:7276420201"
+                  href="tel:7273310238"
                   className="inline-flex items-center justify-center bg-gradient-to-r from-[#0d0d0d] to-[#ffa326] text-white text-[12px] sm:text-xs font-bold rounded-full px-6 py-3.5 transition-all duration-300 shadow-md hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-95 cursor-pointer"
                 >
-                  Call Emergency Line: (727) 642-0201
+                  Call Emergency Line: (727) 331-0238
                 </a>
               </div>
 

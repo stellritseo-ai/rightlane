@@ -26,7 +26,7 @@ export const Route = createFileRoute("/industrial-leases-cleaning")({
       {
         name: "description",
         content:
-          "Heavy-duty industrial and warehouse lease cleaning in Tampa, Clearwater, and across Hillsborough & Pinellas Counties. Floor scrubbing, debris haul & power washing. Call (727) 642-0201.",
+          "Heavy-duty industrial and warehouse lease cleaning in Tampa, Clearwater, and across Hillsborough & Pinellas Counties. Floor scrubbing, debris haul & power washing. Call (727) 331-0238.",
       },
       { property: "og:title", content: "Industrial Leases Cleaning - Right Lane Handyman" },
       {
@@ -100,7 +100,7 @@ const FAQS = [
   { question: "Can you remove oil and chemical stains from industrial floors?", answer: "We specialize in industrial stain removal including motor oil, hydraulic fluid, chemical spills, and tire marks using industrial degreasers and scrubbing equipment." },
   { question: "Do you handle debris removal and haul-away?", answer: "Yes. We remove and haul away left-behind materials including pallets, packaging, scrap metal, and general industrial waste as part of our lease cleanup service." },
   { question: "Are you insured for industrial facilities?", answer: "Yes! Right Lane Handyman Services, LLC is fully licensed, insured, and bonded for commercial and industrial operations." },
-  { question: "Do you offer free estimates?", answer: "Yes. We provide free, no-obligation estimates for all industrial lease cleaning projects. Call (727) 642-0201 or fill out our form." },
+  { question: "Do you offer free estimates?", answer: "Yes. We provide free, no-obligation estimates for all industrial lease cleaning projects. Call (727) 331-0238 or fill out our form." },
 ];
 
 const REVIEWS = [
@@ -342,7 +342,7 @@ function IndustrialLeasesCleaningPage() {
                 <motion.div key="success" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-16 px-8 bg-[#f9f7f2] rounded-2xl border border-neutral-200">
                   <div className="h-16 w-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-5"><Check className="h-8 w-8 text-emerald-600" /></div>
                   <h3 className="text-xl font-bold text-neutral-900 mb-2">Request Received!</h3>
-                  <p className="text-sm text-neutral-500 font-light">We'll contact you within 24 hours. Call <a href="tel:7276420201" className="text-copper font-bold">(727) 642-0201</a>.</p>
+                  <p className="text-sm text-neutral-500 font-light">We'll contact you within 24 hours. Call <a href="tel:7273310238" className="text-copper font-bold">(727) 331-0238</a>.</p>
                 </motion.div>
               ) : (
                 <motion.form key="form" onSubmit={handleSubmit} className="grid gap-5">
@@ -421,7 +421,7 @@ function IndustrialLeasesCleaningPage() {
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-4" style={{ fontFamily: "Georgia, serif" }}>Ready for Your Industrial Lease Cleanup?</h2>
           <p className="text-sm text-neutral-400 font-light mb-8 max-w-xl mx-auto">Let Right Lane handle your industrial lease cleaning. Serving Tampa Bay Area, Hillsborough County, Pinellas County, and beyond.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:7276420201" className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#ffa326] to-[#cc7e14] text-white rounded-full px-8 py-3.5 text-sm font-bold uppercase tracking-wider shadow-lg hover:scale-[1.03] transition-all"><Phone className="h-4 w-4" />(727) 642-0201</a>
+            <a href="tel:7273310238" className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#ffa326] to-[#cc7e14] text-white rounded-full px-8 py-3.5 text-sm font-bold uppercase tracking-wider shadow-lg hover:scale-[1.03] transition-all"><Phone className="h-4 w-4" />(727) 331-0238</a>
             <Link to="/free-estimate" className="inline-flex items-center justify-center gap-2 border border-white/20 text-white rounded-full px-8 py-3.5 text-sm font-bold uppercase tracking-wider hover:bg-white/10 transition-all">Get Free Estimate</Link>
           </div>
         </section>

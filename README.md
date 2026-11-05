@@ -3,7 +3,7 @@
 > **Official Website**: [https://www.rightlanehandymanservicellc.com/](https://www.rightlanehandymanservicellc.com/)  
 > **Business Name**: Right Lane Handyman Services LLC  
 > **Owner / Principal**: Ronnie Lane  
-> **Phone**: (727) 642-0201 | `tel:7276420201`  
+> **Phone**: (727) 331-0238 | `tel:7273310238`  
 > **Email**: `contact@rightlanehandymanservicellc.com`  
 > **Operating Base / HQ**: Clearwater, FL 33756  
 > **Primary Target Market**: Tampa, Florida  
@@ -84,7 +84,7 @@ https://www.rightlanehandymanservicellc.com/
 Every route has been engineered with:
 1. **Single Strict `<h1>` Heading** with primary target keyword and geographic modifier.
 2. **Curated `<title>` Tag** under 60 characters with primary keyword + brand name.
-3. **Compelling `<meta name="description">` Tag** between 140–160 characters with value proposition, cities served, and call-to-action with phone number `(727) 642-0201`.
+3. **Compelling `<meta name="description">` Tag** between 140–160 characters with value proposition, cities served, and call-to-action with phone number `(727) 331-0238`.
 4. **Open Graph & Twitter Cards** for high CTR social snippet rendering.
 5. **Geo-Location Meta Tags** in root layout:
    - `geo.region`: `US-FL`
@@ -100,7 +100,7 @@ Every route has been engineered with:
 | Field | Value |
 |---|---|
 | **Legal Business Name** | Right Lane Handyman Services LLC |
-| **Phone Number** | (727) 642-0201 |
+| **Phone Number** | (727) 331-0238 |
 | **Email Address** | contact@rightlanehandymanservicellc.com |
 | **Headquarters Address** | Clearwater, FL 33756 |
 | **Primary Target Market** | Tampa, FL |
@@ -171,7 +171,7 @@ The content incorporates localized terminology and Florida coastal climate consi
 ## Section H: Conversion Rate Optimization (CRO) & Lead Capture
 
 1. **Direct Clickable Contact**:
-   - Primary Phone: `<a href="tel:7276420201">(727) 642-0201</a>` in TopBar, Header, Hero banners, and Footer.
+   - Primary Phone: `<a href="tel:7273310238">(727) 331-0238</a>` in TopBar, Header, Hero banners, and Footer.
    - Email: `<a href="mailto:contact@rightlanehandymanservicellc.com">`
 2. **Interactive Lead Capture Funnel**:
    - Multi-step Free Estimate form on `/free-estimate`.

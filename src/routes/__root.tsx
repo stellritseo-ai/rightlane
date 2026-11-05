@@ -66,11 +66,11 @@ function NotFoundComponent() {
         <div className="mt-8 pt-6 border-t border-neutral-100 flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="text-xs text-neutral-500 font-medium">Need immediate assistance?</span>
           <a
-            href="tel:7276420201"
+            href="tel:7273310238"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#ffa326] hover:bg-[#cc7e14] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md"
           >
             <Phone className="w-3.5 h-3.5 fill-current" />
-            <span>Call (727) 642-0201</span>
+            <span>Call (727) 331-0238</span>
           </a>
         </div>
       </div>
@@ -129,7 +129,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Professional handyman, home repair & property maintenance in Tampa, FL & Tampa Bay Area. 25+ years experience. Licensed, insured & bonded. Call (727) 642-0201.",
+          "Professional handyman, home repair & property maintenance in Tampa, FL & Tampa Bay Area. 25+ years experience. Licensed, insured & bonded. Call (727) 331-0238.",
       },
       { name: "author", content: "Right Lane Handyman Services LLC" },
       { name: "geo.region", content: "US-FL" },
@@ -140,7 +140,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Clearwater & Tampa's premier licensed, insured & bonded handyman and property maintenance company. 25+ years experience. Call (727) 642-0201.",
+          "Clearwater & Tampa's premier licensed, insured & bonded handyman and property maintenance company. 25+ years experience. Call (727) 331-0238.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://www.rightlanehandymanservicellc.com/" },
@@ -149,7 +149,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "Right Lane Handyman Services LLC | Tampa, FL" },
       {
         name: "twitter:description",
-        content: "25+ years of trusted handyman services & home repairs in Tampa Bay. Licensed, insured & bonded. Call (727) 642-0201.",
+        content: "25+ years of trusted handyman services & home repairs in Tampa Bay. Licensed, insured & bonded. Call (727) 331-0238.",
       },
     ],
     links: [

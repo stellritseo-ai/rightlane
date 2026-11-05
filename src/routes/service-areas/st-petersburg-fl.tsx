@@ -35,7 +35,7 @@ export const Route = createFileRoute("/service-areas/st-petersburg-fl")({
       {
         name: "description",
         content:
-          "Professional handyman services in St. Petersburg, FL. Quality drywall repair, painting, door fixing, pressure washing & property maintenance. Call (727) 642-0201.",
+          "Professional handyman services in St. Petersburg, FL. Quality drywall repair, painting, door fixing, pressure washing & property maintenance. Call (727) 331-0238.",
       },
       { property: "og:title", content: "Handyman Services in St. Petersburg, FL | Right Lane Handyman" },
       {
@@ -178,11 +178,11 @@ function StPetersburgLocationPage() {
 
             <div className="flex flex-wrap items-center gap-4">
               <a
-                href="tel:7276420201"
+                href="tel:7273310238"
                 className="inline-flex items-center gap-2 rounded-full bg-[#ffa326] hover:bg-[#cc7e14] px-7 py-3.5 text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md hover:scale-[1.02]"
               >
                 <Phone className="w-4 h-4 fill-current" />
-                <span>Call Ronnie: (727) 642-0201</span>
+                <span>Call Ronnie: (727) 331-0238</span>
               </a>
               <Link
                 to="/free-estimate"

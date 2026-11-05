@@ -45,7 +45,7 @@ export const Route = createFileRoute("/service-areas/")({
       {
         name: "description",
         content:
-          "Right Lane Handyman Services LLC provides trusted handyman, home repair & property maintenance across Tampa Bay, Hillsborough County & Pinellas County. Call (727) 642-0201.",
+          "Right Lane Handyman Services LLC provides trusted handyman, home repair & property maintenance across Tampa Bay, Hillsborough County & Pinellas County. Call (727) 331-0238.",
       },
       { property: "og:title", content: "Handyman Services in Tampa Bay, FL | Right Lane Handyman" },
       {
@@ -80,7 +80,7 @@ const FAQS = [
   {
     question: "How do I request a handyman estimate in Tampa or Pinellas County?",
     answer:
-      "You can request an upfront, transparent estimate by calling Ronnie Lane directly at (727) 642-0201 or by submitting our online quote request form. We respond promptly within 24 hours.",
+      "You can request an upfront, transparent estimate by calling Ronnie Lane directly at (727) 331-0238 or by submitting our online quote request form. We respond promptly within 24 hours.",
   },
   {
     question: "Do you handle both residential and commercial handyman projects across Tampa Bay?",
@@ -192,11 +192,11 @@ function ServiceAreasHubPage() {
 
             <div className="flex flex-wrap items-center gap-4">
               <a
-                href="tel:7276420201"
+                href="tel:7273310238"
                 className="inline-flex items-center gap-2 rounded-full bg-[#ffa326] hover:bg-[#cc7e14] px-7 py-3.5 text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md hover:scale-[1.02]"
               >
                 <Phone className="w-4 h-4 fill-current" />
-                <span>Call Ronnie: (727) 642-0201</span>
+                <span>Call Ronnie: (727) 331-0238</span>
               </a>
               <Link
                 to="/free-estimate"

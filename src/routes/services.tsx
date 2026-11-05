@@ -51,7 +51,7 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Explore professional handyman, home repair, property maintenance, pressure washing, demolition & hauling services across Tampa Bay, FL. Call (727) 642-0201.",
+          "Explore professional handyman, home repair, property maintenance, pressure washing, demolition & hauling services across Tampa Bay, FL. Call (727) 331-0238.",
       },
       { property: "og:title", content: "Handyman Services in Tampa, FL & Tampa Bay | Right Lane Handyman" },
       {
@@ -580,9 +580,9 @@ function ServicesPage() {
               </h3>
               
               <div className="grid sm:grid-cols-2 gap-5 text-[15px] font-light">
-                <a href="tel:7276420201" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
+                <a href="tel:7273310238" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
                   <Phone className="w-5 h-5 text-[#ffa326] shrink-0" />
-                  <span>(727) 642-0201</span>
+                  <span>(727) 331-0238</span>
                 </a>
                 <a href="mailto:contact@rightlanehandymanservicellc.com" className="flex items-center gap-3.5 hover:text-[#ffa326] transition-colors">
                   <Mail className="w-5 h-5 text-[#ffa326] shrink-0" />
@@ -601,7 +601,7 @@ function ServicesPage() {
 
             <div className="flex flex-wrap gap-4 justify-center">
               <a
-                href="tel:7276420201"
+                href="tel:7273310238"
                 className="rounded-full bg-[#ffa326] hover:bg-[#ffa326] px-8 py-3.5 text-white text-[14px] font-bold tracking-wider uppercase transition-all duration-300 shadow-lg hover:scale-[1.03]"
               >
                 Call Ronnie Now

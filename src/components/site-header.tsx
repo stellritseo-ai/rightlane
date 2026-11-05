@@ -142,7 +142,7 @@ export function SiteHeader() {
             {/* Mobile controls */}
             <div className="lg:hidden flex items-center gap-2.5">
               <a
-                href="tel:7276420201"
+                href="tel:7273310238"
                 className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#ffa326] to-[#cc7e14] text-white shadow-md transition-all duration-200 hover:scale-105 active:scale-95"
               >
                 <Phone className="h-3.5 w-3.5 fill-white text-white" />
@@ -275,11 +275,11 @@ export function SiteHeader() {
                 Free Estimate
               </Link>
               <a
-                href="tel:7276420201"
+                href="tel:7273310238"
                 className="flex items-center gap-2 rounded-full bg-gradient-to-r from-[#32322d] to-[#1e1e1a] hover:from-[#23231f] hover:to-[#121210] px-6 py-2 text-white hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-sm"
               >
                 <Phone className="h-3.5 w-3.5 fill-white text-white" />
-                <span className="font-normal text-sm">(727) 642-0201</span>
+                <span className="font-normal text-sm">(727) 331-0238</span>
               </a>
             </div>
           </div>
@@ -498,11 +498,11 @@ export function SiteHeader() {
                   Free Estimate
                 </Link>
                 <a
-                  href="tel:7276420201"
+                  href="tel:7273310238"
                   className="flex items-center justify-center gap-2.5 w-full rounded-xl bg-gradient-to-r from-[#32322d] to-[#1e1e1a] hover:from-[#23231f] hover:to-[#121210] py-3.5 text-white text-[13px] font-bold tracking-wide shadow-md hover:shadow-lg hover:scale-[1.01] active:scale-[0.98] transition-all duration-200"
                 >
                   <Phone className="h-3.5 w-3.5 fill-white text-white" />
-                  (727) 642-0201
+                  (727) 331-0238
                 </a>
               </div>
             </motion.div>
